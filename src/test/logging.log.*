@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-11-18T00:55:26.900967Z</date>
+  <millis>1637196926900</millis>
+  <nanos>967000</nanos>
+  <sequence>0</sequence>
+  <logger>com.solvd.thebuildingcompany.subcontractors.Carpenter</logger>
+  <level>INFO</level>
+  <class>com.solvd.thebuildingcompany.subcontractors.Carpenter</class>
+  <method>addComponents</method>
+  <thread>1</thread>
+  <message>Add Windows</message>
+</record>
+<record>
+  <date>2021-11-18T00:55:27.007903Z</date>
+  <millis>1637196927007</millis>
+  <nanos>903000</nanos>
+  <sequence>1</sequence>
+  <logger>com.solvd.thebuildingcompany.subcontractors.Carpenter</logger>
+  <level>INFO</level>
+  <class>com.solvd.thebuildingcompany.subcontractors.Carpenter</class>
+  <method>addComponents</method>
+  <thread>1</thread>
+  <message>Add Siding</message>
+</record>
+<record>
+  <date>2021-11-18T00:55:27.011059Z</date>
+  <millis>1637196927011</millis>
+  <nanos>59000</nanos>
+  <sequence>2</sequence>
+  <logger>com.solvd.thebuildingcompany.subcontractors.Carpenter</logger>
+  <level>INFO</level>
+  <class>com.solvd.thebuildingcompany.subcontractors.Carpenter</class>
+  <method>addComponents</method>
+  <thread>1</thread>
+  <message>Add Cabinets</message>
+</record>
+<record>
+  <date>2021-11-18T00:55:27.012308Z</date>
+  <millis>1637196927012</millis>
+  <nanos>308000</nanos>
+  <sequence>3</sequence>
+  <logger>com.solvd.thebuildingcompany.subcontractors.Carpenter</logger>
+  <level>INFO</level>
+  <class>com.solvd.thebuildingcompany.subcontractors.Carpenter</class>
+  <method>addComponents</method>
+  <thread>1</thread>
+  <message>Add Walls</message>
+</record>
+<record>
+  <date>2021-11-18T00:55:27.014453Z</date>
+  <millis>1637196927014</millis>
+  <nanos>453000</nanos>
+  <sequence>4</sequence>
+  <logger>com.solvd.thebuildingcompany.subcontractors.Carpenter</logger>
+  <level>INFO</level>
+  <class>com.solvd.thebuildingcompany.subcontractors.Carpenter</class>
+  <method>addComponents</method>
+  <thread>1</thread>
+  <message>Add Floors</message>
+</record>
+<record>
+  <date>2021-11-18T00:55:27.015614Z</date>
+  <millis>1637196927015</millis>
+  <nanos>614000</nanos>
+  <sequence>5</sequence>
+  <logger>com.solvd.thebuildingcompany.subcontractors.Carpenter</logger>
+  <level>INFO</level>
+  <class>com.solvd.thebuildingcompany.subcontractors.Carpenter</class>
+  <method>addComponents</method>
+  <thread>1</thread>
+  <message>Add Door Frames</message>
+</record>
+</log>

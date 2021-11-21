@@ -1,0 +1,5 @@
+2021-11-09 20:57:32.112 [main] DEBUG com.solvd.thebuildingcompany.FinalResult - We've just greeted the user!
+2021-11-09 20:57:32.118 [main] INFO  com.solvd.thebuildingcompany.FinalResult - We've just greeted the user!
+2021-11-09 20:57:32.119 [main] WARN  com.solvd.thebuildingcompany.FinalResult - We've just greeted the user!
+2021-11-09 20:57:32.119 [main] ERROR com.solvd.thebuildingcompany.FinalResult - We've just greeted the user!
+2021-11-09 20:57:32.120 [main] FATAL com.solvd.thebuildingcompany.FinalResult - We've just greeted the user!

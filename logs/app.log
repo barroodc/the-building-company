@@ -1,0 +1,12 @@
+2021-11-09 20:34:58,823 TRACE   com.solvd.thebuildingcompany.FinalResult - We've just greeted the user!
+2021-11-09 20:34:58,827 DEBUG   com.solvd.thebuildingcompany.FinalResult - We've just greeted the user!
+2021-11-09 20:34:58,827 INFO    com.solvd.thebuildingcompany.FinalResult - We've just greeted the user!
+2021-11-09 20:34:58,827 WARN    com.solvd.thebuildingcompany.FinalResult - We've just greeted the user!
+2021-11-09 20:34:58,828 ERROR   com.solvd.thebuildingcompany.FinalResult - We've just greeted the user!
+2021-11-09 20:34:58,828 FATAL   com.solvd.thebuildingcompany.FinalResult - We've just greeted the user!
+2021-11-09 20:43:36,455 TRACE   com.solvd.thebuildingcompany.FinalResult - We've just greeted the user!
+2021-11-09 20:43:36,460 DEBUG   com.solvd.thebuildingcompany.FinalResult - We've just greeted the user!
+2021-11-09 20:43:36,460 INFO    com.solvd.thebuildingcompany.FinalResult - We've just greeted the user!
+2021-11-09 20:43:36,460 WARN    com.solvd.thebuildingcompany.FinalResult - We've just greeted the user!
+2021-11-09 20:43:36,461 ERROR   com.solvd.thebuildingcompany.FinalResult - We've just greeted the user!
+2021-11-09 20:43:36,461 FATAL   com.solvd.thebuildingcompany.FinalResult - We've just greeted the user!
