@@ -6,9 +6,9 @@
   <millis>1637196926900</millis>
   <nanos>967000</nanos>
   <sequence>0</sequence>
-  <logger>com.solvd.thebuildingcompany.employees.contractors.subcontractors.Carpenter</logger>
+  <logger>com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter</logger>
   <level>INFO</level>
-  <class>com.solvd.thebuildingcompany.employees.contractors.subcontractors.Carpenter</class>
+  <class>com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter</class>
   <method>addComponents</method>
   <thread>1</thread>
   <message>Add Windows</message>
@@ -18,9 +18,9 @@
   <millis>1637196927007</millis>
   <nanos>903000</nanos>
   <sequence>1</sequence>
-  <logger>com.solvd.thebuildingcompany.employees.contractors.subcontractors.Carpenter</logger>
+  <logger>com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter</logger>
   <level>INFO</level>
-  <class>com.solvd.thebuildingcompany.employees.contractors.subcontractors.Carpenter</class>
+  <class>com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter</class>
   <method>addComponents</method>
   <thread>1</thread>
   <message>Add Siding</message>
@@ -30,9 +30,9 @@
   <millis>1637196927011</millis>
   <nanos>59000</nanos>
   <sequence>2</sequence>
-  <logger>com.solvd.thebuildingcompany.employees.contractors.subcontractors.Carpenter</logger>
+  <logger>com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter</logger>
   <level>INFO</level>
-  <class>com.solvd.thebuildingcompany.employees.contractors.subcontractors.Carpenter</class>
+  <class>com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter</class>
   <method>addComponents</method>
   <thread>1</thread>
   <message>Add Cabinets</message>
@@ -42,9 +42,9 @@
   <millis>1637196927012</millis>
   <nanos>308000</nanos>
   <sequence>3</sequence>
-  <logger>com.solvd.thebuildingcompany.employees.contractors.subcontractors.Carpenter</logger>
+  <logger>com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter</logger>
   <level>INFO</level>
-  <class>com.solvd.thebuildingcompany.employees.contractors.subcontractors.Carpenter</class>
+  <class>com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter</class>
   <method>addComponents</method>
   <thread>1</thread>
   <message>Add Walls</message>
@@ -54,9 +54,9 @@
   <millis>1637196927014</millis>
   <nanos>453000</nanos>
   <sequence>4</sequence>
-  <logger>com.solvd.thebuildingcompany.employees.contractors.subcontractors.Carpenter</logger>
+  <logger>com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter</logger>
   <level>INFO</level>
-  <class>com.solvd.thebuildingcompany.employees.contractors.subcontractors.Carpenter</class>
+  <class>com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter</class>
   <method>addComponents</method>
   <thread>1</thread>
   <message>Add Floors</message>
@@ -66,9 +66,9 @@
   <millis>1637196927015</millis>
   <nanos>614000</nanos>
   <sequence>5</sequence>
-  <logger>com.solvd.thebuildingcompany.employees.contractors.subcontractors.Carpenter</logger>
+  <logger>com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter</logger>
   <level>INFO</level>
-  <class>com.solvd.thebuildingcompany.employees.contractors.subcontractors.Carpenter</class>
+  <class>com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter</class>
   <method>addComponents</method>
   <thread>1</thread>
   <message>Add Door Frames</message>
