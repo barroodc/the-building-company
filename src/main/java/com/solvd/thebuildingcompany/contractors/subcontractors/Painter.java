@@ -1,13 +1,15 @@
 package com.solvd.thebuildingcompany.contractors.subcontractors;
 
+import com.solvd.thebuildingcompany.contractors.Contractor;
 import com.solvd.thebuildingcompany.interfaces.ICleanable;
 import com.solvd.thebuildingcompany.interfaces.IMeasurable;
 import com.solvd.thebuildingcompany.interfaces.IPaintable;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.logging.Logger;
 
-public class Painter implements ICleanable, IMeasurable, IPaintable {
+public class Painter extends Contractor implements ICleanable, IMeasurable, IPaintable {
 
     private String name;
     private String nameOfCompany;
@@ -19,6 +21,21 @@ public class Painter implements ICleanable, IMeasurable, IPaintable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    protected HashMap<String, Boolean> employeePunchIn() {
+        return null;
+    }
+
+    @Override
+    protected HashMap<String, Boolean> employeePunchOut() {
+        return null;
+    }
+
+    @Override
+    protected Double earnings() {
+        return null;
     }
 
     public String getNameOfCompany() {

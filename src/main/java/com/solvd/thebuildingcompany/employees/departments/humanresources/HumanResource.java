@@ -1,11 +1,12 @@
 package com.solvd.thebuildingcompany.employees.departments.humanresources;
 
-import com.solvd.thebuildingcompany.employees.abstractclass.Employees;
+import com.solvd.thebuildingcompany.employees.Employee;
+import com.solvd.thebuildingcompany.interfaces.IHire;
 
 import java.util.LinkedList;
 import java.util.logging.Logger;
 
-public class HumanResource extends Employees {
+public class HumanResource extends Employee implements IHire {
 
     private int welcomeHireManual;
     private boolean environmentSafe;
@@ -78,7 +79,7 @@ public class HumanResource extends Employees {
     }
 
     private String recruiting() {
-        final HumanResourceRecruiter larry = new HumanResourceRecruiter("Larry");
+        final HumanResource larry = new HumanResource("Larry");
         larry.setWelcomeHireManual(500);
 
         logger.info("Number of new hire manuals handed out:" + larry.getWelcomeHireManual());
@@ -102,24 +103,6 @@ public class HumanResource extends Employees {
         logger.info("The CEO attended: " + john.getEventsPlanned());
 
         return "The CEO attended: " + john.getEventsPlanned();
-    }
-
-    private String compensationAndBenefits() {
-        final HumanResource alfonso = new HumanResource("Alfonso");
-        alfonso.setSalaryGiven(45000);
-
-        logger.info("Total compensation for Inside Sales Employees is $" + alfonso.getSalaryGiven());
-
-        return "Total compensation for Inside Sales Employees is $" + alfonso.getSalaryGiven();
-    }
-
-    private String laborLawCompliance() {
-        final HumanResource jackie = new HumanResource("Jackie");
-        jackie.setLaborLawsMet(true);
-
-        logger.info("Labor laws met: " + jackie.isLaborLawsMet());
-
-        return "Labor laws met: " + jackie.isLaborLawsMet();
     }
 
     private String trainingAndDevelopment() {
@@ -151,5 +134,10 @@ public class HumanResource extends Employees {
     @Override
     protected Double earnings() {
         return null;
+    }
+
+    @Override
+    public void hire() {
+    //Scan objects in?
     }
 }

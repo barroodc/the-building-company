@@ -1,12 +1,13 @@
 package com.solvd.thebuildingcompany.employees.departments.engineering;
 
-import com.solvd.thebuildingcompany.employees.abstractclass.Employees;
+import com.solvd.thebuildingcompany.employees.Employee;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.logging.Logger;
 
-public class PlumbingEngineer extends Employees {
+public class PlumbingEngineer extends Employee {
 
     private String name;
     private String statusReport;
@@ -15,6 +16,13 @@ public class PlumbingEngineer extends Employees {
     private boolean correctEquipment;
     private boolean designDeveloped;
     private boolean plumbingActive;
+    private boolean discussionHad;
+    private boolean contractHonored;
+    private boolean safetyCheck;
+    private boolean regulationsMet;
+    private boolean sanitaryDrainageDesigned;
+    private boolean stormwaterDrainageDesigned;
+    private boolean portableWaterDrainageDesigned;
 
     public String getName() {
         return name;
@@ -78,128 +86,89 @@ public class PlumbingEngineer extends Employees {
         this.setName(name);
     }
 
-    private HashMap<String, Boolean> evaluationPerformed() {
-        final PlumbingEngineer charles = new PlumbingEngineer("Charles");
-        HashMap<String, Boolean> projectEvaluation = new HashMap<>();
-        projectEvaluation.put("Holistic Plumbing Evaluation Check", true);
-        if (projectEvaluation.containsValue(true)){
-            charles.setStatusReport("I give my approval that this evaluation was performed honestly");
-        }
-        HashMap<String, Boolean> projectComments = new HashMap<>();
-        projectComments.put(charles.getStatusReport(), true);
-
-        for (Map.Entry<String, Boolean> set : projectComments.entrySet()) {
-            logger.info(set.getKey());
-        }
-
-        return projectComments;
+    public boolean isDiscussionHad() {
+        return discussionHad;
     }
 
-    private HashMap<String, String> developmentStage() {
-        final PlumbingEngineer dennis = new PlumbingEngineer("Dennis");
-        final PlumbingEngineer kevin = new PlumbingEngineer("Kevin");
-        final PlumbingEngineer thomas = new PlumbingEngineer("Thomas");
+    public void setDiscussionHad(boolean discussionHad) {
+        this.discussionHad = discussionHad;
+    }
 
-        HashMap<String, String> nameAndJob = new HashMap<>();
-        nameAndJob.put(dennis.getName() , "Design");
-        nameAndJob.put(kevin.getName() , "Planning");
-        nameAndJob.put(thomas.getName() , "Implementation");
+    public boolean isContractHonored() {
+        return contractHonored;
+    }
 
-        for (Map.Entry<String, String> set : nameAndJob.entrySet()) {
-            logger.info(set.getKey());
+    public void setContractHonored(boolean contractHonored) {
+        this.contractHonored = contractHonored;
+    }
+
+    public boolean isSafetyCheck() {
+        return safetyCheck;
+    }
+
+    public void setSafetyCheck(boolean safetyCheck) {
+        this.safetyCheck = safetyCheck;
+    }
+
+    public boolean isRegulationsMet() {
+        return regulationsMet;
+    }
+
+    public void setRegulationsMet(boolean regulationsMet) {
+        this.regulationsMet = regulationsMet;
+    }
+
+    private ArrayList<String> projectDiscussions() {
+        final PlumbingEngineer donna = new PlumbingEngineer("Donna");
+        final PlumbingEngineer patrick = new PlumbingEngineer("Patrick");
+        final PlumbingEngineer kelly = new PlumbingEngineer("Kelly");
+        final PlumbingEngineer judy = new PlumbingEngineer("Judy");
+
+        donna.setDiscussionHad(true);
+        patrick.setContractHonored(true);
+        kelly.setSafetyCheck(true);
+        judy.setRegulationsMet(true);
+
+
+        ArrayList<String> projectSetups = new ArrayList<>();
+        projectSetups.add("Plumbing Engineers " + donna.getName() + " " +  "and" + " " + patrick.getName() + " " + "met with the Engineering Team: " + donna.isDiscussionHad());
+
+        for (String discussionSet : projectSetups) {
+            logger.info(discussionSet);
         }
 
-        return nameAndJob;
-    }
-    private HashMap<String, Boolean> testType() {
-        final PlumbingEngineer jasmin = new PlumbingEngineer("Jasmin");
-        final PlumbingEngineer terry = new PlumbingEngineer("Terry");
-        final PlumbingEngineer velma = new PlumbingEngineer("Velma");
-
-        HashMap<String, Boolean> testingPerformed = new HashMap<>();
-        testingPerformed.put("Water line test in east wing performed by " + jasmin.getName(), true);
-        testingPerformed.put("Water line test in south wing performed by " + terry.getName(), true);
-        testingPerformed.put("Sewage line test in east wing performed by " + velma.getName(), true);
-
-        for (Map.Entry<String, Boolean> set : testingPerformed.entrySet()) {
-            logger.info(set.getKey());
-        }
-
-        return testingPerformed;
+        return projectSetups;
     }
 
-    private HashMap<String, String> changesMade() {
-        final PlumbingEngineer richard = new PlumbingEngineer("Richard");
-        final PlumbingEngineer scott = new PlumbingEngineer("Scott");
 
-        HashMap<String, String> changedBy = new HashMap<>();
-        changedBy.put("Changes made based of drawing submittals performed by ", richard.getName());
+    private void designingPlumbingSystems() {
+        final PlumbingEngineer carson = new PlumbingEngineer("Carson");
+        carson.sanitaryDrainageDesigned = true;
+        carson.stormwaterDrainageDesigned = true;
+        carson.portableWaterDrainageDesigned = true;
 
-        changedBy.put("New plumbing system implementations based off updated blue print performed by", scott.getName());
-
-        for (Map.Entry<String, String> set : changedBy.entrySet()) {
-            logger.info(set.getKey());
-        }
-
-        return changedBy;
+        logger.info("Sanitary Drainage System Designed: " + true);
+        logger.info("Stormwater Drainage System Designed: " + true);
+        logger.info("Portable Water Drainage System Designed: " + true);
     }
 
-    private HashMap<String, Boolean> installComplete() {
-        final PlumbingEngineer patrice = new PlumbingEngineer("Patrice");
-        final PlumbingEngineer bianca = new PlumbingEngineer("Bianca");
-
-        HashMap<String, Boolean> plumbingInstallations = new HashMap<>();
-        plumbingInstallations.put(patrice.getName() + " installation of pipes done", true);
-        plumbingInstallations.put(bianca.getName() + "installation of fixtures done", true);
-
-        for (Map.Entry<String, Boolean> set : plumbingInstallations.entrySet()) {
-            logger.info(set.getKey());
-        }
-
-        return plumbingInstallations;
+    private void designingWaterSupplySystems() {
+        final PlumbingEngineer kyle = new PlumbingEngineer("Kyle");
+        //drawings prepared
+        //Water source
+        //purification and treatment facilities
+        //transmission and distribution systems
+        //storage systems
+        //pumping stations
+        //accessories - valves, service lines, generators, meters, fire hydrants (ensures smoothly running system).
+        //design prepared
     }
 
-    private HashMap<String, Boolean> inspectionCheck() {
-        final PlumbingEngineer henry = new PlumbingEngineer("Henry");
-        final PlumbingEngineer tommy = new PlumbingEngineer("Tommy");
+    private void evaluateTestReports() {
+        final PlumbingEngineer greggory = new PlumbingEngineer("Greggory");
 
-        HashMap<String, Boolean> inspectionComplete = new HashMap<>();
-        inspectionComplete.put(henry.getName() + "inspection of pumps and boiler system checked: ", henry.isInspectionDone());
-        inspectionComplete.put(tommy.getName() + "inspection of valves checked: ", tommy.isInspectionDone());
-
-        for (Map.Entry<String, Boolean> set : inspectionComplete.entrySet()) {
-            logger.info(set.getKey());
-        }
-
-        return inspectionComplete;
     }
 
-    private HashMap<String, Boolean> plumbingSystemDesign() {
-        final PlumbingEngineer diane = new PlumbingEngineer("Diane");
-        diane.setCorrectSystem(true);
-        diane.setCorrectEquipment(true);
-        diane.setDesignDeveloped(true);
-
-        HashMap<String, Boolean> designProgress = new HashMap<>();
-        designProgress.put("Appropriate System Selected: ", diane.isCorrectSystem());
-        designProgress.put("Appropriate Equipment Selected: ", diane.isCorrectEquipment());
-        designProgress.put("Design Developed Successfully ", diane.isDesignDeveloped());
-
-        for (Map.Entry<String, Boolean> set : designProgress.entrySet()) {
-            logger.info(set.getKey());
-        }
-
-        return designProgress;
-    }
-
-    private String plumbingSystemStatus() {
-        final PlumbingEngineer casey = new PlumbingEngineer("Casey");
-        casey.setPlumbingActive(true);
-
-        logger.info("Plumbing System Active: " + casey.isPlumbingActive());
-
-        return "Plumbing System Active: " + casey.isPlumbingActive();
-    }
 
     @Override
     protected Double earnings() {

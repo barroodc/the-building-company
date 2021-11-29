@@ -1,13 +1,15 @@
 package com.solvd.thebuildingcompany.employees.departments.materialpurchasing;
 
-import com.solvd.thebuildingcompany.employees.abstractclass.Employees;
+import com.solvd.thebuildingcompany.PreConstructionPlanning;
+import com.solvd.thebuildingcompany.employees.Employee;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.logging.Logger;
+import java.io.*;
+import java.util.*;
+import java.util.stream.Collectors;
 
-public class ConstructionExpeditor extends Employees {
+public class ConstructionExpeditor extends Employee {
 
     private boolean proposalSent;
     private boolean feasible;
@@ -82,61 +84,33 @@ public class ConstructionExpeditor extends Employees {
         this.name = name;
     }
 
-    private final Logger logger = Logger.getLogger(ConstructionExpeditor.class.getName());
+    private static Logger logger = LogManager.getLogger(ConstructionExpeditor.class);
 
     public ConstructionExpeditor(String name) {
         this.setName(name);
     }
 
-    private String materialsToOrder() {
-        //figure out a way to incorporate louis into this
-        final ArrayList<String> materialsList = new ArrayList<>();
-        materialsList.add("Stone");
-        materialsList.add("Kitchen island");
 
-        logger.info("Materials I still need to order: " + materialsList.get(0));
-        logger.info("Materials I still need to order: " + materialsList.get(1));
-        return "Materials I still need to order: " + materialsList;
-    }
+    private void materialsOrdered() {
 
-    private String materialsOrdered() {
-        //figure out a way to incorporate louis into this
-        final ArrayList<String> materialsOrdered = new ArrayList<>();
-        materialsOrdered.add("Steele");
-        materialsOrdered.add("Cabinets");
+        ConstructionExpeditor jasmine = new ConstructionExpeditor("Jasmine");
+        StringBuilder listBuilding = new StringBuilder();
+        InputStream readingListOfItems = jasmine.getClass().getClassLoader().getResourceAsStream("NewJerseyProjectItems.txt");
 
-        logger.info("Materials ordered" + materialsOrdered.get(0));
-        logger.info("Materials ordered" + materialsOrdered.get(1));
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(readingListOfItems));
+            String line;
 
-        return "Materials ordered: " + materialsOrdered;
-    }
+             while ((line = reader.readLine()) != null) {
+                listBuilding.append(line).append(System.lineSeparator());
+            }
 
-    private String requestForProposalEvaluation() {
-        final ConstructionExpeditor louis = new ConstructionExpeditor("Louis");
-        louis.setProposalSent(true);
-
-        logger.info("Proposal Evaluation Sent: " + louis.isProposalSent());
-
-        return "Proposal Evaluation Sent: " + louis.isProposalSent();
-    }
-
-    private String bidEvaluation() {
-        final ConstructionExpeditor grace = new ConstructionExpeditor("Grace");
-        grace.setFeasible(true);
-        grace.setMaintenanceCosts(5235.37);
-        grace.setOperatingCosts(4392.43);
-
-        final HashMap<String, Double> bidAssessment = new HashMap<>();
-        bidAssessment.put("Maintenance costs total: $", grace.getMaintenanceCosts());
-        bidAssessment.put("Operating costs total: $", grace.getOperatingCosts());
-
-        for (Map.Entry<String, Double> set : bidAssessment.entrySet()) {
-            logger.info(set.getKey());
+            logger.info(listBuilding.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
-        logger.info("Material Purchase is Feasible: " + grace.isFeasible());
 
-        return "Material Purchase is Feasible: " + grace.isFeasible();
     }
 
     private HashMap<String, Boolean> resourceManagement() {
@@ -167,23 +141,16 @@ public class ConstructionExpeditor extends Employees {
         return onTimeOrders;
     }
 
-    private String orderChanges() {
-        final ConstructionExpeditor klaus = new ConstructionExpeditor("Klaus");
-        final ArrayList<String> orderChanges = new ArrayList<>();
-        orderChanges.add("Add cement mixer");
-        orderChanges.add("Delete stone order");
-
-        logger.info(klaus.getName() + "made the following changes to the order: " + orderChanges.get(0));
-        logger.info(klaus.getName() + "made the following changes to the order: " + orderChanges.get(1));
-
-        return klaus.getName() + "made the following changes to the order: " + orderChanges;
-    }
-
     private String contractManagement() {
         final ConstructionExpeditor sunny = new ConstructionExpeditor("Sunny");
 
         logger.info("All contracts were honored: " + sunny.isContractsHonored());
         return "All contracts were honored: " + sunny.isContractsHonored();
+    }
+
+    public static void main(String[] args) {
+        ConstructionExpeditor randy = new ConstructionExpeditor("Randy");
+        randy.materialsOrdered();
     }
 
     @Override

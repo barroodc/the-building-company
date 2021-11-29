@@ -1,13 +1,13 @@
 package com.solvd.thebuildingcompany.employees.departments.engineering;
 
-import com.solvd.thebuildingcompany.employees.abstractclass.Employees;
+import com.solvd.thebuildingcompany.employees.Employee;
+import com.solvd.thebuildingcompany.employees.departments.architecture.ResidentialArchitect;
+import com.solvd.thebuildingcompany.employees.departments.management.CivilSupervisor;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Logger;
 
-public class CivilEngineer extends Employees {
+public class CivilEngineer extends Employee {
 
     private String statusReport;
     private String name;
@@ -16,6 +16,11 @@ public class CivilEngineer extends Employees {
     private boolean permitSent;
     private boolean setPermitAccepted;
     private boolean softwareInstalled;
+    private boolean discussionHad;
+    private boolean contractHonored;
+    private boolean safetyCheck;
+    private boolean regulationsMet;
+    private HashMap<String, Boolean> areSitePlansMade;
 
     public String getStatusReport() {
         return statusReport;
@@ -73,138 +78,123 @@ public class CivilEngineer extends Employees {
         this.softwareInstalled = softwareInstalled;
     }
 
+    public void setProjectCompleted(Double projectCompleted) {
+        this.projectCompleted = projectCompleted;
+    }
+
+    public boolean isDiscussionHad() {
+        return discussionHad;
+    }
+
+    public boolean isContractHonored() {
+        return contractHonored;
+    }
+
+    public boolean isSafetyCheck() {
+        return safetyCheck;
+    }
+
+    public void setSafetyCheck(boolean safetyCheck) {
+        this.safetyCheck = safetyCheck;
+    }
+
+    public void setContractHonored(boolean contractHonored) {
+        this.contractHonored = contractHonored;
+    }
+
+    public void setDiscussionHad(boolean discussionHad) {
+        this.discussionHad = discussionHad;
+    }
+
+    public boolean isRegulationsMet() {
+        return regulationsMet;
+    }
+
+    public void setRegulationsMet(boolean regulationsMet) {
+        this.regulationsMet = regulationsMet;
+    }
+
+    public HashMap<String, Boolean> getAreSitePlansMade() {
+        return areSitePlansMade;
+    }
+
+    public void setAreSitePlansMade(HashMap<String, Boolean> areSitePlansMade) {
+        this.areSitePlansMade = areSitePlansMade;
+    }
+
     private final Logger logger = Logger.getLogger(CivilEngineer.class.getName());
 
     public CivilEngineer(String name) {
         this.setName(name);
     }
 
-    private HashMap<String, Boolean> evaluationPerformed() {
-        final CivilEngineer einstein = new CivilEngineer("Einstein");
-        HashMap<String, Boolean> projectEvaluation = new HashMap<>();
-        projectEvaluation.put("Project Evaluation", true);
-        if (projectEvaluation.containsValue(true)){
-            einstein.setStatusReport("I give my approval that this evaluation was performed honestly");
-        }
-        HashMap<String, Boolean> projectComments = new HashMap<>();
-        projectComments.put(einstein.getStatusReport(), true);
+    private ArrayList<String> projectDiscussions() {
+        final CivilEngineer dora = new CivilEngineer("Dora");
+        final CivilEngineer murphy = new CivilEngineer("Murphy");
+        final CivilEngineer sheldon = new CivilEngineer("Sheldon");
+        final CivilEngineer greg = new CivilEngineer("Greg");
 
-        for (Map.Entry<String, Boolean> set : projectEvaluation.entrySet()) {
-            logger.info(set.getKey());
+        dora.setDiscussionHad(true);
+        murphy.setContractHonored(true);
+        sheldon.setSafetyCheck(true);
+        greg.setRegulationsMet(true);
+
+        ArrayList<String> projectSetups = new ArrayList<>();
+        projectSetups.add("Civil Engineers " + dora.getName() + " " +  "and" + " " + murphy.getName() + " " + "met with the Engineering Team: " + dora.isDiscussionHad());
+
+        for (String discussionSet : projectSetups) {
+            logger.info(discussionSet);
         }
-        return projectComments;
+
+        return projectSetups;
     }
 
-    private HashMap<String, String> developmentStage() {
-        final CivilEngineer randy = new CivilEngineer("Randy");
-        final CivilEngineer greggory = new CivilEngineer("Greggory");
-        final CivilEngineer harry = new CivilEngineer("Harry");
 
-        HashMap<String, String> nameAndJob = new HashMap<>();
-        nameAndJob.put(randy.getName() , "Design");
-        nameAndJob.put(greggory.getName() , "Planning");
-        nameAndJob.put(harry.getName() , "Implementation");
-
-        for (Map.Entry<String, String> set : nameAndJob.entrySet()) {
-            logger.info(set.getKey());
+    private void sitePlanning() {
+        final CivilEngineer doug = new CivilEngineer("Doug");
+        logger.info("Civil Engineer Site Planning performed by: " + doug.getName());
+        areSitePlansMade = new HashMap<>();
+        areSitePlansMade.put("Chestnut Lakes site planning performed", false);
+        areSitePlansMade.put("Victory Lakes site planning performed", false);
+        areSitePlansMade.put("Sycamore Village site planning performed", true);
+        for (Map.Entry<String, Boolean> set : areSitePlansMade.entrySet()) {
+            logger.info(set.getKey() + " " + set.getValue());
         }
-        return nameAndJob;
     }
 
-    private HashMap<String, Boolean> testType() {
-        final CivilEngineer tony = new CivilEngineer("Tony");
-        final CivilEngineer nancy = new CivilEngineer("Nancy");
-        final CivilEngineer steven = new CivilEngineer("Steven");
+    private void gradeDesigning() {
+        final CivilEngineer rachel = new CivilEngineer("Rachel");
 
-        HashMap<String, Boolean> testingPerformed = new HashMap<>();
-        testingPerformed.put("Cement Testing was performed by " + tony.getName(), true);
-        testingPerformed.put("Unconfined Compression Test was performed by " + nancy.getName(), true);
-        testingPerformed.put("Elongation Index Test For Aggregates was performed by " + steven.getName(), true);
-
-        for (Map.Entry<String, Boolean> set : testingPerformed.entrySet()) {
-            logger.info(set.getKey());
-        }
-        return testingPerformed;
     }
 
-    private HashMap<String, String> changesMade() {
-        final CivilEngineer chris = new CivilEngineer("Chris");
-        final CivilEngineer marshall = new CivilEngineer("Marshall");
+    private void drainagePlanning() {
+        final CivilEngineer tobey = new CivilEngineer("Tobey");
 
-        HashMap<String, String> changedBy = new HashMap<>();
-        changedBy.put("Corrections to the cement testing was performed by", chris.getName());
-        changedBy.put("Corrections to the unconfined compression testing was performed by", marshall.getName());
-
-        for (Map.Entry<String, String> set : changedBy.entrySet()) {
-            logger.info(set.getKey());
-        }
-        return changedBy;
     }
 
-    private HashMap<String, Boolean> installComplete() {
-        final CivilEngineer garry = new CivilEngineer("Garry");
-        final CivilEngineer antonio = new CivilEngineer("Antonio");
-
-        HashMap<String, Boolean> structuralSoundness = new HashMap<>();
-        structuralSoundness.put(garry.getName() + " floorOne done", true);
-        structuralSoundness.put(antonio.getName() + "floor two done", true);
-
-        for (Map.Entry<String, Boolean> set : structuralSoundness.entrySet()) {
-            logger.info(set.getKey());
-        }
-        return structuralSoundness;
+    private void sanitaryDrainagePlanning() {
+       final CivilEngineer barry = new CivilEngineer("Barry");
     }
 
-    private HashMap<String, Boolean> inspectionCheck() {
-        final CivilEngineer tracy = new CivilEngineer("Tracy");
-        final CivilEngineer brian = new CivilEngineer("Brian");
-
-        HashMap<String, Boolean> inspectionComplete = new HashMap<>();
-        inspectionComplete.put(tracy.getName() + "power supply checked: ", tracy.isInspectionDone());
-        inspectionComplete.put(brian.getName() + "sensors checked: ", brian.isInspectionDone());
-
-        for (Map.Entry<String, Boolean> set : inspectionComplete.entrySet()) {
-            logger.info(set.getKey());
-        }
-
-        return inspectionComplete;
+    private void erosionAndSedimentControl() {
+        final CivilEngineer charles = new CivilEngineer("Charles");
     }
 
-    protected HashMap<String, Double> infrastructureProgress() throws IOException {
-        final CivilEngineer chelsea = new CivilEngineer("Chelsea");
-        chelsea.setProjectCompleted(24.8);
-
-        HashMap<String, Double> projectProgress = new HashMap<>();
-        projectProgress.put("Brooklyn Project Percentage Completed: ",chelsea.getProjectCompleted());
-
-        for (Map.Entry<String, Double> set : projectProgress.entrySet()) {
-            logger.info(set.getKey());
-        }
-        return projectProgress;
+    private void floodWayConstruction() {
+        final CivilEngineer andrew = new CivilEngineer("Andrew");
     }
 
-    protected HashMap<String, Boolean> permitApplications() {
-        final CivilEngineer ilissa = new CivilEngineer("Ilissa");
-        ilissa.setPermitSent(true);
-
-        HashMap<String, Boolean> newYorkPermit = new HashMap<>();
-        newYorkPermit.put("Construction permit request submitted:", ilissa.isPermitSent());
-        newYorkPermit.put("Construction permit obtained: ", ilissa.isSetPermitAccepted());
-
-        for (Map.Entry<String, Boolean> set : newYorkPermit.entrySet()) {
-            logger.info(set.getKey());
-        }
-
-        return newYorkPermit;
+    private void gradingControlPermitHandling() {
+        final CivilEngineer tom = new CivilEngineer("Tom");
     }
 
-    protected String vendorSoftwareImplementation() {
-        final CivilEngineer nate = new CivilEngineer("Nate");
-        nate.setSoftwareInstalled(true);
+    private void erosionControlPermitHandling() {
+       final CivilEngineer jason = new CivilEngineer("Jason");
+    }
 
-        logger.info("All required software is installed: " + nate.isSoftwareInstalled());
-
-        return "All required software is installed: " + nate.isSoftwareInstalled();
+    public static void main(String[] args) {
+        CivilEngineer example = new CivilEngineer("example");
+        example.sitePlanning();
     }
 
     @Override

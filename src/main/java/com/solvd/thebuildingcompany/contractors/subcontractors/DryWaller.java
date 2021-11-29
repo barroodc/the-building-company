@@ -1,15 +1,17 @@
 package com.solvd.thebuildingcompany.contractors.subcontractors;
 
+import com.solvd.thebuildingcompany.contractors.Contractor;
 import com.solvd.thebuildingcompany.interfaces.IFixable;
 import com.solvd.thebuildingcompany.interfaces.IInstallable;
 import com.solvd.thebuildingcompany.interfaces.IModifiable;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.logging.Logger;
 
-public class DryWaller implements IInstallable, IModifiable, IFixable {
+public class DryWaller extends Contractor implements IInstallable, IModifiable, IFixable {
 
     private String name;
     private String nameOfCompany;
@@ -24,6 +26,21 @@ public class DryWaller implements IInstallable, IModifiable, IFixable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    protected HashMap<String, Boolean> employeePunchIn() {
+        return null;
+    }
+
+    @Override
+    protected HashMap<String, Boolean> employeePunchOut() {
+        return null;
+    }
+
+    @Override
+    protected Double earnings() {
+        return null;
     }
 
     public String getNameOfCompany() {

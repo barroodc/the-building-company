@@ -1,10 +1,10 @@
 package com.solvd.thebuildingcompany.employees.departments.humanresources;
 
-import com.solvd.thebuildingcompany.employees.abstractclass.Employees;
+import com.solvd.thebuildingcompany.employees.Employee;
 
 import java.util.logging.Logger;
 
-public class HumanResourceDirector extends Employees {
+public class HumanResourceDirector extends Employee {
 
     private int welcomeHireManual;
     private boolean environmentSafe;
@@ -88,16 +88,49 @@ public class HumanResourceDirector extends Employees {
         return null;
     }
 
-    private String compensationAndBenefits() {
-        return null;
-    }
-
     private String laborLawCompliance() {
         return null;
     }
 
     private String trainingAndDevelopment() {
         return null;
+    }
+
+
+    private void enforcedPolicies() {
+        //human resource policies
+    }
+
+    private void identifyingStaffNeeds() {
+
+    }
+
+    private void creatingJobDescriptions() {
+
+    }
+
+    private void directingTraining() {
+        //different training programs
+    }
+
+    private void handlingBenefits() {
+
+    }
+
+    private void maintainingStaffRecords() {
+
+    }
+
+    private void managingPerformanceReviews() {
+
+    }
+
+    private String compensationAndBenefits() {
+        final HumanResource alfonso = new HumanResource("Alfonso");
+        alfonso.setSalaryGiven(45000);
+
+        logger.info("Total compensation for Inside Sales Employees is $" + alfonso.getSalaryGiven());
+        return "Total compensation for Inside Sales Employees is $" + alfonso.getSalaryGiven();
     }
 
     @Override

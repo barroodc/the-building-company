@@ -1,11 +1,11 @@
 package com.solvd.thebuildingcompany.employees.departments.engineering;
 
-import com.solvd.thebuildingcompany.employees.abstractclass.Employees;
+import com.solvd.thebuildingcompany.employees.Employee;
 
 import java.util.*;
 import java.util.logging.Logger;
 
-public class StructuralEngineer extends Employees {
+public class StructuralEngineer extends Employee {
 
     private String name;
     private boolean materialTested;
@@ -13,6 +13,10 @@ public class StructuralEngineer extends Employees {
     private boolean testingPerformed;
     private boolean areaBuildReady;
     private boolean timelyDelivery;
+    private boolean discussionHad;
+    private boolean contractHonored;
+    private boolean safetyCheck;
+    private boolean regulationsMet;
 
     public String getName() {
         return name;
@@ -62,6 +66,38 @@ public class StructuralEngineer extends Employees {
         this.timelyDelivery = timelyDelivery;
     }
 
+    public boolean isDiscussionHad() {
+        return discussionHad;
+    }
+
+    public void setDiscussionHad(boolean discussionHad) {
+        this.discussionHad = discussionHad;
+    }
+
+    public boolean isContractHonored() {
+        return contractHonored;
+    }
+
+    public void setContractHonored(boolean contractHonored) {
+        this.contractHonored = contractHonored;
+    }
+
+    public boolean isSafetyCheck() {
+        return safetyCheck;
+    }
+
+    public void setSafetyCheck(boolean safetyCheck) {
+        this.safetyCheck = safetyCheck;
+    }
+
+    public boolean isRegulationsMet() {
+        return regulationsMet;
+    }
+
+    public void setRegulationsMet(boolean regulationsMet) {
+        this.regulationsMet = regulationsMet;
+    }
+
     private final Logger logger = Logger.getLogger(StructuralEngineer.class.getName());
 
     public StructuralEngineer(String name) {
@@ -90,6 +126,30 @@ public class StructuralEngineer extends Employees {
 
     private HashMap<String, Boolean> inspectionCheck() {
         return null;
+    }
+
+
+    private ArrayList<String> projectDiscussions(){
+
+        final StructuralEngineer andrew = new StructuralEngineer("Andrew");
+        final StructuralEngineer naomi = new StructuralEngineer("Naomi");
+        final StructuralEngineer kelsey = new StructuralEngineer("Kelsey");
+        final StructuralEngineer brianna = new StructuralEngineer("Brianna");
+
+        andrew.setDiscussionHad(true);
+        naomi.setContractHonored(true);
+        kelsey.setSafetyCheck(true);
+        brianna.setRegulationsMet(true);
+
+        ArrayList<String> projectSetups = new ArrayList<>();
+        projectSetups.add("Structural Engineers " + andrew.getName() + " " +  "and" + " " + naomi.getName() + " " + "met with the Engineering Team: " + andrew.isDiscussionHad());
+
+        for (String discussionSet : projectSetups) {
+            logger.info(discussionSet);
+        }
+
+        return projectSetups;
+
     }
 
     private HashMap<String, Boolean> buildingMaterialTesting() {
@@ -127,22 +187,6 @@ public class StructuralEngineer extends Employees {
 
         logger.info("Land is suitable for project: " + rachel.isAreaBuildReady());
         logger.info("Current issues with land: " + issuesWithLand);
-    }
-
-    private void deliveryOfMaterials() {
-        final StructuralEngineer kelly = new StructuralEngineer("Kelly");
-        kelly.setTimelyDelivery(true);
-
-        final Calendar dateReceived = Calendar.getInstance();
-        dateReceived.set(Calendar.YEAR, 2021);
-        dateReceived.set(Calendar.MONTH, Calendar.OCTOBER);
-        dateReceived.set(Calendar.DAY_OF_MONTH, 27);
-
-        final Date date = dateReceived.getTime();
-
-        logger.info("Materials Delivered On Time: " + kelly.isTimelyDelivery());
-        logger.info("Calendar date materials were received: " + date.getTime());
-
     }
 
     @Override

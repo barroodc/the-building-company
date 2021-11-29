@@ -1,18 +1,21 @@
 package com.solvd.thebuildingcompany.employees.departments.businessdevelopment;
 
-import com.solvd.thebuildingcompany.employees.abstractclass.Employees;
+import com.solvd.thebuildingcompany.employees.Employee;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
-public class BusinessDeveloper extends Employees {
+public class BusinessDeveloper extends Employee {
 
     private String name;
     private double costOfMaterials;
     private double growthRate;
     private boolean sellersMarket;
     private boolean buyersMarket;
+    private HashMap<String, String> developmentNumberOfHomes;
+    private HashMap<String, String> developmentAndModel;
+    private HashMap<String, String> projectsAssignedTo;
 
     public String getName() {
         return name;
@@ -54,6 +57,23 @@ public class BusinessDeveloper extends Employees {
         this.buyersMarket = buyersMarket;
     }
 
+    public HashMap<String, String> getDevelopmentNumberOfHomes() {
+        return developmentNumberOfHomes;
+    }
+
+    public void setDevelopmentNumberOfHomes(HashMap<String, String> developmentNumberOfHomes) {
+        this.developmentNumberOfHomes = developmentNumberOfHomes;
+    }
+
+    public HashMap<String, String> getDevelopmentAndModel() {
+        return developmentAndModel;
+    }
+
+    public void setMakeAndModel(HashMap<String, String> developmentAndModel) {
+        this.developmentAndModel = developmentAndModel;
+    }
+
+
     private final Logger logger = Logger.getLogger(BusinessDeveloper.class.getName());
 
 
@@ -62,86 +82,37 @@ public class BusinessDeveloper extends Employees {
         this.setName(name);
     }
 
+    private void developmentProjects() {
+        final BusinessDeveloper ashley = new BusinessDeveloper("Ashley");
+        final BusinessDeveloper alexander = new BusinessDeveloper("Alexander");
+        final BusinessDeveloper marcus = new BusinessDeveloper("Marcus");
 
-    protected HashMap<String, String> prospectLog() {
-        final BusinessDeveloper kevin = new BusinessDeveloper("Kevin");
-        final BusinessDeveloper casey = new BusinessDeveloper("Casey");
-        final BusinessDeveloper bruce = new BusinessDeveloper("Bruce");
+        developmentNumberOfHomes = new HashMap<>();
+        developmentNumberOfHomes.put("Development: Chestnut Lake ", "200 homes are needed");
+        developmentNumberOfHomes.put("Development: Victory Lakes", "100 homes are needed");
+        developmentNumberOfHomes.put("Development: Sycamore Village", "50 homes are needed");
 
-        final HashMap<String, String> prospectAssignedTo = new HashMap<>();
-        prospectAssignedTo.put(kevin.getName(), "Jack Morrison");
-        prospectAssignedTo.put(casey.getName(), "Casey Slater");
-        prospectAssignedTo.put(bruce.getName(), "Rachel Newman");
+        developmentAndModel = new HashMap<>();
+        developmentAndModel.put("Chestnut Lake", "Tudor");
+        developmentAndModel.put("Victory Lakes", "Colonial");
+        developmentAndModel.put("Sycamore Village", "Victorian");
 
-        for (Map.Entry<String, String> set : prospectAssignedTo.entrySet()) {
-            logger.info(set.getKey());
+        projectsAssignedTo = new HashMap<>();
+        projectsAssignedTo.put("Chestnut Lake assigned to: ", ashley.getName());
+        projectsAssignedTo.put("Victory Lakes assigned to: ", alexander.getName());
+        projectsAssignedTo.put("Sycamore Village assigned to: ", marcus.getName());
+
+        for (Map.Entry<String, String> set : developmentNumberOfHomes.entrySet()) {
+            logger.info(set.getKey() + " " + set.getValue());
         }
 
-        return prospectAssignedTo;
-    }
-
-    protected String quarterlyBusinessGrowth() {
-        final BusinessDeveloper chris = new BusinessDeveloper("Chris");
-        chris.setGrowthRate(20.34);
-
-        logger.info("The percentage growth from quarter one has %" + chris.getGrowthRate());
-        return "The percentage growth from quarter one has %" + chris.getGrowthRate();
-    }
-
-    protected HashMap<String, String> currentBusiness() {
-        BusinessDeveloper icarus = new BusinessDeveloper("Icarus");
-        BusinessDeveloper paul = new BusinessDeveloper("Paul");
-        BusinessDeveloper liam = new BusinessDeveloper("Liam");
-
-        HashMap<String, String> customerAssignedTo = new HashMap<>();
-        customerAssignedTo.put(icarus.getName(), "Nina Cruz");
-        customerAssignedTo.put(paul.getName(), "Robert Black");
-        customerAssignedTo.put(liam.getName(), "Marco Polo");
-
-        for (Map.Entry<String, String> set : customerAssignedTo.entrySet()) {
-            logger.info(set.getKey());
+        for (Map.Entry<String, String> set : developmentAndModel.entrySet()) {
+            logger.info(set.getKey() + " " + set.getValue());
         }
 
-        return customerAssignedTo;
-    }
-
-    protected String marketResearch() {
-        //Figure out how to incorporate BusinessDeveloper
-        final BusinessDeveloper mateo = new BusinessDeveloper("Mateo");
-        final BusinessDeveloper charlotte = new BusinessDeveloper("Charlotte");
-
-        mateo.setSellersMarket(true);
-        charlotte.setBuyersMarket(false);
-
-        if (isSellersMarket()) {
-            logger.info("The current market is a sellers market: " + mateo.isSellersMarket());
-            return "The current market is a sellers market: " + mateo.isSellersMarket();
-        } else {
-            logger.info("The current market is a buyers market: " + charlotte.isBuyersMarket());
-            return "The current market is a buyers market: " + charlotte.isBuyersMarket();
+        for (Map.Entry<String, String> set: projectsAssignedTo.entrySet()) {
+            logger.info(set.getKey() + set.getValue());
         }
-    }
-
-    protected HashMap<String, Double> businessContacts() {
-        final BusinessDeveloper madison = new BusinessDeveloper("Madison");
-        final BusinessDeveloper sophia = new BusinessDeveloper("Sophia");
-        final BusinessDeveloper isabella = new BusinessDeveloper("Isabella");
-
-        madison.setCostOfMaterials(20159.59);
-        sophia.setCostOfMaterials(54981.76);
-        isabella.setCostOfMaterials(15421.05);
-
-
-        final HashMap<String, Double> contractorCosts = new HashMap<>();
-        contractorCosts.put("Contractors AYR individual expenses: ", madison.getCostOfMaterials() / 3);
-        contractorCosts.put("Contractors NXE individual expenses: ", sophia.getCostOfMaterials() / 3);
-        contractorCosts.put("Contractors YZW individual expenses: ", isabella.getCostOfMaterials() / 3);
-
-        for (Map.Entry<String, Double> set : contractorCosts.entrySet()) {
-            logger.info(set.getKey());
-        }
-
-        return contractorCosts;
     }
 
     @Override

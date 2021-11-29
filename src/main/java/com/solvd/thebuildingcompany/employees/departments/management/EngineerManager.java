@@ -1,12 +1,12 @@
 package com.solvd.thebuildingcompany.employees.departments.management;
 
-import com.solvd.thebuildingcompany.employees.abstractclass.Employees;
+import com.solvd.thebuildingcompany.employees.Employee;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
-public class EngineerManager extends Employees {
+public class EngineerManager extends Employee {
 
     private double costEstimates;
     private boolean riskAverse;
@@ -19,8 +19,9 @@ public class EngineerManager extends Employees {
         return costEstimates;
     }
 
-    public void setCostEstimates(double costEstimates) {
+    public double setCostEstimates(double costEstimates) {
         this.costEstimates = costEstimates;
+        return costEstimates;
     }
 
     public boolean isRiskAverse() {
@@ -75,17 +76,17 @@ public class EngineerManager extends Employees {
         chris.setRiskAverse(true);
 
         HashMap<String, Double> rebuildCost = new HashMap<>();
-        rebuildCost.put("Total cost to rebuild Brooklyn project: ", chris.getCostEstimates());
+        rebuildCost.put("Estimated cost to rebuild any of the projects: ", chris.getCostEstimates());
 
         for (Map.Entry<String, Double> set : rebuildCost.entrySet()) {
-            logger.info(set.getKey());
+            logger.info(set.getKey() + set.getValue());
         }
 
         HashMap<String, Boolean> riskLevel = new HashMap<>();
         riskLevel.put("Risk averse if the deal loses money?: ", chris.isRiskAverse());
 
         for (Map.Entry<String, Boolean> set : riskLevel.entrySet()) {
-            logger.info(set.getKey());
+            logger.info(set.getKey() + set.getValue());
         }
 
         return riskLevel;
@@ -98,29 +99,6 @@ public class EngineerManager extends Employees {
         logger.info("Total amount required to compensate new hired crew: $" + jessica.getLaborCalculation());
 
         return "Total amount required to compensate new hired crew: $" + jessica.getLaborCalculation();
-    }
-
-    private String costEstimate() {
-        final EngineerManager robyn = new EngineerManager("Robyn");
-        robyn.setCostEstimate(25000);
-
-        logger.info("Electrical wiring cost for Brooklyn project $" + robyn.getCostEstimate());
-
-        return "Electrical wiring cost for Brooklyn project $" + robyn.getCostEstimate();
-    }
-
-    private HashMap<String, Boolean> negotiateServiceAgreements() {
-        final EngineerManager devyn = new EngineerManager("Devyn");
-        devyn.setAgreementSigned(true);
-
-        HashMap<String, Boolean> agreementStatus = new HashMap<>();
-        agreementStatus.put("The EPC agreement is signed: ", devyn.isAgreementSigned());
-
-        for (Map.Entry<String, Boolean> set : agreementStatus.entrySet()) {
-            logger.info(set.getKey());
-        }
-
-        return agreementStatus;
     }
 
     @Override

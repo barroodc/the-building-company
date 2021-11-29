@@ -1,6 +1,6 @@
 package com.solvd.thebuildingcompany.employees.departments.riskmanagement;
 
-import com.solvd.thebuildingcompany.employees.abstractclass.Employees;
+import com.solvd.thebuildingcompany.employees.Employee;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
-public class SafetyOfficer extends Employees {
+public class SafetyOfficer extends Employee {
 
     private double costRiskAnalysis;
     private boolean mitigationExists;

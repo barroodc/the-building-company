@@ -1,63 +1,21 @@
 package com.solvd.thebuildingcompany.employees.departments.management;
 
-import com.solvd.thebuildingcompany.employees.abstractclass.Employees;
+import com.solvd.thebuildingcompany.employees.Employee;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
-public class ProjectManager extends Employees {
+public class ProjectManager extends Employee {
 
-    private double heightOfBuilding;
-    private double squareFootage;
-    private double roomsNeeded;
-    private boolean blueprintMade;
-    private boolean isSiteCleared;
     private boolean positiveFeedback;
     private boolean passedSoilTesting;
     private boolean sitePlanMade;
     private boolean resourcesAcquired;
     private boolean itemsReturned;
+    private String name;
 
-    public double getHeightOfBuilding() {
-        return heightOfBuilding;
-    }
 
-    public void setHeightOfBuilding(double heightOfBuilding) {
-        this.heightOfBuilding = heightOfBuilding;
-    }
-
-    public double getSquareFootage() {
-        return squareFootage;
-    }
-
-    public void setSquareFootage(double squareFootage) {
-        this.squareFootage = squareFootage;
-    }
-
-    public double getRoomsNeeded() {
-        return roomsNeeded;
-    }
-
-    public void setRoomsNeeded(double roomsNeeded) {
-        this.roomsNeeded = roomsNeeded;
-    }
-
-    public boolean isBlueprintMade() {
-        return blueprintMade;
-    }
-
-    public void setBlueprintMade(boolean blueprintMade) {
-        this.blueprintMade = blueprintMade;
-    }
-
-    public boolean isSiteCleared() {
-        return isSiteCleared;
-    }
-
-    public void setSiteCleared(boolean siteCleared) {
-        isSiteCleared = siteCleared;
-    }
 
     public boolean isPositiveFeedback() {
         return positiveFeedback;
@@ -99,83 +57,48 @@ public class ProjectManager extends Employees {
         this.itemsReturned = itemsReturned;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     private final Logger logger = Logger.getLogger(ProjectManager.class.getName());
 
-    final ProjectManager magnus = new ProjectManager();
-
-
-    private HashMap<String, Double> programmingAndFeasibility() {
-        magnus.setHeightOfBuilding(20);
-        magnus.setSquareFootage(1740);
-        magnus.setRoomsNeeded(5);
-
-        HashMap<String, Double> schematicHomes = new HashMap<>();
-        schematicHomes.put("Height of home in ft: ", magnus.getHeightOfBuilding());
-        schematicHomes.put("Square Footage: ", magnus.getSquareFootage());
-        schematicHomes.put("Number of rooms needed: ", magnus.getRoomsNeeded());
-
-        for (Map.Entry<String, Double> set : schematicHomes.entrySet()) {
-            logger.info(set.getKey());
-        }
-
-        return schematicHomes;
+    public ProjectManager(String name) {
+        this.name = name;
     }
 
-    private String schematicDesign() {
-        magnus.setBlueprintMade(true);
-
-        logger.info("First Blueprint Create: " + magnus.isBlueprintMade());
-
-        return "First Blueprint Created: " + magnus.isBlueprintMade();
-    }
-
-    private String contractDocuments() {
-        //figure out a way to work magnus into this method
-        final boolean contractCreated = true;
-
-        logger.info("Contract Created: " + contractCreated);
-
-        return "Contract Created: " + contractCreated;
-    }
 
     private HashMap<String, Boolean> constructionSitePreparations() {
-        magnus.setSiteCleared(true);
+        final ProjectManager magnus = new ProjectManager("Magnus");
         magnus.setPositiveFeedback(true);
         magnus.setPassedSoilTesting(true);
         magnus.setSitePlanMade(true);
 
+        logger.info("Project Manager Checks:");
+
         HashMap<String, Boolean> checkpoints = new HashMap<>();
-        checkpoints.put("Construction Site Cleared: ", magnus.isSiteCleared());
         checkpoints.put("Positive Survey Result Achieved, ", magnus.isPositiveFeedback());
         checkpoints.put("Soil Testing Passed: ", magnus.isPassedSoilTesting());
         checkpoints.put("Site Plan Created: ", magnus.isSitePlanMade());
 
         for (Map.Entry<String, Boolean> set : checkpoints.entrySet()) {
-            logger.info(set.getKey());
+            logger.info(set.getKey() + " " + set.getValue());
         }
 
         return checkpoints;
     }
 
-    private HashMap<String, Boolean> procurementOfResources() {
-        magnus.setResourcesAcquired(true);
-
-        HashMap<String, Boolean> acquiredItems = new HashMap<>();
-        acquiredItems.put("Resources obtained: ", magnus.isResourcesAcquired());
-
-        for (Map.Entry<String, Boolean> set : acquiredItems.entrySet()) {
-            logger.info(set.getKey());
-        }
-
-        return acquiredItems;
-    }
-
     private String projectCloseOut() {
-        magnus.setItemsReturned(true);
+        final ProjectManager ralph = new ProjectManager("Ralph");
+        ralph.setItemsReturned(true);
 
-        logger.info("Resources are demobilized: " + magnus.isItemsReturned());
+        logger.info("Resources are demobilized: " + ralph.isItemsReturned());
 
-        return "Resources are demobilized: " + magnus.isItemsReturned();
+        return "Resources are demobilized: " + ralph.isItemsReturned();
     }
 
     @Override

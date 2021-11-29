@@ -1,6 +1,6 @@
 package com.solvd.thebuildingcompany.employees.departments.management;
 
-import com.solvd.thebuildingcompany.employees.abstractclass.Employees;
+import com.solvd.thebuildingcompany.employees.Employee;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
-public class CivilSupervisor extends Employees {
+public class CivilSupervisor extends Employee {
 
     private boolean surveyReady;
     private String name;
@@ -40,17 +40,17 @@ public class CivilSupervisor extends Employees {
         adam.setSurveyReady(true);
 
         final Calendar estimatedFinish = Calendar.getInstance();
-        estimatedFinish.set(Calendar.YEAR, 2021);
+        estimatedFinish.set(Calendar.YEAR, 2022);
         estimatedFinish.set(Calendar.MONTH, Calendar.FEBRUARY);
         estimatedFinish.set(Calendar.DAY_OF_MONTH, 21);
 
         final Date date = estimatedFinish.getTime();
 
         HashMap<String, Date> completionDate = new HashMap<>();
-        completionDate.put("Estimated Completion Date:", date);
+        completionDate.put("Estimated Completion Date of Active Project Victory Lakes :", date);
 
         for (Map.Entry<String, Date> set : completionDate.entrySet()) {
-            logger.info(set.getKey());
+            logger.info(set.getKey() + " " + set.getValue());
         }
 
         if (adam.isSurveyReady()){

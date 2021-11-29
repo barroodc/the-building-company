@@ -1,12 +1,11 @@
 package com.solvd.thebuildingcompany.contractors.residential;
 
-import com.solvd.thebuildingcompany.employees.abstractclass.Employees;
+import com.solvd.thebuildingcompany.contractors.Contractor;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Logger;
 
-public class ResidentialContractor {
+public class ResidentialContractor extends Contractor {
 
     private boolean suppliesAvailable;
     private String name;
@@ -114,30 +113,42 @@ public class ResidentialContractor {
         }
     }
 
-    private HashMap<String, String> brandNewSubcontractorsHired() {
+    private HashMap<String, List<String>> brandNewSubcontractorCompanies() {
         final ResidentialContractor jacob = new ResidentialContractor("Jacob", "PQR Group");
-        final HashMap<String, String> hiredByAndHired = new HashMap<>();
-        hiredByAndHired.put(jacob.getName(), "XYZ Group");
-        hiredByAndHired.put(jacob.getName(), "AYR Group");
-        hiredByAndHired.put(jacob.getName(), "NXE Group");
-        hiredByAndHired.put(jacob.getName(), "YZW Group");
-        hiredByAndHired.put(jacob.getName(), "DEF Group");
-        hiredByAndHired.put(jacob.getName(), "ABC Group");
-        hiredByAndHired.put(jacob.getName(), "GHI Group");
-        hiredByAndHired.put(jacob.getName(), "JKL Group");
-        hiredByAndHired.put(jacob.getName(), "MNO Group");
-        hiredByAndHired.put(jacob.getName(), "NLX Group");
-        hiredByAndHired.put(jacob.getName(), "STU Group");
-        hiredByAndHired.put(jacob.getName(), "AZB Group");
-        hiredByAndHired.put(jacob.getName(), "BMX Group");
-        hiredByAndHired.put(jacob.getName(), "ROF Group");
-        hiredByAndHired.put(jacob.getName(), "SAB Group");
-        hiredByAndHired.put(jacob.getName(), "TSE Group");
-        hiredByAndHired.put(jacob.getName(), "NAC Group");
+        HashMap<String, List<String>> hiredByJacob = new HashMap<>();
+        List<String> contractorsHired = new ArrayList<>();
+        contractorsHired.add("XYZ Group");
+        contractorsHired.add("AYR Group");
+        contractorsHired.add("NXE Group");
+        contractorsHired.add("YZW Group");
+        contractorsHired.add("DEF Group");
+        contractorsHired.add("ABC Group");
+        contractorsHired.add("AZB Group");
+        contractorsHired.add("BMX Group");
+        contractorsHired.add("ROF Group");
+        contractorsHired.add("SAB Group");
+        contractorsHired.add("TSE Group");
+        contractorsHired.add("NAC Group");
 
-        for (Map.Entry<String, String> set : hiredByAndHired.entrySet()) {
-            logger.info(set.getKey());
+        hiredByJacob.put(jacob.getName(), contractorsHired);
+        for (Map.Entry<String, List<String>> set : hiredByJacob.entrySet()) {
+            logger.info(set.getKey() + " " + "hired the following subcontractors" + " " +  set.getValue());
         }
-        return hiredByAndHired;
+        return hiredByJacob;
+    }
+
+    @Override
+    protected HashMap<String, Boolean> employeePunchIn() {
+        return null;
+    }
+
+    @Override
+    protected HashMap<String, Boolean> employeePunchOut() {
+        return null;
+    }
+
+    @Override
+    protected Double earnings() {
+        return null;
     }
 }

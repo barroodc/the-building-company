@@ -1,12 +1,15 @@
 package com.solvd.thebuildingcompany.contractors.subcontractors;
 
+import com.solvd.thebuildingcompany.contractors.Contractor;
 import com.solvd.thebuildingcompany.interfaces.IInstallable;
 import com.solvd.thebuildingcompany.interfaces.IMeasurable;
 import com.solvd.thebuildingcompany.interfaces.IMonitorable;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.logging.Logger;
 
-public class Roofer implements IMonitorable, IMeasurable, IInstallable {
+public class Roofer extends Contractor implements IMonitorable, IMeasurable, IInstallable {
 
     private String name;
     private String nameOfCompany;
@@ -18,6 +21,21 @@ public class Roofer implements IMonitorable, IMeasurable, IInstallable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    protected HashMap<String, Boolean> employeePunchIn() {
+        return null;
+    }
+
+    @Override
+    protected HashMap<String, Boolean> employeePunchOut() {
+        return null;
+    }
+
+    @Override
+    protected Double earnings() {
+        return null;
     }
 
     public String getNameOfCompany() {
