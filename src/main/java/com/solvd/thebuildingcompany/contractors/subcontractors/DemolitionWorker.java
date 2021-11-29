@@ -1,11 +1,11 @@
 package com.solvd.thebuildingcompany.contractors.subcontractors;
 
 import com.solvd.thebuildingcompany.contractors.Contractor;
+import com.solvd.thebuildingcompany.interfaces.IDrivable;
+import com.solvd.thebuildingcompany.interfaces.IPushable;
 import com.solvd.thebuildingcompany.vehicles.Bulldozer;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
+import java.util.*;
 import java.util.logging.Logger;
 
 public class DemolitionWorker extends Contractor {
@@ -84,6 +84,26 @@ public class DemolitionWorker extends Contractor {
        this.setNameOfCompany(nameOfCompany);
    }
 
+    @Override
+    protected HashMap<String, Boolean> employeePunchIn() {
+
+
+        HashMap<String, Boolean> punchIn = new HashMap<>();
+        punchIn.put("Gerald",true);
+
+        for (Map.Entry<String, Boolean> set : punchIn.entrySet()) {
+            if (punchIn.containsValue(true)) {
+                logger.info(set.getKey() + "'s punch in confirmed.");
+                logger.info(set.getKey() + " is ready to work!");
+            } else {
+                logger.info(set.getKey() + "'s punch in non-existent.");
+                logger.info(set.getKey() + " needs to punch in before continuing his shift.");
+            }
+        }
+        return punchIn;
+
+    }
+
     private void demolitionOfSite() {
        final DemolitionWorker gerald = new DemolitionWorker("Gerald", "XYZ Group");
         clearanceForBulldozer = new ArrayList<>();
@@ -105,14 +125,6 @@ public class DemolitionWorker extends Contractor {
     }
 
     @Override
-    protected HashMap<String, Boolean> employeePunchIn() {
-
-        HashMap<String, Boolean> punchIn = new HashMap<>();
-        punchIn.put("Gerald",true);
-        return punchIn;
-    }
-
-    @Override
     protected HashMap<String, Boolean> employeePunchOut() {
         return null;
     }
@@ -124,6 +136,9 @@ public class DemolitionWorker extends Contractor {
 
     public static void main(String[] args) {
        DemolitionWorker example = new DemolitionWorker("Demo", "123");
+        example.employeePunchIn();
        example.demolitionOfSite();
+
     }
+
 }

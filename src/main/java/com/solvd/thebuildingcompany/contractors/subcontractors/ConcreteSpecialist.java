@@ -5,18 +5,16 @@ import com.solvd.thebuildingcompany.contractors.Contractor;
 import com.solvd.thebuildingcompany.interfaces.*;
 import com.solvd.thebuildingcompany.vehicles.Bulldozer;
 import com.solvd.thebuildingcompany.vehicles.ConcretePump;
+import com.solvd.thebuildingcompany.vehicles.Vehicle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
+import java.util.*;
 
-public class ConcreteSpecialist extends Contractor implements IMeasurable, IPourable, IShapable, IMonitorable, ISpreadable, IDrivable {
+public class ConcreteSpecialist extends Contractor implements IInstallable {
 
     private String name;
     private String nameOfCompany;
@@ -31,21 +29,6 @@ public class ConcreteSpecialist extends Contractor implements IMeasurable, IPour
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    @Override
-    protected HashMap<String, Boolean> employeePunchIn() {
-        return null;
-    }
-
-    @Override
-    protected HashMap<String, Boolean> employeePunchOut() {
-        return null;
-    }
-
-    @Override
-    protected Double earnings() {
-        return null;
     }
 
     public String getNameOfCompany() {
@@ -82,6 +65,8 @@ public class ConcreteSpecialist extends Contractor implements IMeasurable, IPour
 
     private static Logger logger = LogManager.getLogger(ConcreteSpecialist.class);
 
+    private static ConcretePump concretePump;
+
     public ConcreteSpecialist(String name, String nameOfCompany) {
         super();
         this.setName(name);
@@ -89,11 +74,14 @@ public class ConcreteSpecialist extends Contractor implements IMeasurable, IPour
     }
 
 
-    private void mixAndPourConcrete() throws IOException {
+    private void mixAndPourConcrete() {
         final ConcreteSpecialist penny = new ConcreteSpecialist("Penny", "NXE Group");
         logger.info(penny.getName() + " " + "the concrete specialist now has to drive and pour concrete into trenches");
-        penny.drive();
-        penny.pour();
+        ConcretePump concretePump = new ConcretePump("Concrete Pump");
+        concretePump.drive();
+        concretePump.pour();
+
+        logger.info("Construction now stops until drying process complete.");
     }
 
     private HashMap<String, Date> monitorDryingProcess() {
@@ -116,14 +104,18 @@ public class ConcreteSpecialist extends Contractor implements IMeasurable, IPour
         return dryingProcessLog;
     }
 
+    private void postDryingProcess() {
+        final ConcreteSpecialist shannon = new ConcreteSpecialist("Shannon", "NXE Group");
+    }
+
     private void spreadConcrete() {
         final ConcreteSpecialist tiffany = new ConcreteSpecialist("Tiffany", "NXE Group");
-        tiffany.spread();
+
     }
 
     private void shapeConcrete() {
         final ConcreteSpecialist christina = new ConcreteSpecialist("Christina", "NXE Group");
-         christina.shape();
+
     }
 
 
@@ -134,33 +126,38 @@ public class ConcreteSpecialist extends Contractor implements IMeasurable, IPour
     }
 
     @Override
-    public void addMeasurements() {
+    protected HashMap<String, Boolean> employeePunchIn() {
+        HashMap<String, Boolean> punchIn = new HashMap<>();
+        punchIn.put("Penny",true);
+        punchIn.put("Hannah", true);
 
+        for (Map.Entry<String, Boolean> set : punchIn.entrySet()) {
+            if (punchIn.containsValue(true)) {
+                logger.info(set.getKey() + "'s punch in confirmed.");
+                logger.info(set.getKey() + " is ready to work!");
+            } else {
+                logger.info(set.getKey() + "'s punch in non-existent.");
+                logger.info(set.getKey() + " needs to punch in before continuing his shift.");
+            }
+        }
+        return punchIn;
     }
 
     @Override
-    public void pour() {
-        logger.info("Penny poured all of the concrete into the trench");
+    protected HashMap<String, Boolean> employeePunchOut() {
+        return null;
     }
 
     @Override
-    public void shape() {
-       logger.info("shape the concrete");
+    protected Double earnings() {
+        return null;
     }
 
     @Override
-    public void monitorProcess() {
-      logger.info("Process Monitored");
-    }
-
-    @Override
-    public void spread() {
-        logger.info("Spread Concrete");
-    }
-
-    @Override
-    public void drive() {
-        logger.info("Penny put keys in the ignition");
-        logger.info("Penny drove to appropriate location");
+    public void addComponents() {
+        logger.info("water proofing membrane to the foundation walls installed");
+        logger.info("drains installed");
+        logger.info("sewer taps installed");
+        logger.info("water taps installed");
     }
 }

@@ -26,12 +26,12 @@ public class ConcretePump extends Vehicle implements IDrivable, IPourable {
 
     @Override
     public void pour() {
-       logger.info("pour cement");
+       logger.info("Penny used the concrete pump to pour cement");
     }
 
     @Override
     public void drive() {
-       logger.info("put keys in ignition");
-       logger.info("drive concrete pump to appropriate location");
+       logger.info(" Penny put the keys in ignition");
+       logger.info(" Penny drove the concrete pump to appropriate location");
     }
 }

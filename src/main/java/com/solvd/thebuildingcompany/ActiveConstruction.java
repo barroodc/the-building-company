@@ -13,6 +13,17 @@ public class ActiveConstruction {
     private static Logger logger = LogManager.getLogger(ActiveConstruction.class);
 
     private void constructionSiteCleared() {
+
+        try {
+            DemolitionWorker nina = new DemolitionWorker("Nina", "XYZ Group");
+            Method employeePunchedIn = DemolitionWorker.class.getDeclaredMethod("employeePunchIn");
+            employeePunchedIn.setAccessible(true);
+            employeePunchedIn.invoke(nina);
+            logger.info(employeePunchedIn);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+
         try {
             DemolitionWorker janet = new DemolitionWorker("Janet", "XYZ Group");
             Method siteClearOfObstruction = DemolitionWorker.class.getDeclaredMethod("demolitionOfSite");
@@ -38,6 +49,16 @@ public class ActiveConstruction {
     }
 
     private void basementBuilding() {
+
+        try {
+            ConcreteSpecialist baxter = new ConcreteSpecialist("Baxter", "NXE Group");
+            Method punchIn = ConcreteSpecialist.class.getDeclaredMethod("employeePunchIn");
+            punchIn.setAccessible(true);
+            punchIn.invoke(baxter);
+            logger.info(punchIn);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
 
         try {
             ConcreteSpecialist cara = new ConcreteSpecialist("Cara", "NXE Group");

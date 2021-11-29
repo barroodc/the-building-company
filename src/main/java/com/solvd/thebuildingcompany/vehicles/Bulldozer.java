@@ -16,14 +16,14 @@ public class Bulldozer extends Vehicle implements IDrivable, IPushable {
 
     @Override
     public void push() {
-      logger.info("Push rocks");
-      logger.info("Push trees");
-      logger.info("Push debris");
+      logger.info("The bulldozer pushed all the rocks out of the way.");
+      logger.info("The bulldozer pushed all the trees out of the way.");
+      logger.info("The bulldozer pushed all the debris out of the way.");
     }
 
     @Override
     public void drive() {
-      logger.info("put keys in ignition");
-      logger.info("drive bulldozer");
+      logger.info("Gerald put the keys in ignition");
+      logger.info("Gerald drove the bulldozer to the appropriate location");
     }
 }
