@@ -200,10 +200,10 @@ public class Main {
         }
 
         try {
-            Inspections foundationCheck = new Inspections();
+            Inspections foundationInspected = new Inspections();
             Method foundationUpToCode = Inspections.class.getDeclaredMethod("foundationInspection");
             foundationUpToCode.setAccessible(true);
-            foundationUpToCode.invoke(foundationCheck);
+            foundationUpToCode.invoke(foundationInspected);
             logger.info(foundationUpToCode);
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
@@ -220,10 +220,10 @@ public class Main {
         }
 
         try {
-           ActiveConstruction wallSkeleton = new ActiveConstruction();
+           ActiveConstruction wallCompleted = new ActiveConstruction();
            Method bareWall = ActiveConstruction.class.getDeclaredMethod("wallsCompleted");
            bareWall.setAccessible(true);
-           bareWall.invoke(wallSkeleton);
+           bareWall.invoke(wallCompleted);
            logger.info(bareWall);
            Thread.sleep(5000);
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
@@ -236,6 +236,57 @@ public class Main {
             roofingInstallComplete.setAccessible(true);
             roofingInstallComplete.invoke(roofingInstallation);
             logger.info(roofingInstallComplete);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+
+        try {
+           ActiveConstruction pipingInstallation = new ActiveConstruction();
+           Method pipingInstall = ActiveConstruction.class.getDeclaredMethod("pipingInstallation");
+           pipingInstall.setAccessible(true);
+           pipingInstall.invoke(pipingInstallation);
+           logger.info(pipingInstall);
+           Thread.sleep(5000);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+            logger.error(e);
+        }
+
+        try {
+            ActiveConstruction electricalWorkInstalled = new ActiveConstruction();
+            Method electricalWiring = ActiveConstruction.class.getDeclaredMethod("electricalInstallation");
+            electricalWiring.setAccessible(true);
+            electricalWiring.invoke(electricalWorkInstalled);
+            logger.info(electricalWiring);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+
+        try {
+           Inspections plumbingInspected = new Inspections();
+           Method plumbingInspection = Inspections.class.getDeclaredMethod("plumbingInspection");
+           plumbingInspection.setAccessible(true);
+           plumbingInspection.invoke(plumbingInspected);
+           logger.info(plumbingInspection);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+
+        try {
+          Inspections electricalInspected = new Inspections();
+          Method electricalInspection = Inspections.class.getDeclaredMethod("electricalInspection");
+          electricalInspection.setAccessible(true);
+          electricalInspection.invoke(electricalInspected);
+          logger.info(electricalInspection);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+           logger.error(e);
+        }
+
+        try {
+          Inspections mechanicalSystemsInspected = new Inspections();
+          Method mechanicalSystemsInspection = Inspections.class.getDeclaredMethod("mechanicalInspection");
+          mechanicalSystemsInspection.setAccessible(true);
+          mechanicalSystemsInspection.invoke(mechanicalSystemsInspected);
+          logger.info(mechanicalSystemsInspection);
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }

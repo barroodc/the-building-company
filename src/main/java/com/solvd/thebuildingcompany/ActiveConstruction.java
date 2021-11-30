@@ -147,6 +147,30 @@ public class ActiveConstruction implements IBasement  {
         }
     }
 
+    private void pipingInstallation() {
+        try {
+          Plumber peach = new Plumber("Peach", "AZP Group");
+          Method pipingInstall = Plumber.class.getDeclaredMethod("piping");
+          pipingInstall.setAccessible(true);
+          pipingInstall.invoke(peach);
+          logger.info(pipingInstall);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+    }
+
+    private void electricalInstallation() {
+        try {
+            Electrician frank = new Electrician("Frank","DEF Group");
+            Method electricalWiringComplete = Electrician.class.getDeclaredMethod("installElectricalComponents");
+            electricalWiringComplete.setAccessible(true);
+            electricalWiringComplete.invoke(frank);
+            logger.info(electricalWiringComplete);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+    }
+
     @Override
     public void addBasement() {
         logger.info("Basement added successfully");

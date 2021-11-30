@@ -35,15 +35,16 @@ public class Electrician extends Contractor implements IInstallable {
 
     private final Logger logger = Logger.getLogger(Electrician.class.getName());
 
-    private Electrician(String name, String nameOfCompany) {
+    public Electrician(String name, String nameOfCompany) {
         super();
         this.setName(name);
         this.setNameOfCompany(nameOfCompany);
     }
 
-    private boolean installElectricalComponents() {
+    private void installElectricalComponents() {
         final Electrician brandon = new Electrician("Brandon", "DEF Group");
-        return false;
+        logger.info("Brandon begins doing electrical work on the home: ");
+        brandon.addComponents();
     }
 
     private boolean electricalComponentInspection() {
@@ -54,6 +55,9 @@ public class Electrician extends Contractor implements IInstallable {
 
     @Override
     public void addComponents() {
-
+      logger.info("runs wires from the breaker panel to each receptacle");
+      logger.info("ductwork for HVAC system applied");
+      logger.info("receptacles for outlets are installed");
+      logger.info("lights and switches are installed");
     }
 }
