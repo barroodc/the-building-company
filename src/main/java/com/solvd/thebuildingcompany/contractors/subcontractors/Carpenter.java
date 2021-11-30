@@ -70,8 +70,15 @@ public class Carpenter extends Contractor implements IInstallable, IModifiable, 
         this.setNameOfCompany(nameOfCompany);
     }
 
+    private void wallInstallationComplete() {
+        final Carpenter jamison = new Carpenter("Jamison", "AYR Group");
+        logger.info("Jamison the Carpenter now installs the wall:");
+        jamison.addComponents();
+        logger.info("adding drywall later...");
+    }
+
     private void fixturesAndFrameworks() {
-       FlooringContractor byron = new FlooringContractor();
+       final FloorLayer byron = new FloorLayer("Byron","GHI Group");
     }
 
     private void modifyMaterials() {
@@ -98,12 +105,11 @@ public class Carpenter extends Contractor implements IInstallable, IModifiable, 
 
     @Override
     public void addComponents() {
-        logger.info("Add Windows");
-        logger.info("Add Siding");
-        logger.info("Add Cabinets");
-        logger.info("Add Walls");
-        logger.info("Add Floors");
-        logger.info("Add Door Frames");
+        logger.info("wooden beams for walls installed");
+        logger.info("sheathing applied to exterior walls");
+        logger.info("sheathing covered with protective wrap");
+        logger.info("exterior doors are installed");
+        logger.info("house wraps added");
     }
 
     @Override

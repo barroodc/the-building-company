@@ -199,13 +199,43 @@ public class Main {
             logger.error(e);
         }
 
+        try {
+            Inspections foundationCheck = new Inspections();
+            Method foundationUpToCode = Inspections.class.getDeclaredMethod("foundationInspection");
+            foundationUpToCode.setAccessible(true);
+            foundationUpToCode.invoke(foundationCheck);
+            logger.info(foundationUpToCode);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
 
         try {
-           Inspections foundationCheck = new Inspections();
-           Method foundationUpToCode = Inspections.class.getDeclaredMethod("foundationInspection");
-           foundationUpToCode.setAccessible(true);
-           foundationUpToCode.invoke(foundationCheck);
-           logger.info(foundationUpToCode);
+            ActiveConstruction flooringSkeleton = new ActiveConstruction();
+            Method flooringRoots = ActiveConstruction.class.getDeclaredMethod("flooringSystemSkeleton");
+            flooringRoots.setAccessible(true);
+            flooringRoots.invoke(flooringSkeleton);
+            logger.info(flooringRoots);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+
+        try {
+           ActiveConstruction wallSkeleton = new ActiveConstruction();
+           Method bareWall = ActiveConstruction.class.getDeclaredMethod("wallsCompleted");
+           bareWall.setAccessible(true);
+           bareWall.invoke(wallSkeleton);
+           logger.info(bareWall);
+           Thread.sleep(5000);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+            logger.error(e);
+        }
+
+        try {
+            ActiveConstruction roofingInstallation = new ActiveConstruction();
+            Method roofingInstallComplete = ActiveConstruction.class.getDeclaredMethod("roofInstallation");
+            roofingInstallComplete.setAccessible(true);
+            roofingInstallComplete.invoke(roofingInstallation);
+            logger.info(roofingInstallComplete);
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }

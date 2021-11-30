@@ -42,6 +42,13 @@ public class FloorLayer extends Contractor implements IInstallable, ICleanable {
         this.setNameOfCompany(nameOfCompany);
     }
 
+    private void flooringSystemRoots() {
+        final FloorLayer ian = new FloorLayer("Ian", "GHI Group");
+        logger.info("Ian the Floor Layer installs the following foundational roots for the flooring of the home:");
+        ian.addComponents();
+
+    }
+
     private boolean carpetInstalled() {
         final FloorLayer pierre = new FloorLayer("Pierre", "GHI Group");
         return false;
@@ -64,11 +71,24 @@ public class FloorLayer extends Contractor implements IInstallable, ICleanable {
 
     @Override
     public void addComponents() {
-
+        logger.info("wooden planks installed where applicable");
+        logger.info("solid bridging installed");
+        logger.info("joist hanger installed");
+        logger.info("shield installed");
+        logger.info("sub floor installed");
+        logger.info("header joist installed");
+        logger.info("pier and post installed");
+        logger.info("girders installed");
+        logger.info("sill installed");
     }
 
     @Override
     public void cleanArea() {
 
+    }
+
+    public static void main(String[] args) {
+        FloorLayer example = new FloorLayer("Az","Dz");
+        example.flooringSystemRoots();
     }
 }

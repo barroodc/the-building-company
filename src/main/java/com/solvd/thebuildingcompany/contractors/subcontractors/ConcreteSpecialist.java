@@ -157,6 +157,7 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
         backhoeLoader.drive();
         backhoeLoader.pave();
         backhoeLoader.finishedTheJob();
+
     }
 
     private void spreadConcrete() {
@@ -190,5 +191,6 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
         logger.info("Hannah and Craig installed drains inside the basement");
         logger.info("Hannah and Craig installed sewer taps inside the basement");
         logger.info("Hannah and Craig installed water taps inside the basement");
+
     }
 }

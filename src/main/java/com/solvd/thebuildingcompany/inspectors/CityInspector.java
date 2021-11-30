@@ -59,7 +59,7 @@ public class CityInspector extends Inspector{
     protected void inspection() {
         CityInspector tobey = new CityInspector("Tobey", "Foundation Wall");
         if (numberOfViolations == 0){
-            logger.info(tobey.getName() + " gave the foundation wall a passing mark: " + !inspectionPassed);
+            logger.info(tobey.getName() + " the City Inspector gave the foundation wall a passing mark: " + !inspectionPassed);
         } else {
             logger.info(numberOfViolations + "is the current number of violations");
             logger.info("Please address these violations before moving forward with construction");

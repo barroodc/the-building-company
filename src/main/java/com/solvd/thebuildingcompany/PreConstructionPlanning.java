@@ -237,9 +237,4 @@ public class PreConstructionPlanning {
             logger.error(e);
         }
     }
-
-    public static void main(String[] args) {
-        PreConstructionPlanning example = new PreConstructionPlanning();
-        example.contractorsHired();
-    }
 }

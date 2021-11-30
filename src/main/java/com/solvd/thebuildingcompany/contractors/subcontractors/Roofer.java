@@ -49,19 +49,11 @@ public class Roofer extends Contractor implements IMonitorable, IMeasurable, IIn
         return false;
     }
 
-    private double measureAndCutMaterials() {
-        final Roofer jake = new Roofer("Jake", "ROF Group");
-        return 0;
-    }
-
-    private boolean roofSurfaceSmoothed() {
-        final Roofer joseph = new Roofer("Joseph", "ROF Group");
-        return false;
-    }
-
-    private boolean roofInstallation() {
+    private void roofInstallationComplete() {
         final Roofer brian = new Roofer("Brian", "ROF Group");
-        return false;
+        logger.info("Brian the Roofer begins installing the roof");
+        brian.addComponents();
+        logger.info("Brian completes the installation of the Roof");
     }
 
     @Override
@@ -76,6 +68,22 @@ public class Roofer extends Contractor implements IMonitorable, IMeasurable, IIn
 
     @Override
     public void addComponents() {
-
+      logger.info("rafter installed");
+      logger.info("collar beam installed");
+      logger.info("ridge board installed");
+      logger.info("solid decking installed");
+      logger.info("felt underlayment installed");
+      logger.info("vent pipe flashing installed");
+      logger.info("gutter installed");
+      logger.info("down spout installed");
+      logger.info("splash block installed");
+      logger.info("rake installed");
+      logger.info("lookout installed");
+      logger.info("facia installed");
+      logger.info("additional ridge board installed");
+      logger.info("valley underlayment installed");
+      logger.info("spaced sheathing installed");
+      logger.info("shingles added");
+      logger.info("chimney with flashing installed");
     }
 }

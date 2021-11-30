@@ -1,15 +1,18 @@
 package com.solvd.thebuildingcompany;
 
-import com.solvd.thebuildingcompany.contractors.subcontractors.ConcreteSpecialist;
-import com.solvd.thebuildingcompany.contractors.subcontractors.DemolitionWorker;
-import com.solvd.thebuildingcompany.contractors.subcontractors.GeneralWorker;
+import com.solvd.thebuildingcompany.contractors.subcontractors.*;
+import com.solvd.thebuildingcompany.interfaces.IBasement;
+import org.apache.log4j.spi.LoggerFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 
-public class ActiveConstruction {
+public class ActiveConstruction implements IBasement  {
     private static Logger logger = LogManager.getLogger(ActiveConstruction.class);
 
     private void constructionSiteCleared() {
@@ -98,12 +101,55 @@ public class ActiveConstruction {
            foundationFinalTouches.setAccessible(true);
            foundationFinalTouches.invoke(sebastian);
            logger.info(foundationFinalTouches);
+           Thread.sleep(2000);
+           addBasement();
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+            logger.error(e);
+        }
+    }
+
+    private void flooringSystemSkeleton() {
+
+        try {
+            FloorLayer jenkins = new FloorLayer("Jenkins", "GHI Group");
+            Method flooringRoots = FloorLayer.class.getDeclaredMethod("flooringSystemRoots");
+            flooringRoots.setAccessible(true);
+            flooringRoots.invoke(jenkins);
+            logger.info(flooringRoots);
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
-
-        //If time permits I can even try creating another method to draw a foundation.
-
     }
 
+    private void wallsCompleted() {
+
+        try {
+            Carpenter joshua = new Carpenter("Joshua", "AYR Group");
+            Method bareBonesWall = Carpenter.class.getDeclaredMethod("wallInstallationComplete");
+            bareBonesWall.setAccessible(true);
+            bareBonesWall.invoke(joshua);
+            logger.info(bareBonesWall);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+    }
+
+    private void roofInstallation() {
+
+        try {
+            Roofer ethan = new Roofer("Ethan", "ROF Group");
+            Method roofingInstalled = Roofer.class.getDeclaredMethod("roofInstallationComplete");
+            roofingInstalled.setAccessible(true);
+            roofingInstalled.invoke(ethan);
+            logger.info(roofingInstalled);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+    }
+
+    @Override
+    public void addBasement() {
+        logger.info("Basement added successfully");
+        logger.info("Basement size: 28 feet by 34 feet");
+    }
 }
