@@ -2,13 +2,15 @@ package com.solvd.thebuildingcompany.contractors.subcontractors;
 
 import com.solvd.thebuildingcompany.contractors.Contractor;
 import com.solvd.thebuildingcompany.interfaces.IDrivable;
+import com.solvd.thebuildingcompany.interfaces.IPunchIn;
+import com.solvd.thebuildingcompany.interfaces.IPunchOut;
 import com.solvd.thebuildingcompany.interfaces.IPushable;
 import com.solvd.thebuildingcompany.vehicles.Bulldozer;
 
 import java.util.*;
 import java.util.logging.Logger;
 
-public class DemolitionWorker extends Contractor {
+public class DemolitionWorker extends Contractor implements IPunchIn, IPunchOut {
 
     private String name;
     private String nameOfCompany;
@@ -84,15 +86,16 @@ public class DemolitionWorker extends Contractor {
        this.setNameOfCompany(nameOfCompany);
    }
 
-    @Override
-    protected HashMap<String, Boolean> employeePunchIn() {
 
+    protected HashMap<String, Boolean> employeePunchIn() {
+        final DemolitionWorker gerald = new DemolitionWorker("Gerald", "NXE Group");
 
         HashMap<String, Boolean> punchIn = new HashMap<>();
         punchIn.put("Gerald",true);
 
         for (Map.Entry<String, Boolean> set : punchIn.entrySet()) {
             if (punchIn.containsValue(true)) {
+                gerald.punchIn();
                 logger.info(set.getKey() + "'s punch in confirmed.");
                 logger.info(set.getKey() + " is ready to work!");
             } else {
@@ -111,7 +114,7 @@ public class DemolitionWorker extends Contractor {
 
         if (clearanceForBulldozer.contains(gerald.getName())) {
             logger.info("Begin removal of all rocks, trees, and debris from construction site.");
-            Bulldozer bulldozer = new Bulldozer("Bulldozer");
+            Bulldozer bulldozer = new Bulldozer("Bulldozer", gerald.getName());
             bulldozer.drive();
             bulldozer.push();
             logger.info("Site successfully cleared");
@@ -124,7 +127,7 @@ public class DemolitionWorker extends Contractor {
         return true;
     }
 
-    @Override
+
     protected HashMap<String, Boolean> employeePunchOut() {
         return null;
     }
@@ -141,4 +144,13 @@ public class DemolitionWorker extends Contractor {
 
     }
 
+    @Override
+    public void punchIn() {
+      logger.info("employees punch in confirmed");
+    }
+
+    @Override
+    public void punchOut() {
+      logger.info("employees punch out confirmed");
+    }
 }

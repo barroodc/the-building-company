@@ -1,13 +1,15 @@
 package com.solvd.thebuildingcompany.contractors.subcontractors;
 
+import com.solvd.thebuildingcompany.ActiveConstruction;
 import com.solvd.thebuildingcompany.contractors.Contractor;
 import com.solvd.thebuildingcompany.interfaces.IFixable;
 import com.solvd.thebuildingcompany.interfaces.IInstallable;
 import com.solvd.thebuildingcompany.interfaces.IModifiable;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Date;
 import java.util.logging.FileHandler;
-import java.util.logging.Logger;
 
 
 import java.io.IOException;
@@ -30,15 +32,6 @@ public class Carpenter extends Contractor implements IInstallable, IModifiable, 
         this.name = name;
     }
 
-    @Override
-    protected HashMap<String, Boolean> employeePunchIn() {
-        return null;
-    }
-
-    @Override
-    protected HashMap<String, Boolean> employeePunchOut() {
-        return null;
-    }
 
     @Override
     protected Double earnings() {
@@ -69,7 +62,7 @@ public class Carpenter extends Contractor implements IInstallable, IModifiable, 
         this.expectedNumberOfFrameworks = expectedNumberOfFrameworks;
     }
 
-    private final Logger logger = Logger.getLogger(Carpenter.class.getName());
+    private static Logger logger = LogManager.getLogger(Carpenter.class);
 
     public Carpenter(String name, String nameOfCompany) {
         super();
@@ -78,40 +71,11 @@ public class Carpenter extends Contractor implements IInstallable, IModifiable, 
     }
 
     private void fixturesAndFrameworks() {
-        final Carpenter whitney = new Carpenter("Whitney", "AYR Group");
-
-        try {
-            FileHandler listOfRequiredItems = new FileHandler("src/test/logging.log.*");
-            logger.addHandler(listOfRequiredItems);
-            whitney.addComponents();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+       FlooringContractor byron = new FlooringContractor();
     }
 
     private void modifyMaterials() {
-        final Carpenter valerie = new Carpenter("Valerie", "AYR Group");
-        HashMap<String, Double> itemToBeCutInFeet = new HashMap<>();
-        itemToBeCutInFeet.put("50 wooden planks for first floor", 8.0);
-        itemToBeCutInFeet.put("100 wooden planks for second floor", 8.0);
 
-
-
-        try {
-            for (Map.Entry<String, Double> set : itemToBeCutInFeet.entrySet()) {
-                if (set.getValue() == 8.0) {
-                    valerie.materialAltered();
-                    break;
-                } else {
-                    logger.info(String.valueOf(false));
-                    logger.warning("Please order more wood to cut to the appropriate length");
-                }
-            }
-
-        } catch(NullPointerException e) {
-            logger.warning("Please make sure everything is entered in correctly.");
-        }
 
     }
 

@@ -48,8 +48,7 @@ public class ActiveConstruction {
         }
     }
 
-    private void basementBuilding() {
-
+    private void basementWorkersClockInAndOut() {
         try {
             ConcreteSpecialist baxter = new ConcreteSpecialist("Baxter", "NXE Group");
             Method punchIn = ConcreteSpecialist.class.getDeclaredMethod("employeePunchIn");
@@ -59,6 +58,9 @@ public class ActiveConstruction {
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
+    }
+
+    private void basementBuilding() {
 
         try {
             ConcreteSpecialist cara = new ConcreteSpecialist("Cara", "NXE Group");
@@ -79,5 +81,29 @@ public class ActiveConstruction {
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
+
+        try {
+            ConcreteSpecialist reggie = new ConcreteSpecialist("Reggie", "NXE Group");
+            Method postDryingProcess = ConcreteSpecialist.class.getDeclaredMethod("postDryingProcess");
+            postDryingProcess.setAccessible(true);
+            postDryingProcess.invoke(reggie);
+            logger.info(postDryingProcess);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+
+        try {
+           ConcreteSpecialist sebastian = new ConcreteSpecialist("Sebastian", "NXE Group");
+           Method foundationFinalTouches = ConcreteSpecialist.class.getDeclaredMethod("foundationFinalSteps");
+           foundationFinalTouches.setAccessible(true);
+           foundationFinalTouches.invoke(sebastian);
+           logger.info(foundationFinalTouches);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+
+        //If time permits I can even try creating another method to draw a foundation.
+
     }
+
 }

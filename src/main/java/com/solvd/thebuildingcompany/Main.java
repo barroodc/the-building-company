@@ -188,12 +188,24 @@ public class Main {
             logger.error(e);
         }
 
+
         try {
             ActiveConstruction basementConcretePoured = new ActiveConstruction();
             Method concreteInTrenches = ActiveConstruction.class.getDeclaredMethod("basementBuilding");
             concreteInTrenches.setAccessible(true);
             concreteInTrenches.invoke(basementConcretePoured);
             logger.info(concreteInTrenches);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+
+
+        try {
+           Inspections foundationCheck = new Inspections();
+           Method foundationUpToCode = Inspections.class.getDeclaredMethod("foundationInspection");
+           foundationUpToCode.setAccessible(true);
+           foundationUpToCode.invoke(foundationCheck);
+           logger.info(foundationUpToCode);
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }

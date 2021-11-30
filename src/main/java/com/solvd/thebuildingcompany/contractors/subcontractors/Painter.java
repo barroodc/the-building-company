@@ -24,16 +24,6 @@ public class Painter extends Contractor implements ICleanable, IMeasurable, IPai
     }
 
     @Override
-    protected HashMap<String, Boolean> employeePunchIn() {
-        return null;
-    }
-
-    @Override
-    protected HashMap<String, Boolean> employeePunchOut() {
-        return null;
-    }
-
-    @Override
     protected Double earnings() {
         return null;
     }

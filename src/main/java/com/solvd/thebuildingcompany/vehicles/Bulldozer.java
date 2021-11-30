@@ -14,6 +14,11 @@ public class Bulldozer extends Vehicle implements IDrivable, IPushable {
         super(nameOfVehicle);
     }
 
+    public Bulldozer(String nameOfVehicle, String operatorOfVehicle) {
+        super(nameOfVehicle, operatorOfVehicle);
+
+    }
+
     @Override
     public void push() {
       logger.info("The bulldozer pushed all the rocks out of the way.");

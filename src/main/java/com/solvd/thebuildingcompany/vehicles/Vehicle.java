@@ -5,6 +5,7 @@ package com.solvd.thebuildingcompany.vehicles;
 public abstract class Vehicle {
 
     private String nameOfVehicle;
+    private String operatorOfVehicle;
     private String categoryOfVehicle; //different types of bulldozers etc.
     private String manufacturer;
     private String color;
@@ -20,6 +21,14 @@ public abstract class Vehicle {
 
     public void setNameOfVehicle(String nameOfVehicle) {
         this.nameOfVehicle = nameOfVehicle;
+    }
+
+    public String getOperatorOfVehicle() {
+        return operatorOfVehicle;
+    }
+
+    public void setOperatorOfVehicle(String operatorOfVehicle) {
+        this.operatorOfVehicle = operatorOfVehicle;
     }
 
     public String getCategoryOfVehicle() {
@@ -55,6 +64,11 @@ public abstract class Vehicle {
     }
 
     public Vehicle(String nameOfVehicle) {
+      this.nameOfVehicle = nameOfVehicle;
+    }
+
+    public Vehicle(String nameOfVehicle, String operatorOfVehicle) {
         this.nameOfVehicle = nameOfVehicle;
+        this.operatorOfVehicle = operatorOfVehicle;
     }
 }

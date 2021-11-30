@@ -3,6 +3,7 @@ package com.solvd.thebuildingcompany.contractors.subcontractors;
 import com.solvd.thebuildingcompany.Main;
 import com.solvd.thebuildingcompany.contractors.Contractor;
 import com.solvd.thebuildingcompany.interfaces.*;
+import com.solvd.thebuildingcompany.vehicles.BackhoeLoader;
 import com.solvd.thebuildingcompany.vehicles.Bulldozer;
 import com.solvd.thebuildingcompany.vehicles.ConcretePump;
 import com.solvd.thebuildingcompany.vehicles.Vehicle;
@@ -21,6 +22,9 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
     private double measurements;
     private boolean correctAmountGathered;
     private ArrayList<String> clearanceForConcretePump;
+    private ConcreteSpecialist hannah;
+    private Calendar currentDate;
+    private Calendar completionDate;
 
 
     public String getName() {
@@ -63,6 +67,22 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
         this.clearanceForConcretePump = clearanceForConcretePump;
     }
 
+    public Calendar getCurrentDate() {
+        return currentDate;
+    }
+
+    public void setCurrentDate(Calendar currentDate) {
+        this.currentDate = currentDate;
+    }
+
+    public Calendar getCompletionDate() {
+        return completionDate;
+    }
+
+    public void setCompletionDate(Calendar completionDate) {
+        this.completionDate = completionDate;
+    }
+
     private static Logger logger = LogManager.getLogger(ConcreteSpecialist.class);
 
     private static ConcretePump concretePump;
@@ -77,7 +97,7 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
     private void mixAndPourConcrete() {
         final ConcreteSpecialist penny = new ConcreteSpecialist("Penny", "NXE Group");
         logger.info(penny.getName() + " " + "the concrete specialist now has to drive and pour concrete into trenches");
-        ConcretePump concretePump = new ConcretePump("Concrete Pump");
+        ConcretePump concretePump = new ConcretePump("Concrete Pump", penny.getName());
         concretePump.drive();
         concretePump.pour();
 
@@ -85,18 +105,22 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
     }
 
     private HashMap<String, Date> monitorDryingProcess() {
-        final ConcreteSpecialist hannah = new ConcreteSpecialist("Hannah", "NXE Group");
+        hannah = new ConcreteSpecialist("Hannah", "NXE Group");
         HashMap<String, Date> dryingProcessLog = new HashMap<>();
-        final Calendar completionDate = Calendar.getInstance();
+
+        currentDate = Calendar.getInstance();
+        currentDate.set(Calendar.YEAR, 2021);
+        currentDate.set(Calendar.MONTH, Calendar.APRIL);
+        currentDate.set(Calendar.DAY_OF_MONTH, 27);
+        final Date todaysDate = currentDate.getTime();
+
+
+        completionDate = Calendar.getInstance();
         completionDate.set(Calendar.YEAR, 2021);
         completionDate.set(Calendar.MONTH, Calendar.MAY);
         completionDate.set(Calendar.DAY_OF_MONTH, 27);
         final Date dateOfCompletion = completionDate.getTime();
 
-        final Calendar currentDate = Calendar.getInstance();
-        currentDate.set(Calendar.YEAR, 2021);
-        currentDate.set(Calendar.MONTH, Calendar.APRIL);
-        final Date todaysDate = currentDate.getTime();
 
         dryingProcessLog.put(hannah.getName() + " the on duty concrete specialist expects the concrete to be dry by", dateOfCompletion);
         logger.info(dryingProcessLog.toString());
@@ -105,7 +129,34 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
     }
 
     private void postDryingProcess() {
-        final ConcreteSpecialist shannon = new ConcreteSpecialist("Shannon", "NXE Group");
+        final ConcreteSpecialist craig = new ConcreteSpecialist("Craig", "NXE Group");
+        try {
+            Thread.sleep(5000);
+            logger.info("It has now been 30 days");
+        } catch (InterruptedException e) {
+            logger.error(e);
+        }
+        currentDate = Calendar.getInstance();
+        currentDate.set(Calendar.YEAR, 2021);
+        currentDate.set(Calendar.MONTH, Calendar.MAY);
+        currentDate.set(Calendar.DAY_OF_MONTH, 27);
+        final Date todaysDate = currentDate.getTime();
+
+           logger.info("Todays date is ." + todaysDate + " which is exactly 30 days from the initial concrete pouring");
+           logger.info("The home building process can resume");
+           craig.addComponents();
+
+
+    }
+
+
+    private void foundationFinalSteps() {
+        final ConcreteSpecialist doug = new ConcreteSpecialist("Doug", "NXE Group");
+        BackhoeLoader backhoeLoader = new BackhoeLoader("Backhoe Loader", doug.getName());
+        backhoeLoader.dig();
+        backhoeLoader.drive();
+        backhoeLoader.pave();
+        backhoeLoader.finishedTheJob();
     }
 
     private void spreadConcrete() {
@@ -123,30 +174,10 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
         ConcreteSpecialist babe = new ConcreteSpecialist("Babe", "hoAndCo");
         babe.mixAndPourConcrete();
         babe.monitorDryingProcess();
+        babe.postDryingProcess();
+        babe.foundationFinalSteps();
     }
 
-    @Override
-    protected HashMap<String, Boolean> employeePunchIn() {
-        HashMap<String, Boolean> punchIn = new HashMap<>();
-        punchIn.put("Penny",true);
-        punchIn.put("Hannah", true);
-
-        for (Map.Entry<String, Boolean> set : punchIn.entrySet()) {
-            if (punchIn.containsValue(true)) {
-                logger.info(set.getKey() + "'s punch in confirmed.");
-                logger.info(set.getKey() + " is ready to work!");
-            } else {
-                logger.info(set.getKey() + "'s punch in non-existent.");
-                logger.info(set.getKey() + " needs to punch in before continuing his shift.");
-            }
-        }
-        return punchIn;
-    }
-
-    @Override
-    protected HashMap<String, Boolean> employeePunchOut() {
-        return null;
-    }
 
     @Override
     protected Double earnings() {
@@ -155,9 +186,9 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
 
     @Override
     public void addComponents() {
-        logger.info("water proofing membrane to the foundation walls installed");
-        logger.info("drains installed");
-        logger.info("sewer taps installed");
-        logger.info("water taps installed");
+        logger.info("Hannah and Craig installed water proofing membrane to the foundation walls inside the basement");
+        logger.info("Hannah and Craig installed drains inside the basement");
+        logger.info("Hannah and Craig installed sewer taps inside the basement");
+        logger.info("Hannah and Craig installed water taps inside the basement");
     }
 }

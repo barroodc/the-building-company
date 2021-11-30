@@ -28,15 +28,6 @@ public class DryWaller extends Contractor implements IInstallable, IModifiable, 
         this.name = name;
     }
 
-    @Override
-    protected HashMap<String, Boolean> employeePunchIn() {
-        return null;
-    }
-
-    @Override
-    protected HashMap<String, Boolean> employeePunchOut() {
-        return null;
-    }
 
     @Override
     protected Double earnings() {

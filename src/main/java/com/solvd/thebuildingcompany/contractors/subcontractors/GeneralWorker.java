@@ -20,16 +20,6 @@ public class GeneralWorker extends Contractor implements IInstallable, IDig {
     }
 
     @Override
-    protected HashMap<String, Boolean> employeePunchIn() {
-        return null;
-    }
-
-    @Override
-    protected HashMap<String, Boolean> employeePunchOut() {
-        return null;
-    }
-
-    @Override
     protected Double earnings() {
         return null;
     }

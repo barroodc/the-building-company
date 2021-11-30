@@ -15,6 +15,11 @@ public class ConcretePump extends Vehicle implements IDrivable, IPourable {
         super(nameOfVehicle);
     }
 
+    public ConcretePump(String nameOfVehicle, String operatorOfVehicle) {
+        super(nameOfVehicle, operatorOfVehicle);
+
+    }
+
     public String getName() {
         return name;
     }

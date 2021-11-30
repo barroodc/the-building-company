@@ -1,6 +1,5 @@
 package com.solvd.thebuildingcompany.residentialdevelopment;
 
-import com.solvd.thebuildingcompany.HomeBuilder;
 import com.solvd.thebuildingcompany.interfaces.ILivingRoom;
 
 import java.util.logging.Logger;

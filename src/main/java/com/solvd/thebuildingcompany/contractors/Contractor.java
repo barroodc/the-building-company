@@ -42,8 +42,6 @@ public abstract class Contractor {
         this.startAndEndDate = startAndEndDate;
     }
 
-    protected abstract HashMap<String, Boolean> employeePunchIn();
-    protected abstract HashMap<String, Boolean> employeePunchOut();
     protected abstract Double earnings();
 
     public String getFirstName() {
