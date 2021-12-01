@@ -77,17 +77,6 @@ public class Carpenter extends Contractor implements IInstallable {
         logger.info("adding drywall later...");
     }
 
-    private void fixturesAndFrameworks() {
-       final FloorLayer byron = new FloorLayer("Byron","GHI Group");
-    }
-
-    private void modifyMaterials() {
-
-
-    }
-
-
-
     @Override
     public void addComponents() {
         logger.info("wooden beams for walls installed");

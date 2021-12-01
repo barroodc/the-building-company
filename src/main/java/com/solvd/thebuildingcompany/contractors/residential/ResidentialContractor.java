@@ -1,11 +1,12 @@
 package com.solvd.thebuildingcompany.contractors.residential;
 
 import com.solvd.thebuildingcompany.contractors.Contractor;
+import com.solvd.thebuildingcompany.interfaces.IInstallable;
 
 import java.util.*;
 import java.util.logging.Logger;
 
-public class ResidentialContractor extends Contractor {
+public class ResidentialContractor extends Contractor implements IInstallable {
 
     private boolean suppliesAvailable;
     private String name;
@@ -137,8 +138,20 @@ public class ResidentialContractor extends Contractor {
         return hiredByJacob;
     }
 
+    private void lastMinuteInstallations(){
+        ResidentialContractor meghan = new ResidentialContractor("Meghan", "PQR Group");
+        logger.info(meghan.getName() + "one of our Residential Contractors decided to help us save money by installing some last minute things.");
+        meghan.addComponents();
+    }
+
     @Override
     protected Double earnings() {
         return null;
+    }
+
+    @Override
+    public void addComponents() {
+        logger.info("Mirrors in all bathrooms added");
+        logger.info("Shower doors in all bathrooms but the downstairs bathroom have been added");
     }
 }

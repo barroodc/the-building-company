@@ -1,5 +1,6 @@
 package com.solvd.thebuildingcompany;
 
+import com.solvd.thebuildingcompany.contractors.residential.ResidentialContractor;
 import com.solvd.thebuildingcompany.contractors.subcontractors.*;
 import com.solvd.thebuildingcompany.interfaces.IBasement;
 import org.apache.logging.log4j.LogManager;
@@ -257,6 +258,66 @@ public class ActiveConstruction implements IBasement  {
           logger.info(carpetAdded);
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
           logger.error(e);
+        }
+    }
+
+    private void HVACUnitInstalled() {
+
+        try{
+            HVACTechnician jackie = new HVACTechnician("Jackie", "MNO Group");
+            Method hvacInstall = HVACTechnician.class.getDeclaredMethod("installationOfHVACUnit");
+            hvacInstall.setAccessible(true);
+            hvacInstall.invoke(jackie);
+            logger.info(hvacInstall);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+    }
+
+    private void lastMinuteInteriorInstalls() {
+
+        try {
+            ResidentialContractor jarvis = new ResidentialContractor("Jarvis", "PQR Group");
+            Method mirrorAndShowerDoor = ResidentialContractor.class.getDeclaredMethod("lastMinuteInstallations");
+            mirrorAndShowerDoor.setAccessible(true);
+            mirrorAndShowerDoor.invoke(jarvis);
+            logger.info(mirrorAndShowerDoor);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+    }
+
+    private void cleanUpStage() {
+
+        try {
+          CleanupContractor david = new CleanupContractor("David", "ZWF Group");
+          Method interiorCleaning = CleanupContractor.class.getDeclaredMethod("interiorCleanup");
+          Method exteriorCleaning = CleanupContractor.class.getDeclaredMethod("exteriorCleanup");
+          interiorCleaning.setAccessible(true);
+          interiorCleaning.invoke(david);
+          exteriorCleaning.setAccessible(true);
+          exteriorCleaning.invoke(david);
+          logger.info(interiorCleaning);
+          logger.info(exteriorCleaning);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+           logger.error(e);
+        }
+    }
+
+    private void landscapingStage() {
+
+        try {
+            LandScaper karl = new LandScaper("Karl", "NLX Group");
+            Method plantingGreenery = LandScaper.class.getDeclaredMethod("plantTheGreenery");
+            Method fertilizerAdded = LandScaper.class.getDeclaredMethod("applyFertilizer");
+            plantingGreenery.setAccessible(true);
+            plantingGreenery.invoke(karl);
+            fertilizerAdded.setAccessible(true);
+            fertilizerAdded.invoke(karl);
+            logger.info(plantingGreenery);
+            logger.info(fertilizerAdded);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
         }
     }
 

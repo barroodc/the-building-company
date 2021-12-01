@@ -1,6 +1,8 @@
 package com.solvd.thebuildingcompany;
 
+import com.solvd.thebuildingcompany.contractors.subcontractors.Electrician;
 import com.solvd.thebuildingcompany.contractors.subcontractors.GradingContractor;
+import com.solvd.thebuildingcompany.employees.departments.materialpurchasing.ConstructionExpeditor;
 import com.solvd.thebuildingcompany.inspectors.CityInspector;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -86,6 +88,34 @@ public class Inspections {
          logger.info(levelingNeededCheck);
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
            logger.error(e);
+        }
+    }
+
+    private void electricalPanelInspection() {
+
+        try {
+            Electrician bruce = new Electrician("Bruce", "DEF Group");
+            Method electricalPanelCheck = Electrician.class.getDeclaredMethod("electricalPanelFinalCheck");
+            electricalPanelCheck.setAccessible(true);
+            electricalPanelCheck.invoke(bruce);
+            logger.info(electricalPanelCheck);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+    }
+
+    private void lastInspection() {
+
+        try {
+          CityInspector joyce = new CityInspector("Joyce", "General Inspection");
+          Method lastWalkThrough = CityInspector.class.getDeclaredMethod("generalInspection");
+          lastWalkThrough.setAccessible(true);
+          lastWalkThrough.invoke(joyce);
+          logger.info(lastWalkThrough);
+          logger.info("The home building process is now complete!");
+          logger.info("Now time for an open house!");
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+          logger.error(e);
         }
     }
 }

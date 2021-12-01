@@ -96,9 +96,9 @@ public class FloorLayer extends Contractor implements IInstallable, ICleanable {
         carpetSizeLength = 100;
         final FloorLayer pierre = new FloorLayer("Pierre", "GHI Group");
         if (carpetSizeLength >= 100) {
-            logger.info("Sufficient length (in feet) or rug needed to cover all bedrooms: " + !sufficientCarpet);
-            logger.info(pierre.getName() + " the Floor Layer successfully installs rugs in all of the bedrooms.");
-            logger.info("Rug installation complete.");
+            logger.info("Sufficient length (in feet) or carpet needed to cover all bedrooms: " + !sufficientCarpet);
+            logger.info(pierre.getName() + " the Floor Layer successfully installs carpets in all of the bedrooms.");
+            logger.info("carpet installation complete.");
         }
     }
 

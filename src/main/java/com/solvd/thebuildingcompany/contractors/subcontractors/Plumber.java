@@ -53,5 +53,6 @@ public class Plumber extends Contractor implements IInstallable {
         logger.info("sewer lines and vents are installed");
         logger.info("water supply lines for each fixture are installed");
         logger.info("bathtubs and shower units are installed");
+        logger.info("Sinks, toilets and faucets put into place");
     }
 }

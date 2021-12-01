@@ -101,4 +101,16 @@ public class CityInspector extends Inspector{
             logger.info("Failed assessment");
         }
     }
+
+    private void lastInspection() {
+        CityInspector brianna = new CityInspector("Brianna", "General Inspection");
+        logger.info("Final inspection is ready to begin.");
+        if (numberOfViolations == 0){
+            logger.info(brianna.getName() + " the City Inspector gave the final walk through inspection a passing mark: " + !inspectionPassed);
+        } else {
+            logger.info(numberOfViolations + "is the current number of violations");
+            logger.info("Please address these violations before moving forward with the sale of the home");
+            logger.info("Failed assessment");
+        }
+    }
 }

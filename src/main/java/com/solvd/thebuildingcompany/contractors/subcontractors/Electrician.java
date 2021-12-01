@@ -3,14 +3,15 @@ package com.solvd.thebuildingcompany.contractors.subcontractors;
 import com.solvd.thebuildingcompany.contractors.Contractor;
 import com.solvd.thebuildingcompany.interfaces.IInstallable;
 
-import java.util.Date;
-import java.util.HashMap;
+import java.util.*;
 import java.util.logging.Logger;
 
 public class Electrician extends Contractor implements IInstallable {
 
     private String name;
     private String nameOfCompany;
+    private boolean passedInspection;
+    private int evaluationCount;
 
     public String getName() {
         return name;
@@ -33,6 +34,23 @@ public class Electrician extends Contractor implements IInstallable {
         this.nameOfCompany = nameOfCompany;
     }
 
+    public boolean isPassedInspection() {
+        return passedInspection;
+    }
+
+    public void setPassedInspection(boolean passedInspection) {
+        this.passedInspection = passedInspection;
+    }
+
+    public int getEvaluationCount() {
+        return evaluationCount;
+    }
+
+    public void setEvaluationCount(int evaluationCount) {
+        this.evaluationCount = evaluationCount;
+    }
+
+
     private final Logger logger = Logger.getLogger(Electrician.class.getName());
 
     public Electrician(String name, String nameOfCompany) {
@@ -43,14 +61,43 @@ public class Electrician extends Contractor implements IInstallable {
 
     private void installElectricalComponents() {
         final Electrician brandon = new Electrician("Brandon", "DEF Group");
-        logger.info("Brandon begins doing electrical work on the home: ");
+        logger.info("Brandon the Electrician begins doing electrical work on the home: ");
         brandon.addComponents();
     }
 
-    private boolean electricalComponentInspection() {
-        final Electrician bruce = new Electrician("Bruce", "DEF Group");
-        //monitorable interface?
-        return false;
+    private void electricalPanelFinalCheck() {
+      final Electrician robert = new Electrician("Robert", "DEF Group");
+      HashMap<String, Boolean> electricalPanelCheckList = new HashMap<>();
+      electricalPanelCheckList.put("Any electrical corrosion or oxidization of wiring?", false);
+      electricalPanelCheckList.put("Any water leakage?", true);
+      electricalPanelCheckList.put("Was there any insect or rodent nesting damage?", false);
+      electricalPanelCheckList.put("Were there any arcing wires?", false);
+      evaluationCount = 1;
+
+      ArrayList<String> listOfThingsWrong = new ArrayList<>();
+      ArrayList<String> listOfThingsRight = new ArrayList<>();
+
+          for (Map.Entry<String, Boolean> set : electricalPanelCheckList.entrySet()) {
+              while (set.getValue().equals(false) && evaluationCount < 5) {
+                  logger.info(robert.getName() + " the Electrician checked function number: " + evaluationCount + " of the electrical panel.");
+                  evaluationCount++;
+              }
+          }
+
+          for (Map.Entry<String, Boolean> failureCheck: electricalPanelCheckList.entrySet()) {
+              if (failureCheck.getValue().equals(true)){
+                  listOfThingsWrong.add(failureCheck.getKey());
+                  logger.info(Arrays.toString(listOfThingsWrong.toArray()) + ": Yes, this needs fixing before moving forward.");
+              } else {
+                  listOfThingsRight.add(failureCheck.getKey());
+                  logger.info(Arrays.toString(listOfThingsRight.toArray()) + ": No, we are all set on these functions and ready to move forward.");
+              }
+          }
+    }
+
+    public static void main(String[] args) {
+        Electrician example = new Electrician("Johnny", "Walker");
+        example.electricalPanelFinalCheck();
     }
 
     @Override

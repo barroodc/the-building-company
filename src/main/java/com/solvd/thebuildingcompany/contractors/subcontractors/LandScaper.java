@@ -2,15 +2,18 @@ package com.solvd.thebuildingcompany.contractors.subcontractors;
 
 import com.solvd.thebuildingcompany.contractors.Contractor;
 import com.solvd.thebuildingcompany.interfaces.ICleanable;
+import com.solvd.thebuildingcompany.interfaces.IPlantable;
+import com.solvd.thebuildingcompany.interfaces.ISprayable;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.logging.Logger;
 
-public class LandScaper extends Contractor implements ICleanable {
+public class LandScaper extends Contractor implements IPlantable {
 
     private String name;
     private String nameOfCompany;
+    private boolean fertilizerAdded;
 
     public String getName() {
         return name;
@@ -33,7 +36,15 @@ public class LandScaper extends Contractor implements ICleanable {
         this.nameOfCompany = nameOfCompany;
     }
 
-    private final Logger logger = Logger.getLogger(LandScaper.class.getName());
+    public boolean isFertilizerAdded() {
+        return fertilizerAdded;
+    }
+
+    public void setFertilizerAdded(boolean fertilizerAdded) {
+        this.fertilizerAdded = fertilizerAdded;
+    }
+
+    private static final Logger logger = Logger.getLogger(LandScaper.class.getName());
 
     public LandScaper(String name, String nameOfCompany) {
         super();
@@ -41,39 +52,31 @@ public class LandScaper extends Contractor implements ICleanable {
         this.setNameOfCompany(nameOfCompany);
     }
 
-    private boolean pesticidesApplied() {
-        final LandScaper kylie = new LandScaper("Kylie", "NLX Group");
-        //Sprayable interface?
-        return false;
-    }
-
-    private boolean generalMaintenanceDuties() {
-        final LandScaper preston = new LandScaper("Preston", "NLX Group");
-        return false;
-    }
-
-    private boolean applyFertilizer() {
-        final LandScaper vincent = new LandScaper("Vincent", "NLX Group");
-        return false;
-    }
-
-    private boolean maintainTheLand() {
-        final LandScaper caterina = new LandScaper("Caterina", "NLX Group");
-        return false;
-    }
-
-    private boolean plantDecorativeBushes() {
+    private void plantTheGreenery() {
         final LandScaper jeffery = new LandScaper("Jeffery", "NLX Group");
-        return false;
+        logger.info(jeffery.getName() + " the Landscaper begins planting the following greenery:");
+        jeffery.plant();
+        logger.info("Landscape work finished");
     }
 
-    private boolean plantDecorativeFlowers() {
-        final LandScaper daniel = new LandScaper("Daniel", "NLX Group");
-        return false;
+    private void applyFertilizer() {
+        final LandScaper vincent = new LandScaper("Vincent", "NLX Group");
+        if(fertilizerAdded = true){
+            logger.info(vincent.getName() + " the Landscaper applied the fertilizer successfully");
+        } else {
+            logger.info(vincent.getName() + " the Landscaper still needs to apply fertilizer");
+        }
     }
 
     @Override
-    public void cleanArea() {
+    public void plant() {
+       logger.info("Jeffery plants the grass.");
+       logger.info("Jeffery plants the trees");
+       logger.info("Jeffery plants the bushes");
+    }
 
+    public static void main(String[] args) {
+        LandScaper j = new LandScaper("j", "w");
+        j.plantTheGreenery();
     }
 }

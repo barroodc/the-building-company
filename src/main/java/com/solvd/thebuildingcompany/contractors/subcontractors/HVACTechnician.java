@@ -33,7 +33,7 @@ public class HVACTechnician extends Contractor implements IInstallable {
         this.nameOfCompany = nameOfCompany;
     }
 
-    private final Logger logger = Logger.getLogger(HVACTechnician.class.getName());
+    private static final Logger logger = Logger.getLogger(HVACTechnician.class.getName());
 
     public HVACTechnician(String name, String nameOfCompany) {
         super();
@@ -41,13 +41,14 @@ public class HVACTechnician extends Contractor implements IInstallable {
         this.setNameOfCompany(nameOfCompany);
     }
 
-    private boolean installationOfHVACUnit() {
+    private void installationOfHVACUnit() {
         final HVACTechnician sharron = new HVACTechnician("Sharron", "MNO Group");
-        return false;
+        logger.info(sharron.getName() + "beings installation of HVAC Unit in basement");
+        addComponents();
     }
 
     @Override
     public void addComponents() {
-
+      logger.info("HVAC Unit successfully installed in the basement.");
     }
 }
