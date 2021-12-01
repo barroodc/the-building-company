@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class Carpenter extends Contractor implements IInstallable, IModifiable, IFixable {
+public class Carpenter extends Contractor implements IInstallable {
 
     private String name;
     private String nameOfCompany;
@@ -86,22 +86,7 @@ public class Carpenter extends Contractor implements IInstallable, IModifiable, 
 
     }
 
-    private HashMap<String, Boolean> damagedMaterial() {
-        final Carpenter jonah = new Carpenter("Jonah", "AYR Group");
-        HashMap<String, Boolean> materialInGoodShape = new HashMap<>();
 
-        try {
-            materialInGoodShape.put("Wood for kitchen", true);
-            logger.info(jonah.getName() + ": Confirmed ");
-            Thread.sleep(2);
-            materialInGoodShape.put("Wood for Dining Room", false);
-            logger.info(jonah.getName() + "Confirmed ");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        return materialInGoodShape;
-    }
 
     @Override
     public void addComponents() {
@@ -112,13 +97,4 @@ public class Carpenter extends Contractor implements IInstallable, IModifiable, 
         logger.info("house wraps added");
     }
 
-    @Override
-    public void materialAltered() {
-        logger.info("Wood cut to appropriate length");
-    }
-
-    @Override
-    public void fixBuildingMaterial() {
-        logger.info("Search for and fix damaged material");
-    }
 }

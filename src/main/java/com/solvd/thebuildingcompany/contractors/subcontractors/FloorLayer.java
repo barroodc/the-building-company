@@ -6,12 +6,17 @@ import com.solvd.thebuildingcompany.interfaces.IInstallable;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class FloorLayer extends Contractor implements IInstallable, ICleanable {
 
     private String name;
     private String nameOfCompany;
+    int oakWoodCount;
+    int carpetSizeLength;
+    private boolean sufficientOakWood;
+    private boolean sufficientCarpet;
 
     public String getName() {
         return name;
@@ -21,17 +26,44 @@ public class FloorLayer extends Contractor implements IInstallable, ICleanable {
         this.name = name;
     }
 
-    @Override
-    protected Double earnings() {
-        return null;
-    }
-
     public String getNameOfCompany() {
         return nameOfCompany;
     }
 
     public void setNameOfCompany(String nameOfCompany) {
         this.nameOfCompany = nameOfCompany;
+    }
+
+    public int getOakWoodCount() {
+        return oakWoodCount;
+    }
+
+    public void setOakWoodCount(int oakWoodCount) {
+        this.oakWoodCount = oakWoodCount;
+    }
+
+    public boolean isSufficientCarpet() {
+        return sufficientCarpet;
+    }
+
+    public void setSufficientCarpet(boolean sufficientCarpet) {
+        this.sufficientCarpet = sufficientCarpet;
+    }
+
+    public int getCarpetSizeLength() {
+        return carpetSizeLength;
+    }
+
+    public void setCarpetSizeLength(int carpetSizeLength) {
+        this.carpetSizeLength = carpetSizeLength;
+    }
+
+    public boolean isSufficientOakWood() {
+        return sufficientOakWood;
+    }
+
+    public void setSufficientOakWood(boolean sufficientOakWood) {
+        this.sufficientOakWood = sufficientOakWood;
     }
 
     private final Logger logger = Logger.getLogger(FloorLayer.class.getName());
@@ -49,14 +81,25 @@ public class FloorLayer extends Contractor implements IInstallable, ICleanable {
 
     }
 
-    private boolean carpetInstalled() {
-        final FloorLayer pierre = new FloorLayer("Pierre", "GHI Group");
-        return false;
+    private void hardwoodFloorInstalled() {
+        oakWoodCount = 27;
+        final FloorLayer zachary = new FloorLayer("Zachary", "GHI Group");
+        if (oakWoodCount > 25) {
+            logger.info("Sufficient amount of oakWood flooring to complete the floor: " + !sufficientOakWood);
+            logger.info(zachary.getName() + " the Floor Layer installs the hardwood floors in the family room.");
+            logger.info("He also installs the hardwood floors in the living room.");
+            logger.info("Hardwood floor installation complete.");
+        }
     }
 
-    private boolean hardwoodFloorInstalled() {
-        final FloorLayer zachary = new FloorLayer("Zachary", "GHI Group");
-        return false;
+    private void carpetInstalled() {
+        carpetSizeLength = 100;
+        final FloorLayer pierre = new FloorLayer("Pierre", "GHI Group");
+        if (carpetSizeLength >= 100) {
+            logger.info("Sufficient length (in feet) or rug needed to cover all bedrooms: " + !sufficientCarpet);
+            logger.info(pierre.getName() + " the Floor Layer successfully installs rugs in all of the bedrooms.");
+            logger.info("Rug installation complete.");
+        }
     }
 
     private boolean inspectAndCleanSurface() {
@@ -87,8 +130,13 @@ public class FloorLayer extends Contractor implements IInstallable, ICleanable {
 
     }
 
+    @Override
+    protected Double earnings() {
+        return null;
+    }
+
     public static void main(String[] args) {
         FloorLayer example = new FloorLayer("Az","Dz");
-        example.flooringSystemRoots();
+        example.hardwoodFloorInstalled();
     }
 }

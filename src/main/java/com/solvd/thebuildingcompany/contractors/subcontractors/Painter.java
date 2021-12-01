@@ -48,6 +48,8 @@ public class Painter extends Contractor implements IPaintable {
 
     private HashMap<String, String> paintColorAndRoom() {
         final Painter harvey = new Painter("Harvey", "STU Group");
+        logger.info("It is now time to paint all of the rooms");
+        logger.info(harvey.getName() + " painted the first and second coat of each room with the following colors: ");
         HashMap<String, String> roomAndColor = new HashMap<>();
         roomAndColor.put("Family room", "Blue");
         roomAndColor.put("Dining room", "White");

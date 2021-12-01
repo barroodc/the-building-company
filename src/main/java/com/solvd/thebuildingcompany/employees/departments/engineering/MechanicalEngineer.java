@@ -96,12 +96,6 @@ public class MechanicalEngineer extends Employee {
         //energy calculations
     }
 
-
-    private void homeInstallations() {
-        final MechanicalEngineer julie = new MechanicalEngineer("Julie");
-        //non-smart home integrations
-    }
-
     private void hVACDesign() {
         final MechanicalEngineer nicholas = new MechanicalEngineer("Nicholas");
         logger.info("HVAC System designed by: " + nicholas.getName());

@@ -311,5 +311,76 @@ public class Main {
          logger.error(e);
         }
 
+        try {
+          ActiveConstruction paintingTheRooms = new ActiveConstruction();
+          Method paintingAllRooms = ActiveConstruction.class.getDeclaredMethod("paintingTheRooms");
+          paintingAllRooms.setAccessible(true);
+          paintingAllRooms.invoke(paintingTheRooms);
+          logger.info(paintingAllRooms);
+          Thread.sleep(5000);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+          logger.error(e);
+        }
+
+        try {
+          ActiveConstruction installingAppliances = new ActiveConstruction();
+          Method appliancesAdded = ActiveConstruction.class.getDeclaredMethod("applianceInstall");
+          appliancesAdded.setAccessible(true);
+          appliancesAdded.invoke(installingAppliances);
+          logger.info(appliancesAdded);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+           logger.error(e);
+        }
+
+        try {
+          ActiveConstruction stairCaseInstall = new ActiveConstruction();
+          Method stairCasesAdded = ActiveConstruction.class.getDeclaredMethod("stairCasesInstalled");
+          stairCasesAdded.setAccessible(true);
+          stairCasesAdded.invoke(stairCaseInstall);
+          logger.info(stairCasesAdded);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+           logger.error(e);
+        }
+
+        try {
+          ActiveConstruction hardWoodFloorInstall = new ActiveConstruction();
+          Method hardWoodFloorAdded = ActiveConstruction.class.getDeclaredMethod("hardWoodFloorInstalled");
+          hardWoodFloorAdded.setAccessible(true);
+          hardWoodFloorAdded.invoke(hardWoodFloorInstall);
+          logger.info(hardWoodFloorAdded);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+           logger.error(e);
+        }
+
+        try {
+          ActiveConstruction carpetInstallation = new ActiveConstruction();
+          Method carpetAdded = ActiveConstruction.class.getDeclaredMethod("carpetInstalled");
+          carpetAdded.setAccessible(true);
+          carpetAdded.invoke(carpetInstallation);
+          logger.info(carpetAdded);
+          Thread.sleep(5000);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+          logger.error(e);
+        }
+
+        try {
+            Inspections drainageZoneCheck = new Inspections();
+            Method propertyDrainageCheck = Inspections.class.getDeclaredMethod("propertyDrainageCheck");
+            propertyDrainageCheck.setAccessible(true);
+            propertyDrainageCheck.invoke(drainageZoneCheck);
+            logger.info(propertyDrainageCheck);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+
+        try {
+          Inspections foundationAreaCheck = new Inspections();
+          Method levelingNeededCheck = Inspections.class.getDeclaredMethod("foundationAreaCheck");
+          levelingNeededCheck.setAccessible(true);
+          levelingNeededCheck.invoke(foundationAreaCheck);
+          logger.info(levelingNeededCheck);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+           logger.error(e);
+        }
     }
 }

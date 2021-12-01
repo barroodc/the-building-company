@@ -196,6 +196,70 @@ public class ActiveConstruction implements IBasement  {
         }
     }
 
+    private void paintingTheRooms() {
+
+        try {
+           Painter ross = new Painter("Ross", "STU Group");
+           Method paintingAllRooms = Painter.class.getDeclaredMethod("paintColorAndRoom");
+           paintingAllRooms.setAccessible(true);
+           paintingAllRooms.invoke(ross);
+           logger.info(paintingAllRooms);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+    }
+
+    private void applianceInstall() {
+        try {
+            ApplianceInstaller vanessa = new ApplianceInstaller("Vanessa", "WeInstallItAll");
+            Method installAppliances = ApplianceInstaller.class.getDeclaredMethod("appliancesInstalled");
+            installAppliances.setAccessible(true);
+            installAppliances.invoke(vanessa);
+            logger.info(installAppliances);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+    }
+
+    private void stairCasesInstalled() {
+
+        try {
+          Joiner chris = new Joiner("Chris", "SOT Group");
+          Method installStaircase = Joiner.class.getDeclaredMethod("buildingStairs");
+          installStaircase.setAccessible(true);
+          installStaircase.invoke(chris);
+          logger.info(installStaircase);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+          logger.error(e);
+        }
+    }
+
+    private void hardWoodFloorInstalled() {
+
+        try {
+          FloorLayer jeffery = new FloorLayer("Jeffery", "GHI Group");
+          Method hardWoodFloorAdded = FloorLayer.class.getDeclaredMethod("hardwoodFloorInstalled");
+          hardWoodFloorAdded.setAccessible(true);
+          hardWoodFloorAdded.invoke(jeffery);
+          logger.info(hardWoodFloorAdded);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+          logger.error(e);
+        }
+    }
+
+    private void carpetInstalled() {
+
+        try {
+          FloorLayer penelope = new FloorLayer("Penelope", "GHI Group");
+          Method carpetAdded = FloorLayer.class.getDeclaredMethod("carpetInstalled");
+          carpetAdded.setAccessible(true);
+          carpetAdded.invoke(penelope);
+          logger.info(carpetAdded);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+          logger.error(e);
+        }
+    }
+
     @Override
     public void addBasement() {
         logger.info("Basement added successfully");

@@ -1,5 +1,6 @@
 package com.solvd.thebuildingcompany;
 
+import com.solvd.thebuildingcompany.contractors.subcontractors.GradingContractor;
 import com.solvd.thebuildingcompany.inspectors.CityInspector;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -59,6 +60,32 @@ public class Inspections {
           logger.info(mechanicalInspection);
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
           logger.error(e);
+        }
+    }
+
+    private void propertyDrainageCheck() {
+
+        try {
+            GradingContractor william = new GradingContractor("William", "LBV Group");
+            Method drainageAbilityCheck = GradingContractor.class.getDeclaredMethod("propertyDrainageAssured");
+            drainageAbilityCheck.setAccessible(true);
+            drainageAbilityCheck.invoke(william);
+            logger.info(drainageAbilityCheck);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+    }
+
+    private void foundationAreaCheck() {
+
+        try {
+         GradingContractor curtis = new GradingContractor("Curtis", "LBV Group");
+         Method levelingNeededCheck = GradingContractor.class.getDeclaredMethod("foundationAreaCheck");
+         levelingNeededCheck.setAccessible(true);
+         levelingNeededCheck.invoke(curtis);
+         logger.info(levelingNeededCheck);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+           logger.error(e);
         }
     }
 }
