@@ -7,9 +7,10 @@ import com.solvd.thebuildingcompany.interfaces.IPaintable;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Logger;
 
-public class Painter extends Contractor implements ICleanable, IMeasurable, IPaintable {
+public class Painter extends Contractor implements IPaintable {
 
     private String name;
     private String nameOfCompany;
@@ -36,7 +37,7 @@ public class Painter extends Contractor implements ICleanable, IMeasurable, IPai
         this.nameOfCompany = nameOfCompany;
     }
 
-    private final Logger logger = Logger.getLogger(Painter.class.getName());
+    private static final Logger logger = Logger.getLogger(Painter.class.getName());
 
     public Painter(String name, String nameOfCompany) {
         super();
@@ -44,43 +45,36 @@ public class Painter extends Contractor implements ICleanable, IMeasurable, IPai
         this.setNameOfCompany(nameOfCompany);
     }
 
-    private boolean surfacePreparation() {
-        final Painter paul = new Painter("Paul", "STU Group");
-        return false;
-    }
-
-    private double calculateAreaToPaint() {
-        final Painter steven = new Painter("Steven", "STU Group");
-        return 0;
-    }
-
-    private boolean primersAdded() {
-        final Painter brendan = new Painter("Brendan", "STU Group");
-        return false;
-    }
-
-    private boolean sealersAdded() {
-        final Painter connor = new Painter("Connor", "STU Group");
-        return false;
-    }
 
     private HashMap<String, String> paintColorAndRoom() {
         final Painter harvey = new Painter("Harvey", "STU Group");
-        return null;
+        HashMap<String, String> roomAndColor = new HashMap<>();
+        roomAndColor.put("Family room", "Blue");
+        roomAndColor.put("Dining room", "White");
+        roomAndColor.put("Living room", "Blue");
+        roomAndColor.put("Bathroom (1st Floor)", "Blue and White");
+        roomAndColor.put("Kitchen", "Blue and White");
+        roomAndColor.put("Basement", "No color/unfinished");
+        roomAndColor.put("Child Bedroom (2nd Floor)", "Black");
+        roomAndColor.put("Guest Bedroom (2nd Floor)", "Pink");
+        roomAndColor.put("Master Bedroom (2nd Floor)", "Blue and White");
+        roomAndColor.put("Master Bathroom (2nd Floor)", "Blue and White");
+        roomAndColor.put("Bathroom (2nd Floor)", "Blue and White");
+
+        for (Map.Entry<String, String> set : roomAndColor.entrySet()) {
+            logger.info(set.getKey() + " " +  set.getValue());
+        }
+        return roomAndColor;
     }
 
-    @Override
-    public void cleanArea() {
-
+    public static void main(String[] args) {
+        Painter john = new Painter("John", "Example");
+        john.paintColorAndRoom();
     }
 
-    @Override
-    public void addMeasurements() {
-
-    }
 
     @Override
     public void paintStructures() {
-
+      logger.info("paint the room");
     }
 }

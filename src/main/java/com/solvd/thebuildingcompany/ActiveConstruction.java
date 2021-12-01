@@ -2,15 +2,11 @@ package com.solvd.thebuildingcompany;
 
 import com.solvd.thebuildingcompany.contractors.subcontractors.*;
 import com.solvd.thebuildingcompany.interfaces.IBasement;
-import org.apache.log4j.spi.LoggerFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 
 public class ActiveConstruction implements IBasement  {
     private static Logger logger = LogManager.getLogger(ActiveConstruction.class);
@@ -166,6 +162,35 @@ public class ActiveConstruction implements IBasement  {
             electricalWiringComplete.setAccessible(true);
             electricalWiringComplete.invoke(frank);
             logger.info(electricalWiringComplete);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+    }
+
+    private void fiberglassAndDryWall() {
+        try {
+            DryWaller jerry = new DryWaller("Jerry", "YZW Group");
+            Method rValueCalculation = DryWaller.class.getDeclaredMethod("rValueOfInsulation");
+            Method fiberGlassAndDrywallInstall = DryWaller.class.getDeclaredMethod("fiberGlassAndDrywallInstall");
+            rValueCalculation.setAccessible(true);
+            fiberGlassAndDrywallInstall.setAccessible(true);
+            rValueCalculation.invoke(jerry);
+            fiberGlassAndDrywallInstall.invoke(jerry);
+            logger.info(rValueCalculation);
+            logger.info(fiberGlassAndDrywallInstall);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+    }
+
+    private void brickFrontInstallation() {
+
+        try {
+            SidingContractor zachary = new SidingContractor("Zachary", "NAW Group");
+            Method brickFrontInstalled = SidingContractor.class.getDeclaredMethod("installBrickSiding");
+            brickFrontInstalled.setAccessible(true);
+            brickFrontInstalled.invoke(zachary);
+            logger.info(brickFrontInstalled);
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }

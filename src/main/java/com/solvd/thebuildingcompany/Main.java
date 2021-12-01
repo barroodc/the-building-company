@@ -291,5 +291,25 @@ public class Main {
             logger.error(e);
         }
 
+        try {
+           ActiveConstruction fiberglassAndDrywall = new ActiveConstruction();
+           Method rValueCalculation = ActiveConstruction.class.getDeclaredMethod("fiberglassAndDryWall");
+           rValueCalculation.setAccessible(true);
+           rValueCalculation.invoke(fiberglassAndDrywall);
+           logger.info(rValueCalculation);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+
+        try {
+         ActiveConstruction brickSidingAdded = new ActiveConstruction();
+         Method brickFrontInstalled = ActiveConstruction.class.getDeclaredMethod("brickFrontInstallation");
+         brickFrontInstalled.setAccessible(true);
+         brickFrontInstalled.invoke(brickSidingAdded);
+         logger.info(brickFrontInstalled);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+         logger.error(e);
+        }
+
     }
 }

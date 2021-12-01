@@ -11,13 +11,18 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.logging.Logger;
 
-public class DryWaller extends Contractor implements IInstallable, IModifiable, IFixable {
+public class DryWaller extends Contractor implements IInstallable {
 
     private String name;
     private String nameOfCompany;
     private boolean dryWallPanelsAvailable;
     private boolean measurementsTook;
     private int numberOfMistakesMade;
+    private double rValue; //(degrees kelvin * meters squared) / (divided by Watts)
+    private double lambdaT; //is the temperature difference between the warmer surface and the colder surface of a barrier.
+    private double phiSubQ; // is the heat flux through the barrier.
+
+
 
 
     public String getName() {
@@ -66,7 +71,7 @@ public class DryWaller extends Contractor implements IInstallable, IModifiable, 
         this.numberOfMistakesMade = numberOfMistakesMade;
     }
 
-    private final Logger logger = Logger.getLogger(DryWaller.class.getName());
+    private static final Logger logger = Logger.getLogger(DryWaller.class.getName());
 
 
     public DryWaller(String name, String nameOfCompany) {
@@ -75,61 +80,55 @@ public class DryWaller extends Contractor implements IInstallable, IModifiable, 
         this.setNameOfCompany(nameOfCompany);
     }
 
-    private boolean drywallInstallation() {
+    private void rValueOfInsulation() {
+        //Indicates how well the insulation material resists heat transfer
+        final DryWaller steve = new DryWaller("Steve", "YZW Group");
+        lambdaT = 20.7;
+        phiSubQ = 8.12;
+        rValue = (lambdaT / phiSubQ);
+        logger.info("Now we must figure out the r value for the fiber glass insulation");
+        logger.info("Steve measured the degrees for the r value equation in degrees celsius");
+        logger.info("The current temperature outside is 5.31 degrees Celsius");
+        logger.info("The current temperature inside is 22.7 degrees Celsius");
+        logger.info("The temperature difference between outside and inside is 17.39 degrees Celsius");
+        logger.info("The heat flux through the barrier is calculated to be around 8.12 degrees Celsius");
+        if (rValue >= 2.1 && rValue <= 2.7) {
+            logger.info("This is a good r value for insulation");
+            logger.info(steve.getName() + "'s rvalue for the fiberglass is acceptable.");
+        } else {
+            logger.info("Better material for insulation is highly recommended.");
+        }
+
+    }
+
+    private void fiberGlassAndDrywallInstall() {
         final DryWaller robert = new DryWaller("Robert", "YZW Group");
         robert.setDryWallPanelsAvailable(true);
 
         if (robert.isDryWallPanelsAvailable()) {
+            logger.info("Drywall is available and ready for use");
             robert.addComponents();
-            return true;
         } else {
             logger.warning("Need to order dry wall panels");
-            return false;
         }
     }
 
-    private boolean measureDryWallPanels()  {
-        final DryWaller kevin = new DryWaller("Kevin", "YZW Group");
-        kevin.setDryWallPanelsAvailable(true);
 
-        if (kevin.isMeasurementsTook()) {
-            logger.info("Measurements have been taken");
-            return true;
-        } else {
-            logger.warning("Measurements need to be taken");
-            return false;
-        }
-    }
-
-    private HashMap<String, String> modifyMaterials() {
-        final DryWaller jerome = new DryWaller("Jerome", "YZW Group");
-        return null;
-    }
-
-
-    private ArrayList<String> mistakesToFix() {
-        final DryWaller clarance = new DryWaller("Clarance", "YZW Group");
-        clarance.setNumberOfMistakesMade(5);
-        LinkedList<String> mistakesMade = new LinkedList<>();
-        mistakesMade.add("New wood needs to be added.");
-        //Need to implement Node with LinkedList
-        //Node head, Node value, etc.
-        return null;
+    public static void main(String[] args) {
+        DryWaller example = new DryWaller("H","H");
+        example.rValueOfInsulation();
+        example.fiberGlassAndDrywallInstall();
     }
 
     @Override
     public void addComponents() {
-      logger.info("Add drywall");
-    }
-
-    @Override
-    public void materialAltered() {
-      logger.info("Cut dry wall panels");
-    }
-
-    @Override
-    public void fixBuildingMaterial() {
-         logger.info("Building material needs fixing");
+      logger.info("Add fiberglass insulation:");
+      logger.info("Fiberglass added to attic");
+      logger.info("Fiberglass added to exterior walls");
+      logger.info("Fiber glass added to basement floor");
+      logger.info("Fiber glass added to bathroom");
+      logger.info("Fiber glass added to crawl space");
+      logger.info("Now Steve adds Drywall to all rooms in the house");
     }
 
 }
