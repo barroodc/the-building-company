@@ -9,7 +9,6 @@ import java.util.logging.Logger;
 public class ResidentialContractor extends Contractor implements IInstallable {
 
     private boolean suppliesAvailable;
-    private String name;
     private String contractorCompany;
     private int totalNumberOfNeededSupplies;
 
@@ -20,14 +19,6 @@ public class ResidentialContractor extends Contractor implements IInstallable {
 
     public void setSuppliesAvailable(final boolean suppliesAvailable) {
         this.suppliesAvailable = suppliesAvailable;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(final String name) {
-        this.name = name;
     }
 
     public String getContractorCompany() {
@@ -48,10 +39,8 @@ public class ResidentialContractor extends Contractor implements IInstallable {
 
     private final Logger logger = Logger.getLogger(ResidentialContractor.class.getName());
 
-    public ResidentialContractor(final String name, final String contractorCompany) {
+    public ResidentialContractor(final String fistName, final String contractorCompany) {
         super();
-        this.setName(name);
-        this.setContractorCompany(contractorCompany);
     }
 
     private HashMap<String, String> whoOverseesConstruction() {
@@ -60,9 +49,9 @@ public class ResidentialContractor extends Contractor implements IInstallable {
         final ResidentialContractor stacy = new ResidentialContractor("Stacy", "PQR Group");
 
         final HashMap<String, String> contractorAndProject = new HashMap<>();
-        contractorAndProject.put(marcus.getName(), "New York Residential Project");
-        contractorAndProject.put(april.getName(), "New Jersey Residential Project");
-        contractorAndProject.put(stacy.getName(), "California Residential Project");
+        contractorAndProject.put(marcus.getFirstName(), "New York Residential Project");
+        contractorAndProject.put(april.getFirstName(), "New Jersey Residential Project");
+        contractorAndProject.put(stacy.getFirstName(), "California Residential Project");
 
         for (Map.Entry<String, String> set : contractorAndProject.entrySet()) {
             logger.info(set.getKey());
@@ -77,9 +66,9 @@ public class ResidentialContractor extends Contractor implements IInstallable {
         final ResidentialContractor amelia = new ResidentialContractor("Amelia", "PQR Group");
 
         final HashMap<String, String> assignedToPaperwork = new HashMap<>();
-        assignedToPaperwork.put(harry.getName(), "Site Registration Documents");
-        assignedToPaperwork.put(reginald.getName(), "Quality Control Inspection Documents");
-        assignedToPaperwork.put(amelia.getName(), "Incentive Application Documents");
+        assignedToPaperwork.put(harry.getFirstName(), "Site Registration Documents");
+        assignedToPaperwork.put(reginald.getFirstName(), "Quality Control Inspection Documents");
+        assignedToPaperwork.put(amelia.getFirstName(), "Incentive Application Documents");
 
         for (Map.Entry<String, String> set : assignedToPaperwork.entrySet()) {
             logger.info(set.getKey());
@@ -131,7 +120,7 @@ public class ResidentialContractor extends Contractor implements IInstallable {
         contractorsHired.add("TSE Group");
         contractorsHired.add("NAC Group");
 
-        hiredByJacob.put(jacob.getName(), contractorsHired);
+        hiredByJacob.put(jacob.getFirstName(), contractorsHired);
         for (Map.Entry<String, List<String>> set : hiredByJacob.entrySet()) {
             logger.info(set.getKey() + " " + "hired the following subcontractors" + " " +  set.getValue());
         }
@@ -140,7 +129,7 @@ public class ResidentialContractor extends Contractor implements IInstallable {
 
     private void lastMinuteInstallations(){
         ResidentialContractor meghan = new ResidentialContractor("Meghan", "PQR Group");
-        logger.info(meghan.getName() + "one of our Residential Contractors decided to help us save money by installing some last minute things.");
+        logger.info(meghan.getFirstName() + "one of our Residential Contractors decided to help us save money by installing some last minute things.");
         meghan.addComponents();
     }
 

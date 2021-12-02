@@ -48,18 +48,6 @@ public class ActiveConstruction implements IBasement  {
         }
     }
 
-    private void basementWorkersClockInAndOut() {
-        try {
-            ConcreteSpecialist baxter = new ConcreteSpecialist("Baxter", "NXE Group");
-            Method punchIn = ConcreteSpecialist.class.getDeclaredMethod("employeePunchIn");
-            punchIn.setAccessible(true);
-            punchIn.invoke(baxter);
-            logger.info(punchIn);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-            logger.error(e);
-        }
-    }
-
     private void basementBuilding() {
 
         try {
