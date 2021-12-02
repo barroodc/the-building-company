@@ -2,14 +2,13 @@ package com.solvd.thebuildingcompany;
 
 import com.solvd.thebuildingcompany.contractors.residential.ResidentialContractor;
 import com.solvd.thebuildingcompany.contractors.subcontractors.*;
-import com.solvd.thebuildingcompany.interfaces.IBasement;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class ActiveConstruction implements IBasement  {
+public class ActiveConstruction {
     private static Logger logger = LogManager.getLogger(ActiveConstruction.class);
 
     private void constructionSiteCleared() {
@@ -77,7 +76,6 @@ public class ActiveConstruction implements IBasement  {
            foundationFinalTouches.invoke(sebastian);
            logger.info(foundationFinalTouches);
            Thread.sleep(2000);
-           addBasement();
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
             logger.error(e);
         }
@@ -297,11 +295,5 @@ public class ActiveConstruction implements IBasement  {
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
-    }
-
-    @Override
-    public void addBasement() {
-        logger.info("Basement added successfully");
-        logger.info("Basement size: 28 feet by 34 feet");
     }
 }

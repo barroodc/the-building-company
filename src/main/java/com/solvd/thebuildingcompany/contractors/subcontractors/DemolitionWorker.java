@@ -76,6 +76,7 @@ public class DemolitionWorker extends Contractor {
     }
 
 
+
     @Override
     protected Double earnings() {
         return null;

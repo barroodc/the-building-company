@@ -78,6 +78,15 @@ public class DryWaller extends Contractor implements IInstallable {
         }
     }
 
+    //Hashcode example number 1;
+    @Override
+    public int hashCode(){
+        int hashLambda = 21;
+        int hashPhiSubQ = 7;
+
+        return hashLambda/hashPhiSubQ;
+    }
+
     @Override
     public void addComponents() {
       logger.info("Add fiberglass insulation:");

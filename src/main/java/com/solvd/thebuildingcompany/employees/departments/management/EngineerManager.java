@@ -98,6 +98,26 @@ public class EngineerManager extends Employee {
     }
 
     @Override
+    public int hashCode(){
+        final EngineerManager bobby = new EngineerManager("Bobby");
+        int hashCostEstimates = 20000000;
+        bobby.setCostEstimate(hashCostEstimates);
+
+        HashMap<String, Double> rebuildCost = new HashMap<>();
+        rebuildCost.put("Estimated cost to rebuild any of the projects: ", bobby.getCostEstimates());
+
+        rebuildCost.forEach((key, value) -> logger.info(key + value));
+
+        HashMap<String, Boolean> riskLevel = new HashMap<>();
+        riskLevel.put("Risk averse if the deal loses money?: ", bobby.isRiskAverse());
+
+        riskLevel.forEach((key, value) -> logger.info(key + value));
+
+        return hashCostEstimates;
+
+    }
+
+    @Override
     protected Double earnings() {
         return null;
     }
