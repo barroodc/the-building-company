@@ -82,9 +82,7 @@ public class ElectricalEngineer extends Employee {
         ArrayList<String> projectSetups = new ArrayList<>();
         projectSetups.add("Electrical Engineers " + erick.getName() + " " +  "and" + " " + jasmine.getName() + " " + "met with the Engineering Team: " + !erick.isDiscussionHad());
 
-        for (String discussionSet : projectSetups) {
-            logger.info(discussionSet);
-        }
+        projectSetups.forEach(logger::info);
 
         return projectSetups;
     }
@@ -99,9 +97,7 @@ public class ElectricalEngineer extends Employee {
        electricalSystemsDesigned.put("power line successfully designed", true);
        electricalSystemsDesigned.put("wall switches successfully designed", true);
 
-        for (Map.Entry<String, Boolean> set : electricalSystemsDesigned.entrySet()) {
-            logger.info(set.getKey() + " " + set.getValue());
-        }
+        electricalSystemsDesigned.forEach((key, value) -> logger.info(key + " " + value));
 
     }
 

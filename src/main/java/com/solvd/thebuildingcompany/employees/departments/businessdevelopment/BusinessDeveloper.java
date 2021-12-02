@@ -102,17 +102,11 @@ public class BusinessDeveloper extends Employee {
         projectsAssignedTo.put("Victory Lakes assigned to: ", alexander.getName());
         projectsAssignedTo.put("Sycamore Village assigned to: ", marcus.getName());
 
-        for (Map.Entry<String, String> set : developmentNumberOfHomes.entrySet()) {
-            logger.info(set.getKey() + " " + set.getValue());
-        }
+        developmentNumberOfHomes.forEach((key, value) -> logger.info(key + " " + value));
 
-        for (Map.Entry<String, String> set : developmentAndModel.entrySet()) {
-            logger.info(set.getKey() + " " + set.getValue());
-        }
+        developmentAndModel.forEach((key, value) -> logger.info(key + " " + value));
 
-        for (Map.Entry<String, String> set: projectsAssignedTo.entrySet()) {
-            logger.info(set.getKey() + set.getValue());
-        }
+        projectsAssignedTo.forEach((key, value) -> logger.info(key + value));
     }
 
     @Override

@@ -85,9 +85,7 @@ public class ProjectManager extends Employee {
         checkpoints.put("Soil Testing Passed: ", magnus.isPassedSoilTesting());
         checkpoints.put("Site Plan Created: ", magnus.isSitePlanMade());
 
-        for (Map.Entry<String, Boolean> set : checkpoints.entrySet()) {
-            logger.info(set.getKey() + " " + set.getValue());
-        }
+        checkpoints.forEach((key, value) -> logger.info(key + " " + value));
 
         return checkpoints;
     }

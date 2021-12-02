@@ -121,9 +121,7 @@ public class InteriorArchitect extends Employee {
         projectSetups.add("Interior Architects " + michael.getName() + " " +  "and" + " " + stacy.getName() + " " + "met with the Engineering Team: " + michael.isDiscussionHad());
         projectSetups.add("Met with clients and met their requirements: " + stacy.isContractHonored());
 
-        for (String discussionSet : projectSetups) {
-            logger.info(discussionSet);
-        }
+        projectSetups.forEach(logger::info);
 
         return projectSetups;
 
@@ -141,9 +139,7 @@ public class InteriorArchitect extends Employee {
         basicDesignNeeds.add("Instructions: " + francis.getDesignPlan());
         basicDesignNeeds.add("Blueprint Redrawing Required: " + !wade.isRedrawingNeeded());
 
-        for (String requirements : basicDesignNeeds) {
-            logger.info(requirements);
-        }
+        basicDesignNeeds.forEach(logger::info);
 
         return basicDesignNeeds;
     }

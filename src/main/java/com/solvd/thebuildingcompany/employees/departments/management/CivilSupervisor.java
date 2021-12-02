@@ -49,9 +49,7 @@ public class CivilSupervisor extends Employee {
         HashMap<String, Date> completionDate = new HashMap<>();
         completionDate.put("Estimated Completion Date of Active Project Victory Lakes :", date);
 
-        for (Map.Entry<String, Date> set : completionDate.entrySet()) {
-            logger.info(set.getKey() + " " + set.getValue());
-        }
+        completionDate.forEach((key, value) -> logger.info(key + " " + value));
 
         if (adam.isSurveyReady()){
             return true;

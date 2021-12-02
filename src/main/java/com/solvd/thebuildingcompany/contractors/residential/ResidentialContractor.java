@@ -53,9 +53,7 @@ public class ResidentialContractor extends Contractor implements IInstallable {
         contractorAndProject.put(april.getFirstName(), "New Jersey Residential Project");
         contractorAndProject.put(stacy.getFirstName(), "California Residential Project");
 
-        for (Map.Entry<String, String> set : contractorAndProject.entrySet()) {
-            logger.info(set.getKey());
-        }
+        contractorAndProject.forEach((key, value) -> logger.info(key));
 
         return contractorAndProject;
     }
@@ -70,9 +68,7 @@ public class ResidentialContractor extends Contractor implements IInstallable {
         assignedToPaperwork.put(reginald.getFirstName(), "Quality Control Inspection Documents");
         assignedToPaperwork.put(amelia.getFirstName(), "Incentive Application Documents");
 
-        for (Map.Entry<String, String> set : assignedToPaperwork.entrySet()) {
-            logger.info(set.getKey());
-        }
+        assignedToPaperwork.forEach((key, value) -> logger.info(key));
 
         return assignedToPaperwork;
     }
@@ -87,13 +83,9 @@ public class ResidentialContractor extends Contractor implements IInstallable {
         supplyStatus.put("Bricks", !isSuppliesAvailable());
         supplyStatus.put("Concrete", !isSuppliesAvailable());
 
-        int count = 0;
-        setTotalNumberOfNeededSupplies(6);
-        for (Map.Entry<String, Boolean> set : supplyStatus.entrySet()) {
-            if(set.getValue().equals(true)){
-                count++;
-            }
-        }
+        int count;
+        this.totalNumberOfNeededSupplies = 6;
+        count = (int) supplyStatus.entrySet().stream().filter(set -> set.getValue().equals(true)).count();
         if (count == 6) {
             logger.info("true");
             return (!elizabeth.isSuppliesAvailable());
@@ -121,9 +113,7 @@ public class ResidentialContractor extends Contractor implements IInstallable {
         contractorsHired.add("NAC Group");
 
         hiredByJacob.put(jacob.getFirstName(), contractorsHired);
-        for (Map.Entry<String, List<String>> set : hiredByJacob.entrySet()) {
-            logger.info(set.getKey() + " " + "hired the following subcontractors" + " " +  set.getValue());
-        }
+        hiredByJacob.forEach((key, value) -> logger.info(key + " " + "hired the following subcontractors" + " " + value));
         return hiredByJacob;
     }
 

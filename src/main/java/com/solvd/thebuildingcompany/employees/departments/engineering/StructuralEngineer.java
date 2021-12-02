@@ -144,9 +144,7 @@ public class StructuralEngineer extends Employee {
         ArrayList<String> projectSetups = new ArrayList<>();
         projectSetups.add("Structural Engineers " + andrew.getName() + " " +  "and" + " " + naomi.getName() + " " + "met with the Engineering Team: " + andrew.isDiscussionHad());
 
-        for (String discussionSet : projectSetups) {
-            logger.info(discussionSet);
-        }
+        projectSetups.forEach(logger::info);
 
         return projectSetups;
 
@@ -161,9 +159,7 @@ public class StructuralEngineer extends Employee {
         materials.put("Stone tested: ", clarissa.isMaterialTested());
         materials.put("Stone received a passing score: ", clarissa.isPassingTestResult());
 
-        for (Map.Entry<String, Boolean> set : materials.entrySet()) {
-            logger.info(set.getKey());
-        }
+        materials.forEach((key, value) -> logger.info(key));
 
         return materials;
     }

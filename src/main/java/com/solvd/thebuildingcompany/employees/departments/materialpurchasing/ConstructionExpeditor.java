@@ -118,9 +118,7 @@ public class ConstructionExpeditor extends Employee {
         HashMap<String, Boolean> onTimeOrders = new HashMap<>();
         onTimeOrders.put("The resource arrived on time: ", eleanor.isDeadlinesAreMade());
 
-        for (Map.Entry<String, Boolean> set : onTimeOrders.entrySet()) {
-            logger.info(set.getKey());
-        }
+        onTimeOrders.forEach((key, value) -> logger.info(key));
 
         return onTimeOrders;
     }
@@ -132,9 +130,7 @@ public class ConstructionExpeditor extends Employee {
         final HashMap<String, Boolean> onTimeOrders = new HashMap<>();
         onTimeOrders.put("Order for steel arrived on schedule: ", violet.isArrivedOnTime());
 
-        for (Map.Entry<String, Boolean> set : onTimeOrders.entrySet()) {
-            logger.info(set.getKey());
-        }
+        onTimeOrders.forEach((key, value) -> logger.info(key));
 
         return onTimeOrders;
     }

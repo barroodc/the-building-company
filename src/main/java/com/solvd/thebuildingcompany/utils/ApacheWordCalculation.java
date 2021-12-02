@@ -22,8 +22,10 @@ public class ApacheWordCalculation {
             }
         }
     }
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         ApacheWordCalculation example = new ApacheWordCalculation();
         example.uniqueWordCounter();
     }
+
+     */
 }

@@ -82,18 +82,9 @@ public class MechanicalEngineer extends Employee {
         ArrayList<String> projectSetups = new ArrayList<>();
         projectSetups.add("Mechanical Engineers " + jeniffer.getName() + " " +  "and" + " " + trevor.getName() + " " + "met with the Engineering Team: " + jeniffer.isDiscussionHad());
 
-        for (String discussionSet : projectSetups) {
-            logger.info(discussionSet);
-        }
+        projectSetups.forEach(logger::info);
 
         return projectSetups;
-    }
-
-
-    private void specifyEnergyEfficiency() {
-        final MechanicalEngineer harrison = new MechanicalEngineer("Harrison");
-        //specify energy efficiency of the home
-        //energy calculations
     }
 
     private void hVACDesign() {
@@ -112,9 +103,7 @@ public class MechanicalEngineer extends Employee {
         hVACSystemDesigned.put("Coolant Circuit component designed", true);
         hVACSystemDesigned.put("Pump component designed", true);
 
-        for (Map.Entry<String, Boolean> set : hVACSystemDesigned.entrySet()) {
-            logger.info(set.getKey() + " " + set.getValue());
-        }
+        hVACSystemDesigned.forEach((key, value) -> logger.info(key + " " + value));
     }
 
 

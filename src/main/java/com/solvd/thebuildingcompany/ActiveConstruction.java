@@ -15,16 +15,6 @@ public class ActiveConstruction implements IBasement  {
     private void constructionSiteCleared() {
 
         try {
-            DemolitionWorker nina = new DemolitionWorker("Nina", "XYZ Group");
-            Method employeePunchedIn = DemolitionWorker.class.getDeclaredMethod("employeePunchIn");
-            employeePunchedIn.setAccessible(true);
-            employeePunchedIn.invoke(nina);
-            logger.info(employeePunchedIn);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-            logger.error(e);
-        }
-
-        try {
             DemolitionWorker janet = new DemolitionWorker("Janet", "XYZ Group");
             Method siteClearOfObstruction = DemolitionWorker.class.getDeclaredMethod("demolitionOfSite");
             siteClearOfObstruction.setAccessible(true);

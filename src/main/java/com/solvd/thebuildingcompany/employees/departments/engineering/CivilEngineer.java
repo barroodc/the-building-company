@@ -140,9 +140,7 @@ public class CivilEngineer extends Employee {
         ArrayList<String> projectSetups = new ArrayList<>();
         projectSetups.add("Civil Engineers " + dora.getName() + " " +  "and" + " " + murphy.getName() + " " + "met with the Engineering Team: " + dora.isDiscussionHad());
 
-        for (String discussionSet : projectSetups) {
-            logger.info(discussionSet);
-        }
+        projectSetups.forEach(logger::info);
 
         return projectSetups;
     }
@@ -155,9 +153,7 @@ public class CivilEngineer extends Employee {
         areSitePlansMade.put("Chestnut Lakes site planning performed", false);
         areSitePlansMade.put("Victory Lakes site planning performed", false);
         areSitePlansMade.put("Sycamore Village site planning performed", true);
-        for (Map.Entry<String, Boolean> set : areSitePlansMade.entrySet()) {
-            logger.info(set.getKey() + " " + set.getValue());
-        }
+        areSitePlansMade.forEach((key, value) -> logger.info(key + " " + value));
     }
 
     private void gradeDesigning() {

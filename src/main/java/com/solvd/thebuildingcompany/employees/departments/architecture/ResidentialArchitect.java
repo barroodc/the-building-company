@@ -120,9 +120,7 @@ public class ResidentialArchitect extends Employee {
         projectSetups.add("Residential Architects " + penny.getName() + " " +  "and" + " " + cooper.getName() + " " + "met with the Engineering Team: " + penny.isDiscussionHad());
         projectSetups.add("Met with clients and met their requirements: " + cooper.isContractHonored());
 
-        for (String discussionSet : projectSetups) {
-            logger.info(discussionSet);
-        }
+        projectSetups.forEach(logger::info);
 
         return projectSetups;
     }
@@ -141,9 +139,7 @@ public class ResidentialArchitect extends Employee {
         basicDesignNeeds.add("Instructions: " + jay.getDesignPlan());
         basicDesignNeeds.add("Blueprint Redrawing Required: " + !bradly.isRedrawingNeeded());
 
-        for (String requirements : basicDesignNeeds) {
-            logger.info(requirements);
-        }
+        basicDesignNeeds.forEach(logger::info);
 
         return basicDesignNeeds;
     }

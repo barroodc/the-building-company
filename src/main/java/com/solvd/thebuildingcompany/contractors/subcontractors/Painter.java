@@ -33,9 +33,7 @@ public class Painter extends Contractor implements IPaintable {
         roomAndColor.put("Master Bathroom (2nd Floor)", "Blue and White");
         roomAndColor.put("Bathroom (2nd Floor)", "Blue and White");
 
-        for (Map.Entry<String, String> set : roomAndColor.entrySet()) {
-            logger.info(set.getKey() + " " +  set.getValue());
-        }
+        roomAndColor.forEach((key, value) -> logger.info(key + " " + value));
         return roomAndColor;
     }
 

@@ -78,16 +78,12 @@ public class EngineerManager extends Employee {
         HashMap<String, Double> rebuildCost = new HashMap<>();
         rebuildCost.put("Estimated cost to rebuild any of the projects: ", chris.getCostEstimates());
 
-        for (Map.Entry<String, Double> set : rebuildCost.entrySet()) {
-            logger.info(set.getKey() + set.getValue());
-        }
+        rebuildCost.forEach((key, value) -> logger.info(key + value));
 
         HashMap<String, Boolean> riskLevel = new HashMap<>();
         riskLevel.put("Risk averse if the deal loses money?: ", chris.isRiskAverse());
 
-        for (Map.Entry<String, Boolean> set : riskLevel.entrySet()) {
-            logger.info(set.getKey() + set.getValue());
-        }
+        riskLevel.forEach((key, value) -> logger.info(key + value));
 
         return riskLevel;
     }

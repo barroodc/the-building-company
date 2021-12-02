@@ -52,22 +52,22 @@ public class Electrician extends Contractor implements IInstallable {
       ArrayList<String> listOfThingsWrong = new ArrayList<>();
       ArrayList<String> listOfThingsRight = new ArrayList<>();
 
-          for (Map.Entry<String, Boolean> set : electricalPanelCheckList.entrySet()) {
-              while (set.getValue().equals(false) && evaluationCount < 5) {
-                  logger.info(robert.getFirstName() + " the Electrician checked function number: " + evaluationCount + " of the electrical panel.");
-                  evaluationCount++;
-              }
-          }
+        electricalPanelCheckList.forEach((key, value) -> {
+            while (value.equals(false) && evaluationCount < 5) {
+                logger.info(robert.getFirstName() + " the Electrician checked function number: " + evaluationCount + " of the electrical panel.");
+                evaluationCount++;
+            }
+        });
 
-          for (Map.Entry<String, Boolean> failureCheck: electricalPanelCheckList.entrySet()) {
-              if (failureCheck.getValue().equals(true)){
-                  listOfThingsWrong.add(failureCheck.getKey());
-                  logger.info(Arrays.toString(listOfThingsWrong.toArray()) + ": Yes, this needs fixing before moving forward.");
-              } else {
-                  listOfThingsRight.add(failureCheck.getKey());
-                  logger.info(Arrays.toString(listOfThingsRight.toArray()) + ": No, we are all set on these functions and ready to move forward.");
-              }
-          }
+        electricalPanelCheckList.forEach((key, value) -> {
+            if (value.equals(true)) {
+                listOfThingsWrong.add(key);
+                logger.info(Arrays.toString(listOfThingsWrong.toArray()) + ": Yes, this needs fixing before moving forward.");
+            } else {
+                listOfThingsRight.add(key);
+                logger.info(Arrays.toString(listOfThingsRight.toArray()) + ": No, we are all set on these functions and ready to move forward.");
+            }
+        });
     }
 
 

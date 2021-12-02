@@ -131,9 +131,7 @@ public class PlumbingEngineer extends Employee {
         ArrayList<String> projectSetups = new ArrayList<>();
         projectSetups.add("Plumbing Engineers " + donna.getName() + " " +  "and" + " " + patrick.getName() + " " + "met with the Engineering Team: " + donna.isDiscussionHad());
 
-        for (String discussionSet : projectSetups) {
-            logger.info(discussionSet);
-        }
+        projectSetups.forEach(logger::info);
 
         return projectSetups;
     }
