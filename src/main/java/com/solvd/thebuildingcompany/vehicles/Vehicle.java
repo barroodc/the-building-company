@@ -19,7 +19,7 @@ public abstract class Vehicle {
         return nameOfVehicle;
     }
 
-    public void setNameOfVehicle(String nameOfVehicle) {
+    public void setNameOfVehicle(final String nameOfVehicle) {
         this.nameOfVehicle = nameOfVehicle;
     }
 
@@ -27,7 +27,7 @@ public abstract class Vehicle {
         return operatorOfVehicle;
     }
 
-    public void setOperatorOfVehicle(String operatorOfVehicle) {
+    public void setOperatorOfVehicle(final String operatorOfVehicle) {
         this.operatorOfVehicle = operatorOfVehicle;
     }
 
@@ -35,7 +35,7 @@ public abstract class Vehicle {
         return categoryOfVehicle;
     }
 
-    public void setCategoryOfVehicle(String categoryOfVehicle) {
+    public void setCategoryOfVehicle(final String categoryOfVehicle) {
         this.categoryOfVehicle = categoryOfVehicle;
     }
 
@@ -43,7 +43,7 @@ public abstract class Vehicle {
         return manufacturer;
     }
 
-    public void setManufacturer(String manufacturer) {
+    public void setManufacturer(final String manufacturer) {
         this.manufacturer = manufacturer;
     }
 
@@ -51,7 +51,7 @@ public abstract class Vehicle {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(final String color) {
         this.color = color;
     }
 
@@ -59,15 +59,15 @@ public abstract class Vehicle {
         return yearMade;
     }
 
-    public void setYearMade(int yearMade) {
+    public void setYearMade(final int yearMade) {
         this.yearMade = yearMade;
     }
 
-    public Vehicle(String nameOfVehicle) {
+    public Vehicle(final String nameOfVehicle) {
       this.nameOfVehicle = nameOfVehicle;
     }
 
-    public Vehicle(String nameOfVehicle, String operatorOfVehicle) {
+    public Vehicle(final String nameOfVehicle, final String operatorOfVehicle) {
         this.nameOfVehicle = nameOfVehicle;
         this.operatorOfVehicle = operatorOfVehicle;
     }

@@ -1,48 +1,24 @@
 package com.solvd.thebuildingcompany.contractors.subcontractors;
 
 import com.solvd.thebuildingcompany.contractors.Contractor;
-import com.solvd.thebuildingcompany.interfaces.IDrivable;
-import com.solvd.thebuildingcompany.interfaces.IPunchIn;
-import com.solvd.thebuildingcompany.interfaces.IPunchOut;
-import com.solvd.thebuildingcompany.interfaces.IPushable;
 import com.solvd.thebuildingcompany.vehicles.Bulldozer;
 
 import java.util.*;
 import java.util.logging.Logger;
 
-public class DemolitionWorker extends Contractor implements IPunchIn, IPunchOut {
+public class DemolitionWorker extends Contractor {
 
-    private String name;
-    private String nameOfCompany;
     private boolean siteLeveled;
     private boolean siteClean;
     private boolean roadBlocksUp;
     private boolean assistanceRequired;
     private ArrayList<String> clearanceForBulldozer;
 
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
-    public String getNameOfCompany() {
-        return nameOfCompany;
-    }
-
-    public void setNameOfCompany(String nameOfCompany) {
-        this.nameOfCompany = nameOfCompany;
-    }
-
     public boolean isSiteLeveled() {
         return siteLeveled;
     }
 
-    public void setSiteLeveled(boolean siteLeveled) {
+    public void setSiteLeveled(final boolean siteLeveled) {
         this.siteLeveled = siteLeveled;
     }
 
@@ -50,7 +26,7 @@ public class DemolitionWorker extends Contractor implements IPunchIn, IPunchOut 
         return siteClean;
     }
 
-    public void setSiteClean(boolean siteClean) {
+    public void setSiteClean(final boolean siteClean) {
         this.siteClean = siteClean;
     }
 
@@ -58,7 +34,7 @@ public class DemolitionWorker extends Contractor implements IPunchIn, IPunchOut 
         return roadBlocksUp;
     }
 
-    public void setRoadBlocksUp(boolean roadBlocksUp) {
+    public void setRoadBlocksUp(final boolean roadBlocksUp) {
         this.roadBlocksUp = roadBlocksUp;
     }
 
@@ -66,7 +42,7 @@ public class DemolitionWorker extends Contractor implements IPunchIn, IPunchOut 
         return assistanceRequired;
     }
 
-    public void setAssistanceRequired(boolean assistanceRequired) {
+    public void setAssistanceRequired(final boolean assistanceRequired) {
         this.assistanceRequired = assistanceRequired;
     }
 
@@ -74,83 +50,35 @@ public class DemolitionWorker extends Contractor implements IPunchIn, IPunchOut 
         return clearanceForBulldozer;
     }
 
-    public void setClearanceForBulldozer(ArrayList<String> clearanceForBulldozer) {
+    public void setClearanceForBulldozer(final ArrayList<String> clearanceForBulldozer) {
         this.clearanceForBulldozer = clearanceForBulldozer;
     }
 
     private final Logger logger = Logger.getLogger(DemolitionWorker.class.getName());
 
-   public DemolitionWorker(String name, String nameOfCompany) {
-       super();
-       this.setName(name);
-       this.setNameOfCompany(nameOfCompany);
+   public DemolitionWorker(final String fistName, final String nameOfCompany) {
+       super(fistName,nameOfCompany);
    }
 
-
-    protected HashMap<String, Boolean> employeePunchIn() {
-        final DemolitionWorker gerald = new DemolitionWorker("Gerald", "NXE Group");
-
-        HashMap<String, Boolean> punchIn = new HashMap<>();
-        punchIn.put("Gerald",true);
-
-        for (Map.Entry<String, Boolean> set : punchIn.entrySet()) {
-            if (punchIn.containsValue(true)) {
-                gerald.punchIn();
-                logger.info(set.getKey() + "'s punch in confirmed.");
-                logger.info(set.getKey() + " is ready to work!");
-            } else {
-                logger.info(set.getKey() + "'s punch in non-existent.");
-                logger.info(set.getKey() + " needs to punch in before continuing his shift.");
-            }
-        }
-        return punchIn;
-
-    }
 
     private void demolitionOfSite() {
        final DemolitionWorker gerald = new DemolitionWorker("Gerald", "XYZ Group");
         clearanceForBulldozer = new ArrayList<>();
-        clearanceForBulldozer.add(gerald.getName());
+        clearanceForBulldozer.add(gerald.getFirstName());
 
-        if (clearanceForBulldozer.contains(gerald.getName())) {
+        if (clearanceForBulldozer.contains(gerald.getFirstName())) {
             logger.info("Begin removal of all rocks, trees, and debris from construction site.");
-            Bulldozer bulldozer = new Bulldozer("Bulldozer", gerald.getName());
+            Bulldozer bulldozer = new Bulldozer("Bulldozer", gerald.getFirstName());
             bulldozer.drive();
             bulldozer.push();
             logger.info("Site successfully cleared");
         }
     }
 
-    private boolean cleanUpSite() {
-       final DemolitionWorker christopher = new DemolitionWorker("Christopher", "XYZ Group");
-       //For end of project
-        return true;
-    }
-
-
-    protected HashMap<String, Boolean> employeePunchOut() {
-        return null;
-    }
 
     @Override
     protected Double earnings() {
         return null;
     }
 
-    public static void main(String[] args) {
-       DemolitionWorker example = new DemolitionWorker("Demo", "123");
-        example.employeePunchIn();
-       example.demolitionOfSite();
-
-    }
-
-    @Override
-    public void punchIn() {
-      logger.info("employees punch in confirmed");
-    }
-
-    @Override
-    public void punchOut() {
-      logger.info("employees punch out confirmed");
-    }
 }

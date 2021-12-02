@@ -18,7 +18,7 @@ public class ResidentialContractor extends Contractor implements IInstallable {
         return suppliesAvailable;
     }
 
-    public void setSuppliesAvailable(boolean suppliesAvailable) {
+    public void setSuppliesAvailable(final boolean suppliesAvailable) {
         this.suppliesAvailable = suppliesAvailable;
     }
 
@@ -26,7 +26,7 @@ public class ResidentialContractor extends Contractor implements IInstallable {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -34,7 +34,7 @@ public class ResidentialContractor extends Contractor implements IInstallable {
         return contractorCompany;
     }
 
-    public void setContractorCompany(String contractorCompany) {
+    public void setContractorCompany(final String contractorCompany) {
         this.contractorCompany = contractorCompany;
     }
 
@@ -42,13 +42,13 @@ public class ResidentialContractor extends Contractor implements IInstallable {
         return totalNumberOfNeededSupplies;
     }
 
-    public void setTotalNumberOfNeededSupplies(int totalNumberOfNeededSupplies) {
+    public void setTotalNumberOfNeededSupplies(final int totalNumberOfNeededSupplies) {
         this.totalNumberOfNeededSupplies = totalNumberOfNeededSupplies;
     }
 
     private final Logger logger = Logger.getLogger(ResidentialContractor.class.getName());
 
-    public ResidentialContractor(String name, String contractorCompany) {
+    public ResidentialContractor(final String name, final String contractorCompany) {
         super();
         this.setName(name);
         this.setContractorCompany(contractorCompany);

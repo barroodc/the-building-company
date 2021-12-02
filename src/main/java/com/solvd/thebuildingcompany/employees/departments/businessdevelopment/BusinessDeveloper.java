@@ -21,7 +21,7 @@ public class BusinessDeveloper extends Employee {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -29,7 +29,7 @@ public class BusinessDeveloper extends Employee {
         return costOfMaterials;
     }
 
-    public void setCostOfMaterials(double costOfMaterials) {
+    public void setCostOfMaterials(final double costOfMaterials) {
         this.costOfMaterials = costOfMaterials;
     }
 
@@ -37,7 +37,7 @@ public class BusinessDeveloper extends Employee {
         return growthRate;
     }
 
-    public void setGrowthRate(double growthRate) {
+    public void setGrowthRate(final double growthRate) {
         this.growthRate = growthRate;
     }
 
@@ -45,7 +45,7 @@ public class BusinessDeveloper extends Employee {
         return sellersMarket;
     }
 
-    public void setSellersMarket(boolean setSellersMarket) {
+    public void setSellersMarket(final boolean setSellersMarket) {
         this.sellersMarket = setSellersMarket;
     }
 
@@ -53,7 +53,7 @@ public class BusinessDeveloper extends Employee {
         return buyersMarket;
     }
 
-    public void setBuyersMarket(boolean buyersMarket) {
+    public void setBuyersMarket(final boolean buyersMarket) {
         this.buyersMarket = buyersMarket;
     }
 
@@ -61,7 +61,7 @@ public class BusinessDeveloper extends Employee {
         return developmentNumberOfHomes;
     }
 
-    public void setDevelopmentNumberOfHomes(HashMap<String, String> developmentNumberOfHomes) {
+    public void setDevelopmentNumberOfHomes(final HashMap<String, String> developmentNumberOfHomes) {
         this.developmentNumberOfHomes = developmentNumberOfHomes;
     }
 
@@ -69,7 +69,7 @@ public class BusinessDeveloper extends Employee {
         return developmentAndModel;
     }
 
-    public void setMakeAndModel(HashMap<String, String> developmentAndModel) {
+    public void setMakeAndModel(final HashMap<String, String> developmentAndModel) {
         this.developmentAndModel = developmentAndModel;
     }
 
@@ -78,7 +78,7 @@ public class BusinessDeveloper extends Employee {
 
 
 
-    public BusinessDeveloper(String name){
+    public BusinessDeveloper(final String name){
         this.setName(name);
     }
 

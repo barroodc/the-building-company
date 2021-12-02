@@ -20,7 +20,7 @@ public class MechanicalEngineer extends Employee {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -28,7 +28,7 @@ public class MechanicalEngineer extends Employee {
         return discussionHad;
     }
 
-    public void setDiscussionHad(boolean discussionHad) {
+    public void setDiscussionHad(final boolean discussionHad) {
         this.discussionHad = discussionHad;
     }
 
@@ -36,7 +36,7 @@ public class MechanicalEngineer extends Employee {
         return contractHonored;
     }
 
-    public void setContractHonored(boolean contractHonored) {
+    public void setContractHonored(final boolean contractHonored) {
         this.contractHonored = contractHonored;
     }
 
@@ -44,7 +44,7 @@ public class MechanicalEngineer extends Employee {
         return safetyCheck;
     }
 
-    public void setSafetyCheck(boolean safetyCheck) {
+    public void setSafetyCheck(final boolean safetyCheck) {
         this.safetyCheck = safetyCheck;
     }
 
@@ -52,7 +52,7 @@ public class MechanicalEngineer extends Employee {
         return regulationsMet;
     }
 
-    public void setRegulationsMet(boolean regulationsMet) {
+    public void setRegulationsMet(final boolean regulationsMet) {
         this.regulationsMet = regulationsMet;
     }
 
@@ -60,11 +60,11 @@ public class MechanicalEngineer extends Employee {
         return hVACSystemDesigned;
     }
 
-    public void sethVACSystemDesigned(HashMap<String, Boolean> hVACSystemDesigned) {
+    public void sethVACSystemDesigned(final HashMap<String, Boolean> hVACSystemDesigned) {
         this.hVACSystemDesigned = hVACSystemDesigned;
     }
 
-    public MechanicalEngineer(String name) {
+    public MechanicalEngineer(final String name) {
         this.name = name;
     }
 
@@ -115,11 +115,6 @@ public class MechanicalEngineer extends Employee {
         for (Map.Entry<String, Boolean> set : hVACSystemDesigned.entrySet()) {
             logger.info(set.getKey() + " " + set.getValue());
         }
-    }
-
-
-    private void buildingCodesFollowed() {
-        final MechanicalEngineer andrea = new MechanicalEngineer("Andrea");
     }
 
 

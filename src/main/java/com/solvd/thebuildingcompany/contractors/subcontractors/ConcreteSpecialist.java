@@ -1,24 +1,17 @@
 package com.solvd.thebuildingcompany.contractors.subcontractors;
 
-import com.solvd.thebuildingcompany.Main;
 import com.solvd.thebuildingcompany.contractors.Contractor;
 import com.solvd.thebuildingcompany.interfaces.*;
 import com.solvd.thebuildingcompany.vehicles.BackhoeLoader;
-import com.solvd.thebuildingcompany.vehicles.Bulldozer;
 import com.solvd.thebuildingcompany.vehicles.ConcretePump;
-import com.solvd.thebuildingcompany.vehicles.Vehicle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.*;
 
 public class ConcreteSpecialist extends Contractor implements IInstallable {
 
-    private String name;
-    private String nameOfCompany;
     private double measurements;
     private boolean correctAmountGathered;
     private ArrayList<String> clearanceForConcretePump;
@@ -26,28 +19,11 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
     private Calendar currentDate;
     private Calendar completionDate;
 
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getNameOfCompany() {
-        return nameOfCompany;
-    }
-
-    public void setNameOfCompany(String nameOfCompany) {
-        this.nameOfCompany= nameOfCompany;
-    }
-
     public double getMeasurements() {
         return measurements;
     }
 
-    public void setMeasurements(double measurements) {
+    public void setMeasurements(final double measurements) {
         this.measurements = measurements;
     }
 
@@ -55,7 +31,7 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
         return correctAmountGathered;
     }
 
-    public void setCorrectAmountGathered(boolean correctAmountGathered) {
+    public void setCorrectAmountGathered(final boolean correctAmountGathered) {
         this.correctAmountGathered = correctAmountGathered;
     }
 
@@ -63,7 +39,7 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
         return clearanceForConcretePump;
     }
 
-    public void setClearanceForConcretePump(ArrayList<String> clearanceForConcretePump) {
+    public void setClearanceForConcretePump(final ArrayList<String> clearanceForConcretePump) {
         this.clearanceForConcretePump = clearanceForConcretePump;
     }
 
@@ -71,7 +47,7 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
         return currentDate;
     }
 
-    public void setCurrentDate(Calendar currentDate) {
+    public void setCurrentDate(final Calendar currentDate) {
         this.currentDate = currentDate;
     }
 
@@ -79,25 +55,23 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
         return completionDate;
     }
 
-    public void setCompletionDate(Calendar completionDate) {
+    public void setCompletionDate(final Calendar completionDate) {
         this.completionDate = completionDate;
     }
 
     private static Logger logger = LogManager.getLogger(ConcreteSpecialist.class);
 
-    private static ConcretePump concretePump;
 
-    public ConcreteSpecialist(String name, String nameOfCompany) {
-        super();
-        this.setName(name);
-        this.setNameOfCompany(nameOfCompany);
+
+    public ConcreteSpecialist(final String firstName, final String nameOfCompany) {
+        super(firstName, nameOfCompany);
     }
 
 
     private void mixAndPourConcrete() {
         final ConcreteSpecialist penny = new ConcreteSpecialist("Penny", "NXE Group");
-        logger.info(penny.getName() + " " + "the concrete specialist now has to drive and pour concrete into trenches");
-        ConcretePump concretePump = new ConcretePump("Concrete Pump", penny.getName());
+        logger.info(penny.getFirstName() + " " + "the concrete specialist now has to drive and pour concrete into trenches");
+        ConcretePump concretePump = new ConcretePump("Concrete Pump", penny.getFirstName());
         concretePump.drive();
         concretePump.pour();
 
@@ -122,7 +96,7 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
         final Date dateOfCompletion = completionDate.getTime();
 
 
-        dryingProcessLog.put(hannah.getName() + " the on duty concrete specialist expects the concrete to be dry by", dateOfCompletion);
+        dryingProcessLog.put(hannah.getFirstName() + " the on duty concrete specialist expects the concrete to be dry by", dateOfCompletion);
         logger.info(dryingProcessLog.toString());
         logger.info("The current date is: " + todaysDate);
         return dryingProcessLog;
@@ -152,31 +126,12 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
 
     private void foundationFinalSteps() {
         final ConcreteSpecialist doug = new ConcreteSpecialist("Doug", "NXE Group");
-        BackhoeLoader backhoeLoader = new BackhoeLoader("Backhoe Loader", doug.getName());
+        BackhoeLoader backhoeLoader = new BackhoeLoader("Backhoe Loader", doug.getFirstName());
         backhoeLoader.dig();
         backhoeLoader.drive();
         backhoeLoader.pave();
         backhoeLoader.finishedTheJob();
 
-    }
-
-    private void spreadConcrete() {
-        final ConcreteSpecialist tiffany = new ConcreteSpecialist("Tiffany", "NXE Group");
-
-    }
-
-    private void shapeConcrete() {
-        final ConcreteSpecialist christina = new ConcreteSpecialist("Christina", "NXE Group");
-
-    }
-
-
-    public static void main(String[] args) throws IOException {
-        ConcreteSpecialist babe = new ConcreteSpecialist("Babe", "hoAndCo");
-        babe.mixAndPourConcrete();
-        babe.monitorDryingProcess();
-        babe.postDryingProcess();
-        babe.foundationFinalSteps();
     }
 
 

@@ -19,14 +19,18 @@ public abstract class Contractor {
 
     }
 
-    public Contractor(String firstName, String lastName, double paymentPerHour, double hoursWorked) {
+    public Contractor(final String firstName, final String nameOfCompany) {
+
+    }
+
+    public Contractor(final String firstName, final String lastName, final double paymentPerHour, final double hoursWorked) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.paymentPerHour = paymentPerHour;
         this.hoursWorked = hoursWorked;
     }
 
-    public Contractor (String firstName, String lastName, String email, int phoneNumber, String nameOfCompany) {
+    public Contractor (final String firstName, final String lastName, final String email, final int phoneNumber, final String nameOfCompany) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -34,7 +38,7 @@ public abstract class Contractor {
         this.nameOfCompany = nameOfCompany;
     }
 
-    public Contractor(String firstName, String lastName, String nameOfCompany, String typeOfService, HashMap<Date, Date> startAndEndDate) {
+    public Contractor(final String firstName, final String lastName, final String nameOfCompany, final String typeOfService, final HashMap<Date, Date> startAndEndDate) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.nameOfCompany = nameOfCompany;
@@ -48,7 +52,7 @@ public abstract class Contractor {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(final String firstName) {
         this.firstName = firstName;
     }
 
@@ -56,7 +60,7 @@ public abstract class Contractor {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(final String lastName) {
         this.lastName = lastName;
     }
 
@@ -64,7 +68,7 @@ public abstract class Contractor {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(final String email) {
         this.email = email;
     }
 
@@ -72,7 +76,7 @@ public abstract class Contractor {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(final int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -80,7 +84,7 @@ public abstract class Contractor {
         return paymentPerHour;
     }
 
-    public void setPaymentPerHour(double paymentPerHour) {
+    public void setPaymentPerHour(final double paymentPerHour) {
         this.paymentPerHour = paymentPerHour;
     }
 
@@ -88,7 +92,7 @@ public abstract class Contractor {
         return hoursWorked;
     }
 
-    public void setHoursWorked(double hoursWorked) {
+    public void setHoursWorked(final double hoursWorked) {
         this.hoursWorked = hoursWorked;
     }
 
@@ -96,7 +100,7 @@ public abstract class Contractor {
         return nameOfCompany;
     }
 
-    public void setNameOfCompany(String nameOfCompany) {
+    public void setNameOfCompany(final String nameOfCompany) {
         this.nameOfCompany = nameOfCompany;
     }
 
@@ -104,7 +108,7 @@ public abstract class Contractor {
         return typeOfService;
     }
 
-    public void setTypeOfService(String typeOfService) {
+    public void setTypeOfService(final String typeOfService) {
         this.typeOfService = typeOfService;
     }
 
@@ -112,7 +116,7 @@ public abstract class Contractor {
         return startAndEndDate;
     }
 
-    public void setStartAndEndDate(HashMap<Date, Date> startAndEndDate) {
+    public void setStartAndEndDate(final HashMap<Date, Date> startAndEndDate) {
         this.startAndEndDate = startAndEndDate;
     }
 }

@@ -1,6 +1,5 @@
 package com.solvd.thebuildingcompany.vehicles;
 
-import com.solvd.thebuildingcompany.employees.departments.engineering.ElectricalEngineer;
 import com.solvd.thebuildingcompany.interfaces.IDrivable;
 import com.solvd.thebuildingcompany.interfaces.IPushable;
 
@@ -10,11 +9,11 @@ public class Bulldozer extends Vehicle implements IDrivable, IPushable {
 
     private final Logger logger = Logger.getLogger(Bulldozer.class.getName());
 
-    public Bulldozer(String nameOfVehicle) {
+    public Bulldozer(final String nameOfVehicle) {
         super(nameOfVehicle);
     }
 
-    public Bulldozer(String nameOfVehicle, String operatorOfVehicle) {
+    public Bulldozer(final String nameOfVehicle, final String operatorOfVehicle) {
         super(nameOfVehicle, operatorOfVehicle);
 
     }

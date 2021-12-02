@@ -5,56 +5,23 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
+
 
 public class TheBuildingCompany {
 
-    private static Logger logger = LogManager.getLogger(TheBuildingCompany.class);
-    private ArrayList<String> locations;
+
     private ArrayList<String> typeOfConstruction;
-    private int numberOfActiveProjects;
-    private HashMap<String, String> nameOfProjectAndLocation;
-    private HashMap<String, Boolean> projectAndGovernmentApproval;
 
-    public ArrayList<String> getLocations() {
-        return locations;
-    }
-
-    public void setLocations(ArrayList<String> locations) {
-        this.locations = locations;
-    }
 
     public ArrayList<String> getTypeOfConstruction() {
         return typeOfConstruction;
     }
 
-    public void setTypeOfConstruction(ArrayList<String> typeOfConstruction) {
+    public void setTypeOfConstruction(final ArrayList<String> typeOfConstruction) {
         this.typeOfConstruction = typeOfConstruction;
     }
 
-    public int getNumberOfActiveProjects() {
-        return numberOfActiveProjects;
-    }
-
-    public void setNumberOfActiveProjects(int numberOfActiveProjects) {
-        this.numberOfActiveProjects = numberOfActiveProjects;
-    }
-
-    public HashMap<String, String> getNameOfProjectAndLocation() {
-        return nameOfProjectAndLocation;
-    }
-
-    public void setNameOfProjectAndLocation(HashMap<String, String> nameOfProjectAndLocation) {
-        this.nameOfProjectAndLocation = nameOfProjectAndLocation;
-    }
-
-    public HashMap<String, Boolean> getProjectAndGovernmentApproval() {
-        return projectAndGovernmentApproval;
-    }
-
-    public void setProjectAndGovernmentApproval(HashMap<String, Boolean> projectAndGovernmentApproval) {
-        this.projectAndGovernmentApproval = projectAndGovernmentApproval;
-    }
+    private final static Logger logger = LogManager.getLogger(TheBuildingCompany.class);
 
     private void welcomeMessage() {
         logger.info("Welcome to The Building Company");
@@ -62,7 +29,7 @@ public class TheBuildingCompany {
 
     private void ourOfficeLocations() {
        logger.info("Our office locations are as follows:");
-       locations = new ArrayList<>();
+       ArrayList<String> locations = new ArrayList<>();
        locations.add("New York");
        locations.add("California");
        locations.add("New Jersey");
@@ -85,7 +52,7 @@ public class TheBuildingCompany {
 
     private void locationAndNaming() {
         logger.info("Location and name of Suburban developments:");
-        nameOfProjectAndLocation = new HashMap<>();
+        HashMap<String, String> nameOfProjectAndLocation = new HashMap<>();
         nameOfProjectAndLocation.put("New York", "Butler Heights");
         nameOfProjectAndLocation.put("California", "Horizon Estates");
         nameOfProjectAndLocation.put("New Jersey", "Highland Hills");
@@ -96,12 +63,12 @@ public class TheBuildingCompany {
 
     private void approvalStatusOfProjects() {
         logger.info("Approval Status of Open Projects:");
-        projectAndGovernmentApproval = new HashMap<>();
+        HashMap<String, Boolean> projectAndGovernmentApproval = new HashMap<>();
         projectAndGovernmentApproval.put("Chestnut Lake ", false);
         projectAndGovernmentApproval.put("Victory Lakes ", false);
         projectAndGovernmentApproval.put("Sycamore Village ", true);
 
-        numberOfActiveProjects = 1;
+        int numberOfActiveProjects = 1;
 
         logger.info(projectAndGovernmentApproval);
         logger.info("Number of active projects: " + numberOfActiveProjects);

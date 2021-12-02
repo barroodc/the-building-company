@@ -15,7 +15,7 @@ public class CityInspector extends Inspector{
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -23,7 +23,7 @@ public class CityInspector extends Inspector{
         return inspectorSpeciality;
     }
 
-    public void setInspectorSpeciality(String inspectorSpeciality) {
+    public void setInspectorSpeciality(final String inspectorSpeciality) {
         this.inspectorSpeciality = inspectorSpeciality;
     }
 
@@ -32,7 +32,7 @@ public class CityInspector extends Inspector{
         return inspectionPassed;
     }
 
-    public void setInspectionPassed(boolean inspectionPassed) {
+    public void setInspectionPassed(final boolean inspectionPassed) {
         this.inspectionPassed = inspectionPassed;
     }
 
@@ -40,15 +40,15 @@ public class CityInspector extends Inspector{
         return numberOfViolations;
     }
 
-    public void setNumberOfViolations(int numberOfViolations) {
+    public void setNumberOfViolations(final int numberOfViolations) {
         this.numberOfViolations = numberOfViolations;
     }
 
-    public CityInspector(String name) {
+    public CityInspector(final String name) {
         this.name = name;
     }
 
-    public CityInspector(String name, String inspectorSpeciality) {
+    public CityInspector(final String name, final String inspectorSpeciality) {
         this.name = name;
         this.inspectorSpeciality = inspectorSpeciality;
     }

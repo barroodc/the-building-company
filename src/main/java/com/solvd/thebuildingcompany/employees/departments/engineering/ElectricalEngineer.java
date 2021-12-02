@@ -1,7 +1,6 @@
 package com.solvd.thebuildingcompany.employees.departments.engineering;
 
 import com.solvd.thebuildingcompany.employees.Employee;
-import com.solvd.thebuildingcompany.employees.departments.architecture.ResidentialArchitect;
 
 import java.util.*;
 import java.util.logging.Logger;
@@ -21,7 +20,7 @@ public class ElectricalEngineer extends Employee {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -29,7 +28,7 @@ public class ElectricalEngineer extends Employee {
         return discussionHad;
     }
 
-    public void setDiscussionHad(boolean discussionHad) {
+    public void setDiscussionHad(final boolean discussionHad) {
         this.discussionHad = discussionHad;
     }
 
@@ -37,7 +36,7 @@ public class ElectricalEngineer extends Employee {
         return contractHonored;
     }
 
-    public void setContractHonored(boolean contractHonored) {
+    public void setContractHonored(final boolean contractHonored) {
         this.contractHonored = contractHonored;
     }
 
@@ -45,7 +44,7 @@ public class ElectricalEngineer extends Employee {
         return safetyCheck;
     }
 
-    public void setSafetyCheck(boolean safetyCheck) {
+    public void setSafetyCheck(final boolean safetyCheck) {
         this.safetyCheck = safetyCheck;
     }
 
@@ -53,7 +52,7 @@ public class ElectricalEngineer extends Employee {
         return regulationsMet;
     }
 
-    public void setRegulationsMet(boolean regulationsMet) {
+    public void setRegulationsMet(final boolean regulationsMet) {
         this.regulationsMet = regulationsMet;
     }
 
@@ -61,11 +60,11 @@ public class ElectricalEngineer extends Employee {
         return electricalSystemsDesigned;
     }
 
-    public void setElectricalSystemsDesigned(HashMap<String, Boolean> electricalSystemsDesigned) {
+    public void setElectricalSystemsDesigned(final HashMap<String, Boolean> electricalSystemsDesigned) {
         this.electricalSystemsDesigned = electricalSystemsDesigned;
     }
 
-    public ElectricalEngineer(String name) {
+    public ElectricalEngineer(final String name) {
         this.name = name;
     }
 
@@ -104,14 +103,6 @@ public class ElectricalEngineer extends Employee {
             logger.info(set.getKey() + " " + set.getValue());
         }
 
-    }
-
-    private void managingElectricalContractors() {
-        final ElectricalEngineer vince = new ElectricalEngineer("Vince");
-    }
-
-    private void fixingElectricalProblems() {
-        final ElectricalEngineer fiona = new ElectricalEngineer("Fiona");
     }
 
     private void conductingSystemTests() {

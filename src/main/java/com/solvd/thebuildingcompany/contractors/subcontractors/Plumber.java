@@ -8,32 +8,10 @@ import org.apache.logging.log4j.Logger;
 
 public class Plumber extends Contractor implements IInstallable {
 
-    private String name;
-    private String nameOfCompany;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String getNameOfCompany() {
-        return nameOfCompany;
-    }
-
-    @Override
-    public void setNameOfCompany(String nameOfCompany) {
-        this.nameOfCompany = nameOfCompany;
-    }
-
     private static Logger logger = LogManager.getLogger(Carpenter.class);
 
-    public Plumber(String name, String nameOfCompany) {
-        this.name = name;
-        this.nameOfCompany = nameOfCompany;
+    public Plumber(final String firstName, final String nameOfCompany) {
+       super(firstName, nameOfCompany);
     }
 
     private void piping() {

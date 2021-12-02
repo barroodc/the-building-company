@@ -11,11 +11,11 @@ public class ConcretePump extends Vehicle implements IDrivable, IPourable {
 
     private String name;
 
-    public ConcretePump(String nameOfVehicle) {
+    public ConcretePump(final String nameOfVehicle) {
         super(nameOfVehicle);
     }
 
-    public ConcretePump(String nameOfVehicle, String operatorOfVehicle) {
+    public ConcretePump(final String nameOfVehicle, final String operatorOfVehicle) {
         super(nameOfVehicle, operatorOfVehicle);
 
     }
@@ -24,7 +24,7 @@ public class ConcretePump extends Vehicle implements IDrivable, IPourable {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 

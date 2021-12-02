@@ -2,7 +2,6 @@ package com.solvd.thebuildingcompany;
 
 import com.solvd.thebuildingcompany.contractors.subcontractors.Electrician;
 import com.solvd.thebuildingcompany.contractors.subcontractors.GradingContractor;
-import com.solvd.thebuildingcompany.employees.departments.materialpurchasing.ConstructionExpeditor;
 import com.solvd.thebuildingcompany.inspectors.CityInspector;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

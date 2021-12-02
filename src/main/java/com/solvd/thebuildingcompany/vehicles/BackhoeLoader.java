@@ -10,11 +10,11 @@ public class BackhoeLoader extends Vehicle implements IDrivable, IDig, IPave {
 
     private final Logger logger = Logger.getLogger(BackhoeLoader.class.getName());
 
-    public BackhoeLoader(String nameOfVehicle) {
+    public BackhoeLoader(final String nameOfVehicle) {
         super(nameOfVehicle);
     }
 
-    public BackhoeLoader(String nameOfVehicle, String operatorOfVehicle) {
+    public BackhoeLoader(final String nameOfVehicle, final String operatorOfVehicle) {
         super(nameOfVehicle, operatorOfVehicle);
 
     }

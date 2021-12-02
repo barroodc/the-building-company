@@ -3,8 +3,6 @@ package com.solvd.thebuildingcompany.employees.departments.architecture;
 import com.solvd.thebuildingcompany.employees.Employee;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.logging.Logger;
 
 public class InteriorArchitect extends Employee {
@@ -25,7 +23,7 @@ public class InteriorArchitect extends Employee {
         return discussionHad;
     }
 
-    public void setDiscussionHad(boolean discussionHad) {
+    public void setDiscussionHad(final boolean discussionHad) {
         this.discussionHad = discussionHad;
     }
 
@@ -33,7 +31,7 @@ public class InteriorArchitect extends Employee {
         return contractHonored;
     }
 
-    public void setContractHonored(boolean contractHonored) {
+    public void setContractHonored(final boolean contractHonored) {
         this.contractHonored = contractHonored;
     }
 
@@ -41,7 +39,7 @@ public class InteriorArchitect extends Employee {
         return safetyCheck;
     }
 
-    public void setSafetyCheck(boolean safetyCheck) {
+    public void setSafetyCheck(final boolean safetyCheck) {
         this.safetyCheck = safetyCheck;
     }
 
@@ -49,7 +47,7 @@ public class InteriorArchitect extends Employee {
         return regulationsMet;
     }
 
-    public void setRegulationsMet(boolean regulationsMet) {
+    public void setRegulationsMet(final boolean regulationsMet) {
         this.regulationsMet = regulationsMet;
     }
 
@@ -57,7 +55,7 @@ public class InteriorArchitect extends Employee {
         return designPlan;
     }
 
-    public void setDesignPlan(String designPlan) {
+    public void setDesignPlan(final String designPlan) {
         this.designPlan = designPlan;
     }
 
@@ -65,7 +63,7 @@ public class InteriorArchitect extends Employee {
         return redrawingNeeded;
     }
 
-    public void setRedrawingNeeded(boolean redrawingNeeded) {
+    public void setRedrawingNeeded(final boolean redrawingNeeded) {
         this.redrawingNeeded = redrawingNeeded;
     }
 
@@ -73,7 +71,7 @@ public class InteriorArchitect extends Employee {
         return materialCost;
     }
 
-    public void setMaterialCost(double materialCost) {
+    public void setMaterialCost(final double materialCost) {
         this.materialCost = materialCost;
     }
 
@@ -81,7 +79,7 @@ public class InteriorArchitect extends Employee {
         return analysisReport;
     }
 
-    public void setAnalysisReport(String analysisReport) {
+    public void setAnalysisReport(final String analysisReport) {
         this.analysisReport = analysisReport;
     }
 
@@ -89,7 +87,7 @@ public class InteriorArchitect extends Employee {
         return renegotiation;
     }
 
-    public void setRenegotiation(boolean renegotiation) {
+    public void setRenegotiation(final boolean renegotiation) {
         this.renegotiation = renegotiation;
     }
 
@@ -97,13 +95,13 @@ public class InteriorArchitect extends Employee {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
     private final Logger logger = Logger.getLogger(InteriorArchitect.class.getName());
 
-    public InteriorArchitect(String name) {
+    public InteriorArchitect(final String name) {
         this.setName(name);
     }
 

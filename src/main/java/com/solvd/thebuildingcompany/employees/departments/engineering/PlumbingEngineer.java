@@ -3,8 +3,6 @@ package com.solvd.thebuildingcompany.employees.departments.engineering;
 import com.solvd.thebuildingcompany.employees.Employee;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.logging.Logger;
 
 public class PlumbingEngineer extends Employee {
@@ -28,7 +26,7 @@ public class PlumbingEngineer extends Employee {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -36,7 +34,7 @@ public class PlumbingEngineer extends Employee {
         return statusReport;
     }
 
-    public void setStatusReport(String statusReport) {
+    public void setStatusReport(final String statusReport) {
         this.statusReport = statusReport;
     }
 
@@ -44,7 +42,7 @@ public class PlumbingEngineer extends Employee {
         return inspectionDone;
     }
 
-    public void setInspectionDone(boolean inspectionDone) {
+    public void setInspectionDone(final boolean inspectionDone) {
         this.inspectionDone = inspectionDone;
     }
 
@@ -52,7 +50,7 @@ public class PlumbingEngineer extends Employee {
         return correctSystem;
     }
 
-    public void setCorrectSystem(boolean correctSystem) {
+    public void setCorrectSystem(final boolean correctSystem) {
         this.correctSystem = correctSystem;
     }
 
@@ -60,7 +58,7 @@ public class PlumbingEngineer extends Employee {
         return correctEquipment;
     }
 
-    public void setCorrectEquipment(boolean correctEquipment) {
+    public void setCorrectEquipment(final boolean correctEquipment) {
         this.correctEquipment = correctEquipment;
     }
 
@@ -68,7 +66,7 @@ public class PlumbingEngineer extends Employee {
         return designDeveloped;
     }
 
-    public void setDesignDeveloped(boolean designDeveloped) {
+    public void setDesignDeveloped(final boolean designDeveloped) {
         this.designDeveloped = designDeveloped;
     }
 
@@ -76,13 +74,13 @@ public class PlumbingEngineer extends Employee {
         return plumbingActive;
     }
 
-    public void setPlumbingActive(boolean plumbingActive) {
+    public void setPlumbingActive(final boolean plumbingActive) {
         this.plumbingActive = plumbingActive;
     }
 
     private final Logger logger = Logger.getLogger(PlumbingEngineer.class.getName());
 
-    public PlumbingEngineer(String name) {
+    public PlumbingEngineer(final String name) {
         this.setName(name);
     }
 
@@ -90,7 +88,7 @@ public class PlumbingEngineer extends Employee {
         return discussionHad;
     }
 
-    public void setDiscussionHad(boolean discussionHad) {
+    public void setDiscussionHad(final boolean discussionHad) {
         this.discussionHad = discussionHad;
     }
 
@@ -98,7 +96,7 @@ public class PlumbingEngineer extends Employee {
         return contractHonored;
     }
 
-    public void setContractHonored(boolean contractHonored) {
+    public void setContractHonored(final boolean contractHonored) {
         this.contractHonored = contractHonored;
     }
 
@@ -106,7 +104,7 @@ public class PlumbingEngineer extends Employee {
         return safetyCheck;
     }
 
-    public void setSafetyCheck(boolean safetyCheck) {
+    public void setSafetyCheck(final boolean safetyCheck) {
         this.safetyCheck = safetyCheck;
     }
 
@@ -114,7 +112,7 @@ public class PlumbingEngineer extends Employee {
         return regulationsMet;
     }
 
-    public void setRegulationsMet(boolean regulationsMet) {
+    public void setRegulationsMet(final boolean regulationsMet) {
         this.regulationsMet = regulationsMet;
     }
 
@@ -150,23 +148,6 @@ public class PlumbingEngineer extends Employee {
         logger.info("Sanitary Drainage System Designed: " + true);
         logger.info("Stormwater Drainage System Designed: " + true);
         logger.info("Portable Water Drainage System Designed: " + true);
-    }
-
-    private void designingWaterSupplySystems() {
-        final PlumbingEngineer kyle = new PlumbingEngineer("Kyle");
-        //drawings prepared
-        //Water source
-        //purification and treatment facilities
-        //transmission and distribution systems
-        //storage systems
-        //pumping stations
-        //accessories - valves, service lines, generators, meters, fire hydrants (ensures smoothly running system).
-        //design prepared
-    }
-
-    private void evaluateTestReports() {
-        final PlumbingEngineer greggory = new PlumbingEngineer("Greggory");
-
     }
 
 

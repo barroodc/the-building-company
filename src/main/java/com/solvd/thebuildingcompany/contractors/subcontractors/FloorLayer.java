@@ -1,44 +1,22 @@
 package com.solvd.thebuildingcompany.contractors.subcontractors;
 
 import com.solvd.thebuildingcompany.contractors.Contractor;
-import com.solvd.thebuildingcompany.interfaces.ICleanable;
 import com.solvd.thebuildingcompany.interfaces.IInstallable;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Scanner;
 import java.util.logging.Logger;
 
-public class FloorLayer extends Contractor implements IInstallable, ICleanable {
+public class FloorLayer extends Contractor implements IInstallable {
 
-    private String name;
-    private String nameOfCompany;
     int oakWoodCount;
     int carpetSizeLength;
     private boolean sufficientOakWood;
     private boolean sufficientCarpet;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getNameOfCompany() {
-        return nameOfCompany;
-    }
-
-    public void setNameOfCompany(String nameOfCompany) {
-        this.nameOfCompany = nameOfCompany;
-    }
-
     public int getOakWoodCount() {
         return oakWoodCount;
     }
 
-    public void setOakWoodCount(int oakWoodCount) {
+    public void setOakWoodCount(final int oakWoodCount) {
         this.oakWoodCount = oakWoodCount;
     }
 
@@ -46,7 +24,7 @@ public class FloorLayer extends Contractor implements IInstallable, ICleanable {
         return sufficientCarpet;
     }
 
-    public void setSufficientCarpet(boolean sufficientCarpet) {
+    public void setSufficientCarpet(final boolean sufficientCarpet) {
         this.sufficientCarpet = sufficientCarpet;
     }
 
@@ -54,7 +32,7 @@ public class FloorLayer extends Contractor implements IInstallable, ICleanable {
         return carpetSizeLength;
     }
 
-    public void setCarpetSizeLength(int carpetSizeLength) {
+    public void setCarpetSizeLength(final int carpetSizeLength) {
         this.carpetSizeLength = carpetSizeLength;
     }
 
@@ -62,16 +40,14 @@ public class FloorLayer extends Contractor implements IInstallable, ICleanable {
         return sufficientOakWood;
     }
 
-    public void setSufficientOakWood(boolean sufficientOakWood) {
+    public void setSufficientOakWood(final boolean sufficientOakWood) {
         this.sufficientOakWood = sufficientOakWood;
     }
 
     private final Logger logger = Logger.getLogger(FloorLayer.class.getName());
 
-    public FloorLayer(String name, String nameOfCompany) {
-        super();
-        this.setName(name);
-        this.setNameOfCompany(nameOfCompany);
+    public FloorLayer(final String firstName, final String nameOfCompany) {
+        super(firstName, nameOfCompany);
     }
 
     private void flooringSystemRoots() {
@@ -86,7 +62,7 @@ public class FloorLayer extends Contractor implements IInstallable, ICleanable {
         final FloorLayer zachary = new FloorLayer("Zachary", "GHI Group");
         if (oakWoodCount > 25) {
             logger.info("Sufficient amount of oakWood flooring to complete the floor: " + !sufficientOakWood);
-            logger.info(zachary.getName() + " the Floor Layer installs the hardwood floors in the family room.");
+            logger.info(zachary.getFirstName() + " the Floor Layer installs the hardwood floors in the family room.");
             logger.info("He also installs the hardwood floors in the living room.");
             logger.info("Hardwood floor installation complete.");
         }
@@ -97,19 +73,9 @@ public class FloorLayer extends Contractor implements IInstallable, ICleanable {
         final FloorLayer pierre = new FloorLayer("Pierre", "GHI Group");
         if (carpetSizeLength >= 100) {
             logger.info("Sufficient length (in feet) or carpet needed to cover all bedrooms: " + !sufficientCarpet);
-            logger.info(pierre.getName() + " the Floor Layer successfully installs carpets in all of the bedrooms.");
+            logger.info(pierre.getFirstName() + " the Floor Layer successfully installs carpets in all of the bedrooms.");
             logger.info("carpet installation complete.");
         }
-    }
-
-    private boolean inspectAndCleanSurface() {
-        final FloorLayer robert = new FloorLayer("Robert", "GHI Group");
-        return false;
-    }
-
-    private boolean flooringMaterialsOrdered() {
-        final FloorLayer terrance = new FloorLayer("Terrance", "GHI Group");
-        return false;
     }
 
     @Override
@@ -125,18 +91,10 @@ public class FloorLayer extends Contractor implements IInstallable, ICleanable {
         logger.info("sill installed");
     }
 
-    @Override
-    public void cleanArea() {
-
-    }
 
     @Override
     protected Double earnings() {
         return null;
     }
 
-    public static void main(String[] args) {
-        FloorLayer example = new FloorLayer("Az","Dz");
-        example.hardwoodFloorInstalled();
-    }
 }

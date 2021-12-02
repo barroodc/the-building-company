@@ -21,7 +21,7 @@ public class ProjectManager extends Employee {
         return positiveFeedback;
     }
 
-    public void setPositiveFeedback(boolean positiveFeedback) {
+    public void setPositiveFeedback(final boolean positiveFeedback) {
         this.positiveFeedback = positiveFeedback;
     }
 
@@ -29,7 +29,7 @@ public class ProjectManager extends Employee {
         return passedSoilTesting;
     }
 
-    public void setPassedSoilTesting(boolean passedSoilTesting) {
+    public void setPassedSoilTesting(final boolean passedSoilTesting) {
         this.passedSoilTesting = passedSoilTesting;
     }
 
@@ -37,7 +37,7 @@ public class ProjectManager extends Employee {
         return sitePlanMade;
     }
 
-    public void setSitePlanMade(boolean sitePlanMade) {
+    public void setSitePlanMade(final boolean sitePlanMade) {
         this.sitePlanMade = sitePlanMade;
     }
 
@@ -45,7 +45,7 @@ public class ProjectManager extends Employee {
         return resourcesAcquired;
     }
 
-    public void setResourcesAcquired(boolean resourcesAcquired) {
+    public void setResourcesAcquired(final boolean resourcesAcquired) {
         this.resourcesAcquired = resourcesAcquired;
     }
 
@@ -53,7 +53,7 @@ public class ProjectManager extends Employee {
         return itemsReturned;
     }
 
-    public void setItemsReturned(boolean itemsReturned) {
+    public void setItemsReturned(final boolean itemsReturned) {
         this.itemsReturned = itemsReturned;
     }
 
@@ -61,13 +61,13 @@ public class ProjectManager extends Employee {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
     private final Logger logger = Logger.getLogger(ProjectManager.class.getName());
 
-    public ProjectManager(String name) {
+    public ProjectManager(final String name) {
         this.name = name;
     }
 

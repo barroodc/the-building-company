@@ -3,7 +3,6 @@ package com.solvd.thebuildingcompany;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import com.solvd.thebuildingcompany.contractors.subcontractors.ConcreteSpecialist;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

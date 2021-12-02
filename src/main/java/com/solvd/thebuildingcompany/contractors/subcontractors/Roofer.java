@@ -2,46 +2,15 @@ package com.solvd.thebuildingcompany.contractors.subcontractors;
 
 import com.solvd.thebuildingcompany.contractors.Contractor;
 import com.solvd.thebuildingcompany.interfaces.IInstallable;
-import com.solvd.thebuildingcompany.interfaces.IMeasurable;
-import com.solvd.thebuildingcompany.interfaces.IMonitorable;
 
-import java.util.Date;
-import java.util.HashMap;
 import java.util.logging.Logger;
 
-public class Roofer extends Contractor implements IMonitorable, IMeasurable, IInstallable {
-
-    private String name;
-    private String nameOfCompany;
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    protected Double earnings() {
-        return null;
-    }
-
-    public String getNameOfCompany() {
-        return nameOfCompany;
-    }
-
-    public void setNameOfCompany(String nameOfCompany) {
-        this.nameOfCompany = nameOfCompany;
-    }
+public class Roofer extends Contractor implements IInstallable {
 
     private final Logger logger = Logger.getLogger(Roofer.class.getName());
 
-    public Roofer(String name, String nameOfCompany) {
-        super();
-        this.setName(name);
-        this.setNameOfCompany(nameOfCompany);
+    public Roofer(final String firstName, final String nameOfCompany) {
+        super(firstName, nameOfCompany);
     }
 
     private boolean roofPreInspections() {
@@ -54,16 +23,6 @@ public class Roofer extends Contractor implements IMonitorable, IMeasurable, IIn
         logger.info("Brian the Roofer begins installing the roof");
         brian.addComponents();
         logger.info("Brian completes the installation of the Roof");
-    }
-
-    @Override
-    public void monitorProcess() {
-
-    }
-
-    @Override
-    public void addMeasurements() {
-
     }
 
     @Override
@@ -85,5 +44,10 @@ public class Roofer extends Contractor implements IMonitorable, IMeasurable, IIn
       logger.info("spaced sheathing installed");
       logger.info("shingles added");
       logger.info("chimney with flashing installed");
+    }
+
+    @Override
+    protected Double earnings() {
+        return null;
     }
 }

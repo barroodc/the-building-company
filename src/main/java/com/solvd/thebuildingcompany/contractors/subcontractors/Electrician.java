@@ -8,37 +8,14 @@ import java.util.logging.Logger;
 
 public class Electrician extends Contractor implements IInstallable {
 
-    private String name;
-    private String nameOfCompany;
     private boolean passedInspection;
     private int evaluationCount;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    protected Double earnings() {
-        return null;
-    }
-
-    public String getNameOfCompany() {
-        return nameOfCompany;
-    }
-
-    public void setNameOfCompany(String nameOfCompany) {
-        this.nameOfCompany = nameOfCompany;
-    }
 
     public boolean isPassedInspection() {
         return passedInspection;
     }
 
-    public void setPassedInspection(boolean passedInspection) {
+    public void setPassedInspection(final boolean passedInspection) {
         this.passedInspection = passedInspection;
     }
 
@@ -46,17 +23,15 @@ public class Electrician extends Contractor implements IInstallable {
         return evaluationCount;
     }
 
-    public void setEvaluationCount(int evaluationCount) {
+    public void setEvaluationCount(final int evaluationCount) {
         this.evaluationCount = evaluationCount;
     }
 
 
     private final Logger logger = Logger.getLogger(Electrician.class.getName());
 
-    public Electrician(String name, String nameOfCompany) {
-        super();
-        this.setName(name);
-        this.setNameOfCompany(nameOfCompany);
+    public Electrician(final String firstName, final String nameOfCompany) {
+        super(firstName, nameOfCompany);
     }
 
     private void installElectricalComponents() {
@@ -79,7 +54,7 @@ public class Electrician extends Contractor implements IInstallable {
 
           for (Map.Entry<String, Boolean> set : electricalPanelCheckList.entrySet()) {
               while (set.getValue().equals(false) && evaluationCount < 5) {
-                  logger.info(robert.getName() + " the Electrician checked function number: " + evaluationCount + " of the electrical panel.");
+                  logger.info(robert.getFirstName() + " the Electrician checked function number: " + evaluationCount + " of the electrical panel.");
                   evaluationCount++;
               }
           }
@@ -95,10 +70,6 @@ public class Electrician extends Contractor implements IInstallable {
           }
     }
 
-    public static void main(String[] args) {
-        Electrician example = new Electrician("Johnny", "Walker");
-        example.electricalPanelFinalCheck();
-    }
 
     @Override
     public void addComponents() {
@@ -106,5 +77,10 @@ public class Electrician extends Contractor implements IInstallable {
       logger.info("ductwork for HVAC system applied");
       logger.info("receptacles for outlets are installed");
       logger.info("lights and switches are installed");
+    }
+
+    @Override
+    protected Double earnings() {
+        return null;
     }
 }

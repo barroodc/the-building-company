@@ -17,7 +17,7 @@ public class CivilSupervisor extends Employee {
         return surveyReady;
     }
 
-    public void setSurveyReady(boolean surveyReady) {
+    public void setSurveyReady(final boolean surveyReady) {
         this.surveyReady = surveyReady;
     }
 
@@ -25,13 +25,13 @@ public class CivilSupervisor extends Employee {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
     private final Logger logger = Logger.getLogger(CivilSupervisor.class.getName());
 
-    public CivilSupervisor(String name) {
+    public CivilSupervisor(final String name) {
         this.setName(name);
     }
 

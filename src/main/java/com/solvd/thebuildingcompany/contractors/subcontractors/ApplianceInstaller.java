@@ -6,39 +6,16 @@ import com.solvd.thebuildingcompany.interfaces.IInstallable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Date;
-import java.util.HashMap;
 
 public class ApplianceInstaller extends Contractor implements IInstallable {
 
-    private String name;
-    private String nameOfCompany;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String getNameOfCompany() {
-        return nameOfCompany;
-    }
-
-    @Override
-    public void setNameOfCompany(String nameOfCompany) {
-        this.nameOfCompany = nameOfCompany;
+    public ApplianceInstaller(final String firstName, final String nameOfCompany) {
+        super(firstName,nameOfCompany);
     }
 
     private static Logger logger = LogManager.getLogger(ActiveConstruction.class);
 
-
-    public ApplianceInstaller(String name, String nameOfCompany) {
-        this.name = name;
-        this.nameOfCompany = nameOfCompany;
-    }
 
     public void appliancesInstalled() {
        final ApplianceInstaller georgina = new ApplianceInstaller("Georgina", "WeInstallItAll");

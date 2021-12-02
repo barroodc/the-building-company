@@ -1,8 +1,6 @@
 package com.solvd.thebuildingcompany.employees.departments.engineering;
 
 import com.solvd.thebuildingcompany.employees.Employee;
-import com.solvd.thebuildingcompany.employees.departments.architecture.ResidentialArchitect;
-import com.solvd.thebuildingcompany.employees.departments.management.CivilSupervisor;
 
 import java.util.*;
 import java.util.logging.Logger;
@@ -26,7 +24,7 @@ public class CivilEngineer extends Employee {
         return statusReport;
     }
 
-    public void setStatusReport(String statusReport) {
+    public void setStatusReport(final String statusReport) {
         this.statusReport = statusReport;
     }
 
@@ -34,7 +32,7 @@ public class CivilEngineer extends Employee {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -42,7 +40,7 @@ public class CivilEngineer extends Employee {
         return projectCompleted;
     }
 
-    public void setProjectCompleted(double projectCompleted) {
+    public void setProjectCompleted(final double projectCompleted) {
         this.projectCompleted = projectCompleted;
     }
 
@@ -50,7 +48,7 @@ public class CivilEngineer extends Employee {
         return inspectionDone;
     }
 
-    public void setInspectionDone(boolean inspectionDone) {
+    public void setInspectionDone(final boolean inspectionDone) {
         this.inspectionDone = inspectionDone;
     }
 
@@ -58,7 +56,7 @@ public class CivilEngineer extends Employee {
         return permitSent;
     }
 
-    public void setPermitSent(boolean permitSent) {
+    public void setPermitSent(final boolean permitSent) {
         this.permitSent = permitSent;
     }
 
@@ -66,7 +64,7 @@ public class CivilEngineer extends Employee {
         return setPermitAccepted;
     }
 
-    public void setSetPermitAccepted(boolean setPermitAccepted) {
+    public void setSetPermitAccepted(final boolean setPermitAccepted) {
         this.setPermitAccepted = setPermitAccepted;
     }
 
@@ -74,11 +72,11 @@ public class CivilEngineer extends Employee {
         return softwareInstalled;
     }
 
-    public void setSoftwareInstalled(boolean softwareInstalled) {
+    public void setSoftwareInstalled(final boolean softwareInstalled) {
         this.softwareInstalled = softwareInstalled;
     }
 
-    public void setProjectCompleted(Double projectCompleted) {
+    public void setProjectCompleted(final Double projectCompleted) {
         this.projectCompleted = projectCompleted;
     }
 
@@ -94,15 +92,15 @@ public class CivilEngineer extends Employee {
         return safetyCheck;
     }
 
-    public void setSafetyCheck(boolean safetyCheck) {
+    public void setSafetyCheck(final boolean safetyCheck) {
         this.safetyCheck = safetyCheck;
     }
 
-    public void setContractHonored(boolean contractHonored) {
+    public void setContractHonored(final boolean contractHonored) {
         this.contractHonored = contractHonored;
     }
 
-    public void setDiscussionHad(boolean discussionHad) {
+    public void setDiscussionHad(final boolean discussionHad) {
         this.discussionHad = discussionHad;
     }
 
@@ -110,7 +108,7 @@ public class CivilEngineer extends Employee {
         return regulationsMet;
     }
 
-    public void setRegulationsMet(boolean regulationsMet) {
+    public void setRegulationsMet(final boolean regulationsMet) {
         this.regulationsMet = regulationsMet;
     }
 
@@ -118,13 +116,13 @@ public class CivilEngineer extends Employee {
         return areSitePlansMade;
     }
 
-    public void setAreSitePlansMade(HashMap<String, Boolean> areSitePlansMade) {
+    public void setAreSitePlansMade(final HashMap<String, Boolean> areSitePlansMade) {
         this.areSitePlansMade = areSitePlansMade;
     }
 
     private final Logger logger = Logger.getLogger(CivilEngineer.class.getName());
 
-    public CivilEngineer(String name) {
+    public CivilEngineer(final String name) {
         this.setName(name);
     }
 
@@ -190,11 +188,6 @@ public class CivilEngineer extends Employee {
 
     private void erosionControlPermitHandling() {
        final CivilEngineer jason = new CivilEngineer("Jason");
-    }
-
-    public static void main(String[] args) {
-        CivilEngineer example = new CivilEngineer("example");
-        example.sitePlanning();
     }
 
     @Override

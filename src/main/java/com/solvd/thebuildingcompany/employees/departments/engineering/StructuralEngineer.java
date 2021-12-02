@@ -22,7 +22,7 @@ public class StructuralEngineer extends Employee {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -30,7 +30,7 @@ public class StructuralEngineer extends Employee {
         return materialTested;
     }
 
-    public void setMaterialTested(boolean materialTested) {
+    public void setMaterialTested(final boolean materialTested) {
         this.materialTested = materialTested;
     }
 
@@ -38,7 +38,7 @@ public class StructuralEngineer extends Employee {
         return passingTestResult;
     }
 
-    public void setPassingTestResult(boolean passingTestResult) {
+    public void setPassingTestResult(final boolean passingTestResult) {
         this.passingTestResult = passingTestResult;
     }
 
@@ -46,7 +46,7 @@ public class StructuralEngineer extends Employee {
         return testingPerformed;
     }
 
-    public void setTestingPerformed(boolean testingPerformed) {
+    public void setTestingPerformed(final boolean testingPerformed) {
         this.testingPerformed = testingPerformed;
     }
 
@@ -54,7 +54,7 @@ public class StructuralEngineer extends Employee {
         return areaBuildReady;
     }
 
-    public void setAreaBuildReady(boolean areaBuildReady) {
+    public void setAreaBuildReady(final boolean areaBuildReady) {
         this.areaBuildReady = areaBuildReady;
     }
 
@@ -62,7 +62,7 @@ public class StructuralEngineer extends Employee {
         return timelyDelivery;
     }
 
-    public void setTimelyDelivery(boolean timelyDelivery) {
+    public void setTimelyDelivery(final boolean timelyDelivery) {
         this.timelyDelivery = timelyDelivery;
     }
 
@@ -70,7 +70,7 @@ public class StructuralEngineer extends Employee {
         return discussionHad;
     }
 
-    public void setDiscussionHad(boolean discussionHad) {
+    public void setDiscussionHad(final boolean discussionHad) {
         this.discussionHad = discussionHad;
     }
 
@@ -78,7 +78,7 @@ public class StructuralEngineer extends Employee {
         return contractHonored;
     }
 
-    public void setContractHonored(boolean contractHonored) {
+    public void setContractHonored(final boolean contractHonored) {
         this.contractHonored = contractHonored;
     }
 
@@ -86,7 +86,7 @@ public class StructuralEngineer extends Employee {
         return safetyCheck;
     }
 
-    public void setSafetyCheck(boolean safetyCheck) {
+    public void setSafetyCheck(final boolean safetyCheck) {
         this.safetyCheck = safetyCheck;
     }
 
@@ -94,13 +94,13 @@ public class StructuralEngineer extends Employee {
         return regulationsMet;
     }
 
-    public void setRegulationsMet(boolean regulationsMet) {
+    public void setRegulationsMet(final boolean regulationsMet) {
         this.regulationsMet = regulationsMet;
     }
 
     private final Logger logger = Logger.getLogger(StructuralEngineer.class.getName());
 
-    public StructuralEngineer(String name) {
+    public StructuralEngineer(final String name) {
         this.setName(name);
     }
 

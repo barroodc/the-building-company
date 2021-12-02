@@ -1,55 +1,25 @@
 package com.solvd.thebuildingcompany.contractors.subcontractors;
 
 import com.solvd.thebuildingcompany.contractors.Contractor;
-import com.solvd.thebuildingcompany.interfaces.ICleanable;
-import com.solvd.thebuildingcompany.interfaces.IMeasurable;
 import com.solvd.thebuildingcompany.interfaces.IPaintable;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
 public class Painter extends Contractor implements IPaintable {
 
-    private String name;
-    private String nameOfCompany;
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    protected Double earnings() {
-        return null;
-    }
-
-    public String getNameOfCompany() {
-        return nameOfCompany;
-    }
-
-    public void setNameOfCompany(String nameOfCompany) {
-        this.nameOfCompany = nameOfCompany;
-    }
-
     private static final Logger logger = Logger.getLogger(Painter.class.getName());
 
-    public Painter(String name, String nameOfCompany) {
-        super();
-        this.setName(name);
-        this.setNameOfCompany(nameOfCompany);
+    public Painter(final String firstName, final String nameOfCompany) {
+        super(firstName, nameOfCompany);
     }
 
 
     private HashMap<String, String> paintColorAndRoom() {
         final Painter harvey = new Painter("Harvey", "STU Group");
         logger.info("It is now time to paint all of the rooms");
-        logger.info(harvey.getName() + " painted the first and second coat of each room with the following colors: ");
+        logger.info(harvey.getFirstName() + " painted the first and second coat of each room with the following colors: ");
         HashMap<String, String> roomAndColor = new HashMap<>();
         roomAndColor.put("Family room", "Blue");
         roomAndColor.put("Dining room", "White");
@@ -69,14 +39,13 @@ public class Painter extends Contractor implements IPaintable {
         return roomAndColor;
     }
 
-    public static void main(String[] args) {
-        Painter john = new Painter("John", "Example");
-        john.paintColorAndRoom();
-    }
-
-
     @Override
     public void paintStructures() {
       logger.info("paint the room");
+    }
+
+    @Override
+    protected Double earnings() {
+        return null;
     }
 }

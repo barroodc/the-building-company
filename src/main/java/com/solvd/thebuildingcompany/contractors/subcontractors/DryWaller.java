@@ -1,20 +1,12 @@
 package com.solvd.thebuildingcompany.contractors.subcontractors;
 
 import com.solvd.thebuildingcompany.contractors.Contractor;
-import com.solvd.thebuildingcompany.interfaces.IFixable;
 import com.solvd.thebuildingcompany.interfaces.IInstallable;
-import com.solvd.thebuildingcompany.interfaces.IModifiable;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.logging.Logger;
 
 public class DryWaller extends Contractor implements IInstallable {
 
-    private String name;
-    private String nameOfCompany;
     private boolean dryWallPanelsAvailable;
     private boolean measurementsTook;
     private int numberOfMistakesMade;
@@ -22,36 +14,11 @@ public class DryWaller extends Contractor implements IInstallable {
     private double lambdaT; //is the temperature difference between the warmer surface and the colder surface of a barrier.
     private double phiSubQ; // is the heat flux through the barrier.
 
-
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
-    @Override
-    protected Double earnings() {
-        return null;
-    }
-
-    public String getNameOfCompany() {
-        return nameOfCompany;
-    }
-
-    public void setNameOfCompany(String nameOfCompany) {
-        this.nameOfCompany = nameOfCompany;
-    }
-
     public boolean isDryWallPanelsAvailable() {
         return dryWallPanelsAvailable;
     }
 
-    public void setDryWallPanelsAvailable(boolean dryWallPanelsAvailable) {
+    public void setDryWallPanelsAvailable(final boolean dryWallPanelsAvailable) {
         this.dryWallPanelsAvailable = dryWallPanelsAvailable;
     }
 
@@ -59,7 +26,7 @@ public class DryWaller extends Contractor implements IInstallable {
         return measurementsTook;
     }
 
-    public void setMeasurementsTook(boolean measurementsTook) {
+    public void setMeasurementsTook(final boolean measurementsTook) {
         this.measurementsTook = measurementsTook;
     }
 
@@ -67,17 +34,15 @@ public class DryWaller extends Contractor implements IInstallable {
         return numberOfMistakesMade;
     }
 
-    public void setNumberOfMistakesMade(int numberOfMistakesMade) {
+    public void setNumberOfMistakesMade(final int numberOfMistakesMade) {
         this.numberOfMistakesMade = numberOfMistakesMade;
     }
 
     private static final Logger logger = Logger.getLogger(DryWaller.class.getName());
 
 
-    public DryWaller(String name, String nameOfCompany) {
-        super();
-        this.setName(name);
-        this.setNameOfCompany(nameOfCompany);
+    public DryWaller(String firstName, String nameOfCompany) {
+        super(firstName, nameOfCompany);
     }
 
     private void rValueOfInsulation() {
@@ -94,7 +59,7 @@ public class DryWaller extends Contractor implements IInstallable {
         logger.info("The heat flux through the barrier is calculated to be around 8.12 degrees Celsius");
         if (rValue >= 2.1 && rValue <= 2.7) {
             logger.info("This is a good r value for insulation");
-            logger.info(steve.getName() + "'s rvalue for the fiberglass is acceptable.");
+            logger.info(steve.getFirstName() + "'s rvalue for the fiberglass is acceptable.");
         } else {
             logger.info("Better material for insulation is highly recommended.");
         }
@@ -113,13 +78,6 @@ public class DryWaller extends Contractor implements IInstallable {
         }
     }
 
-
-    public static void main(String[] args) {
-        DryWaller example = new DryWaller("H","H");
-        example.rValueOfInsulation();
-        example.fiberGlassAndDrywallInstall();
-    }
-
     @Override
     public void addComponents() {
       logger.info("Add fiberglass insulation:");
@@ -129,6 +87,12 @@ public class DryWaller extends Contractor implements IInstallable {
       logger.info("Fiber glass added to bathroom");
       logger.info("Fiber glass added to crawl space");
       logger.info("Now Steve adds Drywall to all rooms in the house");
+    }
+
+
+    @Override
+    protected Double earnings() {
+        return null;
     }
 
 }

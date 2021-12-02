@@ -19,7 +19,7 @@ public class EngineerManager extends Employee {
         return costEstimates;
     }
 
-    public double setCostEstimates(double costEstimates) {
+    public double setCostEstimates(final double costEstimates) {
         this.costEstimates = costEstimates;
         return costEstimates;
     }
@@ -28,7 +28,7 @@ public class EngineerManager extends Employee {
         return riskAverse;
     }
 
-    public void setRiskAverse(boolean riskAverse) {
+    public void setRiskAverse(final boolean riskAverse) {
         this.riskAverse = riskAverse;
     }
 
@@ -36,7 +36,7 @@ public class EngineerManager extends Employee {
         return laborCalculation;
     }
 
-    public void setLaborCalculation(double laborCalculation) {
+    public void setLaborCalculation(final double laborCalculation) {
         this.laborCalculation = laborCalculation;
     }
 
@@ -44,7 +44,7 @@ public class EngineerManager extends Employee {
         return costEstimate;
     }
 
-    public void setCostEstimate(double costEstimate) {
+    public void setCostEstimate(final double costEstimate) {
         this.costEstimate = costEstimate;
     }
 
@@ -52,7 +52,7 @@ public class EngineerManager extends Employee {
         return agreementSigned;
     }
 
-    public void setAgreementSigned(boolean agreementSigned) {
+    public void setAgreementSigned(final boolean agreementSigned) {
         this.agreementSigned = agreementSigned;
     }
 
@@ -60,13 +60,13 @@ public class EngineerManager extends Employee {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
     private final Logger logger = Logger.getLogger(EngineerManager.class.getName());
 
-    public EngineerManager(String name) {
+    public EngineerManager(final String name) {
         this.setName(name);
     }
 

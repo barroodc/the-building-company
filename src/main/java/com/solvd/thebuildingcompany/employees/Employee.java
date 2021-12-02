@@ -20,7 +20,7 @@ public abstract class Employee {
 
     }
 
-    public Employee(String firstName, String lastName, int employeeID, int departmentID, Date hireDate, int paymentPerHour) {
+    public Employee(final String firstName, final String lastName, final int employeeID, final int departmentID, final Date hireDate, final int paymentPerHour) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.employeeID = employeeID;
@@ -29,8 +29,8 @@ public abstract class Employee {
         this.paymentPerHour = paymentPerHour;
     }
 
-    public Employee(String firstName, String lastName, String email, int phoneNumber, String homeStreetAddress,
-                    String homeCity, String homeState) {
+    public Employee(final String firstName, final String lastName, final String email, final int phoneNumber, final String homeStreetAddress,
+                    final String homeCity, final String homeState) {
 
         this.firstName = firstName;
         this.lastName = lastName;
@@ -41,7 +41,7 @@ public abstract class Employee {
         this.homeState = homeState;
     }
 
-    public Employee(String firstName, String lastName, double paymentPerHour, double hoursWorked){
+    public Employee(final String firstName, final String lastName, final double paymentPerHour, final double hoursWorked){
         this.firstName = firstName;
         this.lastName = lastName;
         this.paymentPerHour = paymentPerHour;
@@ -54,7 +54,7 @@ public abstract class Employee {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(final String firstName) {
         this.firstName = firstName;
     }
 
@@ -62,7 +62,7 @@ public abstract class Employee {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(final String lastName) {
         this.lastName = lastName;
     }
 
@@ -70,7 +70,7 @@ public abstract class Employee {
         return employeeID;
     }
 
-    public void setEmployeeID(int employeeID) {
+    public void setEmployeeID(final int employeeID) {
         this.employeeID = employeeID;
     }
 
@@ -78,7 +78,7 @@ public abstract class Employee {
         return departmentID;
     }
 
-    public void setDepartmentID(int departmentID) {
+    public void setDepartmentID(final int departmentID) {
         this.departmentID = departmentID;
     }
 
@@ -86,7 +86,7 @@ public abstract class Employee {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(final String email) {
         this.email = email;
     }
 
@@ -94,7 +94,7 @@ public abstract class Employee {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(final int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -102,7 +102,7 @@ public abstract class Employee {
         return hireDate;
     }
 
-    public void setHireDate(Date hireDate) {
+    public void setHireDate(final Date hireDate) {
         this.hireDate = hireDate;
     }
 
@@ -110,7 +110,7 @@ public abstract class Employee {
         return paymentPerHour;
     }
 
-    public void setPaymentPerHour(double paymentPerHour) {
+    public void setPaymentPerHour(final double paymentPerHour) {
         this.paymentPerHour = paymentPerHour;
     }
 
@@ -118,7 +118,7 @@ public abstract class Employee {
         return hoursWorked;
     }
 
-    public void setHoursWorked(double hoursWorked) {
+    public void setHoursWorked(final double hoursWorked) {
         this.hoursWorked = hoursWorked;
     }
 
@@ -126,7 +126,7 @@ public abstract class Employee {
         return homeStreetAddress;
     }
 
-    public void setHomeStreetAddress(String homeStreetAddress) {
+    public void setHomeStreetAddress(final String homeStreetAddress) {
         this.homeStreetAddress = homeStreetAddress;
     }
 
@@ -134,7 +134,7 @@ public abstract class Employee {
         return homeCity;
     }
 
-    public void setHomeCity(String homeCity) {
+    public void setHomeCity(final String homeCity) {
         this.homeCity = homeCity;
     }
 
@@ -142,7 +142,7 @@ public abstract class Employee {
         return homeState;
     }
 
-    public void setHomeState(String homeState) {
+    public void setHomeState(final String homeState) {
         this.homeState = homeState;
     }
 }

@@ -1,13 +1,11 @@
 package com.solvd.thebuildingcompany.employees.departments.materialpurchasing;
 
-import com.solvd.thebuildingcompany.PreConstructionPlanning;
 import com.solvd.thebuildingcompany.employees.Employee;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class ConstructionExpeditor extends Employee {
 
@@ -24,7 +22,7 @@ public class ConstructionExpeditor extends Employee {
         return proposalSent;
     }
 
-    public void setProposalSent(boolean proposalSent) {
+    public void setProposalSent(final boolean proposalSent) {
         this.proposalSent = proposalSent;
     }
 
@@ -32,7 +30,7 @@ public class ConstructionExpeditor extends Employee {
         return feasible;
     }
 
-    public void setFeasible(boolean feasible) {
+    public void setFeasible(final boolean feasible) {
         this.feasible = feasible;
     }
 
@@ -40,7 +38,7 @@ public class ConstructionExpeditor extends Employee {
         return maintenanceCosts;
     }
 
-    public void setMaintenanceCosts(double maintenanceCosts) {
+    public void setMaintenanceCosts(final double maintenanceCosts) {
         this.maintenanceCosts = maintenanceCosts;
     }
 
@@ -48,7 +46,7 @@ public class ConstructionExpeditor extends Employee {
         return operatingCosts;
     }
 
-    public void setOperatingCosts(double operatingCosts) {
+    public void setOperatingCosts(final double operatingCosts) {
         this.operatingCosts = operatingCosts;
     }
 
@@ -56,7 +54,7 @@ public class ConstructionExpeditor extends Employee {
         return deadlinesAreMade;
     }
 
-    public void setDeadlinesAreMade(boolean deadlinesAreMade) {
+    public void setDeadlinesAreMade(final boolean deadlinesAreMade) {
         this.deadlinesAreMade = deadlinesAreMade;
     }
 
@@ -64,7 +62,7 @@ public class ConstructionExpeditor extends Employee {
         return arrivedOnTime;
     }
 
-    public void setArrivedOnTime(boolean arrivedOnTime) {
+    public void setArrivedOnTime(final boolean arrivedOnTime) {
         this.arrivedOnTime = arrivedOnTime;
     }
 
@@ -72,7 +70,7 @@ public class ConstructionExpeditor extends Employee {
         return contractsHonored;
     }
 
-    public void setContractsHonored(boolean contractsHonored) {
+    public void setContractsHonored(final boolean contractsHonored) {
         this.contractsHonored = contractsHonored;
     }
 
@@ -80,13 +78,13 @@ public class ConstructionExpeditor extends Employee {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
     private static Logger logger = LogManager.getLogger(ConstructionExpeditor.class);
 
-    public ConstructionExpeditor(String name) {
+    public ConstructionExpeditor(final String name) {
         this.setName(name);
     }
 
@@ -146,11 +144,6 @@ public class ConstructionExpeditor extends Employee {
 
         logger.info("All contracts were honored: " + sunny.isContractsHonored());
         return "All contracts were honored: " + sunny.isContractsHonored();
-    }
-
-    public static void main(String[] args) {
-        ConstructionExpeditor randy = new ConstructionExpeditor("Randy");
-        randy.materialsOrdered();
     }
 
     @Override
