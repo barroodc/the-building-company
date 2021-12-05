@@ -3,17 +3,18 @@ package com.solvd.thebuildingcompany.employees.departments.management;
 import com.solvd.thebuildingcompany.employees.Employee;
 
 import java.util.HashMap;
-import java.util.Map;
+import java.util.Scanner;
+import java.util.function.Function;
 import java.util.logging.Logger;
 
 public class EngineerManager extends Employee {
 
+    private static final Logger logger = Logger.getLogger(EngineerManager.class.getName());
+
     private double costEstimates;
     private boolean riskAverse;
-    private double laborCalculation;
-    private double costEstimate;
-    private boolean agreementSigned;
-    private String name;
+    private int laborCalculation;
+    private double singleEstimate;
 
     public double getCostEstimates() {
         return costEstimates;
@@ -32,55 +33,38 @@ public class EngineerManager extends Employee {
         this.riskAverse = riskAverse;
     }
 
-    public double getLaborCalculation() {
+    public int getLaborCalculation() {
         return laborCalculation;
     }
 
-    public void setLaborCalculation(final double laborCalculation) {
+    public void setLaborCalculation(final int laborCalculation) {
         this.laborCalculation = laborCalculation;
     }
 
-    public double getCostEstimate() {
-        return costEstimate;
+    public double getSingleEstimate() {
+        return singleEstimate;
     }
 
-    public void setCostEstimate(final double costEstimate) {
-        this.costEstimate = costEstimate;
+    public void setSingleEstimate(final double singleEstimate) {
+        this.singleEstimate = singleEstimate;
     }
 
-    public boolean isAgreementSigned() {
-        return agreementSigned;
+    public EngineerManager(final String name, final String nameOfCompany){
+        super(name, nameOfCompany);
     }
 
-    public void setAgreementSigned(final boolean agreementSigned) {
-        this.agreementSigned = agreementSigned;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(final String name) {
-        this.name = name;
-    }
-
-    private final Logger logger = Logger.getLogger(EngineerManager.class.getName());
-
-    public EngineerManager(final String name) {
-        this.setName(name);
-    }
 
     private HashMap<String, Boolean> riskAnalysis() {
-        final EngineerManager chris = new EngineerManager("Chris");
+        final EngineerManager chris = new EngineerManager("Chris", "The Building Company");
         chris.setCostEstimates(20000000.00);
         chris.setRiskAverse(true);
 
-        HashMap<String, Double> rebuildCost = new HashMap<>();
+        final HashMap<String, Double> rebuildCost = new HashMap<>();
         rebuildCost.put("Estimated cost to rebuild any of the projects: ", chris.getCostEstimates());
 
         rebuildCost.forEach((key, value) -> logger.info(key + value));
 
-        HashMap<String, Boolean> riskLevel = new HashMap<>();
+        final HashMap<String, Boolean> riskLevel = new HashMap<>();
         riskLevel.put("Risk averse if the deal loses money?: ", chris.isRiskAverse());
 
         riskLevel.forEach((key, value) -> logger.info(key + value));
@@ -88,37 +72,38 @@ public class EngineerManager extends Employee {
         return riskLevel;
     }
 
-    private String laborEstimate() {
-        final EngineerManager jessica = new EngineerManager("Jessica");
+    private void laborEstimate() {
+        final EngineerManager jessica = new EngineerManager("Jessica", "The Building Company");
+        logger.info("Please enter current amount spent on labor:");
+        Scanner laborPayLimit = new Scanner(System.in);
+        Function<Integer, Integer> laborPay = a -> a / 2;
         jessica.setLaborCalculation(5000000);
 
-        logger.info("Total amount required to compensate new hired crew: $" + jessica.getLaborCalculation());
+        if (laborPay.apply(laborPayLimit.nextInt()) / 2 > (laborCalculation / 2)){
+            logger.info("We need to start firing employees");
+        } else {
+            logger.info("Total amount required to compensate new hired crew: $" + jessica.getLaborCalculation());
+        }
 
-        return "Total amount required to compensate new hired crew: $" + jessica.getLaborCalculation();
     }
 
     @Override
     public int hashCode(){
-        final EngineerManager bobby = new EngineerManager("Bobby");
-        int hashCostEstimates = 20000000;
-        bobby.setCostEstimate(hashCostEstimates);
+        final EngineerManager bobby = new EngineerManager("Bobby", "The Building Company");
+        final int hashSingleEstimate = 20000000;
+        bobby.setSingleEstimate(hashSingleEstimate);
 
-        HashMap<String, Double> rebuildCost = new HashMap<>();
-        rebuildCost.put("Estimated cost to rebuild any of the projects: ", bobby.getCostEstimates());
+        final HashMap<String, Double> rebuildCost = new HashMap<>();
+        rebuildCost.put("Estimated cost to rebuild any of the projects: ", bobby.getSingleEstimate());
 
         rebuildCost.forEach((key, value) -> logger.info(key + value));
 
-        HashMap<String, Boolean> riskLevel = new HashMap<>();
+        final HashMap<String, Boolean> riskLevel = new HashMap<>();
         riskLevel.put("Risk averse if the deal loses money?: ", bobby.isRiskAverse());
 
         riskLevel.forEach((key, value) -> logger.info(key + value));
 
-        return hashCostEstimates;
+        return hashSingleEstimate;
 
-    }
-
-    @Override
-    protected Double earnings() {
-        return null;
     }
 }

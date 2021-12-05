@@ -4,7 +4,6 @@ import com.solvd.thebuildingcompany.contractors.Contractor;
 import com.solvd.thebuildingcompany.interfaces.IPaintable;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.logging.Logger;
 
 public class Painter extends Contractor implements IPaintable {
@@ -20,7 +19,7 @@ public class Painter extends Contractor implements IPaintable {
         final Painter harvey = new Painter("Harvey", "STU Group");
         logger.info("It is now time to paint all of the rooms");
         logger.info(harvey.getFirstName() + " painted the first and second coat of each room with the following colors: ");
-        HashMap<String, String> roomAndColor = new HashMap<>();
+        final HashMap<String, String> roomAndColor = new HashMap<>();
         roomAndColor.put("Family room", "Blue");
         roomAndColor.put("Dining room", "White");
         roomAndColor.put("Living room", "Blue");
@@ -40,10 +39,5 @@ public class Painter extends Contractor implements IPaintable {
     @Override
     public void paintStructures() {
       logger.info("paint the room");
-    }
-
-    @Override
-    protected Double earnings() {
-        return null;
     }
 }

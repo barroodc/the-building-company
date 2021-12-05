@@ -9,6 +9,7 @@ import java.util.HashMap;
 
 public class TheBuildingCompany {
 
+    private final static Logger logger = LogManager.getLogger(TheBuildingCompany.class);
 
     private ArrayList<String> typeOfConstruction;
 
@@ -21,7 +22,9 @@ public class TheBuildingCompany {
         this.typeOfConstruction = typeOfConstruction;
     }
 
-    private final static Logger logger = LogManager.getLogger(TheBuildingCompany.class);
+    public TheBuildingCompany() {
+
+    }
 
     private void welcomeMessage() {
         logger.info("Welcome to The Building Company");
@@ -29,7 +32,7 @@ public class TheBuildingCompany {
 
     private void ourOfficeLocations() {
        logger.info("Our office locations are as follows:");
-       ArrayList<String> locations = new ArrayList<>();
+       final ArrayList<String> locations = new ArrayList<>();
        locations.add("New York");
        locations.add("California");
        locations.add("New Jersey");
@@ -52,7 +55,7 @@ public class TheBuildingCompany {
 
     private void locationAndNaming() {
         logger.info("Location and name of Suburban developments:");
-        HashMap<String, String> nameOfProjectAndLocation = new HashMap<>();
+        final HashMap<String, String> nameOfProjectAndLocation = new HashMap<>();
         nameOfProjectAndLocation.put("New York", "Butler Heights");
         nameOfProjectAndLocation.put("California", "Horizon Estates");
         nameOfProjectAndLocation.put("New Jersey", "Highland Hills");
@@ -63,7 +66,7 @@ public class TheBuildingCompany {
 
     private void approvalStatusOfProjects() {
         logger.info("Approval Status of Open Projects:");
-        HashMap<String, Boolean> projectAndGovernmentApproval = new HashMap<>();
+        final HashMap<String, Boolean> projectAndGovernmentApproval = new HashMap<>();
         projectAndGovernmentApproval.put("Chestnut Lake ", false);
         projectAndGovernmentApproval.put("Victory Lakes ", false);
         projectAndGovernmentApproval.put("Sycamore Village ", true);

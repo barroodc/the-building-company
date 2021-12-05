@@ -1,47 +1,20 @@
 package com.solvd.thebuildingcompany.contractors.subcontractors;
 
 import com.solvd.thebuildingcompany.contractors.Contractor;
-import com.solvd.thebuildingcompany.interfaces.*;
+import com.solvd.thebuildingcompany.interfaces.IInstallable;
 import com.solvd.thebuildingcompany.vehicles.BackhoeLoader;
 import com.solvd.thebuildingcompany.vehicles.ConcretePump;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.IOException;
 import java.util.*;
 
 public class ConcreteSpecialist extends Contractor implements IInstallable {
 
-    private double measurements;
-    private boolean correctAmountGathered;
-    private ArrayList<String> clearanceForConcretePump;
-    private ConcreteSpecialist hannah;
-    private Calendar currentDate;
-    private Calendar completionDate;
+    private static final Logger logger = LogManager.getLogger(ConcreteSpecialist.class);
 
-    public double getMeasurements() {
-        return measurements;
-    }
-
-    public void setMeasurements(final double measurements) {
-        this.measurements = measurements;
-    }
-
-    public boolean isCorrectAmountGathered() {
-        return correctAmountGathered;
-    }
-
-    public void setCorrectAmountGathered(final boolean correctAmountGathered) {
-        this.correctAmountGathered = correctAmountGathered;
-    }
-
-    public ArrayList<String> getClearanceForConcretePump() {
-        return clearanceForConcretePump;
-    }
-
-    public void setClearanceForConcretePump(final ArrayList<String> clearanceForConcretePump) {
-        this.clearanceForConcretePump = clearanceForConcretePump;
-    }
+    private static Calendar currentDate;
+    private static Calendar completionDate;
 
     public Calendar getCurrentDate() {
         return currentDate;
@@ -59,9 +32,6 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
         this.completionDate = completionDate;
     }
 
-    private static Logger logger = LogManager.getLogger(ConcreteSpecialist.class);
-
-
 
     public ConcreteSpecialist(final String firstName, final String nameOfCompany) {
         super(firstName, nameOfCompany);
@@ -71,16 +41,16 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
     private void mixAndPourConcrete() {
         final ConcreteSpecialist penny = new ConcreteSpecialist("Penny", "NXE Group");
         logger.info(penny.getFirstName() + " " + "the concrete specialist now has to drive and pour concrete into trenches");
-        ConcretePump concretePump = new ConcretePump("Concrete Pump", penny.getFirstName());
+        final ConcretePump concretePump = new ConcretePump("Concrete Pump", penny.getFirstName());
         concretePump.drive();
-        concretePump.pour();
+        concretePump.pour("Penny used the concrete pump to pour cement");
 
         logger.info("Construction now stops until drying process complete.");
     }
 
     private HashMap<String, Date> monitorDryingProcess() {
-        hannah = new ConcreteSpecialist("Hannah", "NXE Group");
-        HashMap<String, Date> dryingProcessLog = new HashMap<>();
+        ConcreteSpecialist hannah = new ConcreteSpecialist("Hannah", "NXE Group");
+        final HashMap<String, Date> dryingProcessLog = new HashMap<>();
 
         currentDate = Calendar.getInstance();
         currentDate.set(Calendar.YEAR, 2021);
@@ -126,18 +96,12 @@ public class ConcreteSpecialist extends Contractor implements IInstallable {
 
     private void foundationFinalSteps() {
         final ConcreteSpecialist doug = new ConcreteSpecialist("Doug", "NXE Group");
-        BackhoeLoader backhoeLoader = new BackhoeLoader("Backhoe Loader", doug.getFirstName());
-        backhoeLoader.dig();
+        final BackhoeLoader backhoeLoader = new BackhoeLoader("Backhoe Loader", doug.getFirstName());
+        backhoeLoader.dig("dig using backhoe loader to even out foundation.");
         backhoeLoader.drive();
         backhoeLoader.pave();
         backhoeLoader.finishedTheJob();
 
-    }
-
-
-    @Override
-    protected Double earnings() {
-        return null;
     }
 
     @Override

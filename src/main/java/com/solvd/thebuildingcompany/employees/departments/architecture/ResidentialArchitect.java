@@ -7,16 +7,15 @@ import java.util.logging.Logger;
 
 public class ResidentialArchitect extends Employee {
 
+    private static final Logger logger = Logger.getLogger(ResidentialArchitect.class.getName());
+
     private boolean discussionHad;
     private boolean contractHonored;
     private boolean safetyCheck;
     private boolean regulationsMet;
     private String designPlan;
     private boolean redrawingNeeded;
-    private double materialCost;
-    private String analysisReport;
-    private boolean renegotiation;
-    private String name;
+    private ArrayList<String> projectSetups;
 
     public boolean isDiscussionHad() {
         return discussionHad;
@@ -66,49 +65,29 @@ public class ResidentialArchitect extends Employee {
         this.redrawingNeeded = redrawingNeeded;
     }
 
-    public double getMaterialCost() {
-        return materialCost;
+    //Optional example
+    public Optional <ArrayList<String>> getProjectSetups() {
+        return Optional.of(projectSetups);
     }
 
-    public void setMaterialCost(final double materialCost) {
-        this.materialCost = materialCost;
+    public void setProjectSetups(ArrayList<String> projectSetups) {
+        this.projectSetups = projectSetups;
     }
 
-    public String getAnalysisReport() {
-        return analysisReport;
+    public ResidentialArchitect(String name, String nameOfCompany){
+        super(name, nameOfCompany);
     }
-
-    public void setAnalysisReport(final String analysisReport) {
-        this.analysisReport = analysisReport;
-    }
-
-    public boolean isRenegotiation() {
-        return renegotiation;
-    }
-
-    public void setRenegotiation(final boolean renegotiation) {
-        this.renegotiation = renegotiation;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(final String name) {
-        this.name = name;
-    }
-
-    private final Logger logger = Logger.getLogger(ResidentialArchitect.class.getName());
 
     public ResidentialArchitect(final String name) {
         this.setName(name);
     }
 
+    //Optional example
     private ArrayList<String> projectDiscussions() {
-        final ResidentialArchitect penny = new ResidentialArchitect("Penny");
-        final ResidentialArchitect cooper = new ResidentialArchitect("Cooper");
-        final ResidentialArchitect preston = new ResidentialArchitect("Preston");
-        final ResidentialArchitect suzan = new ResidentialArchitect("Suzan");
+        final ResidentialArchitect penny = new ResidentialArchitect("Penny","The Building Company");
+        final ResidentialArchitect cooper = new ResidentialArchitect("Cooper", "The Building Company");
+        final ResidentialArchitect preston = new ResidentialArchitect("Preston", "The Building Company");
+        final ResidentialArchitect suzan = new ResidentialArchitect("Suzan", "The Building Company");
 
         penny.setDiscussionHad(true);
         cooper.setContractHonored(true);
@@ -116,26 +95,32 @@ public class ResidentialArchitect extends Employee {
         suzan.setRegulationsMet(true);
 
 
-        ArrayList<String> projectSetups = new ArrayList<>();
+        final ArrayList<String> projectSetups = new ArrayList<>();
         projectSetups.add("Residential Architects " + penny.getName() + " " +  "and" + " " + cooper.getName() + " " + "met with the Engineering Team: " + penny.isDiscussionHad());
         projectSetups.add("Met with clients and met their requirements: " + cooper.isContractHonored());
 
         projectSetups.forEach(logger::info);
 
+        if (getProjectSetups().isPresent()){
+            logger.info("All required meetings for preconstruction are completed for Residential Architects.");
+        } else {
+            logger.info("Please perform required meetings before beginning any project related work.");
+        }
+
         return projectSetups;
     }
 
     private ArrayList<String> documentationAndDrawings() {
-        final ResidentialArchitect collin = new ResidentialArchitect("Collin");
-        final ResidentialArchitect jay = new ResidentialArchitect("Jay");
-        final ResidentialArchitect bradly = new ResidentialArchitect("Bradly");
+        final ResidentialArchitect collin = new ResidentialArchitect("Collin", "The Building Company");
+        final ResidentialArchitect jay = new ResidentialArchitect("Jay", "The Building Company");
+        final ResidentialArchitect bradly = new ResidentialArchitect("Bradly", "The Building Company");
         logger.info("Entering blueprint drawing stage for Sycamore Village.");
         logger.info("documentation of blueprints stage: ");
         collin.setContractHonored(true);
         jay.setDesignPlan("Using AutoCad to complete exterior blueprint.");
         bradly.setRedrawingNeeded(true);
 
-        ArrayList<String> basicDesignNeeds = new ArrayList<>();
+        final ArrayList<String> basicDesignNeeds = new ArrayList<>();
         basicDesignNeeds.add("Instructions: " + jay.getDesignPlan());
         basicDesignNeeds.add("Blueprint Redrawing Required: " + !bradly.isRedrawingNeeded());
 
@@ -144,8 +129,5 @@ public class ResidentialArchitect extends Employee {
         return basicDesignNeeds;
     }
 
-    @Override
-    protected Double earnings() {
-        return null;
-    }
+
 }

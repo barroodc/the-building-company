@@ -8,43 +8,10 @@ import java.util.logging.Logger;
 
 public class DemolitionWorker extends Contractor {
 
-    private boolean siteLeveled;
-    private boolean siteClean;
-    private boolean roadBlocksUp;
-    private boolean assistanceRequired;
+    private static final Logger logger = Logger.getLogger(DemolitionWorker.class.getName());
+
     private ArrayList<String> clearanceForBulldozer;
 
-    public boolean isSiteLeveled() {
-        return siteLeveled;
-    }
-
-    public void setSiteLeveled(final boolean siteLeveled) {
-        this.siteLeveled = siteLeveled;
-    }
-
-    public boolean isSiteClean() {
-        return siteClean;
-    }
-
-    public void setSiteClean(final boolean siteClean) {
-        this.siteClean = siteClean;
-    }
-
-    public boolean isRoadBlocksUp() {
-        return roadBlocksUp;
-    }
-
-    public void setRoadBlocksUp(final boolean roadBlocksUp) {
-        this.roadBlocksUp = roadBlocksUp;
-    }
-
-    public boolean isAssistanceRequired() {
-        return assistanceRequired;
-    }
-
-    public void setAssistanceRequired(final boolean assistanceRequired) {
-        this.assistanceRequired = assistanceRequired;
-    }
 
     public ArrayList<String> getClearanceForBulldozer() {
         return clearanceForBulldozer;
@@ -54,7 +21,6 @@ public class DemolitionWorker extends Contractor {
         this.clearanceForBulldozer = clearanceForBulldozer;
     }
 
-    private final Logger logger = Logger.getLogger(DemolitionWorker.class.getName());
 
    public DemolitionWorker(final String fistName, final String nameOfCompany) {
        super(fistName,nameOfCompany);
@@ -68,18 +34,11 @@ public class DemolitionWorker extends Contractor {
 
         if (clearanceForBulldozer.contains(gerald.getFirstName())) {
             logger.info("Begin removal of all rocks, trees, and debris from construction site.");
-            Bulldozer bulldozer = new Bulldozer("Bulldozer", gerald.getFirstName());
+            final Bulldozer bulldozer = new Bulldozer("Bulldozer", gerald.getFirstName());
             bulldozer.drive();
             bulldozer.push();
             logger.info("Site successfully cleared");
         }
-    }
-
-
-
-    @Override
-    protected Double earnings() {
-        return null;
     }
 
 }

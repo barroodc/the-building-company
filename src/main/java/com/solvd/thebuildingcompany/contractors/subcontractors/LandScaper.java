@@ -7,17 +7,17 @@ import java.util.logging.Logger;
 
 public class LandScaper extends Contractor implements IPlantable {
 
+    private static final Logger logger = Logger.getLogger(LandScaper.class.getName());
+
     private boolean fertilizerAdded;
 
     public boolean isFertilizerAdded() {
         return fertilizerAdded;
     }
 
-    public void setFertilizerAdded(boolean fertilizerAdded) {
+    public void setFertilizerAdded(final boolean fertilizerAdded) {
         this.fertilizerAdded = fertilizerAdded;
     }
-
-    private static final Logger logger = Logger.getLogger(LandScaper.class.getName());
 
     public LandScaper(final String firstName, final String nameOfCompany) {
         super(firstName, nameOfCompany);
@@ -44,12 +44,6 @@ public class LandScaper extends Contractor implements IPlantable {
        logger.info("Jeffery plants the grass.");
        logger.info("Jeffery plants the trees");
        logger.info("Jeffery plants the bushes");
-    }
-
-
-    @Override
-    protected Double earnings() {
-        return null;
     }
 
 }

@@ -1,6 +1,6 @@
 package com.solvd.thebuildingcompany.vehicles;
 
-import com.solvd.thebuildingcompany.interfaces.IDig;
+import com.solvd.thebuildingcompany.genericinterfaces.IDig;
 import com.solvd.thebuildingcompany.interfaces.IDrivable;
 import com.solvd.thebuildingcompany.interfaces.IPave;
 
@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 public class BackhoeLoader extends Vehicle implements IDrivable, IDig, IPave {
 
-    private final Logger logger = Logger.getLogger(BackhoeLoader.class.getName());
+    private static final Logger logger = Logger.getLogger(BackhoeLoader.class.getName());
 
     public BackhoeLoader(final String nameOfVehicle) {
         super(nameOfVehicle);
@@ -25,10 +25,6 @@ public class BackhoeLoader extends Vehicle implements IDrivable, IDig, IPave {
         logger.info("Doug drove to the designated area");
     }
 
-    @Override
-    public void dig() {
-     logger.info("Doug excavated dirt using the BackhoeLoader");
-    }
 
     @Override
     public void pave() {
@@ -42,4 +38,8 @@ public class BackhoeLoader extends Vehicle implements IDrivable, IDig, IPave {
     }
 
 
+    @Override
+    public void dig(Object x) {
+        logger.info("Doug excavated dirt using the BackhoeLoader");
+    }
 }

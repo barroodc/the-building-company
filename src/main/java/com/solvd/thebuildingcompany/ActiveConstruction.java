@@ -9,13 +9,17 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class ActiveConstruction {
-    private static Logger logger = LogManager.getLogger(ActiveConstruction.class);
+    private static final Logger logger = LogManager.getLogger(ActiveConstruction.class);
+
+    public ActiveConstruction() {
+
+    }
 
     private void constructionSiteCleared() {
 
         try {
-            DemolitionWorker janet = new DemolitionWorker("Janet", "XYZ Group");
-            Method siteClearOfObstruction = DemolitionWorker.class.getDeclaredMethod("demolitionOfSite");
+            final DemolitionWorker janet = new DemolitionWorker("Janet", "XYZ Group");
+            final Method siteClearOfObstruction = DemolitionWorker.class.getDeclaredMethod("demolitionOfSite");
             siteClearOfObstruction.setAccessible(true);
             siteClearOfObstruction.invoke(janet);
             logger.info(siteClearOfObstruction);
@@ -27,8 +31,8 @@ public class ActiveConstruction {
 
     private void woodenFormsInstalled() {
         try {
-            GeneralWorker jimmy = new GeneralWorker();
-            Method woodenFormsInstallation = GeneralWorker.class.getDeclaredMethod("woodenFormInstallations");
+            final GeneralWorker jimmy = new GeneralWorker();
+            final Method woodenFormsInstallation = GeneralWorker.class.getDeclaredMethod("woodenFormInstallations");
             woodenFormsInstallation.setAccessible(true);
             woodenFormsInstallation.invoke(jimmy);
             logger.info(woodenFormsInstallation);
@@ -40,8 +44,8 @@ public class ActiveConstruction {
     private void basementBuilding() {
 
         try {
-            ConcreteSpecialist cara = new ConcreteSpecialist("Cara", "NXE Group");
-            Method concreteInTrenches = ConcreteSpecialist.class.getDeclaredMethod("mixAndPourConcrete");
+            final ConcreteSpecialist cara = new ConcreteSpecialist("Cara", "NXE Group");
+            final Method concreteInTrenches = ConcreteSpecialist.class.getDeclaredMethod("mixAndPourConcrete");
             concreteInTrenches.setAccessible(true);
             concreteInTrenches.invoke(cara);
             logger.info(concreteInTrenches);
@@ -50,8 +54,8 @@ public class ActiveConstruction {
         }
 
         try {
-            ConcreteSpecialist jensen = new ConcreteSpecialist("Jensen", "NXE Group");
-            Method dryingOfCement = ConcreteSpecialist.class.getDeclaredMethod("monitorDryingProcess");
+            final ConcreteSpecialist jensen = new ConcreteSpecialist("Jensen", "NXE Group");
+            final Method dryingOfCement = ConcreteSpecialist.class.getDeclaredMethod("monitorDryingProcess");
             dryingOfCement.setAccessible(true);
             dryingOfCement.invoke(jensen);
             logger.info(jensen);
@@ -60,8 +64,8 @@ public class ActiveConstruction {
         }
 
         try {
-            ConcreteSpecialist reggie = new ConcreteSpecialist("Reggie", "NXE Group");
-            Method postDryingProcess = ConcreteSpecialist.class.getDeclaredMethod("postDryingProcess");
+            final ConcreteSpecialist reggie = new ConcreteSpecialist("Reggie", "NXE Group");
+            final Method postDryingProcess = ConcreteSpecialist.class.getDeclaredMethod("postDryingProcess");
             postDryingProcess.setAccessible(true);
             postDryingProcess.invoke(reggie);
             logger.info(postDryingProcess);
@@ -70,8 +74,8 @@ public class ActiveConstruction {
         }
 
         try {
-           ConcreteSpecialist sebastian = new ConcreteSpecialist("Sebastian", "NXE Group");
-           Method foundationFinalTouches = ConcreteSpecialist.class.getDeclaredMethod("foundationFinalSteps");
+           final ConcreteSpecialist sebastian = new ConcreteSpecialist("Sebastian", "NXE Group");
+           final Method foundationFinalTouches = ConcreteSpecialist.class.getDeclaredMethod("foundationFinalSteps");
            foundationFinalTouches.setAccessible(true);
            foundationFinalTouches.invoke(sebastian);
            logger.info(foundationFinalTouches);
@@ -84,8 +88,8 @@ public class ActiveConstruction {
     private void flooringSystemSkeleton() {
 
         try {
-            FloorLayer jenkins = new FloorLayer("Jenkins", "GHI Group");
-            Method flooringRoots = FloorLayer.class.getDeclaredMethod("flooringSystemRoots");
+            final FloorLayer jenkins = new FloorLayer("Jenkins", "GHI Group");
+            final Method flooringRoots = FloorLayer.class.getDeclaredMethod("flooringSystemRoots");
             flooringRoots.setAccessible(true);
             flooringRoots.invoke(jenkins);
             logger.info(flooringRoots);
@@ -97,8 +101,8 @@ public class ActiveConstruction {
     private void wallsCompleted() {
 
         try {
-            Carpenter joshua = new Carpenter("Joshua", "AYR Group");
-            Method bareBonesWall = Carpenter.class.getDeclaredMethod("wallInstallationComplete");
+            final Carpenter joshua = new Carpenter("Joshua", "AYR Group");
+            final Method bareBonesWall = Carpenter.class.getDeclaredMethod("wallInstallationComplete");
             bareBonesWall.setAccessible(true);
             bareBonesWall.invoke(joshua);
             logger.info(bareBonesWall);
@@ -110,8 +114,8 @@ public class ActiveConstruction {
     private void roofInstallation() {
 
         try {
-            Roofer ethan = new Roofer("Ethan", "ROF Group");
-            Method roofingInstalled = Roofer.class.getDeclaredMethod("roofInstallationComplete");
+            final Roofer ethan = new Roofer("Ethan", "ROF Group");
+            final Method roofingInstalled = Roofer.class.getDeclaredMethod("roofInstallationComplete");
             roofingInstalled.setAccessible(true);
             roofingInstalled.invoke(ethan);
             logger.info(roofingInstalled);
@@ -122,8 +126,8 @@ public class ActiveConstruction {
 
     private void pipingInstallation() {
         try {
-          Plumber peach = new Plumber("Peach", "AZP Group");
-          Method pipingInstall = Plumber.class.getDeclaredMethod("piping");
+          final Plumber peach = new Plumber("Peach", "AZP Group");
+          final Method pipingInstall = Plumber.class.getDeclaredMethod("piping");
           pipingInstall.setAccessible(true);
           pipingInstall.invoke(peach);
           logger.info(pipingInstall);
@@ -134,8 +138,8 @@ public class ActiveConstruction {
 
     private void electricalInstallation() {
         try {
-            Electrician frank = new Electrician("Frank","DEF Group");
-            Method electricalWiringComplete = Electrician.class.getDeclaredMethod("installElectricalComponents");
+            final Electrician frank = new Electrician("Frank","DEF Group");
+            final Method electricalWiringComplete = Electrician.class.getDeclaredMethod("installElectricalComponents");
             electricalWiringComplete.setAccessible(true);
             electricalWiringComplete.invoke(frank);
             logger.info(electricalWiringComplete);
@@ -146,9 +150,9 @@ public class ActiveConstruction {
 
     private void fiberglassAndDryWall() {
         try {
-            DryWaller jerry = new DryWaller("Jerry", "YZW Group");
-            Method rValueCalculation = DryWaller.class.getDeclaredMethod("rValueOfInsulation");
-            Method fiberGlassAndDrywallInstall = DryWaller.class.getDeclaredMethod("fiberGlassAndDrywallInstall");
+            final DryWaller jerry = new DryWaller("Jerry", "YZW Group");
+            final Method rValueCalculation = DryWaller.class.getDeclaredMethod("rValueOfInsulation");
+            final Method fiberGlassAndDrywallInstall = DryWaller.class.getDeclaredMethod("fiberGlassAndDrywallInstall");
             rValueCalculation.setAccessible(true);
             fiberGlassAndDrywallInstall.setAccessible(true);
             rValueCalculation.invoke(jerry);
@@ -163,8 +167,8 @@ public class ActiveConstruction {
     private void brickFrontInstallation() {
 
         try {
-            SidingContractor zachary = new SidingContractor("Zachary", "NAW Group");
-            Method brickFrontInstalled = SidingContractor.class.getDeclaredMethod("installBrickSiding");
+            final SidingContractor zachary = new SidingContractor("Zachary", "NAW Group");
+            final Method brickFrontInstalled = SidingContractor.class.getDeclaredMethod("installBrickSiding");
             brickFrontInstalled.setAccessible(true);
             brickFrontInstalled.invoke(zachary);
             logger.info(brickFrontInstalled);
@@ -176,8 +180,8 @@ public class ActiveConstruction {
     private void paintingTheRooms() {
 
         try {
-           Painter ross = new Painter("Ross", "STU Group");
-           Method paintingAllRooms = Painter.class.getDeclaredMethod("paintColorAndRoom");
+           final Painter ross = new Painter("Ross", "STU Group");
+           final Method paintingAllRooms = Painter.class.getDeclaredMethod("paintColorAndRoom");
            paintingAllRooms.setAccessible(true);
            paintingAllRooms.invoke(ross);
            logger.info(paintingAllRooms);
@@ -188,8 +192,8 @@ public class ActiveConstruction {
 
     private void applianceInstall() {
         try {
-            ApplianceInstaller vanessa = new ApplianceInstaller("Vanessa", "WeInstallItAll");
-            Method installAppliances = ApplianceInstaller.class.getDeclaredMethod("appliancesInstalled");
+            final ApplianceInstaller vanessa = new ApplianceInstaller("Vanessa", "WeInstallItAll");
+            final Method installAppliances = ApplianceInstaller.class.getDeclaredMethod("appliancesInstalled");
             installAppliances.setAccessible(true);
             installAppliances.invoke(vanessa);
             logger.info(installAppliances);
@@ -201,8 +205,8 @@ public class ActiveConstruction {
     private void stairCasesInstalled() {
 
         try {
-          Joiner chris = new Joiner("Chris", "SOT Group");
-          Method installStaircase = Joiner.class.getDeclaredMethod("buildingStairs");
+          final Joiner chris = new Joiner("Chris", "SOT Group");
+          final Method installStaircase = Joiner.class.getDeclaredMethod("buildingStairs");
           installStaircase.setAccessible(true);
           installStaircase.invoke(chris);
           logger.info(installStaircase);
@@ -214,8 +218,8 @@ public class ActiveConstruction {
     private void hardWoodFloorInstalled() {
 
         try {
-          FloorLayer jeffery = new FloorLayer("Jeffery", "GHI Group");
-          Method hardWoodFloorAdded = FloorLayer.class.getDeclaredMethod("hardwoodFloorInstalled");
+          final FloorLayer jeffery = new FloorLayer("Jeffery", "GHI Group");
+          final Method hardWoodFloorAdded = FloorLayer.class.getDeclaredMethod("hardwoodFloorInstalled");
           hardWoodFloorAdded.setAccessible(true);
           hardWoodFloorAdded.invoke(jeffery);
           logger.info(hardWoodFloorAdded);
@@ -227,8 +231,8 @@ public class ActiveConstruction {
     private void carpetInstalled() {
 
         try {
-          FloorLayer penelope = new FloorLayer("Penelope", "GHI Group");
-          Method carpetAdded = FloorLayer.class.getDeclaredMethod("carpetInstalled");
+          final FloorLayer penelope = new FloorLayer("Penelope", "GHI Group");
+          final Method carpetAdded = FloorLayer.class.getDeclaredMethod("carpetInstalled");
           carpetAdded.setAccessible(true);
           carpetAdded.invoke(penelope);
           logger.info(carpetAdded);
@@ -240,8 +244,8 @@ public class ActiveConstruction {
     private void HVACUnitInstalled() {
 
         try{
-            HVACTechnician jackie = new HVACTechnician("Jackie", "MNO Group");
-            Method hvacInstall = HVACTechnician.class.getDeclaredMethod("installationOfHVACUnit");
+            final HVACTechnician jackie = new HVACTechnician("Jackie", "MNO Group");
+            final Method hvacInstall = HVACTechnician.class.getDeclaredMethod("installationOfHVACUnit");
             hvacInstall.setAccessible(true);
             hvacInstall.invoke(jackie);
             logger.info(hvacInstall);
@@ -253,8 +257,8 @@ public class ActiveConstruction {
     private void lastMinuteInteriorInstalls() {
 
         try {
-            ResidentialContractor jarvis = new ResidentialContractor("Jarvis", "PQR Group");
-            Method mirrorAndShowerDoor = ResidentialContractor.class.getDeclaredMethod("lastMinuteInstallations");
+            final ResidentialContractor jarvis = new ResidentialContractor("Jarvis", "PQR Group");
+            final Method mirrorAndShowerDoor = ResidentialContractor.class.getDeclaredMethod("lastMinuteInstallations");
             mirrorAndShowerDoor.setAccessible(true);
             mirrorAndShowerDoor.invoke(jarvis);
             logger.info(mirrorAndShowerDoor);
@@ -266,9 +270,9 @@ public class ActiveConstruction {
     private void cleanUpStage() {
 
         try {
-          CleanupContractor david = new CleanupContractor("David", "ZWF Group");
-          Method interiorCleaning = CleanupContractor.class.getDeclaredMethod("interiorCleanup");
-          Method exteriorCleaning = CleanupContractor.class.getDeclaredMethod("exteriorCleanup");
+          final CleanupContractor david = new CleanupContractor("David", "ZWF Group");
+          final Method interiorCleaning = CleanupContractor.class.getDeclaredMethod("interiorCleanup");
+          final Method exteriorCleaning = CleanupContractor.class.getDeclaredMethod("exteriorCleanup");
           interiorCleaning.setAccessible(true);
           interiorCleaning.invoke(david);
           exteriorCleaning.setAccessible(true);
@@ -283,9 +287,9 @@ public class ActiveConstruction {
     private void landscapingStage() {
 
         try {
-            LandScaper karl = new LandScaper("Karl", "NLX Group");
-            Method plantingGreenery = LandScaper.class.getDeclaredMethod("plantTheGreenery");
-            Method fertilizerAdded = LandScaper.class.getDeclaredMethod("applyFertilizer");
+            final LandScaper karl = new LandScaper("Karl", "NLX Group");
+            final Method plantingGreenery = LandScaper.class.getDeclaredMethod("plantTheGreenery");
+            final Method fertilizerAdded = LandScaper.class.getDeclaredMethod("applyFertilizer");
             plantingGreenery.setAccessible(true);
             plantingGreenery.invoke(karl);
             fertilizerAdded.setAccessible(true);

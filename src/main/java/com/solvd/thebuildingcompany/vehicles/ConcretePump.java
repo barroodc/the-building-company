@@ -1,15 +1,14 @@
 package com.solvd.thebuildingcompany.vehicles;
 
 import com.solvd.thebuildingcompany.interfaces.IDrivable;
-import com.solvd.thebuildingcompany.interfaces.IPourable;
+import com.solvd.thebuildingcompany.genericinterfaces.IPourable;
 
 import java.util.logging.Logger;
 
 public class ConcretePump extends Vehicle implements IDrivable, IPourable {
 
-    private final Logger logger = Logger.getLogger(ConcretePump.class.getName());
+    private static final Logger logger = Logger.getLogger(ConcretePump.class.getName());
 
-    private String name;
 
     public ConcretePump(final String nameOfVehicle) {
         super(nameOfVehicle);
@@ -20,23 +19,21 @@ public class ConcretePump extends Vehicle implements IDrivable, IPourable {
 
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(final String name) {
-        this.name = name;
-    }
-
-
-    @Override
-    public void pour() {
-       logger.info("Penny used the concrete pump to pour cement");
-    }
 
     @Override
     public void drive() {
        logger.info(" Penny put the keys in ignition");
        logger.info(" Penny drove the concrete pump to appropriate location");
     }
+
+
+    
+
+
+    @Override
+    public void pour(Object x) {
+        logger.info("Penny used the concrete pump to pour cement");
+    }
+
+
 }

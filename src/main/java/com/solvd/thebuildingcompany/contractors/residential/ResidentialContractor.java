@@ -8,8 +8,9 @@ import java.util.logging.Logger;
 
 public class ResidentialContractor extends Contractor implements IInstallable {
 
+    private static final Logger logger = Logger.getLogger(ResidentialContractor.class.getName());
+
     private boolean suppliesAvailable;
-    private String contractorCompany;
     private int totalNumberOfNeededSupplies;
 
 
@@ -21,14 +22,6 @@ public class ResidentialContractor extends Contractor implements IInstallable {
         this.suppliesAvailable = suppliesAvailable;
     }
 
-    public String getContractorCompany() {
-        return contractorCompany;
-    }
-
-    public void setContractorCompany(final String contractorCompany) {
-        this.contractorCompany = contractorCompany;
-    }
-
     public int getTotalNumberOfNeededSupplies() {
         return totalNumberOfNeededSupplies;
     }
@@ -37,10 +30,9 @@ public class ResidentialContractor extends Contractor implements IInstallable {
         this.totalNumberOfNeededSupplies = totalNumberOfNeededSupplies;
     }
 
-    private final Logger logger = Logger.getLogger(ResidentialContractor.class.getName());
 
-    public ResidentialContractor(final String fistName, final String contractorCompany) {
-        super();
+    public ResidentialContractor(final String fistName, final String nameOfCompany) {
+        super(fistName,nameOfCompany);
     }
 
     private HashMap<String, String> whoOverseesConstruction() {
@@ -97,8 +89,8 @@ public class ResidentialContractor extends Contractor implements IInstallable {
 
     private HashMap<String, List<String>> brandNewSubcontractorCompanies() {
         final ResidentialContractor jacob = new ResidentialContractor("Jacob", "PQR Group");
-        HashMap<String, List<String>> hiredByJacob = new HashMap<>();
-        List<String> contractorsHired = new ArrayList<>();
+        final HashMap<String, List<String>> hiredByJacob = new HashMap<>();
+        final List<String> contractorsHired = new ArrayList<>();
         contractorsHired.add("XYZ Group");
         contractorsHired.add("AYR Group");
         contractorsHired.add("NXE Group");
@@ -118,19 +110,24 @@ public class ResidentialContractor extends Contractor implements IInstallable {
     }
 
     private void lastMinuteInstallations(){
-        ResidentialContractor meghan = new ResidentialContractor("Meghan", "PQR Group");
-        logger.info(meghan.getFirstName() + "one of our Residential Contractors decided to help us save money by installing some last minute things.");
+        final ResidentialContractor meghan = new ResidentialContractor("Meghan", "PQR Group");
+        logger.info("Clean test done");
+        IInstallable<String> iInstall = () ->{
+            logger.info(meghan.getFirstName() + "one of our Residential Contractors decided to help us save money by installing some last minute things.");
+            logger.info("Mirrors in all bathrooms added");
+            logger.info("Shower doors in all bathrooms but the downstairs bathroom have been added");
+        };
+        iInstall.addComponents();
         meghan.addComponents();
     }
 
-    @Override
-    protected Double earnings() {
-        return null;
-    }
-
-    @Override
+   @Override
     public void addComponents() {
-        logger.info("Mirrors in all bathrooms added");
-        logger.info("Shower doors in all bathrooms but the downstairs bathroom have been added");
+        /*
+        Marker interface
+
+        values for the interface method are defined inside of the last minute
+        installatoins method.
+         */
     }
 }

@@ -3,66 +3,27 @@ package com.solvd.thebuildingcompany.employees.departments.businessdevelopment;
 import com.solvd.thebuildingcompany.employees.Employee;
 
 import java.util.HashMap;
-import java.util.Map;
+import java.util.Optional;
 import java.util.logging.Logger;
 
 public class BusinessDeveloper extends Employee {
 
-    private String name;
-    private double costOfMaterials;
-    private double growthRate;
-    private boolean sellersMarket;
+    private static final Logger logger = Logger.getLogger(BusinessDeveloper.class.getName());
+
     private boolean buyersMarket;
-    private HashMap<String, String> developmentNumberOfHomes;
-    private HashMap<String, String> developmentAndModel;
-    private HashMap<String, String> projectsAssignedTo;
+    private static HashMap<String, String> developmentNumberOfHomes;
+    private static HashMap<String, String> developmentAndModel;
+    private static HashMap<String, String> projectsAssignedTo;
+    private int yearsAtTheCompany;
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(final String name) {
-        this.name = name;
-    }
-
-    public double getCostOfMaterials() {
-        return costOfMaterials;
-    }
-
-    public void setCostOfMaterials(final double costOfMaterials) {
-        this.costOfMaterials = costOfMaterials;
-    }
-
-    public double getGrowthRate() {
-        return growthRate;
-    }
-
-    public void setGrowthRate(final double growthRate) {
-        this.growthRate = growthRate;
-    }
-
-    public boolean isSellersMarket() {
-        return sellersMarket;
-    }
-
-    public void setSellersMarket(final boolean setSellersMarket) {
-        this.sellersMarket = setSellersMarket;
-    }
-
-    public boolean isBuyersMarket() {
-        return buyersMarket;
-    }
-
-    public void setBuyersMarket(final boolean buyersMarket) {
-        this.buyersMarket = buyersMarket;
-    }
 
     public HashMap<String, String> getDevelopmentNumberOfHomes() {
         return developmentNumberOfHomes;
     }
 
     public void setDevelopmentNumberOfHomes(final HashMap<String, String> developmentNumberOfHomes) {
-        this.developmentNumberOfHomes = developmentNumberOfHomes;
+        BusinessDeveloper.developmentNumberOfHomes = developmentNumberOfHomes;
     }
 
     public HashMap<String, String> getDevelopmentAndModel() {
@@ -70,22 +31,51 @@ public class BusinessDeveloper extends Employee {
     }
 
     public void setMakeAndModel(final HashMap<String, String> developmentAndModel) {
-        this.developmentAndModel = developmentAndModel;
+        BusinessDeveloper.developmentAndModel = developmentAndModel;
     }
 
+    public void setDevelopmentAndModel(HashMap<String, String> developmentAndModel) {
+        BusinessDeveloper.developmentAndModel = developmentAndModel;
+    }
 
-    private final Logger logger = Logger.getLogger(BusinessDeveloper.class.getName());
+    public HashMap<String, String> getProjectsAssignedTo() {
+        return projectsAssignedTo;
+    }
 
+    public void setProjectsAssignedTo(HashMap<String, String> projectsAssignedTo) {
+        BusinessDeveloper.projectsAssignedTo = projectsAssignedTo;
+    }
 
+    //optional example
+    public Optional<Integer> getYearsAtTheCompany() {
+        return Optional.of(yearsAtTheCompany);
+    }
 
-    public BusinessDeveloper(final String name){
-        this.setName(name);
+    public void setYearsAtTheCompany(int yearsAtTheCompany) {
+        this.yearsAtTheCompany = yearsAtTheCompany;
+    }
+
+    public BusinessDeveloper(final String name, final String nameOfCompany, Integer yearsAtTheCompany){
+        super(name, nameOfCompany);
+        this.yearsAtTheCompany = yearsAtTheCompany;
     }
 
     private void developmentProjects() {
-        final BusinessDeveloper ashley = new BusinessDeveloper("Ashley");
-        final BusinessDeveloper alexander = new BusinessDeveloper("Alexander");
-        final BusinessDeveloper marcus = new BusinessDeveloper("Marcus");
+
+        final BusinessDeveloper ashley = new BusinessDeveloper("Ashley", "The Building Company", 5);
+        final BusinessDeveloper alexander = new BusinessDeveloper("Alexander", "The Building Company", 15);
+        final BusinessDeveloper marcus = new BusinessDeveloper("Marcus", "The Building Company", 7);
+
+        //optional example
+        if (ashley.getYearsAtTheCompany().isPresent() || alexander.getYearsAtTheCompany().isPresent() || marcus.getYearsAtTheCompany().isPresent()){
+            Optional<Integer> ashleyYearsAtTheCompany = ashley.getYearsAtTheCompany();
+            Optional<Integer> alexanderYearsAtTheCompany = alexander.getYearsAtTheCompany();
+            Optional<Integer> marcusYearsAtTheCompany = marcus.getYearsAtTheCompany();
+            logger.info("The following experience of Business Developers Ashley, Alexander and Marcus are given from left to right respectively");
+            logger.info(ashleyYearsAtTheCompany.toString() + " " + alexanderYearsAtTheCompany.toString() + " " + marcusYearsAtTheCompany.toString());
+        } else {
+            logger.info("Number of years working at The Building Company not listed.");
+        }
 
         developmentNumberOfHomes = new HashMap<>();
         developmentNumberOfHomes.put("Development: Chestnut Lake ", "200 homes are needed");
@@ -107,10 +97,5 @@ public class BusinessDeveloper extends Employee {
         developmentAndModel.forEach((key, value) -> logger.info(key + " " + value));
 
         projectsAssignedTo.forEach((key, value) -> logger.info(key + value));
-    }
-
-    @Override
-    protected Double earnings() {
-        return null;
     }
 }

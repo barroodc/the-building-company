@@ -7,15 +7,10 @@ import java.util.logging.Logger;
 
 public class Roofer extends Contractor implements IInstallable {
 
-    private final Logger logger = Logger.getLogger(Roofer.class.getName());
+    private static final Logger logger = Logger.getLogger(Roofer.class.getName());
 
     public Roofer(final String firstName, final String nameOfCompany) {
         super(firstName, nameOfCompany);
-    }
-
-    private boolean roofPreInspections() {
-        final Roofer sebastian = new Roofer("Sebastian", "ROF Group");
-        return false;
     }
 
     private void roofInstallationComplete() {
@@ -44,10 +39,5 @@ public class Roofer extends Contractor implements IInstallable {
       logger.info("spaced sheathing installed");
       logger.info("shingles added");
       logger.info("chimney with flashing installed");
-    }
-
-    @Override
-    protected Double earnings() {
-        return null;
     }
 }

@@ -6,18 +6,11 @@ import java.util.logging.Logger;
 
 public class CityInspector extends Inspector{
 
-    private String name;
+    private static final Logger logger = Logger.getLogger(DemolitionWorker.class.getName());
+
     private String inspectorSpeciality;
     private boolean inspectionPassed;
     private int numberOfViolations;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(final String name) {
-        this.name = name;
-    }
 
     public String getInspectorSpeciality() {
         return inspectorSpeciality;
@@ -45,19 +38,17 @@ public class CityInspector extends Inspector{
     }
 
     public CityInspector(final String name) {
-        this.name = name;
+       super(name);
     }
 
     public CityInspector(final String name, final String inspectorSpeciality) {
-        this.name = name;
+        super(name);
         this.inspectorSpeciality = inspectorSpeciality;
     }
 
-    private final Logger logger = Logger.getLogger(DemolitionWorker.class.getName());
-
     @Override
     protected void generalInspection() {
-        CityInspector tobey = new CityInspector("Tobey", "Foundation Wall");
+        final CityInspector tobey = new CityInspector("Tobey", "Foundation Wall");
         if (numberOfViolations == 0){
             logger.info(tobey.getName() + " the City Inspector gave the foundation wall a passing mark: " + !inspectionPassed);
         } else {
@@ -70,7 +61,7 @@ public class CityInspector extends Inspector{
 
 
     private void plumbingInspection() {
-        CityInspector gabriel = new CityInspector("Gabriel", "Plumbing");
+        final CityInspector gabriel = new CityInspector("Gabriel", "Plumbing");
         if (numberOfViolations == 0){
             logger.info(gabriel.getName() + " the City Inspector gave the plumbing work a passing mark: " + !inspectionPassed);
         } else {
@@ -81,7 +72,7 @@ public class CityInspector extends Inspector{
     }
 
     private void electricalInspection() {
-        CityInspector andrew = new CityInspector("Andrew", "Electrical");
+        final CityInspector andrew = new CityInspector("Andrew", "Electrical");
         if (numberOfViolations == 0){
             logger.info(andrew.getName() + " the City Inspector gave the electrical work a passing mark: " + !inspectionPassed);
         } else {
@@ -92,7 +83,7 @@ public class CityInspector extends Inspector{
     }
 
     private void mechanicalInspection() {
-        CityInspector tom = new CityInspector("Tom", "Mechanical");
+        final CityInspector tom = new CityInspector("Tom", "Mechanical");
         if (numberOfViolations == 0){
             logger.info(tom.getName() + " the City Inspector gave the mechanical systems a passing mark: " + !inspectionPassed);
         } else {
@@ -103,7 +94,7 @@ public class CityInspector extends Inspector{
     }
 
     private void lastInspection() {
-        CityInspector brianna = new CityInspector("Brianna", "General Inspection");
+        final CityInspector brianna = new CityInspector("Brianna", "General Inspection");
         logger.info("Final inspection is ready to begin.");
         if (numberOfViolations == 0){
             logger.info(brianna.getName() + " the City Inspector gave the final walk through inspection a passing mark: " + !inspectionPassed);

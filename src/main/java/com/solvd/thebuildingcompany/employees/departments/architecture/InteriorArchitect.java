@@ -7,16 +7,14 @@ import java.util.logging.Logger;
 
 public class InteriorArchitect extends Employee {
 
+    private static final Logger logger = Logger.getLogger(InteriorArchitect.class.getName());
+
     private boolean discussionHad;
     private boolean contractHonored;
     private boolean safetyCheck;
     private boolean regulationsMet;
     private String designPlan;
     private boolean redrawingNeeded;
-    private double materialCost;
-    private String analysisReport;
-    private boolean renegotiation;
-    private String name;
 
 
     public boolean isDiscussionHad() {
@@ -67,57 +65,22 @@ public class InteriorArchitect extends Employee {
         this.redrawingNeeded = redrawingNeeded;
     }
 
-    public double getMaterialCost() {
-        return materialCost;
+    public InteriorArchitect(String name, String nameOfCompany){
+        super(name,nameOfCompany);
     }
-
-    public void setMaterialCost(final double materialCost) {
-        this.materialCost = materialCost;
-    }
-
-    public String getAnalysisReport() {
-        return analysisReport;
-    }
-
-    public void setAnalysisReport(final String analysisReport) {
-        this.analysisReport = analysisReport;
-    }
-
-    public boolean isRenegotiation() {
-        return renegotiation;
-    }
-
-    public void setRenegotiation(final boolean renegotiation) {
-        this.renegotiation = renegotiation;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(final String name) {
-        this.name = name;
-    }
-
-    private final Logger logger = Logger.getLogger(InteriorArchitect.class.getName());
-
-    public InteriorArchitect(final String name) {
-        this.setName(name);
-    }
-
 
     private ArrayList<String> projectDiscussions() {
-        final InteriorArchitect michael = new InteriorArchitect("Michael");
-        final InteriorArchitect stacy = new InteriorArchitect("Stacy");
-        final InteriorArchitect jessica = new InteriorArchitect("Jessica");
-        final InteriorArchitect jonathan = new InteriorArchitect("Jonathan");
+        final InteriorArchitect michael = new InteriorArchitect("Michael", "The Building Company");
+        final InteriorArchitect stacy = new InteriorArchitect("Stacy", "The Building Company");
+        final InteriorArchitect jessica = new InteriorArchitect("Jessica", "The Building Company");
+        final InteriorArchitect jonathan = new InteriorArchitect("Jonathan", "The Building Company");
         michael.setDiscussionHad(true);
         stacy.setContractHonored(true);
         jessica.setSafetyCheck(true);
         jonathan.setRegulationsMet(true);
 
 
-        ArrayList<String> projectSetups = new ArrayList<>();
+        final ArrayList<String> projectSetups = new ArrayList<>();
         projectSetups.add("Interior Architects " + michael.getName() + " " +  "and" + " " + stacy.getName() + " " + "met with the Engineering Team: " + michael.isDiscussionHad());
         projectSetups.add("Met with clients and met their requirements: " + stacy.isContractHonored());
 
@@ -128,14 +91,14 @@ public class InteriorArchitect extends Employee {
     }
 
     private ArrayList<String> documentationAndDrawings() {
-        final InteriorArchitect sarah = new InteriorArchitect("Sarah");
-        final InteriorArchitect francis = new InteriorArchitect("Francis");
-        final InteriorArchitect wade = new InteriorArchitect("Wade");
+        final InteriorArchitect sarah = new InteriorArchitect("Sarah", "The Building Company");
+        final InteriorArchitect francis = new InteriorArchitect("Francis", "The Building Company");
+        final InteriorArchitect wade = new InteriorArchitect("Wade", "The Building Company");
         sarah.setContractHonored(true);
         francis.setDesignPlan("Using AutoCad to complete interior blueprint.");
         wade.setRedrawingNeeded(true);
 
-        ArrayList<String> basicDesignNeeds = new ArrayList<>();
+        final ArrayList<String> basicDesignNeeds = new ArrayList<>();
         basicDesignNeeds.add("Instructions: " + francis.getDesignPlan());
         basicDesignNeeds.add("Blueprint Redrawing Required: " + !wade.isRedrawingNeeded());
 
@@ -144,9 +107,4 @@ public class InteriorArchitect extends Employee {
         return basicDesignNeeds;
     }
 
-
-    @Override
-    protected Double earnings() {
-        return null;
-    }
 }

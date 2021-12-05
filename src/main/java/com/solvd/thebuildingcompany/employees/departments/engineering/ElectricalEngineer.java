@@ -1,28 +1,21 @@
 package com.solvd.thebuildingcompany.employees.departments.engineering;
 
 import com.solvd.thebuildingcompany.employees.Employee;
+import com.solvd.thebuildingcompany.enums.Location;
+import com.solvd.thebuildingcompany.exceptions.InsufficientWiringException;
 
 import java.util.*;
 import java.util.logging.Logger;
 
 public class ElectricalEngineer extends Employee {
 
-    private final Logger logger = Logger.getLogger(ElectricalEngineer.class.getName());
+    private static final Logger logger = Logger.getLogger(ElectricalEngineer.class.getName());
 
-    private String name;
     private boolean discussionHad;
     private boolean contractHonored;
     private boolean safetyCheck;
     private boolean regulationsMet;
     private HashMap<String, Boolean> electricalSystemsDesigned;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(final String name) {
-        this.name = name;
-    }
 
     public boolean isDiscussionHad() {
         return discussionHad;
@@ -64,22 +57,22 @@ public class ElectricalEngineer extends Employee {
         this.electricalSystemsDesigned = electricalSystemsDesigned;
     }
 
-    public ElectricalEngineer(final String name) {
-        this.name = name;
+    public ElectricalEngineer(final String name, final String nameOfCompany){
+        super(name, nameOfCompany);
     }
 
     private ArrayList<String> projectDiscussions() {
-        final ElectricalEngineer enrique = new ElectricalEngineer("Enrique");
-        final ElectricalEngineer jasmine = new ElectricalEngineer("Jasmine");
-        final ElectricalEngineer erick = new ElectricalEngineer("Erick");
-        final ElectricalEngineer debbie = new ElectricalEngineer("Debbie");
+        final ElectricalEngineer enrique = new ElectricalEngineer("Enrique", "The Building Company");
+        final ElectricalEngineer jasmine = new ElectricalEngineer("Jasmine", "The Building Company");
+        final ElectricalEngineer erick = new ElectricalEngineer("Erick", "The Building Company");
+        final ElectricalEngineer debbie = new ElectricalEngineer("Debbie", "The Building Company");
 
         enrique.setDiscussionHad(true);
         jasmine.setContractHonored(true);
         erick.setSafetyCheck(true);
         debbie.setRegulationsMet(true);
 
-        ArrayList<String> projectSetups = new ArrayList<>();
+        final ArrayList<String> projectSetups = new ArrayList<>();
         projectSetups.add("Electrical Engineers " + erick.getName() + " " +  "and" + " " + jasmine.getName() + " " + "met with the Engineering Team: " + !erick.isDiscussionHad());
 
         projectSetups.forEach(logger::info);
@@ -88,7 +81,7 @@ public class ElectricalEngineer extends Employee {
     }
 
     private void designingElectricalSystems() {
-       final ElectricalEngineer george = new ElectricalEngineer("George");
+       final ElectricalEngineer george = new ElectricalEngineer("George", "The Building Company");
        logger.info("Electrical system design planning performed by: " + george.getName());
        electricalSystemsDesigned = new HashMap<>();
        electricalSystemsDesigned.put("outlets successfully designed", true);
@@ -101,13 +94,24 @@ public class ElectricalEngineer extends Employee {
 
     }
 
-    private void conductingSystemTests() {
-        final ElectricalEngineer tammy = new ElectricalEngineer("Tammy");
+    private void conductingSystemTests() throws InsufficientWiringException {
+        final ElectricalEngineer tammy = new ElectricalEngineer("Tammy", "The Building Company");
+        HashMap<String, Boolean> testResults = new HashMap<>();
+        testResults.put("Wiring methods suitable", true);
+        testResults.put("Cable installation suitable", true);
+        testResults.put("Cables secured safely to box", true);
 
-    }
+        testResults.forEach((key, value) -> {
+           try {
+               if(value) {
+                   logger.info("Electrical Engineer " + tammy.getName() + " was able to achieve passing results for all components of the electrical test.");
+               } else {
+                   throw new InsufficientWiringException("Please correct the electrical issues for the project location.", Location.NEW_JERSEY);
+               }
 
-    @Override
-    protected Double earnings() {
-        return null;
+           } catch (InsufficientWiringException e) {
+               logger.warning(String.valueOf(e));
+           }
+        });
     }
 }

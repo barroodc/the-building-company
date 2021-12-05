@@ -2,27 +2,20 @@ package com.solvd.thebuildingcompany.employees.departments.engineering;
 
 import com.solvd.thebuildingcompany.employees.Employee;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.logging.Logger;
 
 public class MechanicalEngineer extends Employee {
 
-    private final Logger logger = Logger.getLogger(MechanicalEngineer.class.getName());
+    private static final Logger logger = Logger.getLogger(MechanicalEngineer.class.getName());
 
-    private String name;
     private boolean discussionHad;
     private boolean contractHonored;
     private boolean safetyCheck;
     private boolean regulationsMet;
-    private HashMap<String, Boolean> hVACSystemDesigned;
+    private static HashMap<String, Boolean> hVACSystemDesigned;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(final String name) {
-        this.name = name;
-    }
 
     public boolean isDiscussionHad() {
         return discussionHad;
@@ -56,30 +49,31 @@ public class MechanicalEngineer extends Employee {
         this.regulationsMet = regulationsMet;
     }
 
-    public HashMap<String, Boolean> gethVACSystemDesigned() {
-        return hVACSystemDesigned;
+    //optional example
+    public Optional <HashMap<String, Boolean>> gethVACSystemDesigned() {
+        return Optional.of(hVACSystemDesigned);
     }
 
     public void sethVACSystemDesigned(final HashMap<String, Boolean> hVACSystemDesigned) {
-        this.hVACSystemDesigned = hVACSystemDesigned;
+        MechanicalEngineer.hVACSystemDesigned = hVACSystemDesigned;
     }
 
-    public MechanicalEngineer(final String name) {
-        this.name = name;
+    public MechanicalEngineer(final String name, final String nameOfCompany){
+        super(name, nameOfCompany);
     }
 
     private ArrayList<String> projectDiscussions() {
-        final MechanicalEngineer jeniffer = new MechanicalEngineer("Jeniffer");
-        final MechanicalEngineer trevor = new MechanicalEngineer("Trevor");
-        final MechanicalEngineer nancy = new MechanicalEngineer("Nancy");
-        final MechanicalEngineer vivian = new MechanicalEngineer("Vivian");
+        final MechanicalEngineer jeniffer = new MechanicalEngineer("Jeniffer", "The Building Company");
+        final MechanicalEngineer trevor = new MechanicalEngineer("Trevor", "The Building Company");
+        final MechanicalEngineer nancy = new MechanicalEngineer("Nancy", "The Building Company");
+        final MechanicalEngineer vivian = new MechanicalEngineer("Vivian", "The Building Company");
 
         jeniffer.setDiscussionHad(true);
         trevor.setContractHonored(true);
         nancy.setSafetyCheck(true);
         vivian.setRegulationsMet(true);
 
-        ArrayList<String> projectSetups = new ArrayList<>();
+        final ArrayList<String> projectSetups = new ArrayList<>();
         projectSetups.add("Mechanical Engineers " + jeniffer.getName() + " " +  "and" + " " + trevor.getName() + " " + "met with the Engineering Team: " + jeniffer.isDiscussionHad());
 
         projectSetups.forEach(logger::info);
@@ -88,7 +82,8 @@ public class MechanicalEngineer extends Employee {
     }
 
     private void hVACDesign() {
-        final MechanicalEngineer nicholas = new MechanicalEngineer("Nicholas");
+        //optional example
+        final MechanicalEngineer nicholas = new MechanicalEngineer("Nicholas", "The Building Company");
         logger.info("HVAC System designed by: " + nicholas.getName());
         hVACSystemDesigned = new HashMap<>();
         hVACSystemDesigned.put("Cooler component designed", true);
@@ -104,11 +99,11 @@ public class MechanicalEngineer extends Employee {
         hVACSystemDesigned.put("Pump component designed", true);
 
         hVACSystemDesigned.forEach((key, value) -> logger.info(key + " " + value));
-    }
 
-
-    @Override
-    protected Double earnings() {
-        return null;
+        if (gethVACSystemDesigned().isPresent()){
+            logger.info("The HVAC System Initial Design Configuration Process Complete.");
+        } else {
+            logger.info("The HVAC System Initial Design Configuration Process Is Not Complete.");
+        }
     }
 }

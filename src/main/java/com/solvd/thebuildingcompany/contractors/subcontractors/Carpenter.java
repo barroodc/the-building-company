@@ -8,27 +8,8 @@ import org.apache.logging.log4j.Logger;
 
 public class Carpenter extends Contractor implements IInstallable {
 
-    private int expectedNumberOfFixtures;
-    private int expectedNumberOfFrameworks;
+    private static final Logger logger = LogManager.getLogger(Carpenter.class);
 
-
-    public int getExpectedNumberOfFixtures() {
-        return expectedNumberOfFixtures;
-    }
-
-    public void setExpectedNumberOfFixtures(final int expectedNumberOfFixtures) {
-        this.expectedNumberOfFixtures = expectedNumberOfFixtures;
-    }
-
-    public int getExpectedNumberOfFrameworks() {
-        return expectedNumberOfFrameworks;
-    }
-
-    public void setExpectedNumberOfFrameworks(final int expectedNumberOfFrameworks) {
-        this.expectedNumberOfFrameworks = expectedNumberOfFrameworks;
-    }
-
-    private static Logger logger = LogManager.getLogger(Carpenter.class);
 
     public Carpenter(final String firstName, final String nameOfCompany) {
         super(firstName, nameOfCompany);
@@ -48,12 +29,6 @@ public class Carpenter extends Contractor implements IInstallable {
         logger.info("sheathing covered with protective wrap");
         logger.info("exterior doors are installed");
         logger.info("house wraps added");
-    }
-
-
-    @Override
-    protected Double earnings() {
-        return null;
     }
 
 }

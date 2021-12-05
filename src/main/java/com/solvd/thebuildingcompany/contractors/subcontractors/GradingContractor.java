@@ -9,8 +9,9 @@ import java.util.ArrayList;
 
 public class GradingContractor extends Contractor {
 
+    private static Logger logger = LogManager.getLogger(GradingContractor.class);
+
     private boolean zoningBoardApproval;
-    private boolean levelingForLandNeeded;
 
     public boolean isZoningBoardApproval() {
         return zoningBoardApproval;
@@ -20,23 +21,14 @@ public class GradingContractor extends Contractor {
         this.zoningBoardApproval = zoningBoardApproval;
     }
 
-    public boolean isLevelingForLandNeeded() {
-        return levelingForLandNeeded;
-    }
-
-    public void setLevelingForLandNeeded(final boolean levelingForLandNeeded) {
-        this.levelingForLandNeeded = levelingForLandNeeded;
-    }
-
     public GradingContractor(final String firstName, final String nameOfCompany) {
         super(firstName, nameOfCompany);
     }
 
-    private static Logger logger = LogManager.getLogger(GradingContractor.class);
 
     private void propertyDrainageAssured() {
      final GradingContractor tina = new GradingContractor("Tina", "LBV Group");
-     ArrayList<String> developmentsApproved = new ArrayList<>();
+     final ArrayList<String> developmentsApproved = new ArrayList<>();
      developmentsApproved.add("Sycamore Village");
 
      if (developmentsApproved.contains("Sycamore Village")) {
@@ -53,7 +45,7 @@ public class GradingContractor extends Contractor {
 
     private void foundationAreaCheck() {
       final GradingContractor elijah = new GradingContractor("Elijah", "LBV Group");
-      ArrayList<String> developmentsNeedingLeveling = new ArrayList<>();
+      final ArrayList<String> developmentsNeedingLeveling = new ArrayList<>();
       developmentsNeedingLeveling.add("Princeton Heights");
       developmentsNeedingLeveling.add("Fox Run Village");
 
@@ -65,10 +57,5 @@ public class GradingContractor extends Contractor {
           logger.info(elijah.getFirstName() + " must talk to demolition about leveling specific areas of land within the development.");
       }
 
-    }
-
-    @Override
-    protected Double earnings() {
-        return null;
     }
 }

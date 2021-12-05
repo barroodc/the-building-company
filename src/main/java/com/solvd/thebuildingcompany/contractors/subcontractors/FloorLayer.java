@@ -3,9 +3,13 @@ package com.solvd.thebuildingcompany.contractors.subcontractors;
 import com.solvd.thebuildingcompany.contractors.Contractor;
 import com.solvd.thebuildingcompany.interfaces.IInstallable;
 
+import java.util.Scanner;
+import java.util.function.Function;
 import java.util.logging.Logger;
 
 public class FloorLayer extends Contractor implements IInstallable {
+
+    private static final Logger logger = Logger.getLogger(FloorLayer.class.getName());
 
     int oakWoodCount;
     int carpetSizeLength;
@@ -44,7 +48,6 @@ public class FloorLayer extends Contractor implements IInstallable {
         this.sufficientOakWood = sufficientOakWood;
     }
 
-    private final Logger logger = Logger.getLogger(FloorLayer.class.getName());
 
     public FloorLayer(final String firstName, final String nameOfCompany) {
         super(firstName, nameOfCompany);
@@ -58,10 +61,13 @@ public class FloorLayer extends Contractor implements IInstallable {
     }
 
     private void hardwoodFloorInstalled() {
-        oakWoodCount = 27;
+        Scanner completeWoodCount = new Scanner(System.in);
+        Scanner oakWoodCount = new Scanner(System.in);
+        Function<Integer,Integer> woodCount = a -> a - 2;
         final FloorLayer zachary = new FloorLayer("Zachary", "GHI Group");
-        if (oakWoodCount > 25) {
-            logger.info("Sufficient amount of oakWood flooring to complete the floor: " + !sufficientOakWood);
+
+        if (woodCount.apply(completeWoodCount.nextInt()) > 40 && oakWoodCount.nextInt() > 25) {
+            logger.info("Sufficient amount of oakWood/wood flooring to complete the floor: " + !sufficientOakWood);
             logger.info(zachary.getFirstName() + " the Floor Layer installs the hardwood floors in the family room.");
             logger.info("He also installs the hardwood floors in the living room.");
             logger.info("Hardwood floor installation complete.");
@@ -91,10 +97,8 @@ public class FloorLayer extends Contractor implements IInstallable {
         logger.info("sill installed");
     }
 
-
-    @Override
-    protected Double earnings() {
-        return null;
+    public static void main(String[] args) {
+        FloorLayer example = new FloorLayer("A","A");
+        example.hardwoodFloorInstalled();
     }
-
 }

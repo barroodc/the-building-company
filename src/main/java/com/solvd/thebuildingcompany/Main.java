@@ -10,9 +10,9 @@ import org.apache.logging.log4j.Logger;
 
 public class Main {
 
-    private static Logger logger = LogManager.getLogger(Main.class);
+    private static final Logger logger = LogManager.getLogger(Main.class);
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         /*
         Order of classes accessed:
         Part 1: Pre-planning Stage:
@@ -28,12 +28,12 @@ public class Main {
 
         try {
             //Intro to the company and the current project available to be worked on.
-            TheBuildingCompany introduction = new TheBuildingCompany();
-            Method aboutTheCompany = TheBuildingCompany.class.getDeclaredMethod("welcomeMessage");
-            Method currentLocations = TheBuildingCompany.class.getDeclaredMethod("ourOfficeLocations");
-            Method approvalStage = TheBuildingCompany.class.getDeclaredMethod("approvalStatusOfProjects");
-            Method specializedHomeBuilds = TheBuildingCompany.class.getDeclaredMethod("specializations");
-            Method locationAndName = TheBuildingCompany.class.getDeclaredMethod("locationAndNaming");
+            final TheBuildingCompany introduction = new TheBuildingCompany();
+            final Method aboutTheCompany = TheBuildingCompany.class.getDeclaredMethod("welcomeMessage");
+            final Method currentLocations = TheBuildingCompany.class.getDeclaredMethod("ourOfficeLocations");
+            final Method approvalStage = TheBuildingCompany.class.getDeclaredMethod("approvalStatusOfProjects");
+            final Method specializedHomeBuilds = TheBuildingCompany.class.getDeclaredMethod("specializations");
+            final Method locationAndName = TheBuildingCompany.class.getDeclaredMethod("locationAndNaming");
             aboutTheCompany.setAccessible(true);
             currentLocations.setAccessible(true);
             approvalStage.setAccessible(true);
@@ -57,8 +57,8 @@ public class Main {
 
 
         try {
-            PreConstructionPlanning architectMeeting = new PreConstructionPlanning();
-            Method initialProjectTalks = PreConstructionPlanning.class.getDeclaredMethod("architectsPlanAndMeet");
+            final PreConstructionPlanning architectMeeting = new PreConstructionPlanning();
+            final Method initialProjectTalks = PreConstructionPlanning.class.getDeclaredMethod("architectsPlanAndMeet");
             initialProjectTalks.setAccessible(true);
             initialProjectTalks.invoke(architectMeeting);
             logger.info(initialProjectTalks);
@@ -68,8 +68,8 @@ public class Main {
         }
 
         try {
-            PreConstructionPlanning engineerMeeting = new PreConstructionPlanning();
-            Method initialProjectTalks = PreConstructionPlanning.class.getDeclaredMethod("engineersMeet");
+            final PreConstructionPlanning engineerMeeting = new PreConstructionPlanning();
+            final Method initialProjectTalks = PreConstructionPlanning.class.getDeclaredMethod("engineersMeet");
             initialProjectTalks.setAccessible(true);
             initialProjectTalks.invoke(engineerMeeting);
             logger.info(initialProjectTalks);
@@ -79,8 +79,8 @@ public class Main {
         }
 
         try {
-            PreConstructionPlanning civilEngineerSitePlan = new PreConstructionPlanning();
-            Method prePlanningSite = PreConstructionPlanning.class.getDeclaredMethod("civilEngineerPrePlanning");
+            final PreConstructionPlanning civilEngineerSitePlan = new PreConstructionPlanning();
+            final Method prePlanningSite = PreConstructionPlanning.class.getDeclaredMethod("civilEngineerPrePlanning");
             prePlanningSite.setAccessible(true);
             prePlanningSite.invoke(civilEngineerSitePlan);
             logger.info(prePlanningSite);
@@ -90,8 +90,8 @@ public class Main {
         }
 
         try {
-            PreConstructionPlanning electricalSystemPlan = new PreConstructionPlanning();
-            Method electricalDesign = PreConstructionPlanning.class.getDeclaredMethod("electricalSystemPlanning");
+            final PreConstructionPlanning electricalSystemPlan = new PreConstructionPlanning();
+            final Method electricalDesign = PreConstructionPlanning.class.getDeclaredMethod("electricalSystemPlanning");
             electricalDesign.setAccessible(true);
             electricalDesign.invoke(electricalSystemPlan);
             logger.info(electricalSystemPlan);
@@ -101,8 +101,8 @@ public class Main {
         }
 
         try {
-            PreConstructionPlanning hVACSystemDesign = new PreConstructionPlanning();
-            Method hVACDesign = PreConstructionPlanning.class.getDeclaredMethod("hVACSystemDesignStage");
+            final PreConstructionPlanning hVACSystemDesign = new PreConstructionPlanning();
+            final Method hVACDesign = PreConstructionPlanning.class.getDeclaredMethod("hVACSystemDesignStage");
             hVACDesign.setAccessible(true);
             hVACDesign.invoke(hVACSystemDesign);
             logger.info(hVACDesign);
@@ -112,8 +112,8 @@ public class Main {
         }
 
         try {
-            PreConstructionPlanning plumbingDesignStage = new PreConstructionPlanning();
-            Method plumbingDesign = PreConstructionPlanning.class.getDeclaredMethod("plumbingDesigns");
+            final PreConstructionPlanning plumbingDesignStage = new PreConstructionPlanning();
+            final Method plumbingDesign = PreConstructionPlanning.class.getDeclaredMethod("plumbingDesigns");
             plumbingDesign.setAccessible(true);
             plumbingDesign.invoke(plumbingDesignStage);
             logger.info(plumbingDesign);
@@ -123,8 +123,8 @@ public class Main {
         }
 
         try {
-            PreConstructionPlanning developmentLeadership = new PreConstructionPlanning();
-            Method developmentAssigned = PreConstructionPlanning.class.getDeclaredMethod("assignedDevelopments");
+            final PreConstructionPlanning developmentLeadership = new PreConstructionPlanning();
+            final Method developmentAssigned = PreConstructionPlanning.class.getDeclaredMethod("assignedDevelopments");
             developmentAssigned.setAccessible(true);
             developmentAssigned.invoke(developmentLeadership);
             logger.info(developmentAssigned);
@@ -134,8 +134,8 @@ public class Main {
         }
 
         try {
-            PreConstructionPlanning timeToCompleteNJProject = new PreConstructionPlanning();
-            Method completionOfProject = PreConstructionPlanning.class.getDeclaredMethod("estimatedCompletion");
+            final PreConstructionPlanning timeToCompleteNJProject = new PreConstructionPlanning();
+            final Method completionOfProject = PreConstructionPlanning.class.getDeclaredMethod("estimatedCompletion");
             completionOfProject.setAccessible(true);
             completionOfProject.invoke(timeToCompleteNJProject);
             logger.info(completionOfProject);
@@ -145,8 +145,8 @@ public class Main {
         }
 
         try {
-            PreConstructionPlanning initialSitePreparations = new PreConstructionPlanning();
-            Method preppingSite = PreConstructionPlanning.class.getDeclaredMethod("initialSitePreparations");
+            final PreConstructionPlanning initialSitePreparations = new PreConstructionPlanning();
+            final Method preppingSite = PreConstructionPlanning.class.getDeclaredMethod("initialSitePreparations");
             preppingSite.setAccessible(true);
             preppingSite.invoke(initialSitePreparations);
             logger.info(preppingSite);
@@ -156,8 +156,8 @@ public class Main {
         }
 
         try {
-            PreConstructionPlanning orderingTheItems = new PreConstructionPlanning();
-            Method itemsOrderedList = PreConstructionPlanning.class.getDeclaredMethod("materialsForProject");
+            final PreConstructionPlanning orderingTheItems = new PreConstructionPlanning();
+            final Method itemsOrderedList = PreConstructionPlanning.class.getDeclaredMethod("materialsForProject");
             itemsOrderedList.setAccessible(true);
             itemsOrderedList.invoke(orderingTheItems);
             logger.info(itemsOrderedList);
@@ -167,8 +167,8 @@ public class Main {
         }
 
         try {
-            PreConstructionPlanning subContractorsHired = new PreConstructionPlanning();
-            Method brandNewSubContractors = PreConstructionPlanning.class.getDeclaredMethod("contractorsHired");
+            final PreConstructionPlanning subContractorsHired = new PreConstructionPlanning();
+            final Method brandNewSubContractors = PreConstructionPlanning.class.getDeclaredMethod("contractorsHired");
             brandNewSubContractors.setAccessible(true);
             brandNewSubContractors.invoke(subContractorsHired);
             logger.info(brandNewSubContractors);
@@ -178,8 +178,8 @@ public class Main {
         }
 
         try {
-            ActiveConstruction demolition = new ActiveConstruction();
-            Method siteClearedOfObstructions = ActiveConstruction.class.getDeclaredMethod("constructionSiteCleared");
+            final ActiveConstruction demolition = new ActiveConstruction();
+            final Method siteClearedOfObstructions = ActiveConstruction.class.getDeclaredMethod("constructionSiteCleared");
             siteClearedOfObstructions.setAccessible(true);
             siteClearedOfObstructions.invoke(demolition);
             logger.info(siteClearedOfObstructions);
@@ -189,8 +189,8 @@ public class Main {
         }
 
         try {
-            ActiveConstruction woodFormsInstalled = new ActiveConstruction();
-            Method woodenForms = ActiveConstruction.class.getDeclaredMethod("woodenFormsInstalled");
+            final ActiveConstruction woodFormsInstalled = new ActiveConstruction();
+            final Method woodenForms = ActiveConstruction.class.getDeclaredMethod("woodenFormsInstalled");
             woodenForms.setAccessible(true);
             woodenForms.invoke(woodFormsInstalled);
             Thread.sleep(5000);
@@ -200,8 +200,8 @@ public class Main {
 
 
         try {
-            ActiveConstruction basementConcretePoured = new ActiveConstruction();
-            Method concreteInTrenches = ActiveConstruction.class.getDeclaredMethod("basementBuilding");
+            final ActiveConstruction basementConcretePoured = new ActiveConstruction();
+            final Method concreteInTrenches = ActiveConstruction.class.getDeclaredMethod("basementBuilding");
             concreteInTrenches.setAccessible(true);
             concreteInTrenches.invoke(basementConcretePoured);
             logger.info(concreteInTrenches);
@@ -211,8 +211,8 @@ public class Main {
         }
 
         try {
-            Inspections foundationInspected = new Inspections();
-            Method foundationUpToCode = Inspections.class.getDeclaredMethod("foundationInspection");
+            final Inspections foundationInspected = new Inspections();
+            final Method foundationUpToCode = Inspections.class.getDeclaredMethod("foundationInspection");
             foundationUpToCode.setAccessible(true);
             foundationUpToCode.invoke(foundationInspected);
             logger.info(foundationUpToCode);
@@ -222,8 +222,8 @@ public class Main {
         }
 
         try {
-            ActiveConstruction flooringSkeleton = new ActiveConstruction();
-            Method flooringRoots = ActiveConstruction.class.getDeclaredMethod("flooringSystemSkeleton");
+            final ActiveConstruction flooringSkeleton = new ActiveConstruction();
+            final Method flooringRoots = ActiveConstruction.class.getDeclaredMethod("flooringSystemSkeleton");
             flooringRoots.setAccessible(true);
             flooringRoots.invoke(flooringSkeleton);
             logger.info(flooringRoots);
@@ -233,8 +233,8 @@ public class Main {
         }
 
         try {
-           ActiveConstruction wallCompleted = new ActiveConstruction();
-           Method bareWall = ActiveConstruction.class.getDeclaredMethod("wallsCompleted");
+            final ActiveConstruction wallCompleted = new ActiveConstruction();
+            final Method bareWall = ActiveConstruction.class.getDeclaredMethod("wallsCompleted");
            bareWall.setAccessible(true);
            bareWall.invoke(wallCompleted);
            logger.info(bareWall);
@@ -244,8 +244,8 @@ public class Main {
         }
 
         try {
-            ActiveConstruction roofingInstallation = new ActiveConstruction();
-            Method roofingInstallComplete = ActiveConstruction.class.getDeclaredMethod("roofInstallation");
+            final ActiveConstruction roofingInstallation = new ActiveConstruction();
+            final Method roofingInstallComplete = ActiveConstruction.class.getDeclaredMethod("roofInstallation");
             roofingInstallComplete.setAccessible(true);
             roofingInstallComplete.invoke(roofingInstallation);
             logger.info(roofingInstallComplete);
@@ -255,8 +255,8 @@ public class Main {
         }
 
         try {
-           ActiveConstruction pipingInstallation = new ActiveConstruction();
-           Method pipingInstall = ActiveConstruction.class.getDeclaredMethod("pipingInstallation");
+            final ActiveConstruction pipingInstallation = new ActiveConstruction();
+            final Method pipingInstall = ActiveConstruction.class.getDeclaredMethod("pipingInstallation");
            pipingInstall.setAccessible(true);
            pipingInstall.invoke(pipingInstallation);
            logger.info(pipingInstall);
@@ -266,8 +266,8 @@ public class Main {
         }
 
         try {
-            ActiveConstruction electricalWorkInstalled = new ActiveConstruction();
-            Method electricalWiring = ActiveConstruction.class.getDeclaredMethod("electricalInstallation");
+            final ActiveConstruction electricalWorkInstalled = new ActiveConstruction();
+            final Method electricalWiring = ActiveConstruction.class.getDeclaredMethod("electricalInstallation");
             electricalWiring.setAccessible(true);
             electricalWiring.invoke(electricalWorkInstalled);
             logger.info(electricalWiring);
@@ -277,8 +277,8 @@ public class Main {
         }
 
         try {
-           Inspections plumbingInspected = new Inspections();
-           Method plumbingInspection = Inspections.class.getDeclaredMethod("plumbingInspection");
+            final Inspections plumbingInspected = new Inspections();
+            final Method plumbingInspection = Inspections.class.getDeclaredMethod("plumbingInspection");
            plumbingInspection.setAccessible(true);
            plumbingInspection.invoke(plumbingInspected);
            logger.info(plumbingInspection);
@@ -288,8 +288,8 @@ public class Main {
         }
 
         try {
-          Inspections electricalInspected = new Inspections();
-          Method electricalInspection = Inspections.class.getDeclaredMethod("electricalInspection");
+            final Inspections electricalInspected = new Inspections();
+            final Method electricalInspection = Inspections.class.getDeclaredMethod("electricalInspection");
           electricalInspection.setAccessible(true);
           electricalInspection.invoke(electricalInspected);
           logger.info(electricalInspection);
@@ -299,8 +299,8 @@ public class Main {
         }
 
         try {
-          Inspections mechanicalSystemsInspected = new Inspections();
-          Method mechanicalSystemsInspection = Inspections.class.getDeclaredMethod("mechanicalInspection");
+            final Inspections mechanicalSystemsInspected = new Inspections();
+            final Method mechanicalSystemsInspection = Inspections.class.getDeclaredMethod("mechanicalInspection");
           mechanicalSystemsInspection.setAccessible(true);
           mechanicalSystemsInspection.invoke(mechanicalSystemsInspected);
           logger.info(mechanicalSystemsInspection);
@@ -310,8 +310,8 @@ public class Main {
         }
 
         try {
-           ActiveConstruction fiberglassAndDrywall = new ActiveConstruction();
-           Method rValueCalculation = ActiveConstruction.class.getDeclaredMethod("fiberglassAndDryWall");
+            final ActiveConstruction fiberglassAndDrywall = new ActiveConstruction();
+            final Method rValueCalculation = ActiveConstruction.class.getDeclaredMethod("fiberglassAndDryWall");
            rValueCalculation.setAccessible(true);
            rValueCalculation.invoke(fiberglassAndDrywall);
            logger.info(rValueCalculation);
@@ -321,8 +321,8 @@ public class Main {
         }
 
         try {
-         ActiveConstruction brickSidingAdded = new ActiveConstruction();
-         Method brickFrontInstalled = ActiveConstruction.class.getDeclaredMethod("brickFrontInstallation");
+            final ActiveConstruction brickSidingAdded = new ActiveConstruction();
+            final Method brickFrontInstalled = ActiveConstruction.class.getDeclaredMethod("brickFrontInstallation");
          brickFrontInstalled.setAccessible(true);
          brickFrontInstalled.invoke(brickSidingAdded);
          logger.info(brickFrontInstalled);
@@ -332,8 +332,8 @@ public class Main {
         }
 
         try {
-          ActiveConstruction paintingTheRooms = new ActiveConstruction();
-          Method paintingAllRooms = ActiveConstruction.class.getDeclaredMethod("paintingTheRooms");
+            final ActiveConstruction paintingTheRooms = new ActiveConstruction();
+            final Method paintingAllRooms = ActiveConstruction.class.getDeclaredMethod("paintingTheRooms");
           paintingAllRooms.setAccessible(true);
           paintingAllRooms.invoke(paintingTheRooms);
           logger.info(paintingAllRooms);
@@ -343,8 +343,8 @@ public class Main {
         }
 
         try {
-          ActiveConstruction installingAppliances = new ActiveConstruction();
-          Method appliancesAdded = ActiveConstruction.class.getDeclaredMethod("applianceInstall");
+            final ActiveConstruction installingAppliances = new ActiveConstruction();
+            final Method appliancesAdded = ActiveConstruction.class.getDeclaredMethod("applianceInstall");
           appliancesAdded.setAccessible(true);
           appliancesAdded.invoke(installingAppliances);
           logger.info(appliancesAdded);
@@ -354,8 +354,8 @@ public class Main {
         }
 
         try {
-          ActiveConstruction stairCaseInstall = new ActiveConstruction();
-          Method stairCasesAdded = ActiveConstruction.class.getDeclaredMethod("stairCasesInstalled");
+            final ActiveConstruction stairCaseInstall = new ActiveConstruction();
+            final Method stairCasesAdded = ActiveConstruction.class.getDeclaredMethod("stairCasesInstalled");
           stairCasesAdded.setAccessible(true);
           stairCasesAdded.invoke(stairCaseInstall);
           logger.info(stairCasesAdded);
@@ -365,8 +365,8 @@ public class Main {
         }
 
         try {
-          ActiveConstruction hardWoodFloorInstall = new ActiveConstruction();
-          Method hardWoodFloorAdded = ActiveConstruction.class.getDeclaredMethod("hardWoodFloorInstalled");
+            final ActiveConstruction hardWoodFloorInstall = new ActiveConstruction();
+            final Method hardWoodFloorAdded = ActiveConstruction.class.getDeclaredMethod("hardWoodFloorInstalled");
           hardWoodFloorAdded.setAccessible(true);
           hardWoodFloorAdded.invoke(hardWoodFloorInstall);
           logger.info(hardWoodFloorAdded);
@@ -376,8 +376,8 @@ public class Main {
         }
 
         try {
-          ActiveConstruction carpetInstallation = new ActiveConstruction();
-          Method carpetAdded = ActiveConstruction.class.getDeclaredMethod("carpetInstalled");
+            final ActiveConstruction carpetInstallation = new ActiveConstruction();
+            final Method carpetAdded = ActiveConstruction.class.getDeclaredMethod("carpetInstalled");
           carpetAdded.setAccessible(true);
           carpetAdded.invoke(carpetInstallation);
           logger.info(carpetAdded);
@@ -387,8 +387,8 @@ public class Main {
         }
 
         try {
-            Inspections drainageZoneCheck = new Inspections();
-            Method propertyDrainageCheck = Inspections.class.getDeclaredMethod("propertyDrainageCheck");
+            final Inspections drainageZoneCheck = new Inspections();
+            final Method propertyDrainageCheck = Inspections.class.getDeclaredMethod("propertyDrainageCheck");
             propertyDrainageCheck.setAccessible(true);
             propertyDrainageCheck.invoke(drainageZoneCheck);
             logger.info(propertyDrainageCheck);
@@ -398,8 +398,8 @@ public class Main {
         }
 
         try {
-          Inspections foundationAreaCheck = new Inspections();
-          Method levelingNeededCheck = Inspections.class.getDeclaredMethod("foundationAreaCheck");
+            final Inspections foundationAreaCheck = new Inspections();
+            final Method levelingNeededCheck = Inspections.class.getDeclaredMethod("foundationAreaCheck");
           levelingNeededCheck.setAccessible(true);
           levelingNeededCheck.invoke(foundationAreaCheck);
           logger.info(levelingNeededCheck);
@@ -409,8 +409,8 @@ public class Main {
         }
 
         try {
-          Inspections electricalPanelEvaluation = new Inspections();
-          Method electricalPanelCheck = Inspections.class.getDeclaredMethod("electricalPanelInspection");
+            final Inspections electricalPanelEvaluation = new Inspections();
+            final Method electricalPanelCheck = Inspections.class.getDeclaredMethod("electricalPanelInspection");
           electricalPanelCheck.setAccessible(true);
           electricalPanelCheck.invoke(electricalPanelEvaluation);
           logger.info(electricalPanelCheck);
@@ -420,8 +420,8 @@ public class Main {
         }
 
         try {
-          ActiveConstruction hvacInstallationStage = new ActiveConstruction();
-          Method hvacInstall = ActiveConstruction.class.getDeclaredMethod("HVACUnitInstalled");
+            final ActiveConstruction hvacInstallationStage = new ActiveConstruction();
+            final Method hvacInstall = ActiveConstruction.class.getDeclaredMethod("HVACUnitInstalled");
           hvacInstall.setAccessible(true);
           hvacInstall.invoke(hvacInstallationStage);
           logger.info(hvacInstall);
@@ -431,8 +431,8 @@ public class Main {
         }
 
         try {
-            ActiveConstruction lastMinuteInteriorInstallations = new ActiveConstruction();
-            Method mirrorAndShowerDoor = ActiveConstruction.class.getDeclaredMethod("lastMinuteInteriorInstalls");
+            final ActiveConstruction lastMinuteInteriorInstallations = new ActiveConstruction();
+            final Method mirrorAndShowerDoor = ActiveConstruction.class.getDeclaredMethod("lastMinuteInteriorInstalls");
             mirrorAndShowerDoor.setAccessible(true);
             mirrorAndShowerDoor.invoke(lastMinuteInteriorInstallations);
             logger.info(mirrorAndShowerDoor);
@@ -442,8 +442,8 @@ public class Main {
         }
 
         try {
-          ActiveConstruction propertyCleaning = new ActiveConstruction();
-          Method interiorAndExteriorCleaned = ActiveConstruction.class.getDeclaredMethod("cleanUpStage");
+            final ActiveConstruction propertyCleaning = new ActiveConstruction();
+            final Method interiorAndExteriorCleaned = ActiveConstruction.class.getDeclaredMethod("cleanUpStage");
           interiorAndExteriorCleaned.setAccessible(true);
           interiorAndExteriorCleaned.invoke(propertyCleaning);
           logger.info(interiorAndExteriorCleaned);
@@ -453,8 +453,8 @@ public class Main {
         }
 
         try {
-          ActiveConstruction landscaping = new ActiveConstruction();
-          Method greeneryAndFertilizer = ActiveConstruction.class.getDeclaredMethod("landscapingStage");
+            final ActiveConstruction landscaping = new ActiveConstruction();
+            final Method greeneryAndFertilizer = ActiveConstruction.class.getDeclaredMethod("landscapingStage");
           greeneryAndFertilizer.setAccessible(true);
           greeneryAndFertilizer.invoke(landscaping);
           logger.info(greeneryAndFertilizer);
@@ -464,8 +464,8 @@ public class Main {
         }
 
         try {
-         Inspections lastInspection = new Inspections();
-         Method lastWalkThrough = Inspections.class.getDeclaredMethod("lastInspection");
+            final Inspections lastInspection = new Inspections();
+            final Method lastWalkThrough = Inspections.class.getDeclaredMethod("lastInspection");
          lastWalkThrough.setAccessible(true);
          lastWalkThrough.invoke(lastInspection);
          logger.info(lastWalkThrough);

@@ -21,11 +21,6 @@ public class Plumber extends Contractor implements IInstallable {
     }
 
     @Override
-    protected Double earnings() {
-        return null;
-    }
-
-    @Override
     public void addComponents() {
         logger.info("pipes installed in interior walls, ceilings and floors");
         logger.info("sewer lines and vents are installed");

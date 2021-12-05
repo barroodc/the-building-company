@@ -19,13 +19,9 @@ public class HVACTechnician extends Contractor implements IInstallable {
         addComponents();
     }
 
+
     @Override
     public void addComponents() {
       logger.info("HVAC Unit successfully installed in the basement.");
-    }
-
-    @Override
-    protected Double earnings() {
-        return null;
     }
 }

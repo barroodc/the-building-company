@@ -1,6 +1,6 @@
 package com.solvd.thebuildingcompany.interfaces;
-
-public interface IInstallable {
+@FunctionalInterface
+public interface IInstallable<E> {
 
     void addComponents();
 }

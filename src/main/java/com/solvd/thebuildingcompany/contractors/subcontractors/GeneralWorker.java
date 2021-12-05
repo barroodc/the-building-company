@@ -1,7 +1,7 @@
 package com.solvd.thebuildingcompany.contractors.subcontractors;
 
 import com.solvd.thebuildingcompany.contractors.Contractor;
-import com.solvd.thebuildingcompany.interfaces.IDig;
+import com.solvd.thebuildingcompany.genericinterfaces.IDig;
 import com.solvd.thebuildingcompany.interfaces.IInstallable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,12 +9,19 @@ import org.apache.logging.log4j.Logger;
 
 public class GeneralWorker extends Contractor implements IInstallable, IDig {
 
-    private static Logger logger = LogManager.getLogger(GeneralWorker.class);
+    private final static Logger logger = LogManager.getLogger(GeneralWorker.class);
+
+    public GeneralWorker() {
+
+    }
 
     private void woodenFormInstallations() {
         logger.info("foundation stage begins");
         addComponents();
-        dig();
+        IDig<String> startDig = (x) ->{
+            logger.info("starting digging up dirt for wooden form installations.");
+        };
+        startDig.dig(startDig.toString());
     }
 
     @Override
@@ -22,15 +29,13 @@ public class GeneralWorker extends Contractor implements IInstallable, IDig {
         logger.info("Construction crew puts up wooden forms as the template for the foundation");
         logger.info("add footings");
     }
-
     @Override
-    public void dig() {
-        logger.info("Construction crew digs trenches.");
-    }
+    public void dig(Object x) {
+        /*
+        Marker interface
 
-    @Override
-    protected Double earnings() {
-        return null;
+        values for the interface method are defined inside of the
+        woodenFormsInstallations() method.
+         */
     }
-
 }

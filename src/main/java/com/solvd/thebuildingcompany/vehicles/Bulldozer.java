@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 public class Bulldozer extends Vehicle implements IDrivable, IPushable {
 
-    private final Logger logger = Logger.getLogger(Bulldozer.class.getName());
+    private static final Logger logger = Logger.getLogger(Bulldozer.class.getName());
 
     public Bulldozer(final String nameOfVehicle) {
         super(nameOfVehicle);

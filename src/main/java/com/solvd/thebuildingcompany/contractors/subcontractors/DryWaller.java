@@ -3,16 +3,18 @@ package com.solvd.thebuildingcompany.contractors.subcontractors;
 import com.solvd.thebuildingcompany.contractors.Contractor;
 import com.solvd.thebuildingcompany.interfaces.IInstallable;
 
+import java.util.Scanner;
+import java.util.function.Function;
 import java.util.logging.Logger;
 
 public class DryWaller extends Contractor implements IInstallable {
 
+    private static final Logger logger = Logger.getLogger(DryWaller.class.getName());
+
     private boolean dryWallPanelsAvailable;
-    private boolean measurementsTook;
-    private int numberOfMistakesMade;
-    private double rValue; //(degrees kelvin * meters squared) / (divided by Watts)
-    private double lambdaT; //is the temperature difference between the warmer surface and the colder surface of a barrier.
-    private double phiSubQ; // is the heat flux through the barrier.
+    private static double rValue; //(degrees kelvin * meters squared) / (divided by Watts)
+    private static double lambdaT; //is the temperature difference between the warmer surface and the colder surface of a barrier.
+    private static double phiSubQ; // is the heat flux through the barrier.
 
     public boolean isDryWallPanelsAvailable() {
         return dryWallPanelsAvailable;
@@ -22,35 +24,42 @@ public class DryWaller extends Contractor implements IInstallable {
         this.dryWallPanelsAvailable = dryWallPanelsAvailable;
     }
 
-    public boolean isMeasurementsTook() {
-        return measurementsTook;
+    public double getrValue() {
+        return rValue;
     }
 
-    public void setMeasurementsTook(final boolean measurementsTook) {
-        this.measurementsTook = measurementsTook;
+    public void setrValue(double rValue) {
+        DryWaller.rValue = rValue;
     }
 
-    public int getNumberOfMistakesMade() {
-        return numberOfMistakesMade;
+    public double getLambdaT() {
+        return lambdaT;
     }
 
-    public void setNumberOfMistakesMade(final int numberOfMistakesMade) {
-        this.numberOfMistakesMade = numberOfMistakesMade;
+    public void setLambdaT(double lambdaT) {
+        DryWaller.lambdaT = lambdaT;
     }
 
-    private static final Logger logger = Logger.getLogger(DryWaller.class.getName());
+    public double getPhiSubQ() {
+        return phiSubQ;
+    }
 
+    public void setPhiSubQ(double phiSubQ) {
+        DryWaller.phiSubQ = phiSubQ;
+    }
 
-    public DryWaller(String firstName, String nameOfCompany) {
+    public DryWaller(final String firstName, final String nameOfCompany) {
         super(firstName, nameOfCompany);
     }
 
     private void rValueOfInsulation() {
         //Indicates how well the insulation material resists heat transfer
         final DryWaller steve = new DryWaller("Steve", "YZW Group");
-        lambdaT = 20.7;
+        logger.info("Please enter in your measured lambda value: ");
+        Scanner lambdaT = new Scanner(System.in);
+        Function<Integer, Integer> insulationReadiness = a -> lambdaT.nextInt() / 2;
         phiSubQ = 8.12;
-        rValue = (lambdaT / phiSubQ);
+        rValue = (insulationReadiness.apply(lambdaT.nextInt()) / phiSubQ);
         logger.info("Now we must figure out the r value for the fiber glass insulation");
         logger.info("Steve measured the degrees for the r value equation in degrees celsius");
         logger.info("The current temperature outside is 5.31 degrees Celsius");
@@ -81,27 +90,21 @@ public class DryWaller extends Contractor implements IInstallable {
     //Hashcode example number 1;
     @Override
     public int hashCode(){
-        int hashLambda = 21;
-        int hashPhiSubQ = 7;
+        final int hashLambda = 21;
+        final int hashPhiSubQ = 7;
 
         return hashLambda/hashPhiSubQ;
     }
 
     @Override
     public void addComponents() {
-      logger.info("Add fiberglass insulation:");
-      logger.info("Fiberglass added to attic");
-      logger.info("Fiberglass added to exterior walls");
-      logger.info("Fiber glass added to basement floor");
-      logger.info("Fiber glass added to bathroom");
-      logger.info("Fiber glass added to crawl space");
-      logger.info("Now Steve adds Drywall to all rooms in the house");
-    }
-
-
-    @Override
-    protected Double earnings() {
-        return null;
+        logger.info("Add fiberglass insulation:");
+        logger.info("Fiberglass added to attic");
+        logger.info("Fiberglass added to exterior walls");
+        logger.info("Fiber glass added to basement floor");
+        logger.info("Fiber glass added to bathroom");
+        logger.info("Fiber glass added to crawl space");
+        logger.info("Now Steve adds Drywall to all rooms in the house");
     }
 
 }

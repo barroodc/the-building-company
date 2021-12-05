@@ -10,20 +10,24 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 
 public class ApacheWordCalculation {
-    private static Logger logger = LogManager.getLogger(ApacheWordCalculation.class);
+    private static final Logger logger = LogManager.getLogger(ApacheWordCalculation.class);
+
+    public ApacheWordCalculation() {
+
+    }
 
     public void uniqueWordCounter() {
         {
             try {
-                long uniqueWords = Files.lines(Paths.get("src/main/resources/apachecalc.txt"), Charset.defaultCharset()).flatMap(line -> Arrays.stream(line.split(" "))).distinct().count();
+                final long uniqueWords = Files.lines(Paths.get("src/main/resources/apachecalc.txt"), Charset.defaultCharset()).flatMap(line -> Arrays.stream(line.split(" "))).distinct().count();
                 logger.info(uniqueWords + " unique words exist in this file.");
             } catch (IOException e) {
-                e.printStackTrace();
+                logger.error(e);
             }
         }
     }
     /*public static void main(String[] args) {
-        ApacheWordCalculation example = new ApacheWordCalculation();
+        final ApacheWordCalculation example = new ApacheWordCalculation();
         example.uniqueWordCounter();
     }
 

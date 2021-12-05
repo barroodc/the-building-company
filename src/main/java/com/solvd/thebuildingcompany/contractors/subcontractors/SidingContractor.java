@@ -20,11 +20,6 @@ public class SidingContractor extends Contractor implements IInstallable {
     }
 
     @Override
-    protected Double earnings() {
-        return null;
-    }
-
-    @Override
     public void addComponents() {
         logger.info("exterior brick installed");
     }

@@ -6,7 +6,7 @@ public class IncorrectInstallationException extends Exception {
         super("Installed incorrectly. Please reinstall");
     }
 
-    public IncorrectInstallationException(String warning){
+    public IncorrectInstallationException(final String warning){
         super(warning);
     }
 }

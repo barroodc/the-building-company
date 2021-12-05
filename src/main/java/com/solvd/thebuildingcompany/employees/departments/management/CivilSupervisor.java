@@ -1,17 +1,18 @@
 package com.solvd.thebuildingcompany.employees.departments.management;
 
 import com.solvd.thebuildingcompany.employees.Employee;
+import com.solvd.thebuildingcompany.employees.departments.engineering.CivilEngineer;
 
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.logging.Logger;
 
 public class CivilSupervisor extends Employee {
 
+    private static final Logger logger = Logger.getLogger(CivilSupervisor.class.getName());
+
     private boolean surveyReady;
-    private String name;
 
     public boolean isSurveyReady() {
         return surveyReady;
@@ -21,22 +22,12 @@ public class CivilSupervisor extends Employee {
         this.surveyReady = surveyReady;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(final String name) {
-        this.name = name;
-    }
-
-    private final Logger logger = Logger.getLogger(CivilSupervisor.class.getName());
-
-    public CivilSupervisor(final String name) {
-        this.setName(name);
+    public CivilSupervisor(final String name, final String nameOfCompany){
+        super(name, nameOfCompany);
     }
 
     private boolean constructionPlanDevelopment() {
-        final CivilSupervisor adam = new CivilSupervisor("Adam");
+        final CivilSupervisor adam = new CivilSupervisor("Adam", "The Building Company");
         adam.setSurveyReady(true);
 
         final Calendar estimatedFinish = Calendar.getInstance();
@@ -46,20 +37,12 @@ public class CivilSupervisor extends Employee {
 
         final Date date = estimatedFinish.getTime();
 
-        HashMap<String, Date> completionDate = new HashMap<>();
+        final HashMap<String, Date> completionDate = new HashMap<>();
         completionDate.put("Estimated Completion Date of Active Project Victory Lakes :", date);
 
         completionDate.forEach((key, value) -> logger.info(key + " " + value));
 
-        if (adam.isSurveyReady()){
-            return true;
-        } else {
-            return false;
-        }
+        return adam.isSurveyReady();
     }
 
-    @Override
-    protected Double earnings() {
-        return null;
-    }
 }

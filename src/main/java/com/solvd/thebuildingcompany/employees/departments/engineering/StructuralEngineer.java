@@ -7,24 +7,17 @@ import java.util.logging.Logger;
 
 public class StructuralEngineer extends Employee {
 
-    private String name;
+    private static final Logger logger = Logger.getLogger(StructuralEngineer.class.getName());
+
     private boolean materialTested;
     private boolean passingTestResult;
     private boolean testingPerformed;
     private boolean areaBuildReady;
-    private boolean timelyDelivery;
     private boolean discussionHad;
     private boolean contractHonored;
     private boolean safetyCheck;
     private boolean regulationsMet;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(final String name) {
-        this.name = name;
-    }
 
     public boolean isMaterialTested() {
         return materialTested;
@@ -56,14 +49,6 @@ public class StructuralEngineer extends Employee {
 
     public void setAreaBuildReady(final boolean areaBuildReady) {
         this.areaBuildReady = areaBuildReady;
-    }
-
-    public boolean isTimelyDelivery() {
-        return timelyDelivery;
-    }
-
-    public void setTimelyDelivery(final boolean timelyDelivery) {
-        this.timelyDelivery = timelyDelivery;
     }
 
     public boolean isDiscussionHad() {
@@ -98,8 +83,6 @@ public class StructuralEngineer extends Employee {
         this.regulationsMet = regulationsMet;
     }
 
-    private final Logger logger = Logger.getLogger(StructuralEngineer.class.getName());
-
     public StructuralEngineer(final String name) {
         this.setName(name);
     }
@@ -128,20 +111,24 @@ public class StructuralEngineer extends Employee {
         return null;
     }
 
+    public StructuralEngineer(final String name, final String nameOfCompany){
+        super(name, nameOfCompany);
+    }
+
 
     private ArrayList<String> projectDiscussions(){
 
-        final StructuralEngineer andrew = new StructuralEngineer("Andrew");
-        final StructuralEngineer naomi = new StructuralEngineer("Naomi");
-        final StructuralEngineer kelsey = new StructuralEngineer("Kelsey");
-        final StructuralEngineer brianna = new StructuralEngineer("Brianna");
+        final StructuralEngineer andrew = new StructuralEngineer("Andrew", "The Building Company");
+        final StructuralEngineer naomi = new StructuralEngineer("Naomi", "The Building Company");
+        final StructuralEngineer kelsey = new StructuralEngineer("Kelsey", "The Building Company");
+        final StructuralEngineer brianna = new StructuralEngineer("Brianna", "The Building Company");
 
         andrew.setDiscussionHad(true);
         naomi.setContractHonored(true);
         kelsey.setSafetyCheck(true);
         brianna.setRegulationsMet(true);
 
-        ArrayList<String> projectSetups = new ArrayList<>();
+        final ArrayList<String> projectSetups = new ArrayList<>();
         projectSetups.add("Structural Engineers " + andrew.getName() + " " +  "and" + " " + naomi.getName() + " " + "met with the Engineering Team: " + andrew.isDiscussionHad());
 
         projectSetups.forEach(logger::info);
@@ -151,11 +138,11 @@ public class StructuralEngineer extends Employee {
     }
 
     private HashMap<String, Boolean> buildingMaterialTesting() {
-        final StructuralEngineer clarissa = new StructuralEngineer("Clarissa");
+        final StructuralEngineer clarissa = new StructuralEngineer("Clarissa", "The Building Company");
         clarissa.setMaterialTested(true);
         clarissa.setPassingTestResult(true);
 
-        HashMap<String, Boolean> materials = new HashMap<>();
+        final HashMap<String, Boolean> materials = new HashMap<>();
         materials.put("Stone tested: ", clarissa.isMaterialTested());
         materials.put("Stone received a passing score: ", clarissa.isPassingTestResult());
 
@@ -165,7 +152,7 @@ public class StructuralEngineer extends Employee {
     }
 
     private void structureStressTest() {
-        final StructuralEngineer tyler = new StructuralEngineer("Tyler");
+        final StructuralEngineer tyler = new StructuralEngineer("Tyler", "The Building Company");
         tyler.setTestingPerformed(true);
         tyler.setPassingTestResult(true);
 
@@ -174,7 +161,7 @@ public class StructuralEngineer extends Employee {
     }
 
     private void landSuitability() {
-        final StructuralEngineer rachel = new StructuralEngineer("Rachel");
+        final StructuralEngineer rachel = new StructuralEngineer("Rachel", "The Building Company");
         rachel.setAreaBuildReady(false);
 
         final ArrayList<String> issuesWithLand = new ArrayList<>();
@@ -183,10 +170,5 @@ public class StructuralEngineer extends Employee {
 
         logger.info("Land is suitable for project: " + rachel.isAreaBuildReady());
         logger.info("Current issues with land: " + issuesWithLand);
-    }
-
-    @Override
-    protected Double earnings() {
-        return null;
     }
 }

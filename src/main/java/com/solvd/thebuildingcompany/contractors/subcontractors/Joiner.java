@@ -24,9 +24,4 @@ public class Joiner extends Contractor implements IInstallable {
       logger.info("basement staircase installed");
       logger.info("foyer staircase installed");
     }
-
-    @Override
-    protected Double earnings() {
-        return null;
-    }
 }

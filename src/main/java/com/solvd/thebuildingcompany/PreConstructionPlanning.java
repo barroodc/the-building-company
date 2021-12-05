@@ -16,13 +16,17 @@ import java.lang.reflect.Method;
 
 
 public class PreConstructionPlanning {
-    private static Logger logger = LogManager.getLogger(PreConstructionPlanning.class);
+    private static final Logger logger = LogManager.getLogger(PreConstructionPlanning.class);
+
+    public PreConstructionPlanning() {
+
+    }
 
     private void architectsPlanAndMeet() {
 
         try {
-            ResidentialArchitect jane = new ResidentialArchitect("Jane");
-            Method projectDiscussions = ResidentialArchitect.class.getDeclaredMethod("projectDiscussions");
+            final ResidentialArchitect jane = new ResidentialArchitect("Jane", "The Building Company");
+            final Method projectDiscussions = ResidentialArchitect.class.getDeclaredMethod("projectDiscussions");
             projectDiscussions.setAccessible(true);
             projectDiscussions.invoke(jane);
             logger.info(projectDiscussions);
@@ -31,8 +35,8 @@ public class PreConstructionPlanning {
         }
 
         try {
-            InteriorArchitect happy = new InteriorArchitect("Happy");
-            Method projectDiscussions = InteriorArchitect.class.getDeclaredMethod("projectDiscussions");
+            final InteriorArchitect happy = new InteriorArchitect("Happy", "The Building Company");
+            final Method projectDiscussions = InteriorArchitect.class.getDeclaredMethod("projectDiscussions");
             projectDiscussions.setAccessible(true);
             projectDiscussions.invoke(happy);
             logger.info(projectDiscussions);
@@ -42,8 +46,8 @@ public class PreConstructionPlanning {
         }
 
         try {
-            ResidentialArchitect brendan = new ResidentialArchitect("Brendan");
-            Method bluePrintPlanning = ResidentialArchitect.class.getDeclaredMethod("documentationAndDrawings");
+            final ResidentialArchitect brendan = new ResidentialArchitect("Brendan", "The Building Company");
+            final Method bluePrintPlanning = ResidentialArchitect.class.getDeclaredMethod("documentationAndDrawings");
             bluePrintPlanning.setAccessible(true);
             bluePrintPlanning.invoke(brendan);
             logger.info(bluePrintPlanning);
@@ -52,8 +56,8 @@ public class PreConstructionPlanning {
         }
 
         try {
-            InteriorArchitect james = new InteriorArchitect("James");
-            Method bluePrintPlanning = InteriorArchitect.class.getDeclaredMethod("documentationAndDrawings");
+            final InteriorArchitect james = new InteriorArchitect("James", "The Building Company");
+            final Method bluePrintPlanning = InteriorArchitect.class.getDeclaredMethod("documentationAndDrawings");
             bluePrintPlanning.setAccessible(true);
             bluePrintPlanning.invoke(james);
             logger.info(bluePrintPlanning);
@@ -66,8 +70,8 @@ public class PreConstructionPlanning {
     private void engineersMeet() {
 
         try {
-            CivilEngineer lana = new CivilEngineer("Lana");
-            Method projectDiscussions = CivilEngineer.class.getDeclaredMethod("projectDiscussions");
+            final CivilEngineer lana = new CivilEngineer("Lana", "The Building Company");
+            final Method projectDiscussions = CivilEngineer.class.getDeclaredMethod("projectDiscussions");
             projectDiscussions.setAccessible(true);
             projectDiscussions.invoke(lana);
             logger.info(projectDiscussions);
@@ -76,8 +80,8 @@ public class PreConstructionPlanning {
         }
 
         try {
-            MechanicalEngineer dwayne = new MechanicalEngineer("Dwayne");
-            Method projectDiscussions = MechanicalEngineer.class.getDeclaredMethod("projectDiscussions");
+            final MechanicalEngineer dwayne = new MechanicalEngineer("Dwayne", "The Building Company");
+            final Method projectDiscussions = MechanicalEngineer.class.getDeclaredMethod("projectDiscussions");
             projectDiscussions.setAccessible(true);
             projectDiscussions.invoke(dwayne);
             logger.info(projectDiscussions);
@@ -87,8 +91,8 @@ public class PreConstructionPlanning {
         }
 
         try {
-            StructuralEngineer bart = new StructuralEngineer("Bart");
-            Method projectDiscussions = StructuralEngineer.class.getDeclaredMethod("projectDiscussions");
+            final StructuralEngineer bart = new StructuralEngineer("Bart", "The Building Company");
+            final Method projectDiscussions = StructuralEngineer.class.getDeclaredMethod("projectDiscussions");
             projectDiscussions.setAccessible(true);
             projectDiscussions.invoke(bart);
             logger.info(projectDiscussions);
@@ -98,8 +102,8 @@ public class PreConstructionPlanning {
         }
 
         try {
-            PlumbingEngineer peter = new PlumbingEngineer("Peter");
-            Method projectDiscussions = PlumbingEngineer.class.getDeclaredMethod("projectDiscussions");
+            final PlumbingEngineer peter = new PlumbingEngineer("Peter", "The Building Company");
+            final Method projectDiscussions = PlumbingEngineer.class.getDeclaredMethod("projectDiscussions");
             projectDiscussions.setAccessible(true);
             projectDiscussions.invoke(peter);
             logger.info(projectDiscussions);
@@ -109,8 +113,8 @@ public class PreConstructionPlanning {
         }
 
         try {
-            ElectricalEngineer valerie = new ElectricalEngineer("Valerie");
-            Method projectDiscussions = ElectricalEngineer.class.getDeclaredMethod("projectDiscussions");
+            final ElectricalEngineer valerie = new ElectricalEngineer("Valerie", "The Building Company");
+            final Method projectDiscussions = ElectricalEngineer.class.getDeclaredMethod("projectDiscussions");
             projectDiscussions.setAccessible(true);
             projectDiscussions.invoke(valerie);
             logger.info(projectDiscussions);
@@ -123,8 +127,8 @@ public class PreConstructionPlanning {
     private void civilEngineerPrePlanning() {
 
         try {
-            CivilEngineer daisy = new CivilEngineer("Daisy");
-            Method sitePlanning = CivilEngineer.class.getDeclaredMethod("sitePlanning");
+            final CivilEngineer daisy = new CivilEngineer("Daisy", "The Building Company");
+            final Method sitePlanning = CivilEngineer.class.getDeclaredMethod("sitePlanning");
             sitePlanning.setAccessible(true);
             sitePlanning.invoke(daisy);
             logger.info(sitePlanning);
@@ -135,8 +139,8 @@ public class PreConstructionPlanning {
 
     private void electricalSystemPlanning() {
         try {
-            ElectricalEngineer brian = new ElectricalEngineer("Brian");
-            Method electricalSystemDesign = ElectricalEngineer.class.getDeclaredMethod("designingElectricalSystems");
+            final ElectricalEngineer brian = new ElectricalEngineer("Brian", "The Building Company");
+            final Method electricalSystemDesign = ElectricalEngineer.class.getDeclaredMethod("designingElectricalSystems");
             electricalSystemDesign.setAccessible(true);
             electricalSystemDesign.invoke(brian);
             logger.info(electricalSystemDesign);
@@ -148,8 +152,8 @@ public class PreConstructionPlanning {
 
     private void hVACSystemDesignStage() {
         try {
-            MechanicalEngineer bobby = new MechanicalEngineer("Bobby");
-            Method HVACDesign = MechanicalEngineer.class.getDeclaredMethod("hVACDesign");
+            final MechanicalEngineer bobby = new MechanicalEngineer("Bobby", "The Building Company");
+            final Method HVACDesign = MechanicalEngineer.class.getDeclaredMethod("hVACDesign");
             HVACDesign.setAccessible(true);
             HVACDesign.invoke(bobby);
             logger.info(HVACDesign);
@@ -160,8 +164,8 @@ public class PreConstructionPlanning {
 
     private void plumbingDesigns() {
         try {
-            PlumbingEngineer paul = new PlumbingEngineer("Paul");
-            Method plumbingSystemDesign = PlumbingEngineer.class.getDeclaredMethod("designingPlumbingSystems");
+            final PlumbingEngineer paul = new PlumbingEngineer("Paul", "The Building Company");
+            final Method plumbingSystemDesign = PlumbingEngineer.class.getDeclaredMethod("designingPlumbingSystems");
             plumbingSystemDesign.setAccessible(true);
             plumbingSystemDesign.invoke(paul);
             logger.info(plumbingSystemDesign);
@@ -174,8 +178,8 @@ public class PreConstructionPlanning {
     private void assignedDevelopments() {
 
         try {
-            BusinessDeveloper kathleen = new BusinessDeveloper("Kathleen");
-            Method assignedProjects = BusinessDeveloper.class.getDeclaredMethod("developmentProjects");
+            final BusinessDeveloper kathleen = new BusinessDeveloper("Kathleen", "The Building Company", 27);
+            final Method assignedProjects = BusinessDeveloper.class.getDeclaredMethod("developmentProjects");
             assignedProjects.setAccessible(true);
             assignedProjects.invoke(kathleen);
             logger.info(assignedProjects);
@@ -187,8 +191,8 @@ public class PreConstructionPlanning {
     private void estimatedCompletion() {
 
         try {
-            CivilSupervisor rodger = new CivilSupervisor("Rodger");
-            Method completionDate = CivilSupervisor.class.getDeclaredMethod("constructionPlanDevelopment");
+            final CivilSupervisor rodger = new CivilSupervisor("Rodger", "The Building Company");
+            final Method completionDate = CivilSupervisor.class.getDeclaredMethod("constructionPlanDevelopment");
             completionDate.setAccessible(true);
             completionDate.invoke(rodger);
             logger.info(completionDate);
@@ -200,8 +204,8 @@ public class PreConstructionPlanning {
     private void initialSitePreparations() {
         //Can probably lump material ordering in here.
         try {
-            ProjectManager harvey = new ProjectManager("Harvey");
-            Method preppingSite = ProjectManager.class.getDeclaredMethod("constructionSitePreparations");
+            final ProjectManager harvey = new ProjectManager("Harvey", "The Building Company");
+            final Method preppingSite = ProjectManager.class.getDeclaredMethod("constructionSitePreparations");
             preppingSite.setAccessible(true);
             preppingSite.invoke(harvey);
             logger.info(preppingSite);
@@ -214,8 +218,8 @@ public class PreConstructionPlanning {
     private void materialsForProject() {
 
         try {
-            ConstructionExpeditor damian = new ConstructionExpeditor("Damian");
-            Method listOfItemsOrdered = ConstructionExpeditor.class.getDeclaredMethod("materialsOrdered");
+            final ConstructionExpeditor damian = new ConstructionExpeditor("Damian", "The Building Company");
+            final Method listOfItemsOrdered = ConstructionExpeditor.class.getDeclaredMethod("materialsOrdered");
             listOfItemsOrdered.setAccessible(true);
             listOfItemsOrdered.invoke(damian);
             logger.info("Materials currently ordered for project:");
@@ -228,8 +232,8 @@ public class PreConstructionPlanning {
     private void contractorsHired() {
 
         try {
-            ResidentialContractor john = new ResidentialContractor("John", "PQR Group");
-            Method brandNewSubcontractors = ResidentialContractor.class.getDeclaredMethod("brandNewSubcontractorCompanies");
+            final ResidentialContractor john = new ResidentialContractor("John", "PQR Group");
+            final Method brandNewSubcontractors = ResidentialContractor.class.getDeclaredMethod("brandNewSubcontractorCompanies");
             brandNewSubcontractors.setAccessible(true);
             brandNewSubcontractors.invoke(john);
             logger.info(brandNewSubcontractors);

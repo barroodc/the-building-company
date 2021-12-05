@@ -7,13 +7,8 @@ import java.util.logging.Logger;
 
 public class PlumbingEngineer extends Employee {
 
-    private String name;
-    private String statusReport;
-    private boolean inspectionDone;
-    private boolean correctSystem;
-    private boolean correctEquipment;
-    private boolean designDeveloped;
-    private boolean plumbingActive;
+    private static final Logger logger = Logger.getLogger(PlumbingEngineer.class.getName());
+
     private boolean discussionHad;
     private boolean contractHonored;
     private boolean safetyCheck;
@@ -22,63 +17,6 @@ public class PlumbingEngineer extends Employee {
     private boolean stormwaterDrainageDesigned;
     private boolean portableWaterDrainageDesigned;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(final String name) {
-        this.name = name;
-    }
-
-    public String getStatusReport() {
-        return statusReport;
-    }
-
-    public void setStatusReport(final String statusReport) {
-        this.statusReport = statusReport;
-    }
-
-    public boolean isInspectionDone() {
-        return inspectionDone;
-    }
-
-    public void setInspectionDone(final boolean inspectionDone) {
-        this.inspectionDone = inspectionDone;
-    }
-
-    public boolean isCorrectSystem() {
-        return correctSystem;
-    }
-
-    public void setCorrectSystem(final boolean correctSystem) {
-        this.correctSystem = correctSystem;
-    }
-
-    public boolean isCorrectEquipment() {
-        return correctEquipment;
-    }
-
-    public void setCorrectEquipment(final boolean correctEquipment) {
-        this.correctEquipment = correctEquipment;
-    }
-
-    public boolean isDesignDeveloped() {
-        return designDeveloped;
-    }
-
-    public void setDesignDeveloped(final boolean designDeveloped) {
-        this.designDeveloped = designDeveloped;
-    }
-
-    public boolean isPlumbingActive() {
-        return plumbingActive;
-    }
-
-    public void setPlumbingActive(final boolean plumbingActive) {
-        this.plumbingActive = plumbingActive;
-    }
-
-    private final Logger logger = Logger.getLogger(PlumbingEngineer.class.getName());
 
     public PlumbingEngineer(final String name) {
         this.setName(name);
@@ -116,11 +54,39 @@ public class PlumbingEngineer extends Employee {
         this.regulationsMet = regulationsMet;
     }
 
+    public boolean isSanitaryDrainageDesigned() {
+        return sanitaryDrainageDesigned;
+    }
+
+    public void setSanitaryDrainageDesigned(final boolean sanitaryDrainageDesigned) {
+        this.sanitaryDrainageDesigned = sanitaryDrainageDesigned;
+    }
+
+    public boolean isStormwaterDrainageDesigned() {
+        return stormwaterDrainageDesigned;
+    }
+
+    public void setStormwaterDrainageDesigned(final boolean stormwaterDrainageDesigned) {
+        this.stormwaterDrainageDesigned = stormwaterDrainageDesigned;
+    }
+
+    public boolean isPortableWaterDrainageDesigned() {
+        return portableWaterDrainageDesigned;
+    }
+
+    public void setPortableWaterDrainageDesigned(final boolean portableWaterDrainageDesigned) {
+        this.portableWaterDrainageDesigned = portableWaterDrainageDesigned;
+    }
+
+    public PlumbingEngineer(final String name, final String nameOfCompany){
+        super(name, nameOfCompany);
+    }
+
     private ArrayList<String> projectDiscussions() {
-        final PlumbingEngineer donna = new PlumbingEngineer("Donna");
-        final PlumbingEngineer patrick = new PlumbingEngineer("Patrick");
-        final PlumbingEngineer kelly = new PlumbingEngineer("Kelly");
-        final PlumbingEngineer judy = new PlumbingEngineer("Judy");
+        final PlumbingEngineer donna = new PlumbingEngineer("Donna", "The Building Company");
+        final PlumbingEngineer patrick = new PlumbingEngineer("Patrick", "The Building Company");
+        final PlumbingEngineer kelly = new PlumbingEngineer("Kelly", "The Building Company");
+        final PlumbingEngineer judy = new PlumbingEngineer("Judy", "The Building Company");
 
         donna.setDiscussionHad(true);
         patrick.setContractHonored(true);
@@ -138,7 +104,7 @@ public class PlumbingEngineer extends Employee {
 
 
     private void designingPlumbingSystems() {
-        final PlumbingEngineer carson = new PlumbingEngineer("Carson");
+        final PlumbingEngineer carson = new PlumbingEngineer("Carson", "The Building Company");
         carson.sanitaryDrainageDesigned = true;
         carson.stormwaterDrainageDesigned = true;
         carson.portableWaterDrainageDesigned = true;
@@ -146,11 +112,5 @@ public class PlumbingEngineer extends Employee {
         logger.info("Sanitary Drainage System Designed: " + true);
         logger.info("Stormwater Drainage System Designed: " + true);
         logger.info("Portable Water Drainage System Designed: " + true);
-    }
-
-
-    @Override
-    protected Double earnings() {
-        return null;
     }
 }

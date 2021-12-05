@@ -1,34 +1,27 @@
 package com.solvd.thebuildingcompany.contractors.subcontractors;
 
 import com.solvd.thebuildingcompany.contractors.Contractor;
+import com.solvd.thebuildingcompany.employees.departments.engineering.ElectricalEngineer;
 import com.solvd.thebuildingcompany.interfaces.IInstallable;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.logging.Logger;
 
 public class Electrician extends Contractor implements IInstallable {
 
-    private boolean passedInspection;
+    private static final Logger logger = Logger.getLogger(Electrician.class.getName());
+
     private int evaluationCount;
 
-    public boolean isPassedInspection() {
-        return passedInspection;
-    }
-
-    public void setPassedInspection(final boolean passedInspection) {
-        this.passedInspection = passedInspection;
-    }
-
-    public int getEvaluationCount() {
-        return evaluationCount;
+    public Optional<Integer> getEvaluationCount() {
+        return Optional.of(evaluationCount);
     }
 
     public void setEvaluationCount(final int evaluationCount) {
         this.evaluationCount = evaluationCount;
     }
 
-
-    private final Logger logger = Logger.getLogger(Electrician.class.getName());
 
     public Electrician(final String firstName, final String nameOfCompany) {
         super(firstName, nameOfCompany);
@@ -40,22 +33,27 @@ public class Electrician extends Contractor implements IInstallable {
         brandon.addComponents();
     }
 
+    //Optional example
     private void electricalPanelFinalCheck() {
       final Electrician robert = new Electrician("Robert", "DEF Group");
-      HashMap<String, Boolean> electricalPanelCheckList = new HashMap<>();
+      final HashMap<String, Boolean> electricalPanelCheckList = new HashMap<>();
       electricalPanelCheckList.put("Any electrical corrosion or oxidization of wiring?", false);
       electricalPanelCheckList.put("Any water leakage?", true);
       electricalPanelCheckList.put("Was there any insect or rodent nesting damage?", false);
       electricalPanelCheckList.put("Were there any arcing wires?", false);
-      evaluationCount = 1;
+      //evaluationCount = 1;
 
-      ArrayList<String> listOfThingsWrong = new ArrayList<>();
-      ArrayList<String> listOfThingsRight = new ArrayList<>();
+      final ArrayList<String> listOfThingsWrong = new ArrayList<>();
+      final ArrayList<String> listOfThingsRight = new ArrayList<>();
 
         electricalPanelCheckList.forEach((key, value) -> {
-            while (value.equals(false) && evaluationCount < 5) {
-                logger.info(robert.getFirstName() + " the Electrician checked function number: " + evaluationCount + " of the electrical panel.");
-                evaluationCount++;
+            while (value.equals(false) && evaluationCount <= 4) {
+                if (getEvaluationCount().isPresent()) {
+                    logger.info(robert.getFirstName() + " the Electrician checked function number: " + evaluationCount + " of the electrical panel.");
+                    evaluationCount++;
+                } else {
+                    logger.info("Please go back and complete the required number of evaluations.");
+                }
             }
         });
 
@@ -70,6 +68,11 @@ public class Electrician extends Contractor implements IInstallable {
         });
     }
 
+    public static void main(String[] args) {
+        Electrician example = new Electrician("E","E");
+        example.electricalPanelFinalCheck();
+    }
+
 
     @Override
     public void addComponents() {
@@ -77,10 +80,5 @@ public class Electrician extends Contractor implements IInstallable {
       logger.info("ductwork for HVAC system applied");
       logger.info("receptacles for outlets are installed");
       logger.info("lights and switches are installed");
-    }
-
-    @Override
-    protected Double earnings() {
-        return null;
     }
 }
