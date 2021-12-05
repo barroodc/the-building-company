@@ -68,11 +68,6 @@ public class Electrician extends Contractor implements IInstallable {
         });
     }
 
-    public static void main(String[] args) {
-        Electrician example = new Electrician("E","E");
-        example.electricalPanelFinalCheck();
-    }
-
 
     @Override
     public void addComponents() {
