@@ -1,6 +1,6 @@
 package com.solvd.thebuildingcompany.vehicles;
 
-import com.solvd.thebuildingcompany.genericinterfaces.IDig;
+import com.solvd.thebuildingcompany.generics.IDig;
 import com.solvd.thebuildingcompany.interfaces.IDrivable;
 import com.solvd.thebuildingcompany.interfaces.IPave;
 

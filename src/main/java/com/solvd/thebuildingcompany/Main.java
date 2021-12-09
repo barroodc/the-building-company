@@ -50,8 +50,7 @@ public class Main {
             logger.info(approvalStage);
             logger.info(specializedHomeBuilds);
             logger.info(locationAndName);
-          Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -62,8 +61,7 @@ public class Main {
             initialProjectTalks.setAccessible(true);
             initialProjectTalks.invoke(architectMeeting);
             logger.info(initialProjectTalks);
-            Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -73,8 +71,7 @@ public class Main {
             initialProjectTalks.setAccessible(true);
             initialProjectTalks.invoke(engineerMeeting);
             logger.info(initialProjectTalks);
-            Thread.sleep(5000);
-        } catch(NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch(NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -84,8 +81,7 @@ public class Main {
             prePlanningSite.setAccessible(true);
             prePlanningSite.invoke(civilEngineerSitePlan);
             logger.info(prePlanningSite);
-            Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -95,8 +91,7 @@ public class Main {
             electricalDesign.setAccessible(true);
             electricalDesign.invoke(electricalSystemPlan);
             logger.info(electricalSystemPlan);
-            Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -106,8 +101,7 @@ public class Main {
             hVACDesign.setAccessible(true);
             hVACDesign.invoke(hVACSystemDesign);
             logger.info(hVACDesign);
-            Thread.sleep(5000);
-        } catch(NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch(NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -117,8 +111,7 @@ public class Main {
             plumbingDesign.setAccessible(true);
             plumbingDesign.invoke(plumbingDesignStage);
             logger.info(plumbingDesign);
-            Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -128,8 +121,7 @@ public class Main {
             developmentAssigned.setAccessible(true);
             developmentAssigned.invoke(developmentLeadership);
             logger.info(developmentAssigned);
-            Thread.sleep(5000);
-        } catch(NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch(NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -139,8 +131,7 @@ public class Main {
             completionOfProject.setAccessible(true);
             completionOfProject.invoke(timeToCompleteNJProject);
             logger.info(completionOfProject);
-            Thread.sleep(5000);
-        } catch(NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch(NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -150,8 +141,7 @@ public class Main {
             preppingSite.setAccessible(true);
             preppingSite.invoke(initialSitePreparations);
             logger.info(preppingSite);
-            Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e){
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e){
             logger.error(e);
         }
 
@@ -161,8 +151,7 @@ public class Main {
             itemsOrderedList.setAccessible(true);
             itemsOrderedList.invoke(orderingTheItems);
             logger.info(itemsOrderedList);
-            Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -172,8 +161,7 @@ public class Main {
             brandNewSubContractors.setAccessible(true);
             brandNewSubContractors.invoke(subContractorsHired);
             logger.info(brandNewSubContractors);
-            Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -183,8 +171,7 @@ public class Main {
             siteClearedOfObstructions.setAccessible(true);
             siteClearedOfObstructions.invoke(demolition);
             logger.info(siteClearedOfObstructions);
-            Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -193,8 +180,7 @@ public class Main {
             final Method woodenForms = ActiveConstruction.class.getDeclaredMethod("woodenFormsInstalled");
             woodenForms.setAccessible(true);
             woodenForms.invoke(woodFormsInstalled);
-            Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e){
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e){
             logger.error(e);
         }
 
@@ -205,8 +191,7 @@ public class Main {
             concreteInTrenches.setAccessible(true);
             concreteInTrenches.invoke(basementConcretePoured);
             logger.info(concreteInTrenches);
-            Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -216,8 +201,7 @@ public class Main {
             foundationUpToCode.setAccessible(true);
             foundationUpToCode.invoke(foundationInspected);
             logger.info(foundationUpToCode);
-            Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -227,8 +211,7 @@ public class Main {
             flooringRoots.setAccessible(true);
             flooringRoots.invoke(flooringSkeleton);
             logger.info(flooringRoots);
-            Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -238,8 +221,7 @@ public class Main {
            bareWall.setAccessible(true);
            bareWall.invoke(wallCompleted);
            logger.info(bareWall);
-           Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -249,8 +231,7 @@ public class Main {
             roofingInstallComplete.setAccessible(true);
             roofingInstallComplete.invoke(roofingInstallation);
             logger.info(roofingInstallComplete);
-            Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -260,8 +241,7 @@ public class Main {
            pipingInstall.setAccessible(true);
            pipingInstall.invoke(pipingInstallation);
            logger.info(pipingInstall);
-           Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -271,8 +251,7 @@ public class Main {
             electricalWiring.setAccessible(true);
             electricalWiring.invoke(electricalWorkInstalled);
             logger.info(electricalWiring);
-            Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -282,8 +261,7 @@ public class Main {
            plumbingInspection.setAccessible(true);
            plumbingInspection.invoke(plumbingInspected);
            logger.info(plumbingInspection);
-           Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -293,8 +271,7 @@ public class Main {
           electricalInspection.setAccessible(true);
           electricalInspection.invoke(electricalInspected);
           logger.info(electricalInspection);
-          Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
            logger.error(e);
         }
 
@@ -304,8 +281,7 @@ public class Main {
           mechanicalSystemsInspection.setAccessible(true);
           mechanicalSystemsInspection.invoke(mechanicalSystemsInspected);
           logger.info(mechanicalSystemsInspection);
-          Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -315,8 +291,7 @@ public class Main {
            rValueCalculation.setAccessible(true);
            rValueCalculation.invoke(fiberglassAndDrywall);
            logger.info(rValueCalculation);
-           Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -326,8 +301,7 @@ public class Main {
          brickFrontInstalled.setAccessible(true);
          brickFrontInstalled.invoke(brickSidingAdded);
          logger.info(brickFrontInstalled);
-         Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
          logger.error(e);
         }
 
@@ -337,8 +311,7 @@ public class Main {
           paintingAllRooms.setAccessible(true);
           paintingAllRooms.invoke(paintingTheRooms);
           logger.info(paintingAllRooms);
-          Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
           logger.error(e);
         }
 
@@ -348,8 +321,7 @@ public class Main {
           appliancesAdded.setAccessible(true);
           appliancesAdded.invoke(installingAppliances);
           logger.info(appliancesAdded);
-          Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
            logger.error(e);
         }
 
@@ -359,8 +331,7 @@ public class Main {
           stairCasesAdded.setAccessible(true);
           stairCasesAdded.invoke(stairCaseInstall);
           logger.info(stairCasesAdded);
-          Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
            logger.error(e);
         }
 
@@ -370,8 +341,7 @@ public class Main {
           hardWoodFloorAdded.setAccessible(true);
           hardWoodFloorAdded.invoke(hardWoodFloorInstall);
           logger.info(hardWoodFloorAdded);
-          Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
            logger.error(e);
         }
 
@@ -381,8 +351,7 @@ public class Main {
           carpetAdded.setAccessible(true);
           carpetAdded.invoke(carpetInstallation);
           logger.info(carpetAdded);
-          Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
           logger.error(e);
         }
 
@@ -392,8 +361,7 @@ public class Main {
             propertyDrainageCheck.setAccessible(true);
             propertyDrainageCheck.invoke(drainageZoneCheck);
             logger.info(propertyDrainageCheck);
-            Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -403,8 +371,7 @@ public class Main {
           levelingNeededCheck.setAccessible(true);
           levelingNeededCheck.invoke(foundationAreaCheck);
           logger.info(levelingNeededCheck);
-          Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
            logger.error(e);
         }
 
@@ -414,8 +381,7 @@ public class Main {
           electricalPanelCheck.setAccessible(true);
           electricalPanelCheck.invoke(electricalPanelEvaluation);
           logger.info(electricalPanelCheck);
-          Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
            logger.error(e);
         }
 
@@ -425,8 +391,7 @@ public class Main {
           hvacInstall.setAccessible(true);
           hvacInstall.invoke(hvacInstallationStage);
           logger.info(hvacInstall);
-          Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
            logger.error(e);
         }
 
@@ -436,8 +401,7 @@ public class Main {
             mirrorAndShowerDoor.setAccessible(true);
             mirrorAndShowerDoor.invoke(lastMinuteInteriorInstallations);
             logger.info(mirrorAndShowerDoor);
-            Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             logger.error(e);
         }
 
@@ -447,8 +411,7 @@ public class Main {
           interiorAndExteriorCleaned.setAccessible(true);
           interiorAndExteriorCleaned.invoke(propertyCleaning);
           logger.info(interiorAndExteriorCleaned);
-          Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
            logger.error(e);
         }
 
@@ -458,8 +421,7 @@ public class Main {
           greeneryAndFertilizer.setAccessible(true);
           greeneryAndFertilizer.invoke(landscaping);
           logger.info(greeneryAndFertilizer);
-          Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
            logger.error(e);
         }
 
@@ -469,8 +431,7 @@ public class Main {
          lastWalkThrough.setAccessible(true);
          lastWalkThrough.invoke(lastInspection);
          logger.info(lastWalkThrough);
-         Thread.sleep(5000);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InterruptedException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
           logger.error(e);
         }
     }

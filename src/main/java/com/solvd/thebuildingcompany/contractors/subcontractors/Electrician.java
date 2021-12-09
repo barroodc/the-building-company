@@ -1,11 +1,9 @@
 package com.solvd.thebuildingcompany.contractors.subcontractors;
 
 import com.solvd.thebuildingcompany.contractors.Contractor;
-import com.solvd.thebuildingcompany.employees.departments.engineering.ElectricalEngineer;
 import com.solvd.thebuildingcompany.interfaces.IInstallable;
 
 import java.util.*;
-import java.util.function.Function;
 import java.util.logging.Logger;
 
 public class Electrician extends Contractor implements IInstallable {

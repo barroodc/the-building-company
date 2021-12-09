@@ -3,7 +3,6 @@ package com.solvd.thebuildingcompany.contractors.subcontractors;
 import com.solvd.thebuildingcompany.contractors.Contractor;
 import com.solvd.thebuildingcompany.interfaces.IInstallable;
 
-import java.util.Scanner;
 import java.util.function.Function;
 import java.util.logging.Logger;
 
@@ -12,6 +11,8 @@ public class FloorLayer extends Contractor implements IInstallable {
     private static final Logger logger = Logger.getLogger(FloorLayer.class.getName());
 
     int oakWoodCount;
+    int mapleWoodCount;
+    int totalAmountOfWood;
     int carpetSizeLength;
     private boolean sufficientOakWood;
     private boolean sufficientCarpet;
@@ -22,6 +23,22 @@ public class FloorLayer extends Contractor implements IInstallable {
 
     public void setOakWoodCount(final int oakWoodCount) {
         this.oakWoodCount = oakWoodCount;
+    }
+
+    public int getMapleWoodCount() {
+        return mapleWoodCount;
+    }
+
+    public void setMapleWoodCount(int mapleWoodCount) {
+        this.mapleWoodCount = mapleWoodCount;
+    }
+
+    public int getTotalAmountOfWood() {
+        return totalAmountOfWood;
+    }
+
+    public void setTotalAmountOfWood(int totalAmountOfWood) {
+        this.totalAmountOfWood = totalAmountOfWood;
     }
 
     public boolean isSufficientCarpet() {
@@ -61,17 +78,31 @@ public class FloorLayer extends Contractor implements IInstallable {
     }
 
     private void hardwoodFloorInstalled() {
-        Scanner completeWoodCount = new Scanner(System.in);
-        Scanner oakWoodCount = new Scanner(System.in);
-        Function<Integer,Integer> woodCount = a -> a - 2;
         final FloorLayer zachary = new FloorLayer("Zachary", "GHI Group");
+        int minimumConstraint = 25;
+        int maximumConstraint = 50;
+        mapleWoodCount = 20;
 
-        if (woodCount.apply(completeWoodCount.nextInt()) > 40 && oakWoodCount.nextInt() > 25) {
-            logger.info("Sufficient amount of oakWood/wood flooring to complete the floor: " + !sufficientOakWood);
-            logger.info(zachary.getFirstName() + " the Floor Layer installs the hardwood floors in the family room.");
-            logger.info("He also installs the hardwood floors in the living room.");
-            logger.info("Hardwood floor installation complete.");
-        }
+        oakWoodCount = (int) Math.floor(Math.random() * (maximumConstraint - minimumConstraint + 1) + minimumConstraint);
+        Function<Integer, Integer> woodAcquired = a -> a + oakWoodCount;
+        totalAmountOfWood = (woodAcquired.apply(mapleWoodCount));
+
+        int negativeResults = 1;
+        do {
+            if (totalAmountOfWood != 40) {
+                logger.info(zachary.getFirstName() + " the Floor Layer still needs to order more wood for the housing project.");
+                negativeResults++;
+            }
+        } while (negativeResults <= 5);
+
+        int positiveResults = 0;
+
+        do {
+            logger.info(zachary.getFirstName() + " the Floor Layer has ordered a sufficient amount of wood to continue the housing project.");
+            logger.info("Oak Wood Count: " + oakWoodCount);
+            logger.info("Maple Wood Count: " + mapleWoodCount);
+            positiveResults++;
+        } while (positiveResults < 1);
     }
 
     private void carpetInstalled() {
@@ -95,10 +126,5 @@ public class FloorLayer extends Contractor implements IInstallable {
         logger.info("pier and post installed");
         logger.info("girders installed");
         logger.info("sill installed");
-    }
-
-    public static void main(String[] args) {
-        FloorLayer example = new FloorLayer("A","A");
-        example.hardwoodFloorInstalled();
     }
 }

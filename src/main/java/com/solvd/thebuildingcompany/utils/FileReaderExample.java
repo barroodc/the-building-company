@@ -8,11 +8,11 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class FileReadWrite {
+public class FileReaderExample {
 
-    private static final Logger logger = LogManager.getLogger(FileReadWrite.class);
+    private static final Logger logger = LogManager.getLogger(FileReaderExample.class);
 
-    public FileReadWrite() {
+    public FileReaderExample() {
 
     }
 

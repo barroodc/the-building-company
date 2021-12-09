@@ -92,7 +92,7 @@ public class CivilEngineer extends Employee {
         areSitePlansMade.forEach((key, value) -> logger.info(key + " " + value));
     }
 
-    private void gradeDesigning() throws FaultyDesignException {
+    private void gradeDesigning() {
         final CivilEngineer rachel = new CivilEngineer("Rachel", "The Building Company");
         final HashMap<String, Boolean> sectorsOfDevelopment = new HashMap<>();
         sectorsOfDevelopment.put("Northern most point passed inspection: ", true);
@@ -166,6 +166,9 @@ public class CivilEngineer extends Employee {
 
            permitQualifications.forEach((key, value) -> logger.info(value ? tom.getName() + "approved the grade designing to submit for permit." : StageOfTask.MIDWAY_THROUGH + "Needs to be researched before permit application is submitted."));
 
+           if (permitQualifications.containsValue(false)){
+               throw new InvalidLotException();
+           }
         }
 
     private void erosionControlPermitHandling(){

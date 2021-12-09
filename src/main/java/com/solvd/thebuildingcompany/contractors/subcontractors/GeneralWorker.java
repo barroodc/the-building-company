@@ -1,7 +1,7 @@
 package com.solvd.thebuildingcompany.contractors.subcontractors;
 
 import com.solvd.thebuildingcompany.contractors.Contractor;
-import com.solvd.thebuildingcompany.genericinterfaces.IDig;
+import com.solvd.thebuildingcompany.generics.IDig;
 import com.solvd.thebuildingcompany.interfaces.IInstallable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

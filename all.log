@@ -1,22 +1,2 @@
-2021-12-05 16:41:23.478 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - Welcome to The Building Company
-2021-12-05 16:41:23.484 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - Our office locations are as follows:
-2021-12-05 16:41:23.485 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - [New York, California, New Jersey]
-2021-12-05 16:41:23.485 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - Approval Status of Open Projects:
-2021-12-05 16:41:23.486 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - {Chestnut Lake =false, Victory Lakes =false, Sycamore Village =true}
-2021-12-05 16:41:23.486 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - Number of active projects: 1
-2021-12-05 16:41:23.487 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - We specialize in Residential Development
-2021-12-05 16:41:23.487 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - The specific types of homes we specialize in are as follows:
-2021-12-05 16:41:23.487 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - [Tudor, Colonial, Victorian]
-2021-12-05 16:41:23.488 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - Location and name of Suburban developments:
-2021-12-05 16:41:23.488 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - Project discussions for Highland Hills in Princeton, New Jersey are under way: 
-2021-12-05 16:41:23.488 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - {New York=Butler Heights, California=Horizon Estates, New Jersey=Highland Hills}
-2021-12-05 16:41:23.489 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.TheBuildingCompany.welcomeMessage()
-2021-12-05 16:41:23.489 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.TheBuildingCompany.ourOfficeLocations()
-2021-12-05 16:41:23.490 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.TheBuildingCompany.approvalStatusOfProjects()
-2021-12-05 16:41:23.490 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.TheBuildingCompany.specializations()
-2021-12-05 16:41:23.490 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.TheBuildingCompany.locationAndNaming()
-2021-12-05 16:41:28.534 [main] ERROR com.solvd.thebuildingcompany.PreConstructionPlanning - java.lang.reflect.InvocationTargetException
-2021-12-05 16:41:28.538 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private java.util.ArrayList com.solvd.thebuildingcompany.employees.departments.architecture.InteriorArchitect.projectDiscussions()
-2021-12-05 16:41:28.543 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private java.util.ArrayList com.solvd.thebuildingcompany.employees.departments.architecture.ResidentialArchitect.documentationAndDrawings()
-2021-12-05 16:41:28.546 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private java.util.ArrayList com.solvd.thebuildingcompany.employees.departments.architecture.InteriorArchitect.documentationAndDrawings()
-2021-12-05 16:41:28.547 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.PreConstructionPlanning.architectsPlanAndMeet()
+2021-12-08 18:54:09.392 [Thread-1] INFO  com.solvd.thebuildingcompany.utils.Worker - Josh is waiting on the day shift worker Josh to end his shift.
+2021-12-08 18:54:09.392 [Thread-0] INFO  com.solvd.thebuildingcompany.utils.Worker - Peter is waiting on the night shift worker Peter to end his shift.
