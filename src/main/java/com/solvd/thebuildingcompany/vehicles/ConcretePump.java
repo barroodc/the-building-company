@@ -1,7 +1,7 @@
 package com.solvd.thebuildingcompany.vehicles;
 
 import com.solvd.thebuildingcompany.interfaces.IDrivable;
-import com.solvd.thebuildingcompany.genericinterfaces.IPourable;
+import com.solvd.thebuildingcompany.generics.IPourable;
 
 import java.util.logging.Logger;
 

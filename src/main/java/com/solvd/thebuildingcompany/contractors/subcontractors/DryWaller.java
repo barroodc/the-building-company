@@ -3,7 +3,6 @@ package com.solvd.thebuildingcompany.contractors.subcontractors;
 import com.solvd.thebuildingcompany.contractors.Contractor;
 import com.solvd.thebuildingcompany.interfaces.IInstallable;
 
-import java.util.Scanner;
 import java.util.function.Function;
 import java.util.logging.Logger;
 
@@ -12,9 +11,10 @@ public class DryWaller extends Contractor implements IInstallable {
     private static final Logger logger = Logger.getLogger(DryWaller.class.getName());
 
     private boolean dryWallPanelsAvailable;
-    private static double rValue; //(degrees kelvin * meters squared) / (divided by Watts)
-    private static double lambdaT; //is the temperature difference between the warmer surface and the colder surface of a barrier.
-    private static double phiSubQ; // is the heat flux through the barrier.
+    private int rValue; //(degrees kelvin * meters squared) / (divided by Watts)
+
+    private static int phiSubQ; // is the heat flux through the barrier.
+    private int lambdaT;  //is the temperature difference between the warmer surface and the colder surface of a barrier.
 
     public boolean isDryWallPanelsAvailable() {
         return dryWallPanelsAvailable;
@@ -24,28 +24,28 @@ public class DryWaller extends Contractor implements IInstallable {
         this.dryWallPanelsAvailable = dryWallPanelsAvailable;
     }
 
-    public double getrValue() {
+    public int getrValue() {
         return rValue;
     }
 
-    public void setrValue(double rValue) {
-        DryWaller.rValue = rValue;
+    public void setrValue(int rValue) {
+        this.rValue = rValue;
     }
 
-    public double getLambdaT() {
-        return lambdaT;
-    }
-
-    public void setLambdaT(double lambdaT) {
-        DryWaller.lambdaT = lambdaT;
-    }
-
-    public double getPhiSubQ() {
+    public static int getPhiSubQ() {
         return phiSubQ;
     }
 
-    public void setPhiSubQ(double phiSubQ) {
+    public static void setPhiSubQ(int phiSubQ) {
         DryWaller.phiSubQ = phiSubQ;
+    }
+
+    public int getLambdaT() {
+        return lambdaT;
+    }
+
+    public void setLambdaT(int lambdaT) {
+        this.lambdaT = lambdaT;
     }
 
     public DryWaller(final String firstName, final String nameOfCompany) {
@@ -53,26 +53,33 @@ public class DryWaller extends Contractor implements IInstallable {
     }
 
     private void rValueOfInsulation() {
-        //Indicates how well the insulation material resists heat transfer
         final DryWaller steve = new DryWaller("Steve", "YZW Group");
-        logger.info("Please enter in your measured lambda value: ");
-        Scanner lambdaT = new Scanner(System.in);
-        Function<Integer, Integer> insulationReadiness = a -> lambdaT.nextInt() / 2;
-        phiSubQ = 8.12;
-        rValue = (insulationReadiness.apply(lambdaT.nextInt()) / phiSubQ);
-        logger.info("Now we must figure out the r value for the fiber glass insulation");
-        logger.info("Steve measured the degrees for the r value equation in degrees celsius");
-        logger.info("The current temperature outside is 5.31 degrees Celsius");
-        logger.info("The current temperature inside is 22.7 degrees Celsius");
-        logger.info("The temperature difference between outside and inside is 17.39 degrees Celsius");
-        logger.info("The heat flux through the barrier is calculated to be around 8.12 degrees Celsius");
-        if (rValue >= 2.1 && rValue <= 2.7) {
-            logger.info("This is a good r value for insulation");
-            logger.info(steve.getFirstName() + "'s rvalue for the fiberglass is acceptable.");
-        } else {
-            logger.info("Better material for insulation is highly recommended.");
-        }
+        int min = 1;
+        int max = 3;
+        phiSubQ = 1;
 
+        lambdaT = (int) Math.floor(Math.random() * (max - min + 1) + min);
+        Function<Integer, Integer> initialEquation = a -> a / phiSubQ;
+        rValue = (initialEquation.apply(lambdaT));
+
+        int negativeResults = 1;
+        do {
+            if (rValue != 2) {
+                logger.info("Now we must figure out the r value for the fiber glass insulation");
+                logger.info("Steve measured the degrees for the r value equation in degrees celsius");
+                logger.info("Better material for insulation is highly recommended.");
+                logger.info("Please come back with better insulation material.");
+                negativeResults++;
+            }
+        } while (negativeResults <= 5);
+
+        int positiveResults = 0;
+
+        do {
+            logger.info("After many trials we finally got a good r-value for sufficient insulation");
+            logger.info(steve.getFirstName() + "'s rvalue for the fiberglass is acceptable.");
+            positiveResults++;
+        } while (positiveResults < 1);
     }
 
     private void fiberGlassAndDrywallInstall() {

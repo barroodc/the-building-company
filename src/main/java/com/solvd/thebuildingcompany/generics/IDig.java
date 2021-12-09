@@ -1,4 +1,4 @@
-package com.solvd.thebuildingcompany.genericinterfaces;
+package com.solvd.thebuildingcompany.generics;
 @FunctionalInterface
 public interface IDig<E> {
 

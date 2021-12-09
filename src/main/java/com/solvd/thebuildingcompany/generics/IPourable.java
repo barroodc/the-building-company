@@ -1,4 +1,4 @@
-package com.solvd.thebuildingcompany.genericinterfaces;
+package com.solvd.thebuildingcompany.generics;
 
 
 public interface IPourable<E> {

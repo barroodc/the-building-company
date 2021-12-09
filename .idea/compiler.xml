@@ -9,5 +9,8 @@
         <module name="the-building-company" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="the-building-company" target="1.14" />
+    </bytecodeTargetLevel>
   </component>
 </project>
