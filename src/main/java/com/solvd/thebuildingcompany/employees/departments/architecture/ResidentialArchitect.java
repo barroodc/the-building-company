@@ -83,6 +83,7 @@ public class ResidentialArchitect extends Employee {
     }
 
     //Optional example
+
     private ArrayList<String> projectDiscussions() {
         final ResidentialArchitect penny = new ResidentialArchitect("Penny","The Building Company");
         final ResidentialArchitect cooper = new ResidentialArchitect("Cooper", "The Building Company");
@@ -94,7 +95,7 @@ public class ResidentialArchitect extends Employee {
         preston.setSafetyCheck(true);
         suzan.setRegulationsMet(true);
 
-
+        //projectSetups is the optional example. Reference getters/setters to further understand implementation.
         final ArrayList<String> projectSetups = new ArrayList<>();
         projectSetups.add("Residential Architects " + penny.getName() + " " +  "and" + " " + cooper.getName() + " " + "met with the Engineering Team: " + penny.isDiscussionHad());
         projectSetups.add("Met with clients and met their requirements: " + cooper.isContractHonored());

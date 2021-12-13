@@ -83,6 +83,8 @@ public class MechanicalEngineer extends Employee {
 
     private void hVACDesign() {
         //optional example
+        //hVACSystemDesigned is the optional example. Reference getters/setters to further understand implementation.
+
         final MechanicalEngineer nicholas = new MechanicalEngineer("Nicholas", "The Building Company");
         logger.info("HVAC System designed by: " + nicholas.getName());
         hVACSystemDesigned = new HashMap<>();

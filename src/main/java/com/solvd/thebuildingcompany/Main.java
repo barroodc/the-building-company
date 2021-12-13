@@ -426,6 +426,16 @@ public class Main {
         }
 
         try {
+           final Inspections qualityOfHomes = new Inspections();
+           final Method homeNationalRatings = Inspections.class.getDeclaredMethod("nationalRankingOfQuality");
+           homeNationalRatings.setAccessible(true);
+           homeNationalRatings.invoke(qualityOfHomes);
+           logger.info(homeNationalRatings);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+
+        try {
             final Inspections lastInspection = new Inspections();
             final Method lastWalkThrough = Inspections.class.getDeclaredMethod("lastInspection");
          lastWalkThrough.setAccessible(true);

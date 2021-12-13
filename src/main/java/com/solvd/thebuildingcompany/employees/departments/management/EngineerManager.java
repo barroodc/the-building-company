@@ -71,7 +71,7 @@ public class EngineerManager extends Employee {
 
         return riskLevel;
     }
-
+    
     private void laborEstimate() {
         final EngineerManager jessica = new EngineerManager("Jessica", "The Building Company");
         logger.info("Please enter current amount spent on labor:");

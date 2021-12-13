@@ -1,2 +1,250 @@
-2021-12-08 18:54:09.392 [Thread-1] INFO  com.solvd.thebuildingcompany.utils.Worker - Josh is waiting on the day shift worker Josh to end his shift.
-2021-12-08 18:54:09.392 [Thread-0] INFO  com.solvd.thebuildingcompany.utils.Worker - Peter is waiting on the night shift worker Peter to end his shift.
+2021-12-12 08:20:03.158 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - Welcome to The Building Company
+2021-12-12 08:20:03.164 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - Our office locations are as follows:
+2021-12-12 08:20:03.165 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - [New York, California, New Jersey]
+2021-12-12 08:20:03.165 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - Approval Status of Open Projects:
+2021-12-12 08:20:03.166 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - {Chestnut Lake =false, Victory Lakes =false, Sycamore Village =true}
+2021-12-12 08:20:03.167 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - Number of active projects: 1
+2021-12-12 08:20:03.167 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - We specialize in Residential Development
+2021-12-12 08:20:03.168 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - The specific types of homes we specialize in are as follows:
+2021-12-12 08:20:03.168 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - [Tudor, Colonial, Victorian]
+2021-12-12 08:20:03.168 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - Location and name of Suburban developments:
+2021-12-12 08:20:03.169 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - Project discussions for Highland Hills in Princeton, New Jersey are under way: 
+2021-12-12 08:20:03.170 [main] INFO  com.solvd.thebuildingcompany.TheBuildingCompany - {New York=Butler Heights, California=Horizon Estates, New Jersey=Highland Hills}
+2021-12-12 08:20:03.171 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.TheBuildingCompany.welcomeMessage()
+2021-12-12 08:20:03.172 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.TheBuildingCompany.ourOfficeLocations()
+2021-12-12 08:20:03.172 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.TheBuildingCompany.approvalStatusOfProjects()
+2021-12-12 08:20:03.173 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.TheBuildingCompany.specializations()
+2021-12-12 08:20:03.174 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.TheBuildingCompany.locationAndNaming()
+2021-12-12 08:20:03.218 [main] ERROR com.solvd.thebuildingcompany.PreConstructionPlanning - java.lang.reflect.InvocationTargetException
+2021-12-12 08:20:03.224 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private java.util.ArrayList com.solvd.thebuildingcompany.employees.departments.architecture.InteriorArchitect.projectDiscussions()
+2021-12-12 08:20:03.229 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private java.util.ArrayList com.solvd.thebuildingcompany.employees.departments.architecture.ResidentialArchitect.documentationAndDrawings()
+2021-12-12 08:20:03.233 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private java.util.ArrayList com.solvd.thebuildingcompany.employees.departments.architecture.InteriorArchitect.documentationAndDrawings()
+2021-12-12 08:20:03.234 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.PreConstructionPlanning.architectsPlanAndMeet()
+2021-12-12 08:20:03.241 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private java.util.HashSet com.solvd.thebuildingcompany.employees.departments.engineering.CivilEngineer.projectDiscussions()
+2021-12-12 08:20:03.244 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private java.util.ArrayList com.solvd.thebuildingcompany.employees.departments.engineering.MechanicalEngineer.projectDiscussions()
+2021-12-12 08:20:03.247 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private java.util.ArrayList com.solvd.thebuildingcompany.employees.departments.engineering.StructuralEngineer.projectDiscussions()
+2021-12-12 08:20:03.251 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private java.util.ArrayList com.solvd.thebuildingcompany.employees.departments.engineering.PlumbingEngineer.projectDiscussions()
+2021-12-12 08:20:03.255 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private java.util.ArrayList com.solvd.thebuildingcompany.employees.departments.engineering.ElectricalEngineer.projectDiscussions()
+2021-12-12 08:20:03.256 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.PreConstructionPlanning.engineersMeet()
+2021-12-12 08:20:03.261 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private void com.solvd.thebuildingcompany.employees.departments.engineering.CivilEngineer.sitePlanning()
+2021-12-12 08:20:03.262 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.PreConstructionPlanning.civilEngineerPrePlanning()
+2021-12-12 08:20:03.267 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private void com.solvd.thebuildingcompany.employees.departments.engineering.ElectricalEngineer.designingElectricalSystems()
+2021-12-12 08:20:03.268 [main] INFO  com.solvd.thebuildingcompany.Main - com.solvd.thebuildingcompany.PreConstructionPlanning@3315d2d7
+2021-12-12 08:20:03.281 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private void com.solvd.thebuildingcompany.employees.departments.engineering.MechanicalEngineer.hVACDesign()
+2021-12-12 08:20:03.281 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.PreConstructionPlanning.hVACSystemDesignStage()
+2021-12-12 08:20:03.289 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private void com.solvd.thebuildingcompany.employees.departments.engineering.PlumbingEngineer.designingPlumbingSystems()
+2021-12-12 08:20:03.290 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.PreConstructionPlanning.plumbingDesigns()
+2021-12-12 08:20:03.306 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private void com.solvd.thebuildingcompany.employees.departments.businessdevelopment.BusinessDeveloper.developmentProjects()
+2021-12-12 08:20:03.307 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.PreConstructionPlanning.assignedDevelopments()
+2021-12-12 08:20:03.311 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private boolean com.solvd.thebuildingcompany.employees.departments.management.CivilSupervisor.constructionPlanDevelopment()
+2021-12-12 08:20:03.312 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.PreConstructionPlanning.estimatedCompletion()
+2021-12-12 08:20:03.317 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private java.util.HashMap com.solvd.thebuildingcompany.employees.departments.management.ProjectManager.constructionSitePreparations()
+2021-12-12 08:20:03.317 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.PreConstructionPlanning.initialSitePreparations()
+2021-12-12 08:20:03.320 [main] INFO  com.solvd.thebuildingcompany.employees.departments.materialpurchasing.ConstructionExpeditor - 			  Complete List of Items needed for 
+                                  New Jersey Project
+
+
+* Wood for wooden forms
+* Concrete and rebar for footings
+* Waterproof membrane 
+* Drains
+* Sewer taps
+* Water taps
+* Linear wooden beams
+* Rafter
+* Collar beam
+* Ridge board
+* Solid decking
+* Felt underlayment
+* Shingles
+* Vent pipe flashing
+* Chimney flashing
+*  Gutter
+* Down spout 
+* Splash block
+* Rake
+* Lookout
+* Ridge board
+* Valley underlayment
+* Valley flashing
+* Spaced sheathing
+* Pipes
+* Wires
+* Bathtubs 
+* Shower units
+* Ductwork for HVAC System
+* Sewer lines
+* Sewer vents
+* Water supply lines
+* HVAC Vent pipes 
+* Receptacles for outlets
+* Lights
+* Switches
+* Fiberglass 
+* Paint
+* Drywall
+* Brick
+* Stucco
+* Stone
+* Doors
+* Window Sills
+* Decorative Trim
+* Cabinets
+* Vanities
+* Fireplace Mantels
+* Crown Molding
+* Concrete for Walkway
+* Asphalt for driveway
+* Ceramic tile
+* Vinyl
+* Wood flooring
+* Countertops
+* Light fixtures
+* Outlets
+* Switches
+* Electrical panel
+* HVAC Equipment
+* Sinks
+* Toilets
+* Faucets 
+* Mirrors 
+* Shower Doors
+* Carpeting
+* Trees
+* Shrubs
+* Grass
+
+
+2021-12-12 08:20:03.321 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - Materials currently ordered for project:
+2021-12-12 08:20:03.322 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private void com.solvd.thebuildingcompany.employees.departments.materialpurchasing.ConstructionExpeditor.materialsOrdered()
+2021-12-12 08:20:03.322 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.PreConstructionPlanning.materialsForProject()
+2021-12-12 08:20:03.329 [main] INFO  com.solvd.thebuildingcompany.PreConstructionPlanning - private java.util.HashMap com.solvd.thebuildingcompany.contractors.residential.ResidentialContractor.brandNewSubcontractorCompanies()
+2021-12-12 08:20:03.329 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.PreConstructionPlanning.contractorsHired()
+2021-12-12 08:20:03.340 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.DemolitionWorker.demolitionOfSite()
+2021-12-12 08:20:03.341 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.ActiveConstruction.constructionSiteCleared()
+2021-12-12 08:20:03.343 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.GeneralWorker - foundation stage begins
+2021-12-12 08:20:03.344 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.GeneralWorker - Construction crew puts up wooden forms as the template for the foundation
+2021-12-12 08:20:03.344 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.GeneralWorker - add footings
+2021-12-12 08:20:03.345 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.GeneralWorker - starting digging up dirt for wooden form installations.
+2021-12-12 08:20:03.345 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.GeneralWorker.woodenFormInstallations()
+2021-12-12 08:20:03.347 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.ConcreteSpecialist - Penny the concrete specialist now has to drive and pour concrete into trenches
+2021-12-12 08:20:03.350 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.ConcreteSpecialist - Construction now stops until drying process complete.
+2021-12-12 08:20:03.351 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.ConcreteSpecialist.mixAndPourConcrete()
+2021-12-12 08:20:03.351 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.ConcreteSpecialist - {Hannah the on duty concrete specialist expects the concrete to be dry by=Thu May 27 08:20:03 EDT 2021}
+2021-12-12 08:20:03.352 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.ConcreteSpecialist - The current date is: Tue Apr 27 08:20:03 EDT 2021
+2021-12-12 08:20:03.352 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - com.solvd.thebuildingcompany.contractors.subcontractors.ConcreteSpecialist@73ee04c8
+2021-12-12 08:20:08.353 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.ConcreteSpecialist - It has now been 30 days
+2021-12-12 08:20:08.355 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.ConcreteSpecialist - Todays date is .Thu May 27 08:20:08 EDT 2021 which is exactly 30 days from the initial concrete pouring
+2021-12-12 08:20:08.355 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.ConcreteSpecialist - The home building process can resume
+2021-12-12 08:20:08.355 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.ConcreteSpecialist - Hannah and Craig installed water proofing membrane to the foundation walls inside the basement
+2021-12-12 08:20:08.355 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.ConcreteSpecialist - Hannah and Craig installed drains inside the basement
+2021-12-12 08:20:08.356 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.ConcreteSpecialist - Hannah and Craig installed sewer taps inside the basement
+2021-12-12 08:20:08.356 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.ConcreteSpecialist - Hannah and Craig installed water taps inside the basement
+2021-12-12 08:20:08.356 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.ConcreteSpecialist.postDryingProcess()
+2021-12-12 08:20:08.360 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.ConcreteSpecialist.foundationFinalSteps()
+2021-12-12 08:20:10.364 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.ActiveConstruction.basementBuilding()
+2021-12-12 08:20:10.373 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.Inspections.foundationInspection()
+2021-12-12 08:20:10.377 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.FloorLayer.flooringSystemRoots()
+2021-12-12 08:20:10.377 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.ActiveConstruction.flooringSystemSkeleton()
+2021-12-12 08:20:10.378 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter - Jamison the Carpenter now installs the wall:
+2021-12-12 08:20:10.378 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter - wooden beams for walls installed
+2021-12-12 08:20:10.378 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter - sheathing applied to exterior walls
+2021-12-12 08:20:10.379 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter - sheathing covered with protective wrap
+2021-12-12 08:20:10.379 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter - exterior doors are installed
+2021-12-12 08:20:10.379 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter - house wraps added
+2021-12-12 08:20:10.379 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter - adding drywall later...
+2021-12-12 08:20:10.379 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter.wallInstallationComplete()
+2021-12-12 08:20:10.379 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.ActiveConstruction.wallsCompleted()
+2021-12-12 08:20:10.385 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.Roofer.roofInstallationComplete()
+2021-12-12 08:20:10.386 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.ActiveConstruction.roofInstallation()
+2021-12-12 08:20:10.387 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter - Mario the Plumber now installs the following: 
+2021-12-12 08:20:10.387 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter - pipes installed in interior walls, ceilings and floors
+2021-12-12 08:20:10.387 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter - sewer lines and vents are installed
+2021-12-12 08:20:10.387 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter - water supply lines for each fixture are installed
+2021-12-12 08:20:10.388 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter - bathtubs and shower units are installed
+2021-12-12 08:20:10.388 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.Carpenter - Sinks, toilets and faucets put into place
+2021-12-12 08:20:10.388 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.Plumber.piping()
+2021-12-12 08:20:10.388 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.ActiveConstruction.pipingInstallation()
+2021-12-12 08:20:10.392 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.Electrician.installElectricalComponents()
+2021-12-12 08:20:10.392 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.ActiveConstruction.electricalInstallation()
+2021-12-12 08:20:10.396 [main] INFO  com.solvd.thebuildingcompany.Inspections - private void com.solvd.thebuildingcompany.inspectors.CityInspector.plumbingInspection()
+2021-12-12 08:20:10.396 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.Inspections.plumbingInspection()
+2021-12-12 08:20:10.397 [main] INFO  com.solvd.thebuildingcompany.Inspections - private void com.solvd.thebuildingcompany.inspectors.CityInspector.electricalInspection()
+2021-12-12 08:20:10.397 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.Inspections.electricalInspection()
+2021-12-12 08:20:10.398 [main] INFO  com.solvd.thebuildingcompany.Inspections - private void com.solvd.thebuildingcompany.inspectors.CityInspector.mechanicalInspection()
+2021-12-12 08:20:10.399 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.Inspections.mechanicalInspection()
+2021-12-12 08:20:10.414 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.DryWaller.rValueOfInsulation()
+2021-12-12 08:20:10.414 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.DryWaller.fiberGlassAndDrywallInstall()
+2021-12-12 08:20:10.414 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.ActiveConstruction.fiberglassAndDryWall()
+2021-12-12 08:20:10.416 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.SidingContractor - Sinclair the siding contractor now installs the exterior bricks around the front of the home: 
+2021-12-12 08:20:10.416 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.SidingContractor - exterior brick installed
+2021-12-12 08:20:10.416 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.SidingContractor.installBrickSiding()
+2021-12-12 08:20:10.417 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.ActiveConstruction.brickFrontInstallation()
+2021-12-12 08:20:10.423 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private java.util.HashMap com.solvd.thebuildingcompany.contractors.subcontractors.Painter.paintColorAndRoom()
+2021-12-12 08:20:10.424 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.ActiveConstruction.paintingTheRooms()
+2021-12-12 08:20:10.425 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Georgina from WeInstallItAll installs the following appliances for the home: 
+2021-12-12 08:20:10.425 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Doors
+2021-12-12 08:20:10.425 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Window Sills
+2021-12-12 08:20:10.426 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Decorative Trim
+2021-12-12 08:20:10.426 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Countertops
+2021-12-12 08:20:10.426 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Vanities
+2021-12-12 08:20:10.426 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Cabinets
+2021-12-12 08:20:10.426 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Refrigerator
+2021-12-12 08:20:10.427 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Microwave
+2021-12-12 08:20:10.427 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Oven
+2021-12-12 08:20:10.427 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Fireplace Mantel
+2021-12-12 08:20:10.429 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Tracking number is correct.
+2021-12-12 08:20:10.429 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Tracking number is correct.
+2021-12-12 08:20:10.429 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Tracking number is correct.
+2021-12-12 08:20:10.429 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Tracking number is correct.
+2021-12-12 08:20:10.430 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Tracking number is correct.
+2021-12-12 08:20:10.430 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Tracking number is correct.
+2021-12-12 08:20:10.430 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Tracking number is correct.
+2021-12-12 08:20:10.430 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Tracking number is correct.
+2021-12-12 08:20:10.431 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Tracking number is correct.
+2021-12-12 08:20:10.431 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - Tracking number is correct.
+2021-12-12 08:20:10.431 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - public void com.solvd.thebuildingcompany.contractors.subcontractors.ApplianceInstaller.appliancesInstalled()
+2021-12-12 08:20:10.432 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.ActiveConstruction.applianceInstall()
+2021-12-12 08:20:10.433 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.Joiner - Johnny the Joiner builds the staircases required for the home
+2021-12-12 08:20:10.433 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.Joiner - basement staircase installed
+2021-12-12 08:20:10.433 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.Joiner - foyer staircase installed
+2021-12-12 08:20:10.434 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.Joiner.buildingStairs()
+2021-12-12 08:20:10.434 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.ActiveConstruction.stairCasesInstalled()
+2021-12-12 08:20:10.438 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.FloorLayer.hardwoodFloorInstalled()
+2021-12-12 08:20:10.438 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.ActiveConstruction.hardWoodFloorInstalled()
+2021-12-12 08:20:10.440 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.FloorLayer.carpetInstalled()
+2021-12-12 08:20:10.441 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.ActiveConstruction.carpetInstalled()
+2021-12-12 08:20:10.442 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.GradingContractor - Grading process begins.
+2021-12-12 08:20:10.443 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.GradingContractor - Tina received approval from zoning board: true
+2021-12-12 08:20:10.443 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.GradingContractor - Water flow from rain is officially not an issue
+2021-12-12 08:20:10.444 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.GradingContractor - The development is still in good standing and ready to hear offers
+2021-12-12 08:20:10.444 [main] INFO  com.solvd.thebuildingcompany.Inspections - private void com.solvd.thebuildingcompany.contractors.subcontractors.GradingContractor.propertyDrainageAssured()
+2021-12-12 08:20:10.444 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.Inspections.propertyDrainageCheck()
+2021-12-12 08:20:10.445 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.GradingContractor - Final stage in the grading process begins
+2021-12-12 08:20:10.445 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.GradingContractor - Approved to move forward with final parts of construction.
+2021-12-12 08:20:10.445 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.GradingContractor - Grading process ends
+2021-12-12 08:20:10.445 [main] INFO  com.solvd.thebuildingcompany.Inspections - private void com.solvd.thebuildingcompany.contractors.subcontractors.GradingContractor.foundationAreaCheck()
+2021-12-12 08:20:10.446 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.Inspections.foundationAreaCheck()
+2021-12-12 08:20:10.451 [main] INFO  com.solvd.thebuildingcompany.Inspections - private void com.solvd.thebuildingcompany.contractors.subcontractors.Electrician.electricalPanelFinalCheck()
+2021-12-12 08:20:10.451 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.Inspections.electricalPanelInspection()
+2021-12-12 08:20:10.453 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.HVACTechnician.installationOfHVACUnit()
+2021-12-12 08:20:10.453 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.ActiveConstruction.HVACUnitInstalled()
+2021-12-12 08:20:10.455 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.residential.ResidentialContractor.lastMinuteInstallations()
+2021-12-12 08:20:10.456 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.ActiveConstruction.lastMinuteInteriorInstalls()
+2021-12-12 08:20:10.457 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.CleanupContractor - Time to bring in the cleanup crew.
+2021-12-12 08:20:10.458 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.CleanupContractor - Emily cleaned all the rooms in the home
+2021-12-12 08:20:10.458 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.CleanupContractor - Chris cleaned the area outside the home.
+2021-12-12 08:20:10.458 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.CleanupContractor - Officially ready to complete landscaping.
+2021-12-12 08:20:10.459 [main] INFO  com.solvd.thebuildingcompany.contractors.subcontractors.CleanupContractor - Clean test done
+2021-12-12 08:20:10.459 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.CleanupContractor.interiorCleanup()
+2021-12-12 08:20:10.460 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.CleanupContractor.exteriorCleanup()
+2021-12-12 08:20:10.460 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.ActiveConstruction.cleanUpStage()
+2021-12-12 08:20:10.464 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.LandScaper.plantTheGreenery()
+2021-12-12 08:20:10.464 [main] INFO  com.solvd.thebuildingcompany.ActiveConstruction - private void com.solvd.thebuildingcompany.contractors.subcontractors.LandScaper.applyFertilizer()
+2021-12-12 08:20:10.465 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.ActiveConstruction.landscapingStage()
+2021-12-12 08:20:10.467 [main] INFO  com.solvd.thebuildingcompany.Inspections - private void com.solvd.thebuildingcompany.inspectors.CityInspector.nationalHomeRatings()
+2021-12-12 08:20:10.468 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.Inspections.nationalRankingOfQuality()
+2021-12-12 08:20:10.468 [main] INFO  com.solvd.thebuildingcompany.Inspections - protected void com.solvd.thebuildingcompany.inspectors.CityInspector.generalInspection()
+2021-12-12 08:20:10.468 [main] INFO  com.solvd.thebuildingcompany.Inspections - The home building process is now complete!
+2021-12-12 08:20:10.469 [main] INFO  com.solvd.thebuildingcompany.Inspections - Now time for an open house!
+2021-12-12 08:20:10.469 [main] INFO  com.solvd.thebuildingcompany.Main - private void com.solvd.thebuildingcompany.Inspections.lastInspection()
