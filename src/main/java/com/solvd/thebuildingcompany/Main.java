@@ -13,18 +13,8 @@ public class Main {
     private static final Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(final String[] args) {
+
         /*
-        Order of classes accessed:
-        Part 1: Pre-planning Stage:
-         1.) Residential Architect
-         2.) Interior Architect
-         3.) Structural Engineer
-         4.) Civil Engineer
-         5.) Mechanical Engineer
-         6.) Electrical Engineer
-         7.) Plumbing Engineer
-         8.) Construction Expeditor
-         */
 
         try {
             //Intro to the company and the current project available to be worked on.
@@ -444,5 +434,7 @@ public class Main {
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
           logger.error(e);
         }
+
+         */
     }
 }

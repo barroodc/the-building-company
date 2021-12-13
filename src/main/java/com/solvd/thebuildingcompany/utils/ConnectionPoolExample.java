@@ -18,17 +18,24 @@ public class ConnectionPoolExample implements IConnectionPool {
     private String password;
     private ConcurrentHashMap<String, Connection> connectionPool;
     private ConcurrentHashMap<String, Connection> usedConnections;
+    private static ConnectionPoolExample connectionPoolExample; //singleton
     private static final int INITIAL_POOL_SIZE = 10;
 
-    public ConnectionPoolExample(String url, String user, String password) {
+    private ConnectionPoolExample(String url, String user, String password) {
+         this.url = url;
+         this.user = user;
+         this.password = password;
+    }
+
+    private ConnectionPoolExample(ConcurrentHashMap<String, Connection> pool) {
 
     }
 
-    public ConnectionPoolExample(ConcurrentHashMap<String, Connection> pool) {
+    private ConnectionPoolExample() {
 
     }
 
-    public static ConnectionPoolExample create(String url, String user, String password) {
+    private static ConnectionPoolExample create(String url, String user, String password) {
         ConcurrentHashMap<String, Connection> pool = new ConcurrentHashMap<>(INITIAL_POOL_SIZE);
         for (int i = 0; i < INITIAL_POOL_SIZE; i++) {
             pool.put("First created pool", (Connection) create(url, user, password));
@@ -54,6 +61,13 @@ public class ConnectionPoolExample implements IConnectionPool {
     private static Connection createConnection(String url, String user, String password) throws SQLException {
 
         return DriverManager.getConnection(url, user, password);
+    }
+
+    //lazy initialization
+    public static ConnectionPoolExample getInstance(){
+        if (connectionPoolExample == null)
+            connectionPoolExample = new ConnectionPoolExample();
+            return connectionPoolExample;
     }
 
     @Override
