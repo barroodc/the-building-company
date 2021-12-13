@@ -57,9 +57,4 @@ public class ApplianceInstaller extends Contractor implements IInstallable {
         logger.info("Oven");
         logger.info("Fireplace Mantel");
     }
-
-    public static void main(String[] args) {
-        ApplianceInstaller example = new ApplianceInstaller("g","g");
-        example.appliancesInstalled();
-    }
 }

@@ -62,7 +62,7 @@ public class CivilEngineer extends Employee {
         super(name, nameOfCompany);
     }
 
-    private ArrayList<String> projectDiscussions() {
+    private HashSet<String> projectDiscussions() {
         final CivilEngineer dora = new CivilEngineer("Dora", "The Building Company");
         final CivilEngineer murphy = new CivilEngineer("Murphy", "The Building Company");
         final CivilEngineer sheldon = new CivilEngineer("Sheldon", "The Building Company");
@@ -73,7 +73,7 @@ public class CivilEngineer extends Employee {
         sheldon.setSafetyCheck(true);
         greg.setRegulationsMet(true);
 
-        final ArrayList<String> projectSetups = new ArrayList<>();
+        final HashSet<String> projectSetups = new HashSet<>();
         projectSetups.add("Civil Engineers " + dora.getName() + " " +  "and" + " " + murphy.getName() + " " + "met with the Engineering Team: " + dora.isDiscussionHad());
 
         projectSetups.forEach(logger::info);

@@ -10,7 +10,6 @@ public class BusinessDeveloper extends Employee {
 
     private static final Logger logger = Logger.getLogger(BusinessDeveloper.class.getName());
 
-    private boolean buyersMarket;
     private static HashMap<String, String> developmentNumberOfHomes;
     private static HashMap<String, String> developmentAndModel;
     private static HashMap<String, String> projectsAssignedTo;

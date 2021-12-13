@@ -31,9 +31,10 @@ public class ConnectionPoolExample implements IConnectionPool {
     public static ConnectionPoolExample create(String url, String user, String password) {
         ConcurrentHashMap<String, Connection> pool = new ConcurrentHashMap<>(INITIAL_POOL_SIZE);
         for (int i = 0; i < INITIAL_POOL_SIZE; i++) {
-            pool.put("First created pool", (Connection) create(url,user,password));
+            pool.put("First created pool", (Connection) create(url, user, password));
         }
            return new ConnectionPoolExample(pool);
+
     }
 
 

@@ -1,0 +1,178 @@
+                          List of Most Recent Assignments
+                          and Their Respective Locations
+ -----------------------------------------------------------------------------------------------------------------------------------------
+  Homework #1:
+
+  Task 1: Create 7 interfaces
+  Task 2: Answer Business Question
+
+  Task 1 Location: thebuildingcompany package -> interfaces
+
+  Task 2 Location: Execute the Main method to see the complete process of building
+                   a residential home.
+
+  -----------------------------------------------------------------------------------------------------------------------------------------
+
+  Homework #2:
+
+  Task 1: Add 5 exceptions
+  Task 2: Handle 3 exceptions using the try-catch block
+  Task 3: Hand 2 exceptions using just the throws keyword
+  *** I excluded loggers since they have already been checked. ***
+
+  Task 1 Location: thebuildingcompany package -> exceptions
+
+  Task 2 Locations:
+
+    *** Note about task 2: I have various try-catch block examples throughout the project.
+    These were custom ones that I made up and implemented. ***
+
+  1.) employees package -> departments -> engineering -> CivilEngineer file ->
+      Method: erosionAndSedimentControl();
+
+  2.) employees package -> departments -> engineering -> CivilEngineer file ->
+      Method: floodWayConstruction();
+
+  3.) employees package -> departments -> engineering -> ElectricalEngineer file ->
+      Method: conductingSystemTests();
+
+ Task 3 Locations:
+
+ 1.) employees package -> departments -> engineering -> CivilEngineer file ->
+     Method: gradingControlPermitHandling();
+
+ 2.) employees package -> departments -> engineering -> CivilEngineer file ->
+     Method: erosionControlPermitHandling();
+
+ -----------------------------------------------------------------------------------------------------------------------------------------
+
+ Homework #3:
+
+ Task 1: Override methods from object class. Get 1 class from hierarchy and override
+ 3 methods using things like hashCode.
+
+ Task 2: Add 3 Generics to hierarchy(any generics)
+
+ Task 3: Create your own LinkedList
+
+ Task 4: Add at least 5 general collections to hierarchy (2 lists, 2 maps, 1 set).
+
+ Task 1 Location:
+
+ 1.) inspectors package -> CityInspector file -> toString(); , equals(Object o), hashCode();
+
+ Task 2 Locations:
+
+ 1.) generics package (all three interfaces incorporate generics).
+
+ Task 3 Location:
+
+ 1.) utils package -> LinkedList file (also incorporates Node file directly below it).
+
+ Task 4 Locations:
+
+  *** Note about task 4: I incorporated several collections throughout my project ***
+
+  1.) Type of Collection: List
+
+      contractors package -> subcontractors -> DemolitionWorker file -> Method: demolitionOfSite();
+
+  2.) Type of Collection: List
+
+      employees package -> departments -> architecture -> ResidentialArchitect file -> Method: documentationAndDrawings();
+
+  3.) Type of Collection: Map
+
+      employees package -> departments -> engineering -> CivilEngineer file -> Method: sitePlanning();
+
+  4.) Type of Collection: Map
+
+      employees package -> departments -> management -> ProjectManager file -> Method: constructionSitePreparations();
+
+  5.) Type of Collection: Set
+
+      employees package -> departments -> engineering -> CivilEngineer file -> Method: projectDiscussions();
+
+  -----------------------------------------------------------------------------------------------------------------------------------------
+
+  Homework #4:
+
+  Task 1: Create a file with text.
+  Task 2: Using apache libraries, calculate the number of unique words.
+  Task 3: Save result to text file.
+  Task 4: Solve the task with the minimum amount of lines of code.
+
+  Task locations for 1 through 4: utils package -> ApacheWordCalculation File
+
+  -----------------------------------------------------------------------------------------------------------------------------------------
+
+  Homework #5:
+
+  Task 1: Add 5 enums to application.
+  Task 2: Create separate package of enums.
+
+  Task locations for 1 and 2: enums package
+
+  -----------------------------------------------------------------------------------------------------------------------------------------
+
+  Homework #6:
+
+  Task 1: Add at least 3 lambda functions using FunctionalInterface.
+  Task 2: Add 4 lambda functions from java.util.functions in a separate package.
+  Task 3: Use optionals in 5 different methods
+
+  ***Did not include for each statements converted to streams since they are all over the project.
+     But they are all successfully converted.***
+
+  Task 1 Interfaces and Locations:
+
+  Interfaces with @FunctionalInterface annotation:
+  1.) ICleanable
+  2.) IDig
+  3.) IInstallable
+
+  1.) ICleanable Functional Interface Implementation: contractors package -> subcontractors -> CleanUpContractor file -> Method: exteriorCleanup();
+
+  2.) IDig Functional Interface Implementation: contractors package -> subcontractors -> GeneralWorker file -> Method: woodenFormInstallations();
+
+  3.) IInstallable Functional Interface Implementation: contractors package -> residential -> ResidentialContractor file -> Method: lastMinuteInstallations();
+
+  Task 2 Locations:
+
+  1.) contractors package -> subcontractors -> DryWaller file -> Method: rValueOfInsulation();
+
+  2.) contractors package -> subcontractors -> FloorLayer file -> Method: hardwoodFloorInstalled();
+
+  3.) employees package -> departments -> management -> EngineerManager file -> Method: laborEstimate();
+
+  4.) inspectors package -> CityInspector file -> Method: nationalHomeRatings();
+
+  Task 3 Locations:
+
+  1.) employees package -> departments -> businessdevelopment -> BusinessDeveloper file -> Method: developmentProjects();
+
+  2.) employees package -> departments -> materialpurchasing -> ConstructionExpeditor file -> Method: resourceManagement();
+
+  3.) contractors package -> subcontractors -> Electrician file -> Method: electricalPanelFinalCheck();
+
+  4.) employees package -> departments -> engineering -> MechanicalEngineer file -> Method: hVACDesign();
+
+  5.) employees package -> departments -> architecture -> ResidentialArchitect file -> Method: projectDiscussions();
+
+  -----------------------------------------------------------------------------------------------------------------------------------------
+
+  Homework #7
+
+  Task 1: Provide an example of a Deadlock scenario
+  Task 2: Provide an example of a ConnectionPool
+  -Implement the connection pool as a Singleton
+  -Make the connection pool with a lazy initialization
+  - Load connection pool and use completable state and wait
+  Task 3: You must use collections from java.util.concurrent
+
+  Task 1-3 locations: utils package
+
+
+
+
+

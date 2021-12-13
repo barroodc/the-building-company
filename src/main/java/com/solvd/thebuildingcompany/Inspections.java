@@ -107,6 +107,18 @@ public class Inspections {
         }
     }
 
+    private void nationalRankingOfQuality() {
+        try {
+          final CityInspector marshall = new CityInspector("Marshall", "National");
+          final Method homesNationallyRanked = CityInspector.class.getDeclaredMethod("nationalHomeRatings");
+          homesNationallyRanked.setAccessible(true);
+          homesNationallyRanked.invoke(marshall);
+          logger.info(homesNationallyRanked);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.error(e);
+        }
+    }
+
     private void lastInspection() {
 
         try {

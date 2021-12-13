@@ -44,6 +44,7 @@ public class Electrician extends Contractor implements IInstallable {
       final ArrayList<String> listOfThingsWrong = new ArrayList<>();
       final ArrayList<String> listOfThingsRight = new ArrayList<>();
 
+      //evaluation count is the optional example. Reference getters/setters to further understand implementation.
         electricalPanelCheckList.forEach((key, value) -> {
             while (value.equals(false) && evaluationCount <= 4) {
                 if (getEvaluationCount().isPresent()) {
