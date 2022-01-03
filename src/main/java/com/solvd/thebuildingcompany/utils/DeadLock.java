@@ -1,12 +1,17 @@
 package com.solvd.thebuildingcompany.utils;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 public class DeadLock {
 
 
     public static void main(String[] args) {
-      final Worker josh = new Worker("Josh");
-      final Worker peter = new Worker("Peter");
-      new Thread(() -> josh.beginMorningShift(peter)).start();
-      new Thread(() -> peter.beginNightShift(josh)).start();
+       Lock participantA = new ReentrantLock();
+       Lock participantB = new ReentrantLock();
+       Lock participantC = new ReentrantLock();
+       new Philosopher("Chris",participantA,participantB).start();
+       new Philosopher("Ilissa",participantB, participantC).start();
+       new Philosopher("Brianna",participantA, participantC).start();
     }
 }
