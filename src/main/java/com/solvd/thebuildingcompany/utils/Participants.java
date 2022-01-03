@@ -5,17 +5,17 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.concurrent.locks.Lock;
 
-public class Philosopher extends Thread {
+public class Participants extends Thread {
 
     private final Lock firstTimers;
     private final Lock secondTimers;
     private static int numberOfPeopleParticipating = 2500;
 
 
-    private static final Logger logger = LogManager.getLogger(Philosopher.class);
+    private static final Logger logger = LogManager.getLogger(Participants.class);
 
 
-    public Philosopher(String name, Lock firstTimers, Lock secondTimers) {
+    public Participants(String name, Lock firstTimers, Lock secondTimers) {
         this.setName(name);
         this.firstTimers = firstTimers;
         this.secondTimers = secondTimers;

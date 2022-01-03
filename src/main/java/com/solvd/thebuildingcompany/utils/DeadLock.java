@@ -10,8 +10,8 @@ public class DeadLock {
        Lock participantA = new ReentrantLock();
        Lock participantB = new ReentrantLock();
        Lock participantC = new ReentrantLock();
-       new Philosopher("Chris",participantA,participantB).start();
-       new Philosopher("Ilissa",participantB, participantC).start();
-       new Philosopher("Brianna",participantA, participantC).start();
+       new Participants("Chris", participantA, participantB).start();
+       new Participants("Ilissa", participantB, participantC).start();
+       new Participants("Brianna", participantA, participantC).start();
     }
 }
