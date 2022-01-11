@@ -1,8 +1,10 @@
 package com.solvd.thebuildingcompany.utils;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -28,12 +30,14 @@ public class ApacheWordCount {
         });
         String wordsOccurrences =  wordCount.toString().replace("[", "").replace("]", "");
         logger.info(wordsOccurrences);
+        FileUtils.writeStringToFile(new File("src/main/resources/apacheresults.txt"), String.valueOf(wordCount), "UTF-8");
+
     }
 
-    /*public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         uniqueWordFunction();
     }
 
-     */
+
 }
 

@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class LinkedList<T> {
-    private static final Logger logger = LogManager.getLogger(ApacheWordCalculation.class);
+    private static final Logger logger = LogManager.getLogger(LinkedList.class);
 
 
     Node head;
